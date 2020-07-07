@@ -11,13 +11,13 @@
 /**
  * Function to return the array of starter content for the theme.
  *
- * Passes it through the `twentytwenty_starter_content` filter before returning.
+ * Passes it through the `edmonton_starter_content` filter before returning.
  *
  * @since Edmonton 1.0
  *
  * @return array A filtered array of args for the starter_content.
  */
-function twentytwenty_get_starter_content() {
+function edmonton_get_starter_content() {
 
 	// Define and register starter content to showcase the theme on new sites.
 	$starter_content = array(
@@ -212,6 +212,6 @@ function twentytwenty_get_starter_content() {
 	 *
 	 * @param array $starter_content Array of starter content.
 	 */
-	return apply_filters( 'twentytwenty_starter_content', $starter_content );
+	return apply_filters( 'edmonton_starter_content', $starter_content );
 
 }

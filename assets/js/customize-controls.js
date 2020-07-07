@@ -1,4 +1,4 @@
-/* global twentyTwentyBgColors, twentyTwentyColor, jQuery, wp, _ */
+/* global edmontonBgColors, edmontonColor, jQuery, wp, _ */
 /**
  * Customizer enhancements for a better user experience.
  *
@@ -14,36 +14,36 @@
 		wp.customize( 'accent_hue', function( value ) {
 			value.bind( function( to ) {
 				// Update the value for our accessible colors for all areas.
-				Object.keys( twentyTwentyBgColors ).forEach( function( context ) {
+				Object.keys( edmontonBgColors ).forEach( function( context ) {
 					var backgroundColorValue;
-					if ( twentyTwentyBgColors[ context ].color ) {
-						backgroundColorValue = twentyTwentyBgColors[ context ].color;
+					if ( edmontonBgColors[ context ].color ) {
+						backgroundColorValue = edmontonBgColors[ context ].color;
 					} else {
-						backgroundColorValue = wp.customize( twentyTwentyBgColors[ context ].setting ).get();
+						backgroundColorValue = wp.customize( edmontonBgColors[ context ].setting ).get();
 					}
-					twentyTwentySetAccessibleColorsValue( context, backgroundColorValue, to );
+					edmontonSetAccessibleColorsValue( context, backgroundColorValue, to );
 				} );
 			} );
 		} );
 
 		// Add a listener for background-color changes.
-		Object.keys( twentyTwentyBgColors ).forEach( function( context ) {
-			wp.customize( twentyTwentyBgColors[ context ].setting, function( value ) {
+		Object.keys( edmontonBgColors ).forEach( function( context ) {
+			wp.customize( edmontonBgColors[ context ].setting, function( value ) {
 				value.bind( function( to ) {
 					// Update the value for our accessible colors for this area.
-					twentyTwentySetAccessibleColorsValue( context, to, wp.customize( 'accent_hue' ).get(), to );
+					edmontonSetAccessibleColorsValue( context, to, wp.customize( 'accent_hue' ).get(), to );
 				} );
 			} );
 		} );
 
 		// Show or hide retina_logo setting on the first load.
-		twentyTwentySetRetineLogoVisibility( !! wp.customize( 'custom_logo' )() );
+		edmontonSetRetineLogoVisibility( !! wp.customize( 'custom_logo' )() );
 
 		// Add a listener for custom_logo changes.
 		wp.customize( 'custom_logo', function( value ) {
 			value.bind( function( to ) {
 				// Show or hide retina_logo setting on changing custom_logo.
-				twentyTwentySetRetineLogoVisibility( !! to );
+				edmontonSetRetineLogoVisibility( !! to );
 			} );
 		} );
 	} );
@@ -59,7 +59,7 @@
 	 *
 	 * @return {void}
 	 */
-	function twentyTwentySetAccessibleColorsValue( context, backgroundColor, accentHue ) {
+	function edmontonSetAccessibleColorsValue( context, backgroundColor, accentHue ) {
 		var value, colors;
 
 		// Get the current value for our accessible colors, and make sure it's an object.
@@ -67,7 +67,7 @@
 		value = ( _.isObject( value ) && ! _.isArray( value ) ) ? value : {};
 
 		// Get accessible colors for the defined background-color and hue.
-		colors = twentyTwentyColor( backgroundColor, accentHue );
+		colors = edmontonColor( backgroundColor, accentHue );
 
 		// Sanity check.
 		if ( colors.getAccentColor() && 'function' === typeof colors.getAccentColor().toCSS ) {
@@ -108,7 +108,7 @@
 	 *
 	 * @return {void}
 	 */
-	function twentyTwentySetRetineLogoVisibility( visible ) {
+	function edmontonSetRetineLogoVisibility( visible ) {
 		wp.customize.control( 'retina_logo' ).container.toggle( visible );
 	}
 }( jQuery ) );

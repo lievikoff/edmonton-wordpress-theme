@@ -111,7 +111,7 @@ if ( ! class_exists( 'TwentyTwenty_Walker_Comment' ) ) {
 						)
 					);
 
-					$by_post_author = twentytwenty_is_comment_by_post_author( $comment );
+					$by_post_author = edmonton_is_comment_by_post_author( $comment );
 
 					if ( $comment_reply_link || $by_post_author ) {
 						?>

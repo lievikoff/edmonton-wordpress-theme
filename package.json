@@ -1,22 +1,15 @@
 {
-	"name": "twentytwenty",
+	"name": "edmonton",
 	"version": "1.0.0",
-	"description": "Default WP Theme",
-	"author": "The WordPress Contributors",
+	"description": "Edmonton is a clean WordPress Theme that suits perfectly for blog, shop, magazine and news sites, it also can be used as a personal portfolio. Create the best experience for your website visitors with our template!",
+	"author": "the Chapak Contributors",
 	"license": "GPL-2.0-or-later",
+	"private": true,
 	"keywords": [
-		"WordPress",
-		"Theme",
-		"TwentyTwenty"
+		"blog",
+		"news",
+		"magazine"
 	],
-	"homepage": "https://github.com/wordpress/twentytwenty#readme",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/wordpress/twentytwenty.git"
-	},
-	"bugs": {
-		"url": "https://github.com/wordpress/twentytwenty/issues"
-	},
 	"devDependencies": {
 		"@wordpress/browserslist-config": "^2.6.0",
 		"@wordpress/scripts": "^5.0.0",
