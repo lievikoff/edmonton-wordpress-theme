@@ -4516,9 +4516,7 @@ a.to-the-top > * {
 	display: none;
 }
 
-.site-title {
-	color: #fff;
-}
+
 
 /* -------------------------------------------------------------------------- */
 
@@ -5710,6 +5708,53 @@ a.to-the-top > * {
 	.primary-menu-wrapper {
 		display: block;
 		width: 100%;
+	}
+
+	.site-title {
+		color: #fff;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 28px;
+		line-height: 34px;
+		text-transform: uppercase;
+		/* identical to box height */
+	
+		letter-spacing: 0.1em;
+	}
+	
+	.alt-navigation-wrapper {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		background: #FFFFFF;
+		border-bottom: 2px solid #E5E5E5;;
+	}
+	
+	.alt-navigation-search,
+	.alt-navigation-menu,
+	.alt-navigation-search input {
+		width: 50%;
+		font-family: Roboto;
+		border: none;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 16px;
+		color: #8492A6;
+	}
+
+	.alt-navigation-search input {
+		text-transform: uppercase;
+	}
+
+	.alt-navigation-menu,
+	.alt-navigation-menu a {
+		text-decoration: none !important;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		list-style: none;
 	}
 
 	/* HEADER TOGGLES */
