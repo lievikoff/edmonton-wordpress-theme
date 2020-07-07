@@ -4,9 +4,8 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
+ * @package Edmonton
+ * @since Edmonton 1.0
  */
 
 /**
@@ -112,9 +111,9 @@ function twentytwenty_theme_support() {
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on Twenty Twenty, use a find and replace
-	 * to change 'twentytwenty' to the name of your theme in all the template files.
+	 * to change 'edmonton' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'twentytwenty' );
+	load_theme_textdomain( 'edmonton' );
 
 	// Add support for full and wide align images.
 	add_theme_support( 'align-wide' );
@@ -235,7 +234,7 @@ add_action( 'wp_print_footer_scripts', 'twentytwenty_skip_link_focus_fix' );
 
 /** Enqueue non-latin language styles
  *
- * @since Twenty Twenty 1.0
+ * @since Edmonton 1.0
  *
  * @return void
  */
@@ -255,11 +254,11 @@ add_action( 'wp_enqueue_scripts', 'twentytwenty_non_latin_languages' );
 function twentytwenty_menus() {
 
 	$locations = array(
-		'primary'  => __( 'Desktop Horizontal Menu', 'twentytwenty' ),
-		'expanded' => __( 'Desktop Expanded Menu', 'twentytwenty' ),
-		'mobile'   => __( 'Mobile Menu', 'twentytwenty' ),
-		'footer'   => __( 'Footer Menu', 'twentytwenty' ),
-		'social'   => __( 'Social Menu', 'twentytwenty' ),
+		'primary'  => __( 'Desktop Horizontal Menu', 'edmonton' ),
+		'expanded' => __( 'Desktop Expanded Menu', 'edmonton' ),
+		'mobile'   => __( 'Mobile Menu', 'edmonton' ),
+		'footer'   => __( 'Footer Menu', 'edmonton' ),
+		'social'   => __( 'Social Menu', 'edmonton' ),
 	);
 
 	register_nav_menus( $locations );
@@ -337,7 +336,7 @@ if ( ! function_exists( 'wp_body_open' ) ) {
  * Include a skip to content link at the top of the page so that users can bypass the menu.
  */
 function twentytwenty_skip_link() {
-	echo '<a class="skip-link screen-reader-text" href="#site-content">' . __( 'Skip to the content', 'twentytwenty' ) . '</a>';
+	echo '<a class="skip-link screen-reader-text" href="#site-content">' . __( 'Skip to the content', 'edmonton' ) . '</a>';
 }
 
 add_action( 'wp_body_open', 'twentytwenty_skip_link', 5 );
@@ -362,9 +361,9 @@ function twentytwenty_sidebar_registration() {
 		array_merge(
 			$shared_args,
 			array(
-				'name'        => __( 'Footer #1', 'twentytwenty' ),
+				'name'        => __( 'Footer #1', 'edmonton' ),
 				'id'          => 'sidebar-1',
-				'description' => __( 'Widgets in this area will be displayed in the first column in the footer.', 'twentytwenty' ),
+				'description' => __( 'Widgets in this area will be displayed in the first column in the footer.', 'edmonton' ),
 			)
 		)
 	);
@@ -374,9 +373,9 @@ function twentytwenty_sidebar_registration() {
 		array_merge(
 			$shared_args,
 			array(
-				'name'        => __( 'Footer #2', 'twentytwenty' ),
+				'name'        => __( 'Footer #2', 'edmonton' ),
 				'id'          => 'sidebar-2',
-				'description' => __( 'Widgets in this area will be displayed in the second column in the footer.', 'twentytwenty' ),
+				'description' => __( 'Widgets in this area will be displayed in the second column in the footer.', 'edmonton' ),
 			)
 		)
 	);
@@ -481,22 +480,22 @@ function twentytwenty_block_editor_settings() {
 	// Block Editor Palette.
 	$editor_color_palette = array(
 		array(
-			'name'  => __( 'Accent Color', 'twentytwenty' ),
+			'name'  => __( 'Accent Color', 'edmonton' ),
 			'slug'  => 'accent',
 			'color' => twentytwenty_get_color_for_area( 'content', 'accent' ),
 		),
 		array(
-			'name'  => __( 'Primary', 'twentytwenty' ),
+			'name'  => __( 'Primary', 'edmonton' ),
 			'slug'  => 'primary',
 			'color' => twentytwenty_get_color_for_area( 'content', 'text' ),
 		),
 		array(
-			'name'  => __( 'Secondary', 'twentytwenty' ),
+			'name'  => __( 'Secondary', 'edmonton' ),
 			'slug'  => 'secondary',
 			'color' => twentytwenty_get_color_for_area( 'content', 'secondary' ),
 		),
 		array(
-			'name'  => __( 'Subtle Background', 'twentytwenty' ),
+			'name'  => __( 'Subtle Background', 'edmonton' ),
 			'slug'  => 'subtle-background',
 			'color' => twentytwenty_get_color_for_area( 'content', 'borders' ),
 		),
@@ -509,7 +508,7 @@ function twentytwenty_block_editor_settings() {
 		$background_color     = $background_color_arr[0]['default-color'];
 	}
 	$editor_color_palette[] = array(
-		'name'  => __( 'Background Color', 'twentytwenty' ),
+		'name'  => __( 'Background Color', 'edmonton' ),
 		'slug'  => 'background',
 		'color' => '#' . $background_color,
 	);
@@ -524,26 +523,26 @@ function twentytwenty_block_editor_settings() {
 		'editor-font-sizes',
 		array(
 			array(
-				'name'      => _x( 'Small', 'Name of the small font size in the block editor', 'twentytwenty' ),
-				'shortName' => _x( 'S', 'Short name of the small font size in the block editor.', 'twentytwenty' ),
+				'name'      => _x( 'Small', 'Name of the small font size in the block editor', 'edmonton' ),
+				'shortName' => _x( 'S', 'Short name of the small font size in the block editor.', 'edmonton' ),
 				'size'      => 18,
 				'slug'      => 'small',
 			),
 			array(
-				'name'      => _x( 'Regular', 'Name of the regular font size in the block editor', 'twentytwenty' ),
-				'shortName' => _x( 'M', 'Short name of the regular font size in the block editor.', 'twentytwenty' ),
+				'name'      => _x( 'Regular', 'Name of the regular font size in the block editor', 'edmonton' ),
+				'shortName' => _x( 'M', 'Short name of the regular font size in the block editor.', 'edmonton' ),
 				'size'      => 21,
 				'slug'      => 'normal',
 			),
 			array(
-				'name'      => _x( 'Large', 'Name of the large font size in the block editor', 'twentytwenty' ),
-				'shortName' => _x( 'L', 'Short name of the large font size in the block editor.', 'twentytwenty' ),
+				'name'      => _x( 'Large', 'Name of the large font size in the block editor', 'edmonton' ),
+				'shortName' => _x( 'L', 'Short name of the large font size in the block editor.', 'edmonton' ),
 				'size'      => 26.25,
 				'slug'      => 'large',
 			),
 			array(
-				'name'      => _x( 'Larger', 'Name of the larger font size in the block editor', 'twentytwenty' ),
-				'shortName' => _x( 'XL', 'Short name of the larger font size in the block editor.', 'twentytwenty' ),
+				'name'      => _x( 'Larger', 'Name of the larger font size in the block editor', 'edmonton' ),
+				'shortName' => _x( 'XL', 'Short name of the larger font size in the block editor.', 'edmonton' ),
 				'size'      => 32,
 				'slug'      => 'larger',
 			),
@@ -577,7 +576,7 @@ add_filter( 'the_content_more_link', 'twentytwenty_read_more_tag' );
 /**
  * Enqueues scripts for customizer controls & settings.
  *
- * @since Twenty Twenty 1.0
+ * @since Edmonton 1.0
  *
  * @return void
  */
@@ -600,7 +599,7 @@ add_action( 'customize_controls_enqueue_scripts', 'twentytwenty_customize_contro
 /**
  * Enqueue scripts for the customizer preview.
  *
- * @since Twenty Twenty 1.0
+ * @since Edmonton 1.0
  *
  * @return void
  */
@@ -626,7 +625,7 @@ add_action( 'customize_preview_init', 'twentytwenty_customize_preview_init' );
 /**
  * Get accessible color for an area.
  *
- * @since Twenty Twenty 1.0
+ * @since Edmonton 1.0
  *
  * @param string $area The area we want to get the colors for.
  * @param string $context Can be 'text' or 'accent'.
@@ -665,7 +664,7 @@ function twentytwenty_get_color_for_area( $area = 'content', $context = 'text' )
 /**
  * Returns an array of variables for the customizer preview.
  *
- * @since Twenty Twenty 1.0
+ * @since Edmonton 1.0
  *
  * @return array
  */
@@ -684,7 +683,7 @@ function twentytwenty_get_customizer_color_vars() {
 /**
  * Get an array of elements.
  *
- * @since Twenty Twenty 1.0
+ * @since Edmonton 1.0
  *
  * @return array
  */
@@ -748,7 +747,7 @@ function twentytwenty_get_elements_array() {
 	/**
 	* Filters Twenty Twenty theme elements
 	*
-	* @since Twenty Twenty 1.0
+	* @since Edmonton 1.0
 	*
 	* @param array Array of elements
 	*/

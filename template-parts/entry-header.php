@@ -2,9 +2,8 @@
 /**
  * Displays the post header
  *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
+ * @package Edmonton
+ * @since Edmonton 1.0
  */
 
 $entry_header_classes = '';
@@ -23,7 +22,7 @@ if ( is_singular() ) {
 		/**
 		 * Allow child themes and plugins to filter the display of the categories in the entry header.
 		 *
-		 * @since Twenty Twenty 1.0
+		 * @since Edmonton 1.0
 		 *
 		 * @param bool   Whether to show the categories in header, Default true.
 		 */
@@ -33,7 +32,7 @@ if ( is_singular() ) {
 			?>
 
 			<div class="entry-categories">
-				<span class="screen-reader-text"><?php _e( 'Categories', 'twentytwenty' ); ?></span>
+				<span class="screen-reader-text"><?php _e( 'Categories', 'edmonton' ); ?></span>
 				<div class="entry-categories-inner">
 					<?php the_category( ' ' ); ?>
 				</div><!-- .entry-categories-inner -->

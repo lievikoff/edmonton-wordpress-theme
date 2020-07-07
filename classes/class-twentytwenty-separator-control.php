@@ -2,9 +2,8 @@
 /**
  * Customizer Separator Control settings for this theme.
  *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
+ * @package Edmonton
+ * @since Edmonton 1.0
  */
 
 if ( class_exists( 'WP_Customize_Control' ) ) {

@@ -3,9 +3,8 @@
  * The template file for displaying the comments and comment form for the
  * Twenty Twenty theme.
  *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
+ * @package Edmonton
+ * @since Edmonton 1.0
  */
 
 /*
@@ -31,10 +30,10 @@ if ( $comments ) {
 			<h2 class="comment-reply-title">
 			<?php
 			if ( ! have_comments() ) {
-				_e( 'Leave a comment', 'twentytwenty' );
+				_e( 'Leave a comment', 'edmonton' );
 			} elseif ( 1 === $comments_number ) {
 				/* translators: %s: Post title. */
-				printf( _x( 'One reply on &ldquo;%s&rdquo;', 'comments title', 'twentytwenty' ), get_the_title() );
+				printf( _x( 'One reply on &ldquo;%s&rdquo;', 'comments title', 'edmonton' ), get_the_title() );
 			} else {
 				printf(
 					/* translators: 1: Number of comments, 2: Post title. */
@@ -43,7 +42,7 @@ if ( $comments ) {
 						'%1$s replies on &ldquo;%2$s&rdquo;',
 						$comments_number,
 						'comments title',
-						'twentytwenty'
+						'edmonton'
 					),
 					number_format_i18n( $comments_number ),
 					get_the_title()
@@ -71,8 +70,8 @@ if ( $comments ) {
 					'echo'      => false,
 					'end_size'  => 0,
 					'mid_size'  => 0,
-					'next_text' => __( 'Newer Comments', 'twentytwenty' ) . ' <span aria-hidden="true">&rarr;</span>',
-					'prev_text' => '<span aria-hidden="true">&larr;</span> ' . __( 'Older Comments', 'twentytwenty' ),
+					'next_text' => __( 'Newer Comments', 'edmonton' ) . ' <span aria-hidden="true">&rarr;</span>',
+					'prev_text' => '<span aria-hidden="true">&larr;</span> ' . __( 'Older Comments', 'edmonton' ),
 				)
 			);
 
@@ -85,7 +84,7 @@ if ( $comments ) {
 				}
 				?>
 
-				<nav class="comments-pagination pagination<?php echo $pagination_classes; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static output ?>" aria-label="<?php esc_attr_e( 'Comments', 'twentytwenty' ); ?>">
+				<nav class="comments-pagination pagination<?php echo $pagination_classes; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static output ?>" aria-label="<?php esc_attr_e( 'Comments', 'edmonton' ); ?>">
 					<?php echo wp_kses_post( $comment_pagination ); ?>
 				</nav>
 
@@ -124,7 +123,7 @@ if ( comments_open() || pings_open() ) {
 
 	<div class="comment-respond" id="respond">
 
-		<p class="comments-closed"><?php _e( 'Comments are closed.', 'twentytwenty' ); ?></p>
+		<p class="comments-closed"><?php _e( 'Comments are closed.', 'edmonton' ); ?></p>
 
 	</div><!-- #respond -->
 

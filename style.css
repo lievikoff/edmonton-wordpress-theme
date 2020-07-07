@@ -1352,7 +1352,7 @@ ul.social-icons li {
 
 
 #site-header {
-	background: #fff;
+	background: #202020;
 	position: relative;
 }
 
@@ -5688,10 +5688,6 @@ a.to-the-top > * {
 	}
 
 	.header-titles {
-		align-items: baseline;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: flex-start;
 		margin: -1rem 0 0 -2.4rem;
 	}
 

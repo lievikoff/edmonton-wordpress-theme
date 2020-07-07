@@ -2,9 +2,8 @@
 /**
  * Custom template tags for this theme.
  *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
+ * @package Edmonton
+ * @since Edmonton 1.0
  */
 
 /**
@@ -105,7 +104,7 @@ function twentytwenty_site_description( $echo = true ) {
 	/**
 	 * Filters the HTML for the site description.
 	 *
-	 * @since Twenty Twenty 1.0
+	 * @since Edmonton 1.0
 	 *
 	 * @param string $html         The HTML to display.
 	 * @param string $description  Site description via `bloginfo()`.
@@ -204,7 +203,7 @@ function twentytwenty_edit_post_link( $link, $post_id, $text ) {
 	$text = sprintf(
 		wp_kses(
 			/* translators: %s: Post title. Only visible to screen readers. */
-			__( 'Edit <span class="screen-reader-text">%s</span>', 'twentytwenty' ),
+			__( 'Edit <span class="screen-reader-text">%s</span>', 'edmonton' ),
 			array(
 				'span' => array(
 					'class' => array(),
@@ -239,7 +238,7 @@ function twentytwenty_get_post_meta( $post_id = null, $location = 'single-top' )
 	 * This filter can be used to hide post meta information of post, page or custom post type
 	 * registered by child themes or plugins.
 	 *
-	 * @since Twenty Twenty 1.0
+	 * @since Edmonton 1.0
 	 *
 	 * @param array Array of post types
 	 */
@@ -260,7 +259,7 @@ function twentytwenty_get_post_meta( $post_id = null, $location = 'single-top' )
 		 *
 		 * Use this filter to hide post meta information like Author, Post date, Comments, Is sticky status.
 		 *
-		 * @since Twenty Twenty 1.0
+		 * @since Edmonton 1.0
 		 *
 		 * @param array $args {
 		 *  @type string 'author'
@@ -288,7 +287,7 @@ function twentytwenty_get_post_meta( $post_id = null, $location = 'single-top' )
 		 *
 		 * Use this filter to hide post tags.
 		 *
-		 * @since Twenty Twenty 1.0
+		 * @since Edmonton 1.0
 		 *
 		 * @param array $args {
 		 *   @type string 'tags'
@@ -330,7 +329,7 @@ function twentytwenty_get_post_meta( $post_id = null, $location = 'single-top' )
 				 *
 				 * Allow output of additional post meta info to be added by child themes and plugins.
 				 *
-				 * @since Twenty Twenty 1.0
+				 * @since Edmonton 1.0
 				 * @since Twenty Twenty 1.1 Added the `$post_meta` and `$location` parameters.
 				 *
 				 * @param int    $post_id   Post ID.
@@ -347,14 +346,14 @@ function twentytwenty_get_post_meta( $post_id = null, $location = 'single-top' )
 					?>
 					<li class="post-author meta-wrapper">
 						<span class="meta-icon">
-							<span class="screen-reader-text"><?php _e( 'Post author', 'twentytwenty' ); ?></span>
+							<span class="screen-reader-text"><?php _e( 'Post author', 'edmonton' ); ?></span>
 							<?php twentytwenty_the_theme_svg( 'user' ); ?>
 						</span>
 						<span class="meta-text">
 							<?php
 							printf(
 								/* translators: %s: Author name. */
-								__( 'By %s', 'twentytwenty' ),
+								__( 'By %s', 'edmonton' ),
 								'<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author_meta( 'display_name' ) ) . '</a>'
 							);
 							?>
@@ -371,7 +370,7 @@ function twentytwenty_get_post_meta( $post_id = null, $location = 'single-top' )
 					?>
 					<li class="post-date meta-wrapper">
 						<span class="meta-icon">
-							<span class="screen-reader-text"><?php _e( 'Post date', 'twentytwenty' ); ?></span>
+							<span class="screen-reader-text"><?php _e( 'Post date', 'edmonton' ); ?></span>
 							<?php twentytwenty_the_theme_svg( 'calendar' ); ?>
 						</span>
 						<span class="meta-text">
@@ -389,11 +388,11 @@ function twentytwenty_get_post_meta( $post_id = null, $location = 'single-top' )
 					?>
 					<li class="post-categories meta-wrapper">
 						<span class="meta-icon">
-							<span class="screen-reader-text"><?php _e( 'Categories', 'twentytwenty' ); ?></span>
+							<span class="screen-reader-text"><?php _e( 'Categories', 'edmonton' ); ?></span>
 							<?php twentytwenty_the_theme_svg( 'folder' ); ?>
 						</span>
 						<span class="meta-text">
-							<?php _ex( 'In', 'A string that is output before one or more categories', 'twentytwenty' ); ?> <?php the_category( ', ' ); ?>
+							<?php _ex( 'In', 'A string that is output before one or more categories', 'edmonton' ); ?> <?php the_category( ', ' ); ?>
 						</span>
 					</li>
 					<?php
@@ -407,7 +406,7 @@ function twentytwenty_get_post_meta( $post_id = null, $location = 'single-top' )
 					?>
 					<li class="post-tags meta-wrapper">
 						<span class="meta-icon">
-							<span class="screen-reader-text"><?php _e( 'Tags', 'twentytwenty' ); ?></span>
+							<span class="screen-reader-text"><?php _e( 'Tags', 'edmonton' ); ?></span>
 							<?php twentytwenty_the_theme_svg( 'tag' ); ?>
 						</span>
 						<span class="meta-text">
@@ -445,7 +444,7 @@ function twentytwenty_get_post_meta( $post_id = null, $location = 'single-top' )
 							<?php twentytwenty_the_theme_svg( 'bookmark' ); ?>
 						</span>
 						<span class="meta-text">
-							<?php _e( 'Sticky post', 'twentytwenty' ); ?>
+							<?php _e( 'Sticky post', 'edmonton' ); ?>
 						</span>
 					</li>
 					<?php
@@ -457,7 +456,7 @@ function twentytwenty_get_post_meta( $post_id = null, $location = 'single-top' )
 				 *
 				 * Allow output of additional post meta info to be added by child themes and plugins.
 				 *
-				 * @since Twenty Twenty 1.0
+				 * @since Edmonton 1.0
 				 * @since Twenty Twenty 1.1 Added the `$post_meta` and `$location` parameters.
 				 *
 				 * @param int    $post_id   Post ID.
@@ -555,7 +554,7 @@ function twentytwenty_add_sub_toggles_to_main_menu( $args, $item, $depth ) {
 			$toggle_duration      = twentytwenty_toggle_duration();
 
 			// Add the sub menu toggle.
-			$args->after .= '<button class="toggle sub-menu-toggle fill-children-current-color" data-toggle-target="' . $toggle_target_string . '" data-toggle-type="slidetoggle" data-toggle-duration="' . absint( $toggle_duration ) . '" aria-expanded="false"><span class="screen-reader-text">' . __( 'Show sub menu', 'twentytwenty' ) . '</span>' . twentytwenty_get_theme_svg( 'chevron-down' ) . '</button>';
+			$args->after .= '<button class="toggle sub-menu-toggle fill-children-current-color" data-toggle-target="' . $toggle_target_string . '" data-toggle-type="slidetoggle" data-toggle-duration="' . absint( $toggle_duration ) . '" aria-expanded="false"><span class="screen-reader-text">' . __( 'Show sub menu', 'edmonton' ) . '</span>' . twentytwenty_get_theme_svg( 'chevron-down' ) . '</button>';
 
 		}
 
@@ -762,7 +761,7 @@ function twentytwenty_toggle_duration() {
 	/**
 	 * Filters the animation duration/speed used usually for submenu toggles.
 	 *
-	 * @since Twenty Twenty 1.0
+	 * @since Edmonton 1.0
 	 *
 	 * @param int $duration Duration in milliseconds.
 	 */

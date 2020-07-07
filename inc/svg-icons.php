@@ -2,9 +2,8 @@
 /**
  * Twenty Twenty SVG Icon helper functions
  *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
+ * @package Edmonton
+ * @since Edmonton 1.0
  */
 
 if ( ! function_exists( 'twentytwenty_the_theme_svg' ) ) {

@@ -2,9 +2,8 @@
 /**
  * Twenty Twenty Custom CSS
  *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
+ * @package Edmonton
+ * @since Edmonton 1.0
  */
 
 if ( ! function_exists( 'twentytwenty_generate_css' ) ) {

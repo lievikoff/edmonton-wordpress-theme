@@ -2,9 +2,8 @@
 /**
  * Displays the content when the cover template is used.
  *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
+ * @package Edmonton
+ * @since Edmonton 1.0
  */
 
 ?>
@@ -57,7 +56,7 @@
 							/**
 							 * Allow child themes and plugins to filter the display of the categories in the article header.
 							 *
-							 * @since Twenty Twenty 1.0
+							 * @since Edmonton 1.0
 							 *
 							 * @param bool Whether to show the categories in article header, Default true.
 							 */
@@ -67,7 +66,7 @@
 								?>
 
 								<div class="entry-categories">
-									<span class="screen-reader-text"><?php _e( 'Categories', 'twentytwenty' ); ?></span>
+									<span class="screen-reader-text"><?php _e( 'Categories', 'edmonton' ); ?></span>
 									<div class="entry-categories-inner">
 										<?php the_category( ' ' ); ?>
 									</div><!-- .entry-categories-inner -->
@@ -85,7 +84,7 @@
 
 									<a href="#post-inner" class="to-the-content fill-children-current-color">
 										<?php twentytwenty_the_theme_svg( 'arrow-down' ); ?>
-										<div class="screen-reader-text"><?php _e( 'Scroll Down', 'twentytwenty' ); ?></div>
+										<div class="screen-reader-text"><?php _e( 'Scroll Down', 'edmonton' ); ?></div>
 									</a><!-- .to-the-content -->
 
 								</div><!-- .to-the-content-wrapper -->
@@ -135,7 +134,7 @@
 		<?php
 		wp_link_pages(
 			array(
-				'before'      => '<nav class="post-nav-links bg-light-background" aria-label="' . esc_attr__( 'Page', 'twentytwenty' ) . '"><span class="label">' . __( 'Pages:', 'twentytwenty' ) . '</span>',
+				'before'      => '<nav class="post-nav-links bg-light-background" aria-label="' . esc_attr__( 'Page', 'edmonton' ) . '"><span class="label">' . __( 'Pages:', 'edmonton' ) . '</span>',
 				'after'       => '</nav>',
 				'link_before' => '<span class="page-number">',
 				'link_after'  => '</span>',

@@ -1,7 +1,7 @@
 /**
  * Remove squared button style
  *
- * @since Twenty Twenty 1.0
+ * @since Edmonton 1.0
  */
 /* global wp */
 wp.domReady( function() {

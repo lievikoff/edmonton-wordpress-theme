@@ -2,9 +2,8 @@
 /**
  * Displays the menu icon and modal
  *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
+ * @package Edmonton
+ * @since Edmonton 1.0
  */
 
 ?>
@@ -18,7 +17,7 @@
 			<div class="menu-top">
 
 				<button class="toggle close-nav-toggle fill-children-current-color" data-toggle-target=".menu-modal" data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".menu-modal">
-					<span class="toggle-text"><?php _e( 'Close Menu', 'twentytwenty' ); ?></span>
+					<span class="toggle-text"><?php _e( 'Close Menu', 'edmonton' ); ?></span>
 					<?php twentytwenty_the_theme_svg( 'cross' ); ?>
 				</button><!-- .nav-toggle -->
 
@@ -45,7 +44,7 @@
 
 					?>
 
-					<nav class="expanded-menu<?php echo esc_attr( $expanded_nav_classes ); ?>" aria-label="<?php esc_attr_e( 'Expanded', 'twentytwenty' ); ?>" role="navigation">
+					<nav class="expanded-menu<?php echo esc_attr( $expanded_nav_classes ); ?>" aria-label="<?php esc_attr_e( 'Expanded', 'edmonton' ); ?>" role="navigation">
 
 						<ul class="modal-menu reset-list-style">
 							<?php
@@ -70,7 +69,7 @@
 				if ( 'expanded' !== $mobile_menu_location ) {
 					?>
 
-					<nav class="mobile-menu" aria-label="<?php esc_attr_e( 'Mobile', 'twentytwenty' ); ?>" role="navigation">
+					<nav class="mobile-menu" aria-label="<?php esc_attr_e( 'Mobile', 'edmonton' ); ?>" role="navigation">
 
 						<ul class="modal-menu reset-list-style">
 
@@ -114,7 +113,7 @@
 
 				<?php if ( has_nav_menu( 'social' ) ) { ?>
 
-					<nav aria-label="<?php esc_attr_e( 'Expanded Social links', 'twentytwenty' ); ?>" role="navigation">
+					<nav aria-label="<?php esc_attr_e( 'Expanded Social links', 'edmonton' ); ?>" role="navigation">
 						<ul class="social-menu reset-list-style social-icons fill-children-current-color">
 
 							<?php

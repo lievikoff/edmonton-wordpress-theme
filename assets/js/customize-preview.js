@@ -4,7 +4,7 @@
  *
  * Contains handlers to make Theme Customizer preview reload changes asynchronously.
  *
- * @since Twenty Twenty 1.0
+ * @since Edmonton 1.0
  */
 
 ( function( $, api, _ ) {
@@ -146,7 +146,7 @@
 	/**
 	 * Add styles to elements in the preview pane.
 	 *
-	 * @since Twenty Twenty 1.0
+	 * @since Edmonton 1.0
 	 *
 	 * @param {string} context The area for which we want to generate styles. Can be for example "content", "header" etc.
 	 *

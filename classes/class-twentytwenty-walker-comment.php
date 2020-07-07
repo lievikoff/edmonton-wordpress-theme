@@ -2,9 +2,8 @@
 /**
  * Custom comment walker for this theme.
  *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
+ * @package Edmonton
+ * @since Edmonton 1.0
  */
 
 if ( ! class_exists( 'TwentyTwenty_Walker_Comment' ) ) {
@@ -53,7 +52,7 @@ if ( ! class_exists( 'TwentyTwenty_Walker_Comment' ) ) {
 							printf(
 								'<span class="fn">%1$s</span><span class="screen-reader-text says">%2$s</span>',
 								esc_html( $comment_author ),
-								__( 'says:', 'twentytwenty' )
+								__( 'says:', 'edmonton' )
 							);
 
 							if ( ! empty( $comment_author_url ) ) {
@@ -66,7 +65,7 @@ if ( ! class_exists( 'TwentyTwenty_Walker_Comment' ) ) {
 							<a href="<?php echo esc_url( get_comment_link( $comment, $args ) ); ?>">
 								<?php
 								/* translators: 1: Comment date, 2: Comment time. */
-								$comment_timestamp = sprintf( __( '%1$s at %2$s', 'twentytwenty' ), get_comment_date( '', $comment ), get_comment_time() );
+								$comment_timestamp = sprintf( __( '%1$s at %2$s', 'edmonton' ), get_comment_date( '', $comment ), get_comment_time() );
 								?>
 								<time datetime="<?php comment_time( 'c' ); ?>" title="<?php echo esc_attr( $comment_timestamp ); ?>">
 									<?php echo esc_html( $comment_timestamp ); ?>
@@ -74,7 +73,7 @@ if ( ! class_exists( 'TwentyTwenty_Walker_Comment' ) ) {
 							</a>
 							<?php
 							if ( get_edit_comment_link() ) {
-								echo ' <span aria-hidden="true">&bull;</span> <a class="comment-edit-link" href="' . esc_url( get_edit_comment_link() ) . '">' . __( 'Edit', 'twentytwenty' ) . '</a>';
+								echo ' <span aria-hidden="true">&bull;</span> <a class="comment-edit-link" href="' . esc_url( get_edit_comment_link() ) . '">' . __( 'Edit', 'edmonton' ) . '</a>';
 							}
 							?>
 						</div><!-- .comment-metadata -->
@@ -89,7 +88,7 @@ if ( ! class_exists( 'TwentyTwenty_Walker_Comment' ) ) {
 
 						if ( '0' === $comment->comment_approved ) {
 							?>
-							<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'twentytwenty' ); ?></p>
+							<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'edmonton' ); ?></p>
 							<?php
 						}
 
@@ -124,7 +123,7 @@ if ( ! class_exists( 'TwentyTwenty_Walker_Comment' ) ) {
 								echo $comment_reply_link; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Link is escaped in https://developer.wordpress.org/reference/functions/get_comment_reply_link/
 							}
 							if ( $by_post_author ) {
-								echo '<span class="by-post-author">' . __( 'By Post Author', 'twentytwenty' ) . '</span>';
+								echo '<span class="by-post-author">' . __( 'By Post Author', 'edmonton' ) . '</span>';
 							}
 							?>
 
