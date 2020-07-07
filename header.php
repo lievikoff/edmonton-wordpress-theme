@@ -119,6 +119,7 @@
 			</div>
 
 			<div class="alt-navigation-menu">
+
 				<?php
 				wp_nav_menu(
 					array(
@@ -128,6 +129,7 @@
 					)
 				);
 				?>
+
 			</div>
 
 		</div>
