@@ -139,13 +139,62 @@
 
 			<div class="alt-navigation-social-media">
 
-				
+				<?php 
+				var_dump( get_option( 'theme_mods_edmonton' ));
+
+				$social_media_list = array (
+					'deviantArt',
+					'facebook',
+					'flickr',
+					'gitHub',
+					'instagram',
+					'linkedIn',
+					'pinterest',
+					'snapchat',
+					'telegram',
+					'tikTok',
+					'tumblr',
+					'twitter',
+					'viber',
+					'wattpad',
+					'whatsApp',
+					'youTube',
+					'vK',
+					'oK',
+				);
+
+				foreach ( $social_media_list as $social_media ) {
+					
+					if ( get_theme_mod( 'show_'.$social_media ) ) {
+						
+						?>
+
+						<a class="social-media-block" href="<?php echo esc_url( get_theme_mod( 'url_'.$social_media ) );?>">
+							<?php if ( get_theme_mod( 'icon_'.$social_media ) ) { ?>
+
+							<img src="<?php echo esc_url( get_theme_mod( 'icon_'.$social_media ) );?>">
+
+							<?php 
+							} else {
+								echo edmonton_the_theme_svg(strtolower($social_media));
+							}
+							?>	
+
+						</a>
+						
+						<?php
+					}
+				}
+				?>
+
+
 
 				<?php 
-					if ( true === $enable_header_search ) {
-						get_template_part( 'template-parts/modal-search' );
-					}
+				if ( true === $enable_header_search ) {
 
+					get_template_part( 'template-parts/modal-search' );
+
+				}
 				?>
 
 			</div>

@@ -310,6 +310,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'url_facebook',
 				array(
 					'capability'        => 'edit_theme_options',
+					'default'           => 'https://www.facebook.com/',
 				)
 			);
 
@@ -452,6 +453,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'url_gitHub',
 				array(
 					'capability'        => 'edit_theme_options',
+					'default'           => 'https://www.github.com/',
 				)
 			);
 
@@ -523,6 +525,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'url_instagram',
 				array(
 					'capability'        => 'edit_theme_options',
+					'default'           => 'https://instagram.com/',
 				)
 			);
 
@@ -646,7 +649,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'show_pinterest',
 				array(
 					'capability'        => 'edit_theme_options',
-					'default'           => false,
+					'default'           => true,
 					'sanitize_callback' => array( __CLASS__, 'sanitize_checkbox' ),
 				)
 			);
@@ -665,6 +668,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'url_pinterest',
 				array(
 					'capability'        => 'edit_theme_options',
+					'default'           => 'https://pinterest.com/',
 				)
 			);
 
@@ -788,7 +792,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'show_telegram',
 				array(
 					'capability'        => 'edit_theme_options',
-					'default'           => true,
+					'default'           => false,
 					'sanitize_callback' => array( __CLASS__, 'sanitize_checkbox' ),
 				)
 			);
@@ -1020,6 +1024,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'url_twitter',
 				array(
 					'capability'        => 'edit_theme_options',
+					'default'           => 'https://twitter.com/',
 				)
 			);
 
@@ -1072,7 +1077,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'show_viber',
 				array(
 					'capability'        => 'edit_theme_options',
-					'default'           => true,
+					'default'           => false,
 					'sanitize_callback' => array( __CLASS__, 'sanitize_checkbox' ),
 				)
 			);
@@ -1304,6 +1309,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'url_youTube',
 				array(
 					'capability'        => 'edit_theme_options',
+					'default'           => 'https://youtube.com/',
 				)
 			);
 
@@ -1356,7 +1362,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'show_vK',
 				array(
 					'capability'        => 'edit_theme_options',
-					'default'           => true,
+					'default'           => false,
 					'sanitize_callback' => array( __CLASS__, 'sanitize_checkbox' ),
 				)
 			);
@@ -1427,7 +1433,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'show_oK',
 				array(
 					'capability'        => 'edit_theme_options',
-					'default'           => true,
+					'default'           => false,
 					'sanitize_callback' => array( __CLASS__, 'sanitize_checkbox' ),
 				)
 			);
