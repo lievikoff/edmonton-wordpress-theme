@@ -5688,6 +5688,12 @@ a.to-the-top > * {
 	}
 }
 
+@media ( max-width: 1000px ) {
+	.alt-navigation-search {
+		display: none;
+	}
+}
+
 @media ( min-width: 1000px ) {
 
 
@@ -5710,6 +5716,10 @@ a.to-the-top > * {
 
 	.header-titles-wrapper {
 		padding: 0;
+	}
+
+	.alt-navigation-search {
+		display: block;
 	}
 
 	.header-titles {

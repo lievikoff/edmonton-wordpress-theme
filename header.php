@@ -35,7 +35,25 @@
 
 				<div class="header-titles-wrapper">
 
-					
+					<?php
+
+					// Check whether the header search is activated in the customizer.
+					$enable_header_search = get_theme_mod( 'enable_header_search', true );
+
+					if ( true === $enable_header_search ) {
+
+						?>
+
+						<button class="toggle search-toggle mobile-search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
+							<span class="toggle-inner">
+								<span class="toggle-icon">
+									<?php edmonton_the_theme_svg( 'search' ); ?>
+								</span>
+								<span class="toggle-text"><?php _e( 'Search', 'edmonton' ); ?></span>
+							</span>
+						</button><!-- .search-toggle -->
+
+					<?php } ?>
 
 					<div class="header-titles">
 
@@ -113,7 +131,8 @@
 			<div class="alt-navigation-search">
 
 				<?php
-				get_search_form( 'Search this site' );
+					
+					get_search_form();
 				?>
 
 			</div>
@@ -145,7 +164,11 @@
 					</ul>
 				</nav><!-- .social-menu -->
 
-				<?php } ?>
+				<?php } 
+					if ( true === $enable_header_search ) {
+						get_template_part( 'template-parts/modal-search' );
+					}
+				?>
 
 			</div>
 
