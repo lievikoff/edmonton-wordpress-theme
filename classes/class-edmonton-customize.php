@@ -6,11 +6,11 @@
  * @since Edmonton 1.0
  */
 
-if ( ! class_exists( 'TwentyTwenty_Customize' ) ) {
+if ( ! class_exists( 'Edmonton_Customize' ) ) {
 	/**
 	 * CUSTOMIZER SETTINGS
 	 */
-	class TwentyTwenty_Customize {
+	class Edmonton_Customize {
 
 		/**
 		 * Register customizer options.
@@ -192,6 +192,50 @@ if ( ! class_exists( 'TwentyTwenty_Customize' ) ) {
 			$wp_customize->get_setting( 'background_color' )->transport = 'postMessage';
 
 			/**
+			 * Social Media
+			 */
+
+			$wp_customize->add_panel(
+				'social_media',
+				array(
+					'title'      => __( 'Social Media', 'edmonton' ),
+					'priority'   => 40,
+					'capability' => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_section(
+				'facebook',
+				array(
+					'title'      => __( 'Facebook', 'edmonton' ),
+					'priority'   => 40,
+					'capability' => 'edit_theme_options',
+					'panel'      => 'social_media',
+				)
+			);
+
+			/* Show Facebook ----------------------------------------------- */
+
+			$wp_customize->add_setting(
+				'show_facebook',
+				array(
+					'capability'        => 'edit_theme_options',
+					'default'           => true,
+					'sanitize_callback' => array( __CLASS__, 'sanitize_checkbox' ),
+				)
+			);
+
+			$wp_customize->add_control(
+				'show_facebook',
+				array(
+					'type'     => 'checkbox',
+					'section'  => 'facebook',
+					'priority' => 10,
+					'label'    => __( 'Show Facebook', 'edmonton' ),
+				)
+			);
+
+			/**
 			 * Theme Options
 			 */
 
@@ -204,7 +248,7 @@ if ( ! class_exists( 'TwentyTwenty_Customize' ) ) {
 				)
 			);
 
-			/* Enable Header Search ----------------------------------------------- */
+			/* Show facebook ----------------------------------------------- */
 
 			$wp_customize->add_setting(
 				'enable_header_search',
@@ -221,7 +265,7 @@ if ( ! class_exists( 'TwentyTwenty_Customize' ) ) {
 					'type'     => 'checkbox',
 					'section'  => 'options',
 					'priority' => 10,
-					'label'    => __( 'Show search in header', 'edmonton' ),
+					'label'    => __( 'Show facebook', 'edmonton' ),
 				)
 			);
 
@@ -458,7 +502,7 @@ if ( ! class_exists( 'TwentyTwenty_Customize' ) ) {
 	}
 
 	// Setup the Theme Customizer settings and controls.
-	add_action( 'customize_register', array( 'TwentyTwenty_Customize', 'register' ) );
+	add_action( 'customize_register', array( 'Edmonton_Customize', 'register' ) );
 
 }
 
