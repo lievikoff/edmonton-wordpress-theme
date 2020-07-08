@@ -5770,7 +5770,7 @@ a.to-the-top > * {
 	}
 	
 	.alt-navigation-search,
-	.alt-navigation-menu,
+	.alt-navigation-social-media,
 	.alt-navigation-search input {
 		width: 50%;
 		font-family: Roboto;
@@ -5786,8 +5786,8 @@ a.to-the-top > * {
 		text-transform: uppercase;
 	}
 
-	.alt-navigation-menu,
-	.alt-navigation-menu a {
+	.alt-navigation-social-media,
+	.alt-navigation-social-media a {
 		text-decoration: none !important;
 		display: flex;
 		align-items: center;
