@@ -1576,7 +1576,7 @@ ul.primary-menu {
 	letter-spacing: -0.0277em;
 	flex-wrap: wrap;
 	justify-content: flex-start;
-	margin: -0.8rem 0 0 -1.6rem;
+	margin: -0.8rem 0 0;
 	background-color: #202020;
 	color: #fff;
 	border-top: 10px solid #000000;
@@ -5778,6 +5778,25 @@ a.to-the-top > * {
 		list-style: none;
 	}
 
+	.social-icons a {
+		justify-content: center;
+	}
+
+	body {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	header,
+	.header-navigation-wrapper,
+	.alt-navigation-wrapper,
+	#site-content,
+	.footer-nav-widgets-wrapper {
+		width: 85%;
+	}
+
 	/* HEADER TOGGLES */
 
 	.mobile-search-toggle,
@@ -6192,7 +6211,7 @@ a.to-the-top > * {
 	/* PRIMARY MENU */
 
 	ul.primary-menu {
-		margin: -0.8rem 0 0 -2.5rem;
+		margin: -0.8rem 0 0;
 	}
 
 	.primary-menu > li {
