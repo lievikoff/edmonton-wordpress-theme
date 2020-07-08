@@ -1541,9 +1541,10 @@ body:not(.enable-search-modal) .site-logo img {
 
 .search-toggle .toggle-icon,
 .search-toggle svg {
-	height: 2.5rem;
+	height: 3.5rem;
 	max-width: 2.3rem;
 	width: 2.3rem;
+	color: #fff;
 }
 
 /* Navigation Toggle ------------------------- */
@@ -1558,12 +1559,9 @@ body:not(.enable-search-modal) .site-logo img {
 
 .nav-toggle .toggle-icon,
 .nav-toggle svg {
-	height: 0.8rem;
+	height: 3rem;
 	width: 2.6rem;
-}
-
-.nav-toggle .toggle-inner {
-	padding-top: 0.8rem;
+	color: #fff;
 }
 
 /* Primary Menu ---------------------------- */

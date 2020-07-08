@@ -49,7 +49,6 @@
 								<span class="toggle-icon">
 									<?php edmonton_the_theme_svg( 'search' ); ?>
 								</span>
-								<span class="toggle-text"><?php _e( 'Search', 'edmonton' ); ?></span>
 							</span>
 						</button><!-- .search-toggle -->
 
@@ -70,9 +69,8 @@
 					<button class="toggle nav-toggle mobile-nav-toggle" data-toggle-target=".menu-modal"  data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
 						<span class="toggle-inner">
 							<span class="toggle-icon">
-								<?php edmonton_the_theme_svg( 'ellipsis' ); ?>
+								<?php edmonton_the_theme_svg( 'mobile-menu' ); ?>
 							</span>
-							<span class="toggle-text"><?php _e( 'Menu', 'edmonton' ); ?></span>
 						</span>
 					</button><!-- .nav-toggle -->
 

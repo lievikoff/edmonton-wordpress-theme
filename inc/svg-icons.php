@@ -9,7 +9,7 @@
 if ( ! function_exists( 'edmonton_the_theme_svg' ) ) {
 	/**
 	 * Output and Get Theme SVG.
-	 * Output and get the SVG markup for an icon in the TwentyTwenty_SVG_Icons class.
+	 * Output and get the SVG markup for an icon in the Edmonton_SVG_Icons class.
 	 *
 	 * @param string $svg_name The name of the icon.
 	 * @param string $group The group the icon belongs to.
