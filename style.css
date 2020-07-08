@@ -1587,12 +1587,19 @@ ul.primary-menu > li > a, .primary-menu .icon{
 
 ul.primary-menu > li > a{
 	padding: 15px 15px;
-	
 }
 
 ul.primary-menu > li {
 	border-right: 2px solid #303030;
 	border-left: 2px solid black;
+}
+
+ul.primary-menu > li:first-child {
+	border-left: none;
+}
+
+ul.primary-menu > li:last-child {
+	border-right: none;
 }
 
 .primary-menu .icon {
@@ -1640,11 +1647,11 @@ ul.primary-menu > li {
 }
 
 .primary-menu > li.menu-item-has-children > a {
-	padding-right: 2rem;
+	padding-right: 35px;
 }
 
 .primary-menu > li > .icon {
-	right: -0.5rem;
+	right: 0.9rem;
 	top: calc(50% - 0.4rem);
 }
 
