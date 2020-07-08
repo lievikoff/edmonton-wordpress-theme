@@ -204,6 +204,79 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				)
 			);
 
+			/* Show DeviantArt ----------------------------------------------- */
+
+			$wp_customize->add_section(
+				'deviantArt',
+				array(
+					'title'      => __( 'DeviantArt', 'edmonton' ),
+					'priority'   => 40,
+					'capability' => 'edit_theme_options',
+					'panel'      => 'social_media',
+				)
+			);
+
+			$wp_customize->add_setting(
+				'show_deviantArt',
+				array(
+					'capability'        => 'edit_theme_options',
+					'default'           => false,
+					'sanitize_callback' => array( __CLASS__, 'sanitize_checkbox' ),
+				)
+			);
+
+			$wp_customize->add_control(
+				'show_deviantArt',
+				array(
+					'type'     => 'checkbox',
+					'section'  => 'deviantArt',
+					'priority' => 10,
+					'label'    => __( 'Show', 'edmonton' ),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'url_deviantArt',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				'url_deviantArt',
+				array(
+					'type'     		=> 'url',
+					'section'  		=> 'deviantArt',
+					'priority' 		=> 10,
+					'label'    		=> __( 'URL', 'edmonton' ),
+					'input_attrs'	=> array (
+						'placeholder'	=> 'https://',
+					),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'icon_deviantArt',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Image_Control (
+					$wp_customize,
+					'icon_deviantArt',
+					[
+						'type'     		=> 'image',
+						'section'  		=> 'deviantArt',
+						'priority' 		=> 10,
+						'label'    		=> __( 'Icon', 'edmonton' ),
+					]
+				)
+			);
+
+			/* Show Facebook ----------------------------------------------- */
+
 			$wp_customize->add_section(
 				'facebook',
 				array(
@@ -213,8 +286,6 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'panel'      => 'social_media',
 				)
 			);
-
-			/* Show Facebook ----------------------------------------------- */
 
 			$wp_customize->add_setting(
 				'show_facebook',
@@ -231,7 +302,1183 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'type'     => 'checkbox',
 					'section'  => 'facebook',
 					'priority' => 10,
-					'label'    => __( 'Show Facebook', 'edmonton' ),
+					'label'    => __( 'Show', 'edmonton' ),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'url_facebook',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				'url_facebook',
+				array(
+					'type'     		=> 'url',
+					'section'  		=> 'facebook',
+					'priority' 		=> 10,
+					'label'    		=> __( 'URL', 'edmonton' ),
+					'input_attrs'	=> array (
+						'placeholder'	=> 'https://',
+					),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'icon_facebook',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Image_Control (
+					$wp_customize,
+					'icon_facebook',
+					[
+						'type'     		=> 'image',
+						'section'  		=> 'facebook',
+						'priority' 		=> 10,
+						'label'    		=> __( 'Icon', 'edmonton' ),
+					]
+				)
+			);
+
+			/* Show Flickr ----------------------------------------------- */
+
+			$wp_customize->add_section(
+				'flickr',
+				array(
+					'title'      => __( 'Flickr', 'edmonton' ),
+					'priority'   => 40,
+					'capability' => 'edit_theme_options',
+					'panel'      => 'social_media',
+				)
+			);
+
+			$wp_customize->add_setting(
+				'show_flickr',
+				array(
+					'capability'        => 'edit_theme_options',
+					'default'           => false,
+					'sanitize_callback' => array( __CLASS__, 'sanitize_checkbox' ),
+				)
+			);
+
+			$wp_customize->add_control(
+				'show_flickr',
+				array(
+					'type'     => 'checkbox',
+					'section'  => 'flickr',
+					'priority' => 10,
+					'label'    => __( 'Show', 'edmonton' ),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'url_flickr',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				'url_flickr',
+				array(
+					'type'     		=> 'url',
+					'section'  		=> 'flickr',
+					'priority' 		=> 10,
+					'label'    		=> __( 'URL', 'edmonton' ),
+					'input_attrs'	=> array (
+						'placeholder'	=> 'https://',
+					),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'icon_flickr',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Image_Control (
+					$wp_customize,
+					'icon_flickr',
+					[
+						'type'     		=> 'image',
+						'section'  		=> 'flickr',
+						'priority' 		=> 10,
+						'label'    		=> __( 'Icon', 'edmonton' ),
+					]
+				)
+			);
+
+			/* Show GitHub ----------------------------------------------- */
+
+			$wp_customize->add_section(
+				'gitHub',
+				array(
+					'title'      => __( 'GitHub', 'edmonton' ),
+					'priority'   => 40,
+					'capability' => 'edit_theme_options',
+					'panel'      => 'social_media',
+				)
+			);
+
+			$wp_customize->add_setting(
+				'show_gitHub',
+				array(
+					'capability'        => 'edit_theme_options',
+					'default'           => true,
+					'sanitize_callback' => array( __CLASS__, 'sanitize_checkbox' ),
+				)
+			);
+
+			$wp_customize->add_control(
+				'show_gitHub',
+				array(
+					'type'     => 'checkbox',
+					'section'  => 'gitHub',
+					'priority' => 10,
+					'label'    => __( 'Show', 'edmonton' ),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'url_gitHub',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				'url_gitHub',
+				array(
+					'type'     		=> 'url',
+					'section'  		=> 'gitHub',
+					'priority' 		=> 10,
+					'label'    		=> __( 'URL', 'edmonton' ),
+					'input_attrs'	=> array (
+						'placeholder'	=> 'https://',
+					),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'icon_gitHub',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Image_Control (
+					$wp_customize,
+					'icon_gitHub',
+					[
+						'type'     		=> 'image',
+						'section'  		=> 'gitHub',
+						'priority' 		=> 10,
+						'label'    		=> __( 'Icon', 'edmonton' ),
+					]
+				)
+			);
+
+			/* Show Instagram ----------------------------------------------- */
+
+			$wp_customize->add_section(
+				'instagram',
+				array(
+					'title'      => __( 'Instagram', 'edmonton' ),
+					'priority'   => 40,
+					'capability' => 'edit_theme_options',
+					'panel'      => 'social_media',
+				)
+			);
+
+			$wp_customize->add_setting(
+				'show_instagram',
+				array(
+					'capability'        => 'edit_theme_options',
+					'default'           => true,
+					'sanitize_callback' => array( __CLASS__, 'sanitize_checkbox' ),
+				)
+			);
+
+			$wp_customize->add_control(
+				'show_instagram',
+				array(
+					'type'     => 'checkbox',
+					'section'  => 'instagram',
+					'priority' => 10,
+					'label'    => __( 'Show', 'edmonton' ),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'url_instagram',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				'url_instagram',
+				array(
+					'type'     		=> 'url',
+					'section'  		=> 'instagram',
+					'priority' 		=> 10,
+					'label'    		=> __( 'URL', 'edmonton' ),
+					'input_attrs'	=> array (
+						'placeholder'	=> 'https://',
+					),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'icon_instagram',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Image_Control (
+					$wp_customize,
+					'icon_instagram',
+					[
+						'type'     		=> 'image',
+						'section'  		=> 'instagram',
+						'priority' 		=> 10,
+						'label'    		=> __( 'Icon', 'edmonton' ),
+					]
+				)
+			);
+
+			/* Show LinkedIn ----------------------------------------------- */
+
+			$wp_customize->add_section(
+				'linkedIn',
+				array(
+					'title'      => __( 'LinkedIn', 'edmonton' ),
+					'priority'   => 40,
+					'capability' => 'edit_theme_options',
+					'panel'      => 'social_media',
+				)
+			);
+
+			$wp_customize->add_setting(
+				'show_linkedIn',
+				array(
+					'capability'        => 'edit_theme_options',
+					'default'           => false,
+					'sanitize_callback' => array( __CLASS__, 'sanitize_checkbox' ),
+				)
+			);
+
+			$wp_customize->add_control(
+				'show_linkedIn',
+				array(
+					'type'     => 'checkbox',
+					'section'  => 'linkedIn',
+					'priority' => 10,
+					'label'    => __( 'Show', 'edmonton' ),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'url_linkedIn',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				'url_linkedIn',
+				array(
+					'type'     		=> 'url',
+					'section'  		=> 'linkedIn',
+					'priority' 		=> 10,
+					'label'    		=> __( 'URL', 'edmonton' ),
+					'input_attrs'	=> array (
+						'placeholder'	=> 'https://',
+					),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'icon_linkedIn',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Image_Control (
+					$wp_customize,
+					'icon_linkedIn',
+					[
+						'type'     		=> 'image',
+						'section'  		=> 'linkedIn',
+						'priority' 		=> 10,
+						'label'    		=> __( 'Icon', 'edmonton' ),
+					]
+				)
+			);
+
+			/* Show Pinterest ----------------------------------------------- */
+
+			$wp_customize->add_section(
+				'pinterest',
+				array(
+					'title'      => __( 'Pinterest', 'edmonton' ),
+					'priority'   => 40,
+					'capability' => 'edit_theme_options',
+					'panel'      => 'social_media',
+				)
+			);
+
+			$wp_customize->add_setting(
+				'show_pinterest',
+				array(
+					'capability'        => 'edit_theme_options',
+					'default'           => false,
+					'sanitize_callback' => array( __CLASS__, 'sanitize_checkbox' ),
+				)
+			);
+
+			$wp_customize->add_control(
+				'show_pinterest',
+				array(
+					'type'     => 'checkbox',
+					'section'  => 'pinterest',
+					'priority' => 10,
+					'label'    => __( 'Show', 'edmonton' ),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'url_pinterest',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				'url_pinterest',
+				array(
+					'type'     		=> 'url',
+					'section'  		=> 'pinterest',
+					'priority' 		=> 10,
+					'label'    		=> __( 'URL', 'edmonton' ),
+					'input_attrs'	=> array (
+						'placeholder'	=> 'https://',
+					),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'icon_pinterest',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Image_Control (
+					$wp_customize,
+					'icon_pinterest',
+					[
+						'type'     		=> 'image',
+						'section'  		=> 'pinterest',
+						'priority' 		=> 10,
+						'label'    		=> __( 'Icon', 'edmonton' ),
+					]
+				)
+			);
+
+			/* Show Snapchat ----------------------------------------------- */
+
+			$wp_customize->add_section(
+				'snapchat',
+				array(
+					'title'      => __( 'Snapchat', 'edmonton' ),
+					'priority'   => 40,
+					'capability' => 'edit_theme_options',
+					'panel'      => 'social_media',
+				)
+			);
+
+			$wp_customize->add_setting(
+				'show_snapchat',
+				array(
+					'capability'        => 'edit_theme_options',
+					'default'           => false,
+					'sanitize_callback' => array( __CLASS__, 'sanitize_checkbox' ),
+				)
+			);
+
+			$wp_customize->add_control(
+				'show_snapchat',
+				array(
+					'type'     => 'checkbox',
+					'section'  => 'snapchat',
+					'priority' => 10,
+					'label'    => __( 'Show', 'edmonton' ),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'url_snapchat',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				'url_snapchat',
+				array(
+					'type'     		=> 'url',
+					'section'  		=> 'snapchat',
+					'priority' 		=> 10,
+					'label'    		=> __( 'URL', 'edmonton' ),
+					'input_attrs'	=> array (
+						'placeholder'	=> 'https://',
+					),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'icon_snapchat',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Image_Control (
+					$wp_customize,
+					'icon_snapchat',
+					[
+						'type'     		=> 'image',
+						'section'  		=> 'snapchat',
+						'priority' 		=> 10,
+						'label'    		=> __( 'Icon', 'edmonton' ),
+					]
+				)
+			);
+
+			/* Show Telegram ----------------------------------------------- */
+
+			$wp_customize->add_section(
+				'telegram',
+				array(
+					'title'      => __( 'Telegram', 'edmonton' ),
+					'priority'   => 40,
+					'capability' => 'edit_theme_options',
+					'panel'      => 'social_media',
+				)
+			);
+
+			$wp_customize->add_setting(
+				'show_telegram',
+				array(
+					'capability'        => 'edit_theme_options',
+					'default'           => true,
+					'sanitize_callback' => array( __CLASS__, 'sanitize_checkbox' ),
+				)
+			);
+
+			$wp_customize->add_control(
+				'show_telegram',
+				array(
+					'type'     => 'checkbox',
+					'section'  => 'telegram',
+					'priority' => 10,
+					'label'    => __( 'Show', 'edmonton' ),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'url_telegram',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				'url_telegram',
+				array(
+					'type'     		=> 'url',
+					'section'  		=> 'telegram',
+					'priority' 		=> 10,
+					'label'    		=> __( 'URL', 'edmonton' ),
+					'input_attrs'	=> array (
+						'placeholder'	=> 'https://',
+					),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'icon_telegram',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Image_Control (
+					$wp_customize,
+					'icon_telegram',
+					[
+						'type'     		=> 'image',
+						'section'  		=> 'telegram',
+						'priority' 		=> 10,
+						'label'    		=> __( 'Icon', 'edmonton' ),
+					]
+				)
+			);
+
+			/* Show TikTok ----------------------------------------------- */
+
+			$wp_customize->add_section(
+				'tikTok',
+				array(
+					'title'      => __( 'TikTok', 'edmonton' ),
+					'priority'   => 40,
+					'capability' => 'edit_theme_options',
+					'panel'      => 'social_media',
+				)
+			);
+
+			$wp_customize->add_setting(
+				'show_tikTok',
+				array(
+					'capability'        => 'edit_theme_options',
+					'default'           => false,
+					'sanitize_callback' => array( __CLASS__, 'sanitize_checkbox' ),
+				)
+			);
+
+			$wp_customize->add_control(
+				'show_tikTok',
+				array(
+					'type'     => 'checkbox',
+					'section'  => 'tikTok',
+					'priority' => 10,
+					'label'    => __( 'Show', 'edmonton' ),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'url_tikTok',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				'url_tikTok',
+				array(
+					'type'     		=> 'url',
+					'section'  		=> 'tikTok',
+					'priority' 		=> 10,
+					'label'    		=> __( 'URL', 'edmonton' ),
+					'input_attrs'	=> array (
+						'placeholder'	=> 'https://',
+					),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'icon_tikTok',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Image_Control (
+					$wp_customize,
+					'icon_tikTok',
+					[
+						'type'     		=> 'image',
+						'section'  		=> 'tikTok',
+						'priority' 		=> 10,
+						'label'    		=> __( 'Icon', 'edmonton' ),
+					]
+				)
+			);
+
+			/* Show Tumblr ----------------------------------------------- */
+
+			$wp_customize->add_section(
+				'tumblr',
+				array(
+					'title'      => __( 'Tumblr', 'edmonton' ),
+					'priority'   => 40,
+					'capability' => 'edit_theme_options',
+					'panel'      => 'social_media',
+				)
+			);
+
+			$wp_customize->add_setting(
+				'show_tumblr',
+				array(
+					'capability'        => 'edit_theme_options',
+					'default'           => false,
+					'sanitize_callback' => array( __CLASS__, 'sanitize_checkbox' ),
+				)
+			);
+
+			$wp_customize->add_control(
+				'show_tumblr',
+				array(
+					'type'     => 'checkbox',
+					'section'  => 'tumblr',
+					'priority' => 10,
+					'label'    => __( 'Show', 'edmonton' ),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'url_tumblr',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				'url_tumblr',
+				array(
+					'type'     		=> 'url',
+					'section'  		=> 'tumblr',
+					'priority' 		=> 10,
+					'label'    		=> __( 'URL', 'edmonton' ),
+					'input_attrs'	=> array (
+						'placeholder'	=> 'https://',
+					),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'icon_tumblr',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Image_Control (
+					$wp_customize,
+					'icon_tumblr',
+					[
+						'type'     		=> 'image',
+						'section'  		=> 'tumblr',
+						'priority' 		=> 10,
+						'label'    		=> __( 'Icon', 'edmonton' ),
+					]
+				)
+			);
+
+			/* Show Twitter ----------------------------------------------- */
+
+			$wp_customize->add_section(
+				'twitter',
+				array(
+					'title'      => __( 'Twitter', 'edmonton' ),
+					'priority'   => 40,
+					'capability' => 'edit_theme_options',
+					'panel'      => 'social_media',
+				)
+			);
+
+			$wp_customize->add_setting(
+				'show_twitter',
+				array(
+					'capability'        => 'edit_theme_options',
+					'default'           => true,
+					'sanitize_callback' => array( __CLASS__, 'sanitize_checkbox' ),
+				)
+			);
+
+			$wp_customize->add_control(
+				'show_twitter',
+				array(
+					'type'     => 'checkbox',
+					'section'  => 'twitter',
+					'priority' => 10,
+					'label'    => __( 'Show', 'edmonton' ),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'url_twitter',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				'url_twitter',
+				array(
+					'type'     		=> 'url',
+					'section'  		=> 'twitter',
+					'priority' 		=> 10,
+					'label'    		=> __( 'URL', 'edmonton' ),
+					'input_attrs'	=> array (
+						'placeholder'	=> 'https://',
+					),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'icon_twitter',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Image_Control (
+					$wp_customize,
+					'icon_twitter',
+					[
+						'type'     		=> 'image',
+						'section'  		=> 'twitter',
+						'priority' 		=> 10,
+						'label'    		=> __( 'Icon', 'edmonton' ),
+					]
+				)
+			);
+
+			/* Show Viber ----------------------------------------------- */
+
+			$wp_customize->add_section(
+				'viber',
+				array(
+					'title'      => __( 'Viber', 'edmonton' ),
+					'priority'   => 40,
+					'capability' => 'edit_theme_options',
+					'panel'      => 'social_media',
+				)
+			);
+
+			$wp_customize->add_setting(
+				'show_viber',
+				array(
+					'capability'        => 'edit_theme_options',
+					'default'           => true,
+					'sanitize_callback' => array( __CLASS__, 'sanitize_checkbox' ),
+				)
+			);
+
+			$wp_customize->add_control(
+				'show_viber',
+				array(
+					'type'     => 'checkbox',
+					'section'  => 'viber',
+					'priority' => 10,
+					'label'    => __( 'Show', 'edmonton' ),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'url_viber',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				'url_viber',
+				array(
+					'type'     		=> 'url',
+					'section'  		=> 'viber',
+					'priority' 		=> 10,
+					'label'    		=> __( 'URL', 'edmonton' ),
+					'input_attrs'	=> array (
+						'placeholder'	=> 'https://',
+					),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'icon_viber',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Image_Control (
+					$wp_customize,
+					'icon_viber',
+					[
+						'type'     		=> 'image',
+						'section'  		=> 'viber',
+						'priority' 		=> 10,
+						'label'    		=> __( 'Icon', 'edmonton' ),
+					]
+				)
+			);
+
+			/* Show Wattpad ----------------------------------------------- */
+
+			$wp_customize->add_section(
+				'wattpad',
+				array(
+					'title'      => __( 'Wattpad', 'edmonton' ),
+					'priority'   => 40,
+					'capability' => 'edit_theme_options',
+					'panel'      => 'social_media',
+				)
+			);
+
+			$wp_customize->add_setting(
+				'show_wattpad',
+				array(
+					'capability'        => 'edit_theme_options',
+					'default'           => false,
+					'sanitize_callback' => array( __CLASS__, 'sanitize_checkbox' ),
+				)
+			);
+
+			$wp_customize->add_control(
+				'show_wattpad',
+				array(
+					'type'     => 'checkbox',
+					'section'  => 'wattpad',
+					'priority' => 10,
+					'label'    => __( 'Show', 'edmonton' ),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'url_wattpad',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				'url_wattpad',
+				array(
+					'type'     		=> 'url',
+					'section'  		=> 'wattpad',
+					'priority' 		=> 10,
+					'label'    		=> __( 'URL', 'edmonton' ),
+					'input_attrs'	=> array (
+						'placeholder'	=> 'https://',
+					),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'icon_wattpad',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Image_Control (
+					$wp_customize,
+					'icon_wattpad',
+					[
+						'type'     		=> 'image',
+						'section'  		=> 'wattpad',
+						'priority' 		=> 10,
+						'label'    		=> __( 'Icon', 'edmonton' ),
+					]
+				)
+			);
+
+			/* Show WhatsApp ----------------------------------------------- */
+
+			$wp_customize->add_section(
+				'whatsApp',
+				array(
+					'title'      => __( 'WhatsApp', 'edmonton' ),
+					'priority'   => 40,
+					'capability' => 'edit_theme_options',
+					'panel'      => 'social_media',
+				)
+			);
+
+			$wp_customize->add_setting(
+				'show_whatsApp',
+				array(
+					'capability'        => 'edit_theme_options',
+					'default'           => false,
+					'sanitize_callback' => array( __CLASS__, 'sanitize_checkbox' ),
+				)
+			);
+
+			$wp_customize->add_control(
+				'show_whatsApp',
+				array(
+					'type'     => 'checkbox',
+					'section'  => 'whatsApp',
+					'priority' => 10,
+					'label'    => __( 'Show', 'edmonton' ),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'url_whatsApp',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				'url_whatsApp',
+				array(
+					'type'     		=> 'url',
+					'section'  		=> 'whatsApp',
+					'priority' 		=> 10,
+					'label'    		=> __( 'URL', 'edmonton' ),
+					'input_attrs'	=> array (
+						'placeholder'	=> 'https://',
+					),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'icon_whatsApp',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Image_Control (
+					$wp_customize,
+					'icon_whatsApp',
+					[
+						'type'     		=> 'image',
+						'section'  		=> 'whatsApp',
+						'priority' 		=> 10,
+						'label'    		=> __( 'Icon', 'edmonton' ),
+					]
+				)
+			);
+
+			/* Show YouTube ----------------------------------------------- */
+
+			$wp_customize->add_section(
+				'youTube',
+				array(
+					'title'      => __( 'YouTube', 'edmonton' ),
+					'priority'   => 40,
+					'capability' => 'edit_theme_options',
+					'panel'      => 'social_media',
+				)
+			);
+
+			$wp_customize->add_setting(
+				'show_youTube',
+				array(
+					'capability'        => 'edit_theme_options',
+					'default'           => true,
+					'sanitize_callback' => array( __CLASS__, 'sanitize_checkbox' ),
+				)
+			);
+
+			$wp_customize->add_control(
+				'show_youTube',
+				array(
+					'type'     => 'checkbox',
+					'section'  => 'youTube',
+					'priority' => 10,
+					'label'    => __( 'Show', 'edmonton' ),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'url_youTube',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				'url_youTube',
+				array(
+					'type'     		=> 'url',
+					'section'  		=> 'youTube',
+					'priority' 		=> 10,
+					'label'    		=> __( 'URL', 'edmonton' ),
+					'input_attrs'	=> array (
+						'placeholder'	=> 'https://',
+					),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'icon_youTube',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Image_Control (
+					$wp_customize,
+					'icon_youTube',
+					[
+						'type'     		=> 'image',
+						'section'  		=> 'youTube',
+						'priority' 		=> 10,
+						'label'    		=> __( 'Icon', 'edmonton' ),
+					]
+				)
+			);
+
+			/* Show ВКонтакте ----------------------------------------------- */
+
+			$wp_customize->add_section(
+				'vK',
+				array(
+					'title'      => __( 'ВКонтакте', 'edmonton' ),
+					'priority'   => 40,
+					'capability' => 'edit_theme_options',
+					'panel'      => 'social_media',
+				)
+			);
+
+			$wp_customize->add_setting(
+				'show_vK',
+				array(
+					'capability'        => 'edit_theme_options',
+					'default'           => true,
+					'sanitize_callback' => array( __CLASS__, 'sanitize_checkbox' ),
+				)
+			);
+
+			$wp_customize->add_control(
+				'show_vK',
+				array(
+					'type'     => 'checkbox',
+					'section'  => 'vK',
+					'priority' => 10,
+					'label'    => __( 'Show', 'edmonton' ),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'url_vK',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				'url_vK',
+				array(
+					'type'     		=> 'url',
+					'section'  		=> 'vK',
+					'priority' 		=> 10,
+					'label'    		=> __( 'URL', 'edmonton' ),
+					'input_attrs'	=> array (
+						'placeholder'	=> 'https://',
+					),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'icon_vK',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Image_Control (
+					$wp_customize,
+					'icon_vK',
+					[
+						'type'     		=> 'image',
+						'section'  		=> 'vK',
+						'priority' 		=> 10,
+						'label'    		=> __( 'Icon', 'edmonton' ),
+					]
+				)
+			);
+
+			/* Show Одноклассники ----------------------------------------------- */
+
+			$wp_customize->add_section(
+				'oK',
+				array(
+					'title'      => __( 'Одноклассники', 'edmonton' ),
+					'priority'   => 40,
+					'capability' => 'edit_theme_options',
+					'panel'      => 'social_media',
+				)
+			);
+
+			$wp_customize->add_setting(
+				'show_oK',
+				array(
+					'capability'        => 'edit_theme_options',
+					'default'           => true,
+					'sanitize_callback' => array( __CLASS__, 'sanitize_checkbox' ),
+				)
+			);
+
+			$wp_customize->add_control(
+				'show_oK',
+				array(
+					'type'     => 'checkbox',
+					'section'  => 'oK',
+					'priority' => 10,
+					'label'    => __( 'Show', 'edmonton' ),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'url_oK',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				'url_oK',
+				array(
+					'type'     		=> 'url',
+					'section'  		=> 'oK',
+					'priority' 		=> 10,
+					'label'    		=> __( 'URL', 'edmonton' ),
+					'input_attrs'	=> array (
+						'placeholder'	=> 'https://',
+					),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'icon_oK',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Image_Control (
+					$wp_customize,
+					'icon_oK',
+					[
+						'type'     		=> 'image',
+						'section'  		=> 'oK',
+						'priority' 		=> 10,
+						'label'    		=> __( 'Icon', 'edmonton' ),
+					]
 				)
 			);
 
