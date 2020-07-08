@@ -138,8 +138,7 @@
 			<div class="alt-navigation-social-media">
 
 				<?php 
-				var_dump( get_option( 'theme_mods_edmonton' ));
-
+				
 				$social_media_list = array (
 					'deviantArt',
 					'facebook',
