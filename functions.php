@@ -753,3 +753,48 @@ function edmonton_get_elements_array() {
 	*/
 	return apply_filters( 'edmonton_get_elements_array', $elements );
 }
+
+
+
+function icon_background_show () {
+	if (get_theme_mod( 'show_icon_background' ) ) {
+		?>
+
+		<style type="text/css">
+			.social-media-block {
+				background: none !important;
+			}
+		</style>
+
+		<?php
+	}
+}
+
+add_action( 'wp_head', 'icon_background_show' );
+
+function icon_backgorund_color () {
+	if ( get_theme_mod( 'show_icon_background' ) )	{
+
+	?>
+	 
+	<style type="text/css">
+		.social-media-block {
+			background: <?php echo get_theme_mod('color_icon_background', 'blue'); ?> !important;
+		}
+	</style>
+
+	<?php 
+	} else {
+		?>
+		
+		<style type="text/css">
+			.social-media-block {
+				background: none !important;
+			}
+		</style>
+
+	<?php
+	}
+}
+
+add_action( 'wp_head', 'icon_backgorund_color' );

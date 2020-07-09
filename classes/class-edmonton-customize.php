@@ -204,6 +204,55 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				)
 			);
 
+			/* Icon display setting ----------------------------------------------- */
+
+			$wp_customize->add_section(
+				'display_setting',
+				array(
+					'title'      => __( 'Display setting', 'edmonton' ),
+					'priority'   => 40,
+					'capability' => 'edit_theme_options',
+					'panel'      => 'social_media',
+				)
+			);
+
+			$wp_customize->add_setting(
+				'show_icon_background',
+				array(
+					'capability'        => 'edit_theme_options',
+					'default'           => false,
+				)
+			);
+			
+			$wp_customize->add_control(
+				'show_icon_background',
+				array(
+					'type'     => 'checkbox',
+					'section'  => 'display_setting',
+					'priority' => 10,
+					'label'    => __( 'Show icon background', 'edmonton' ),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'color_icon_background',
+				array(
+					'capability'        => 'edit_theme_options',
+				)
+			);
+			
+			$wp_customize->add_control(
+				new WP_Customize_Color_Control(
+					$wp_customize,
+					'color_icon_background',
+					array(
+						'section'  => 'display_setting',
+						'priority' => 10,
+						'label'    => __( 'Icon background color', 'edmonton' ),
+					)
+				)
+			);
+
 			/* Show DeviantArt ----------------------------------------------- */
 
 			$wp_customize->add_section(
