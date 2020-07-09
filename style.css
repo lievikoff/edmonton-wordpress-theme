@@ -150,6 +150,10 @@ body {
 	word-wrap: break-word;
 }
 
+*:focus {
+	outline: none;
+}
+
 #site-content {
 	overflow: hidden;
 }
@@ -1836,6 +1840,8 @@ body.touch-enabled .primary-menu ul li.menu-item-has-children > a {
 	z-index: 99;
 }
 
+
+
 .admin-bar .menu-modal {
 	top: 32px;
 }
@@ -2020,7 +2026,7 @@ button.sub-menu-toggle.active svg {
 	position: absolute;
 	top: 0;
 	left: 0;
-	opacity: 1;
+	opacity: 0.01;
 }
 
 .menu-wrapper.is-toggling .toggling-target.active {
@@ -2034,7 +2040,7 @@ button.sub-menu-toggle.active svg {
 }
 
 .menu-wrapper.is-animating.is-toggling .toggling-target.active {
-	opacity: 1;
+	opacity: 0.01;
 }
 
 .menu-wrapper.is-toggling .modal-menu > li:last-child li {
