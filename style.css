@@ -4570,9 +4570,10 @@ a.to-the-top > * {
 	border-right: none;
 }
 
-.social-media-block img {
-	width: 24px;
-	height: 24px;
+.social-media-block img,
+.social-media-block svg {
+	width: 35px;
+	height: 35px;
 }
 
 /* -------------------------------------------------------------------------- */
