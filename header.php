@@ -172,6 +172,7 @@
 
 								<img src="<?php echo esc_url( get_theme_mod( 'icon_'.$social_media ) );?>">
 
+<<<<<<< Updated upstream
 								<?php 
 								} else {
 									echo edmonton_the_theme_svg(strtolower($social_media));
@@ -180,6 +181,13 @@
 
 							</a>
 						</div>
+=======
+							<?php 
+							} else {
+								edmonton_the_theme_svg(strtolower($social_media), 'social', '#ffffff');
+							}
+							?>	
+>>>>>>> Stashed changes
 
 						<?php
 					}
