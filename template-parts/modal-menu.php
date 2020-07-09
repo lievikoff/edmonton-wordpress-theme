@@ -113,29 +113,55 @@
 
 				<?php if ( has_nav_menu( 'social' ) ) { ?>
 
-					<nav aria-label="<?php esc_attr_e( 'Expanded Social links', 'edmonton' ); ?>" role="navigation">
-						<ul class="social-menu reset-list-style social-icons fill-children-current-color">
+					<div class="alt-navigation-social-media">
 
-							<?php
-							wp_nav_menu(
-								array(
-									'theme_location'  => 'social',
-									'container'       => '',
-									'container_class' => '',
-									'items_wrap'      => '%3$s',
-									'menu_id'         => '',
-									'menu_class'      => '',
-									'depth'           => 1,
-									'link_before'     => '<span class="screen-reader-text">',
-									'link_after'      => '</span>',
-									'fallback_cb'     => '',
-								)
-							);
-							?>
+				<?php 
+				
+				$social_media_list = array (
+					'deviantArt',
+					'facebook',
+					'flickr',
+					'gitHub',
+					'instagram',
+					'linkedIn',
+					'pinterest',
+					'snapchat',
+					'telegram',
+					'tikTok',
+					'tumblr',
+					'twitter',
+					'viber',
+					'wattpad',
+					'whatsApp',
+					'youTube',
+					'vK',
+					'oK',
+				);
 
-						</ul>
-					</nav><!-- .social-menu -->
+				foreach ( $social_media_list as $social_media ) {
+					
+					if ( get_theme_mod( 'show_'.$social_media ) ) {
+						
+						?>
 
+						<div class="social-media">
+							<a class="social-media-block" href="<?php echo esc_url( get_theme_mod( 'url_'.$social_media ) );?>">
+								<?php if ( get_theme_mod( 'icon_'.$social_media ) ) { ?>
+
+								<img src="<?php echo esc_url( get_theme_mod( 'icon_'.$social_media ) );?>">
+
+								<?php 
+									} else {
+										edmonton_the_theme_svg(strtolower($social_media), 'social', '#ffffff');
+									}
+								?>
+							</a>
+						</div>
+						<?php
+					}
+				}
+				?>
+				</div>
 				<?php } ?>
 
 			</div><!-- .menu-bottom -->

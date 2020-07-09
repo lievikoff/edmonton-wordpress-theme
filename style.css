@@ -1583,7 +1583,13 @@ ul.primary-menu {
 	background-color: #202020;
 	color: #fff;
 	border-top: 10px solid #000;
+	text-transform: uppercase;
 }
+
+ul.primary-menu > li > .children {
+	text-transform: none;
+}
+
 ul.primary-menu > li > a, .primary-menu .icon{
 	color: #fff !important;
 }
@@ -4549,12 +4555,17 @@ a.to-the-top > * {
 	display: none;
 }
 
-.social-media {
+.alt-navigation-wrapper .alt-navigation-social-media .social-media, 
+.menu-bottom .social-media {
 	padding: 10px 5px;
 	border-right: 2px solid #f8f8f8;
 }
 
-.social-media:nth-last-child(2) {
+.menu-bottom .social-media:last-child {
+	border-right: none;
+}
+
+.alt-navigation-wrapper .alt-navigation-social-media .social-media:nth-last-child(2) {
 	border-right: none;
 }
 
