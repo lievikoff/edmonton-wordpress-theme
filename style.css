@@ -5012,7 +5012,7 @@ a.to-the-top > * {
 	.menu-bottom {
 		align-items: center;
 		display: flex;
-		justify-content: space-between;
+		justify-content: center;
 		padding: 4.4rem 0;
 	}
 
