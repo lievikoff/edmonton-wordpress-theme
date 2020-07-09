@@ -238,6 +238,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'color_icon_background',
 				array(
 					'capability'        => 'edit_theme_options',
+					'transport'         => 'postMessage',
 				)
 			);
 			
@@ -249,6 +250,26 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 						'section'  => 'display_setting',
 						'priority' => 10,
 						'label'    => __( 'Icon background color', 'edmonton' ),
+					)
+				)
+			);
+
+			$wp_customize->add_setting(
+				'color_icon',
+				array(
+					'capability'        => 'edit_theme_options',
+					'transport'         => 'postMessage',
+				)
+			);
+			
+			$wp_customize->add_control(
+				new WP_Customize_Color_Control(
+					$wp_customize,
+					'color_icon',
+					array(
+						'section'  => 'display_setting',
+						'priority' => 10,
+						'label'    => __( 'Icon color', 'edmonton' ),
 					)
 				)
 			);

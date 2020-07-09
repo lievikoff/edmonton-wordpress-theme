@@ -798,3 +798,50 @@ function icon_backgorund_color () {
 }
 
 add_action( 'wp_head', 'icon_backgorund_color' );
+
+function icon_color () {
+	if ( get_theme_mod( 'color_icon' ) )	{
+
+	?>
+	 
+	<style type="text/css">
+		.social-media-block svg {
+			fill: <?php echo get_theme_mod('color_icon', '#202020'); ?> !important;
+		}
+
+		.social-media-block img {
+			color: <?php echo get_theme_mod('color_icon', '#202020'); ?> !important;
+		}
+	</style>
+
+	<?php 
+	} else {
+		?>
+		
+		<style type="text/css">
+			.social-media-block svg {
+				fill: #202020 !important;
+			}
+
+			.social-media-block img {
+				color: #202020 !important;
+			}
+		</style>
+
+	<?php
+	}
+}
+
+add_action( 'wp_head', 'icon_color' );
+
+function  icon_live () {
+	wp_enqueue_script( 
+		'edmonton-customize-live',
+		get_template_directory_uri() . '/assets/js/customize-live.js', 
+		array( 'jquery','customize-preview' ),
+		'',
+		true 
+	);
+}	
+
+add_action( 'customize_preview_init', 'icon_live' );

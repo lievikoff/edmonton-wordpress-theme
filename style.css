@@ -1542,7 +1542,8 @@ body:not(.enable-search-modal) .site-logo img {
 }
 
 .search-toggle .toggle-icon,
-.search-toggle svg {
+.search-toggle svg
+.social-media-block svg {
 	height: 3.5rem;
 	max-width: 2.3rem;
 	width: 2.3rem;
