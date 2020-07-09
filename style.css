@@ -1357,6 +1357,7 @@ ul.social-icons li {
 #site-header {
 	background: #202020;
 	position: relative;
+	border-bottom: 2px solid #303030;
 }
 
 .header-inner {
@@ -1576,7 +1577,7 @@ ul.primary-menu {
 	margin: -0.8rem 0 0;
 	background-color: #202020;
 	color: #fff;
-	border-top: 10px solid #000000;
+	border-top: 10px solid #000;
 }
 ul.primary-menu > li > a, .primary-menu .icon{
 	color: #fff !important;
