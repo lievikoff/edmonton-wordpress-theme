@@ -166,19 +166,21 @@
 						
 						?>
 
-						<a class="social-media-block" href="<?php echo esc_url( get_theme_mod( 'url_'.$social_media ) );?>">
-							<?php if ( get_theme_mod( 'icon_'.$social_media ) ) { ?>
+						<div class="social-media">
+							<a class="social-media-block" href="<?php echo esc_url( get_theme_mod( 'url_'.$social_media ) );?>">
+								<?php if ( get_theme_mod( 'icon_'.$social_media ) ) { ?>
 
-							<img src="<?php echo esc_url( get_theme_mod( 'icon_'.$social_media ) );?>">
+								<img src="<?php echo esc_url( get_theme_mod( 'icon_'.$social_media ) );?>">
 
-							<?php 
-							} else {
-								echo edmonton_the_theme_svg(strtolower($social_media));
-							}
-							?>	
+								<?php 
+								} else {
+									echo edmonton_the_theme_svg(strtolower($social_media));
+								}
+								?>	
 
-						</a>
-						
+							</a>
+						</div>
+
 						<?php
 					}
 				}
