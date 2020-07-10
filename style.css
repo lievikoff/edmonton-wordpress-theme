@@ -151,7 +151,11 @@ body {
 }
 
 *:focus {
-	outline: none;
+	outline: none !important;
+}
+
+input[type="search"]:focus {
+    outline: none;
 }
 
 #site-content {
@@ -1599,8 +1603,8 @@ ul.primary-menu > li > a{
 }
 
 ul.primary-menu > li {
-	border-right: 2px solid #303030;
-	border-left: 2px solid black;
+	border-right: 1px solid #303030;
+	border-left: 1px solid black;
 }
 
 ul.primary-menu > li:first-child {
