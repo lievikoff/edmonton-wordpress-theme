@@ -1315,7 +1315,7 @@ ul.social-icons li {
 .alt-navigation-social-media a {
 	align-items: center;
 	background: #cd2653;
-	border-radius: 50%;
+	border-radius: 6px;
 	color: #fff;
 	display: flex;
 	height: 4.4rem;
