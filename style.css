@@ -1268,12 +1268,12 @@ button.toggle {
 	display: flex;
 	flex-wrap: nowrap;
 	margin: 0 0 -0.8rem -0.8rem;
-	margin-top: 8px;
+	height: 50px;
 }
 
 .search-form .search-field,
 .search-form .search-submit {
-	margin: 0 0 0.8rem 0.8rem;
+	margin: 0 0 0rem 0.8rem;
 }
 
 .search-form label {
@@ -1367,11 +1367,12 @@ ul.social-icons li {
 	background: #202020;
 	position: relative;
 	border-bottom: 1px solid #303030;
+	height: 80px;
 }
 
 .header-inner {
 	max-width: 168rem;
-	padding: 3.15rem 0;
+	padding: 1em 0;
 	z-index: 100;
 }
 
@@ -1646,17 +1647,17 @@ ul.primary-menu > li:last-child {
 
 .primary-menu li {
 	font-family: Roboto;
-	font-size: 16px;
+	font-size: 14px;
 	line-height: 16px;
 	position: relative;
 }
 
 .primary-menu > li {
-	margin: 0.8rem 0 0.8rem 0rem;
+	/*margin: 0.8rem 0 0.8rem 0rem;*/
 }
 
 .primary-menu > li:first-child {
-	margin: 0.8rem 0 0.8rem 15px;
+	/*margin: 0.8rem 0 0.8rem 15px;*/
 }
 
 .primary-menu > li.menu-item-has-children > a {
@@ -4563,6 +4564,7 @@ a.to-the-top > * {
 .menu-bottom .social-media {
 	padding: 5px;
 	border-right: 2px solid #f8f8f8;
+	height: 51px;
 }
 
 .menu-bottom .social-media:last-child {
@@ -4575,8 +4577,8 @@ a.to-the-top > * {
 
 .social-media-block img,
 .social-media-block svg {
-	width: 35px;
-	height: 35px;
+	width: 25px;
+	height: 25px;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -4941,7 +4943,7 @@ a.to-the-top > * {
 	/* Site Header --------------------------- */
 
 	.header-inner {
-		padding: 3.8rem 0;
+		padding: 1em 0;
 	}
 
 	.site-title {
@@ -5736,6 +5738,7 @@ a.to-the-top > * {
 		display: flex;
 		justify-content: center;
 		border-bottom: 2px solid #E5E5E5;
+		height: 50px;
 	}
 
 }
@@ -5751,13 +5754,14 @@ a.to-the-top > * {
 
 	#site-header {
 		z-index: 2;
+		height: 80px;
 	}
 
 	.header-inner {
 		align-items: center;
 		display: flex;
 		justify-content: space-between;
-		padding: 2.8rem 0;
+		padding: 1em 0;
 	}
 
 	.header-titles-wrapper {
@@ -5787,11 +5791,13 @@ a.to-the-top > * {
 	.header-navigation-wrapper {
 		align-items: center;
 		display: flex;
+		height: 50px;
 	}
 
 	.primary-menu-wrapper {
 		display: block;
 		width: 100%;
+		height: 50px;
 	}
 
 	.site-title {
@@ -5817,6 +5823,7 @@ a.to-the-top > * {
 		justify-content: space-around;
 		background: #FFFFFF;
 		border-bottom: 2px solid #E5E5E5;
+		height: 51px;
 	}
 
 	.alt-navigation-search,
@@ -6284,7 +6291,7 @@ a.to-the-top > * {
 	/* PRIMARY MENU */
 
 	.primary-menu > li {
-		margin: 0.8rem 0 0.8rem 0rem;
+		/*margin: 0.8rem 0 0.8rem 0rem;*/
 	}
 
 	/* HEADER TOGGLES */
