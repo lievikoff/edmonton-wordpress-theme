@@ -1,14 +1,14 @@
 /*
-Theme Name: Twenty Twenty
-Text Domain: twentytwenty
-Version: 1.4
+Theme Name: Edmonton
+Text Domain: edmonton
+Version: 1.0
 Requires at least: 4.7
 Requires PHP: 5.2.4
-Description: Our default theme for 2020 is designed to take full advantage of the flexibility of the block editor. Organizations and businesses have the ability to create dynamic landing pages with endless layouts using the group and column blocks. The centered content column and fine-tuned typography also makes it perfect for traditional blogs. Complete editor styles give you a good idea of what your content will look like, even before you publish. You can give your site a personal touch by changing the background colors and the accent color in the Customizer. The colors of all elements on your site are automatically calculated based on the colors you pick, ensuring a high, accessible color contrast for your visitors.
-Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks, accessibility-ready
-Author: the WordPress team
-Author URI: https://wordpress.org/
-Theme URI: https://wordpress.org/themes/twentytwenty/
+Description: Edmonton is a clean WordPress Theme that suits perfectly for blog, shop, magazine and news sites, it also can be used as a personal portfolio. Create the best experience for your website visitors with our template!
+Tags: blog, shop, woocommerce, news, maganize, modern, clean, responsive
+Author: the Chapak team
+Author URI: https://chapak.ca/
+Theme URI: https://chapak.ca/themes/edmonton/
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -148,6 +148,10 @@ body {
 	-webkit-font-smoothing: antialiased;
 	word-break: break-word;
 	word-wrap: break-word;
+}
+
+*:focus {
+	outline: none;
 }
 
 #site-content {
@@ -1254,6 +1258,7 @@ button.toggle {
 	display: flex;
 	flex-wrap: nowrap;
 	margin: 0 -0.8rem -0.8rem 0;
+	margin-top: 8px;
 }
 
 .search-form .search-field,
@@ -1296,7 +1301,8 @@ ul.social-icons li {
 	margin: 0.9rem 0.9rem 0 0;
 }
 
-.social-icons a {
+.social-icons a,
+.alt-navigation-social-media a {
 	align-items: center;
 	background: #cd2653;
 	border-radius: 50%;
@@ -1311,7 +1317,9 @@ ul.social-icons li {
 }
 
 .social-icons a:focus,
-.social-icons a:hover {
+.social-icons a:hover,
+.alt-navigation-social-media a:focus,
+.alt-navigation-social-media a:hover {
 	transform: scale(1.1);
 	text-decoration: none;
 }
@@ -1346,8 +1354,9 @@ ul.social-icons li {
 
 
 #site-header {
-	background: #fff;
+	background: #202020;
 	position: relative;
+	border-bottom: 2px solid #303030;
 }
 
 .header-inner {
@@ -1364,12 +1373,11 @@ ul.social-icons li {
 	justify-content: center;
 	padding: 0 4rem;
 	text-align: center;
+	width: 100%;
 }
 
 body:not(.enable-search-modal) .header-titles-wrapper {
-	justify-content: flex-start;
 	padding-right: 0;
-	text-align: right;
 }
 
 .site-title,
@@ -1390,10 +1398,6 @@ body:not(.enable-search-modal) .header-titles-wrapper {
 	text-decoration: none;
 }
 
-.site-title a:hover,
-.site-title a:focus {
-	text-decoration: underline;
-}
 
 .site-description {
 	margin-top: 1rem;
@@ -1532,10 +1536,12 @@ body:not(.enable-search-modal) .site-logo img {
 }
 
 .search-toggle .toggle-icon,
-.search-toggle svg {
-	height: 2.5rem;
+.search-toggle svg
+.social-media-block svg {
+	height: 3.5rem;
 	max-width: 2.3rem;
 	width: 2.3rem;
+	color: #fff;
 }
 
 /* Navigation Toggle ------------------------- */
@@ -1550,12 +1556,9 @@ body:not(.enable-search-modal) .site-logo img {
 
 .nav-toggle .toggle-icon,
 .nav-toggle svg {
-	height: 0.8rem;
+	height: 3rem;
 	width: 2.6rem;
-}
-
-.nav-toggle .toggle-inner {
-	padding-top: 0.8rem;
+	color: #fff;
 }
 
 /* Primary Menu ---------------------------- */
@@ -1570,8 +1573,36 @@ ul.primary-menu {
 	font-weight: 500;
 	letter-spacing: -0.0277em;
 	flex-wrap: wrap;
-	justify-content: flex-end;
-	margin: -0.8rem -1.6rem 0 0;
+	justify-content: flex-start;
+	background-color: #202020;
+	color: #fff;
+	border-top: 10px solid #000;
+	text-transform: uppercase;
+}
+
+ul.primary-menu > li > .children {
+	text-transform: none;
+}
+
+ul.primary-menu > li > a, .primary-menu .icon{
+	color: #fff !important;
+}
+
+ul.primary-menu > li > a{
+	padding: 15px 15px;
+}
+
+ul.primary-menu > li {
+	border-left: 2px solid #303030;
+	border-right: 2px solid black;
+}
+
+ul.primary-menu > li:first-child {
+	border-right: none;
+}
+
+ul.primary-menu > li:last-child {
+	border-left: none;
 }
 
 .primary-menu .icon {
@@ -1604,21 +1635,26 @@ ul.primary-menu {
 }
 
 .primary-menu li {
-	font-size: inherit;
-	line-height: 1.25;
+	font-family: Roboto;
+	font-size: 16px;
+	line-height: 16px;
 	position: relative;
 }
 
 .primary-menu > li {
-	margin: 0.8rem 1.6rem 0 0;
+	margin: 0.8rem 0rem 0.8rem 0;
+}
+
+.primary-menu > li:first-child {
+	margin: 0.8rem 15px 0.8rem 0;
 }
 
 .primary-menu > li.menu-item-has-children > a {
-	padding-left: 2rem;
+	padding-left: 35px;
 }
 
 .primary-menu > li > .icon {
-	left: -0.5rem;
+	left: 0.9rem;
 	top: calc(50% - 0.4rem);
 }
 
@@ -1801,6 +1837,8 @@ body.touch-enabled .primary-menu ul li.menu-item-has-children > a {
 	transition: opacity 0.25s ease-in, right 0s 0.25s, left 0s 0.25s;
 	z-index: 99;
 }
+
+
 
 .admin-bar .menu-modal {
 	top: 32px;
@@ -1986,7 +2024,7 @@ button.sub-menu-toggle.active svg {
 	position: absolute;
 	top: 0;
 	right: 0;
-	opacity: 1;
+	opacity: 0.01;
 }
 
 .menu-wrapper.is-toggling .toggling-target.active {
@@ -2000,7 +2038,7 @@ button.sub-menu-toggle.active svg {
 }
 
 .menu-wrapper.is-animating.is-toggling .toggling-target.active {
-	opacity: 1;
+	opacity: 0.01;
 }
 
 .menu-wrapper.is-toggling .modal-menu > li:last-child li {
@@ -4483,6 +4521,24 @@ a.to-the-top > * {
 	display: none;
 }
 
+.alt-navigation-wrapper .alt-navigation-social-media .social-media,
+.menu-bottom .social-media {
+	padding: 10px 5px;
+	border-left: 2px solid #f8f8f8;
+}
+
+.menu-bottom .social-media:last-child {
+	border-left: none;
+}
+
+.alt-navigation-wrapper .alt-navigation-social-media .social-media:nth-last-child(2) {
+	border-left: none;
+}
+
+.social-media-block img {
+	width: 24px;
+	height: 24px;
+}
 
 /* -------------------------------------------------------------------------- */
 
@@ -4905,7 +4961,7 @@ a.to-the-top > * {
 	.menu-bottom {
 		align-items: center;
 		display: flex;
-		justify-content: space-between;
+		justify-content: center;
 		padding: 4.4rem 0;
 	}
 
@@ -5598,6 +5654,25 @@ a.to-the-top > * {
 	}
 }
 
+@media ( max-width: 1000px ) {
+
+	.site-title {
+		color: #fff;
+		text-transform: uppercase;
+	}
+
+	.alt-navigation-search {
+		display: none;
+	}
+
+	.alt-navigation-social-media {
+		display: flex;
+		justify-content: center;
+		border-bottom: 2px solid #E5E5E5;
+	}
+
+}
+
 @media ( min-width: 1000px ) {
 
 
@@ -5619,17 +5694,14 @@ a.to-the-top > * {
 	}
 
 	.header-titles-wrapper {
-		margin-left: 4rem;
-		max-width: 50%;
 		padding: 0;
-		text-align: right;
+	}
+
+	.alt-navigation-search {
+		display: block;
 	}
 
 	.header-titles {
-		align-items: baseline;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: flex-start;
 		margin: -1rem -2.4rem 0 0;
 	}
 
@@ -5653,6 +5725,82 @@ a.to-the-top > * {
 	.primary-menu-wrapper {
 		display: block;
 		width: 100%;
+	}
+
+	.site-title {
+		color: #fff;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 28px;
+		line-height: 34px;
+		text-transform: uppercase;
+		/* identical to box height */
+
+		letter-spacing: 0.1em;
+	}
+
+	.site-title:hover {
+		text-decoration: none;
+	}
+
+	.alt-navigation-wrapper {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		background: #FFFFFF;
+		border-bottom: 2px solid #E5E5E5;
+	}
+
+	.alt-navigation-search,
+	.alt-navigation-social-media,
+	.alt-navigation-search input {
+		width: 50%;
+		font-family: Roboto;
+		border: none;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 16px;
+		color: #8492A6;
+	}
+
+	.alt-navigation-search input {
+		text-transform: uppercase;
+	}
+
+	.alt-navigation-social-media {
+		padding-left: 30px;
+	}
+
+	.alt-navigation-social-media,
+	.alt-navigation-social-media a {
+		text-decoration: none !important;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		list-style: none;
+		flex-direction: row;
+	}
+
+	.social-icons a,
+	.alt-navigation-social-media a {
+		justify-content: center;
+	}
+
+	body {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	header,
+	.header-navigation-wrapper,
+	.alt-navigation-wrapper,
+	#site-content,
+	.footer-nav-widgets-wrapper {
+		width: 85%;
 	}
 
 	/* HEADER TOGGLES */
@@ -6040,12 +6188,8 @@ a.to-the-top > * {
 
 	/* PRIMARY MENU */
 
-	ul.primary-menu {
-		margin: -0.8rem -2.5rem 0 0;
-	}
-
 	.primary-menu > li {
-		margin: 0.8rem 2.5rem 0 0;
+		margin: 0.8rem 0rem 0.8rem 0;
 	}
 
 	/* HEADER TOGGLES */
@@ -6354,4 +6498,7 @@ a.to-the-top > * {
 	.wp-block-pullquote.is-style-solid-color.alignright::before {
 		top: 0;
 	}
+
+	/* Additional styles */
+
 }
