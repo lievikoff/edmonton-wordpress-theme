@@ -1372,7 +1372,7 @@ ul.social-icons li {
 
 .header-inner {
 	max-width: 168rem;
-	padding: 1em 0;
+	padding: 1.6em 0;
 	z-index: 100;
 }
 
@@ -4564,7 +4564,7 @@ a.to-the-top > * {
 .menu-bottom .social-media {
 	padding: 5px;
 	border-right: 2px solid #f8f8f8;
-	height: 51px;
+	height: 50px;
 }
 
 .menu-bottom .social-media:last-child {
@@ -5823,7 +5823,7 @@ a.to-the-top > * {
 		justify-content: space-around;
 		background: #FFFFFF;
 		border-bottom: 2px solid #E5E5E5;
-		height: 51px;
+		
 	}
 
 	.alt-navigation-search,
