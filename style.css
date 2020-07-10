@@ -1585,9 +1585,7 @@ ul.primary-menu {
 	letter-spacing: -0.0277em;
 	flex-wrap: wrap;
 	justify-content: flex-start;
-	background-color: #202020;
 	color: #fff;
-	border-top: 1px solid #000;
 	text-transform: uppercase;
 }
 
@@ -1600,7 +1598,7 @@ ul.primary-menu > li > a, .primary-menu .icon{
 }
 
 ul.primary-menu > li > a{
-	padding: 15px 15px;
+	padding: 10px 10px;
 }
 
 ul.primary-menu > li {
@@ -4564,7 +4562,7 @@ a.to-the-top > * {
 .menu-bottom .social-media {
 	padding: 5px;
 	border-right: 2px solid #f8f8f8;
-	height: 50px;
+	height: 53px;
 }
 
 .menu-bottom .social-media:last-child {
@@ -5795,9 +5793,12 @@ a.to-the-top > * {
 	}
 
 	.primary-menu-wrapper {
-		display: block;
+		display: flex;
+    	align-items: center;
 		width: 100%;
 		height: 50px;
+		background-color: #202020;
+		border-top: 1px solid black;
 	}
 
 	.site-title {
