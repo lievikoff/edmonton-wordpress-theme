@@ -1366,7 +1366,7 @@ ul.social-icons li {
 #site-header {
 	background: #202020;
 	position: relative;
-	border-bottom: 2px solid #303030;
+	border-bottom: 1px solid #303030;
 }
 
 .header-inner {
@@ -1586,7 +1586,7 @@ ul.primary-menu {
 	justify-content: flex-start;
 	background-color: #202020;
 	color: #fff;
-	border-top: 10px solid #000;
+	border-top: 1px solid #000;
 	text-transform: uppercase;
 }
 
