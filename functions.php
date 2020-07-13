@@ -834,7 +834,11 @@ function icon_color () {
 
 add_action( 'wp_head', 'icon_color' );
 
+<<<<<<< Updated upstream
 function  customize_live () {
+=======
+function  icon_live () {
+>>>>>>> Stashed changes
 	wp_enqueue_script( 
 		'edmonton-customize-live',
 		get_template_directory_uri() . '/assets/js/customize-live.js', 
@@ -844,4 +848,8 @@ function  customize_live () {
 	);
 }	
 
+<<<<<<< Updated upstream
 add_action( 'customize_preview_init', 'customize_live' );
+=======
+add_action( 'customize_preview_init', 'icon_live' );
+>>>>>>> Stashed changes

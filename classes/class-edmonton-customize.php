@@ -274,6 +274,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				)
 			);
 
+<<<<<<< Updated upstream
 			$wp_customize->add_setting(
 				'href_target',
 				array(
@@ -314,6 +315,8 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				)
 			);
 
+=======
+>>>>>>> Stashed changes
 			/* Show DeviantArt ----------------------------------------------- */
 
 			$wp_customize->add_section(
