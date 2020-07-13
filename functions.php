@@ -834,7 +834,7 @@ function icon_color () {
 
 add_action( 'wp_head', 'icon_color' );
 
-function  icon_live () {
+function  customize_live () {
 	wp_enqueue_script( 
 		'edmonton-customize-live',
 		get_template_directory_uri() . '/assets/js/customize-live.js', 
@@ -844,4 +844,4 @@ function  icon_live () {
 	);
 }	
 
-add_action( 'customize_preview_init', 'icon_live' );
+add_action( 'customize_preview_init', 'customize_live' );

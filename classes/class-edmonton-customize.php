@@ -295,6 +295,25 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				)
 			);
 
+			/* Separator ----------------------------------------------- */
+
+			/*$wp_customize->add_setting(
+				'cover_template_separator_icon',
+				array(
+					'sanitize_callback' => 'wp_filter_nohtml_kses',
+				)
+			);
+
+			$wp_customize->add_control(
+				new TwentyTwenty_Separator_Control(
+					$wp_customize,
+					'cover_template_separator_icon',
+					array(
+						'section' => 'social_media',
+					)
+				)
+			);
+
 			/* Show DeviantArt ----------------------------------------------- */
 
 			$wp_customize->add_section(
@@ -1659,9 +1678,87 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				)
 			);
 
+			/* Separator ----------------------------------------------- */
+
+			$wp_customize->add_setting(
+				'cover_separator_theme_1',
+				array(
+					'sanitize_callback' => 'wp_filter_nohtml_kses',
+				)
+			);
+
+			$wp_customize->add_control(
+				new TwentyTwenty_Separator_Control(
+					$wp_customize,
+					'cover_separator_theme_1',
+					array(
+						'section' => 'options',
+					)
+				)
+			);
+
+			/* Header width size --------- */
+
+			$wp_customize->add_setting(
+				'header_width_full',
+				array(
+					'capability'        => 'edit_theme_options',
+					'default'           => '',
+				)
+			);
+
+			$wp_customize->add_control(
+				'header_width_full',
+				array(
+					'type'     => 'checkbox',
+					'section'  => 'options',
+					'priority' => 10,
+					'label'    => __( 'Header will occupy 100% of the screen width', 'edmonton' ),
+				)
+			);
+
+			$wp_customize->add_setting(
+				'header_width',
+				array(
+					'default'           => 1050,
+					'transport'         => 'postMessage',
+				)
+			);
+
+			$wp_customize->add_control(
+				'header_width',
+				array(
+					'label'       => __( 'Header width', 'edmonton' ),
+					'section'     => 'options',
+					'type'        => 'range',
+					'input_attrs' => edmonton_customize_opacity_range_header_width(),
+				)
+			);		
+			
+			$wp_customize->add_setting(
+				'header_width_text',
+				array(
+					'default'           => 1050,
+					'transport'         => 'postMessage',
+				)
+			);
+
+			$wp_customize->add_control(
+				'header_width_text',
+				array(
+					'label'       => __( '', 'edmonton' ),
+					'section'     => 'options',
+					'type'        => 'number',
+					'max'		  => 400,
+					'min'		  => 0,
+					'step'		  => 1,
+				)
+			);	
+
 			/**
 			 * Template: Cover Template.
 			 */
+
 			$wp_customize->add_section(
 				'cover_template_options',
 				array(
@@ -1909,3 +2006,26 @@ function edmonton_customize_opacity_range() {
 		)
 	);
 }
+
+function edmonton_customize_opacity_range_header_width() {
+	/**
+	 * Filter the input attributes for opacity
+	 *
+	 * @param array $attrs {
+	 *     The attributes
+	 *
+	 *     @type int $min Minimum value
+	 *     @type int $max Maximum value
+	 *     @type int $step Interval between numbers
+	 * }
+	 */
+	return apply_filters(
+		'edmonton_customize_opacity_range',
+		array(
+			'min'  => 100,
+			'max'  => 3000,
+			'step' => 1,
+		)
+	);
+}
+
