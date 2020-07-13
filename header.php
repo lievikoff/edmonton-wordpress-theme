@@ -177,26 +177,15 @@
 						?>
 
 						<div class="social-media">
-<<<<<<< Updated upstream
-							<a class="social-media-block" style="cursor: pointer !important;" href="<?php echo esc_url( get_theme_mod( 'url_'.$social_media ) );?>"
-								target="<?php if ( get_theme_mod( 'href_target' ) ) { echo "_blank"; } ?>">
-=======
 							<a class="social-media-block" style="cursor: pointer !important;" href="<?php echo esc_url( get_theme_mod( 'url_'.$social_media ) );?>">
->>>>>>> Stashed changes
 								<?php if ( get_theme_mod( 'icon_'.$social_media ) ) { ?>
 
 								<img src="<?php echo esc_url( get_theme_mod( 'icon_'.$social_media ) );?>">
 
 								<?php 
-<<<<<<< Updated upstream
-									} else {
-										edmonton_the_theme_svg( strtolower( $social_media ), 'social');
-									}
-=======
 								} else {
 									edmonton_the_theme_svg( strtolower( $social_media ), 'social');
 								}
->>>>>>> Stashed changes
 								?>	
 
 							</a>
