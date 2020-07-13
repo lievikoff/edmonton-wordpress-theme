@@ -228,7 +228,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'show_icon_background',
 				array(
 					'type'     => 'checkbox',
-					'panel'  => 'social_media',
+					'section'  => 'display_setting',
 					'priority' => 10,
 					'label'    => __( 'Show icon background', 'edmonton' ),
 				)

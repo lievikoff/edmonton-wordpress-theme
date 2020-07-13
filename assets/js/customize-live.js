@@ -53,7 +53,7 @@
 	        $( '.header-navigation-wrapper' ).attr( 'style', newValue );
 	        $( '.alt-navigation-wrapper' ).attr( 'style', newValue );
 	        $( '#site-content' ).attr( 'style', newValue );
-	        $( '.footer-nav-widgets-wrappe' ).attr( 'style', newValue );
+            $( '.footer-nav-widgets-wrappe' ).attr( 'style', newValue );
             //newValue = 'fill: ' + newValue + ' !important;' + ' cursor: pointer !important';
             //$( '.social-media-block svg' ).attr( 'style', newValue );
         });
