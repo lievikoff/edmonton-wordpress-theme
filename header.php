@@ -139,61 +139,29 @@
 
 				<?php 
 				
-				$social_media_list = array (
-					'500px',
-					'amazon',
-					'bandcamp',
-					'behance',
-					'codepan',
-					'deviantArt',
-					'dropbox',
-					'facebook',
-					'flickr',
-					'gitHub',
-					'google',
-					'instagram',
-					'linkedIn',
-					'pinterest',
-					'reddit',
-					'skype',
-					'snapchat',
-					'telegram',
-					'tikTok',
-					'tumblr',
-					'twitch',
-					'twitter',
-					'viber',
-					'wattpad',
-					'whatsApp',
-					'youTube',
-					'vK',
-					'oK',
-				);
+				$social_media_list = get_theme_mod( 'social_media_order' );
+
 
 				foreach ( $social_media_list as $social_media ) {
-					
-					if ( get_theme_mod( 'show_'.$social_media ) ) {
-						
-						?>
+					?>
+	
+					<div class="social-media">
+						<a class="social-media-block" style="cursor: pointer !important;" href="<?php echo esc_url( get_theme_mod( 'url_'.$social_media ) );?>">
+							<?php if ( get_theme_mod( 'icon_'.$social_media ) ) { ?>
 
-						<div class="social-media">
-							<a class="social-media-block" style="cursor: pointer !important;" href="<?php echo esc_url( get_theme_mod( 'url_'.$social_media ) );?>">
-								<?php if ( get_theme_mod( 'icon_'.$social_media ) ) { ?>
+							<img src="<?php echo esc_url( get_theme_mod( 'icon_'.$social_media ) );?>">
 
-								<img src="<?php echo esc_url( get_theme_mod( 'icon_'.$social_media ) );?>">
+							<?php 
+							} else {
+								edmonton_the_theme_svg( strtolower( $social_media ), 'social');
+							}
+							?>	
 
-								<?php 
-								} else {
-									edmonton_the_theme_svg( strtolower( $social_media ), 'social');
-								}
-								?>	
-
-							</a>
-						</div>
+						</a>
+					</div>
 
 
-						<?php
-					}
+					<?php
 				}
 				?>
 
