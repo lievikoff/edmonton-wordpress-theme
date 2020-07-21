@@ -155,6 +155,9 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/classes/class-edmonton-svg-icons.php';
 require get_template_directory() . '/inc/svg-icons.php';
 
+// Handle Kirki framework.
+require get_template_directory() . '/inc/kirki/kirki.php';
+
 // Handle Customizer settings.
 require get_template_directory() . '/classes/class-edmonton-customize.php';
 
@@ -594,7 +597,7 @@ function edmonton_customize_controls_enqueue_scripts() {
 	wp_localize_script( 'edmonton-customize-controls', 'edmontonBgColors', edmonton_get_customizer_color_vars() );
 }
 
-add_action( 'customize_controls_enqueue_scripts', 'edmonton_customize_controls_enqueue_scripts' );
+// add_action( 'customize_controls_enqueue_scripts', 'edmonton_customize_controls_enqueue_scripts' );
 
 /**
  * Enqueue scripts for the customizer preview.
@@ -620,7 +623,7 @@ function edmonton_customize_preview_init() {
 	);
 }
 
-add_action( 'customize_preview_init', 'edmonton_customize_preview_init' );
+// add_action( 'customize_preview_init', 'edmonton_customize_preview_init' );
 
 /**
  * Get accessible color for an area.
@@ -776,17 +779,17 @@ function icon_backgorund_color () {
 	if ( get_theme_mod( 'show_icon_background' ) )	{
 
 	?>
-	 
+
 	<style type="text/css">
 		.social-media-block {
 			background: <?php echo get_theme_mod('color_icon_background', 'blue'); ?> !important;
 		}
 	</style>
 
-	<?php 
+	<?php
 	} else {
 		?>
-		
+
 		<style type="text/css">
 			.social-media-block {
 				background: none !important;
@@ -803,7 +806,7 @@ function icon_color () {
 	if ( get_theme_mod( 'color_icon' ) )	{
 
 	?>
-	 
+
 	<style type="text/css">
 		.social-media-block svg {
 			fill: <?php echo get_theme_mod('color_icon', '#202020'); ?> !important;
@@ -814,10 +817,10 @@ function icon_color () {
 		}
 	</style>
 
-	<?php 
+	<?php
 	} else {
 		?>
-		
+
 		<style type="text/css">
 			.social-media-block svg {
 				fill: #202020 !important;
@@ -835,13 +838,16 @@ function icon_color () {
 add_action( 'wp_head', 'icon_color' );
 
 function  customize_live () {
-	wp_enqueue_script( 
+	wp_enqueue_script(
 		'edmonton-customize-live',
-		get_template_directory_uri() . '/assets/js/customize-live.js', 
+		get_template_directory_uri() . '/assets/js/customize-live.js',
 		array( 'jquery','customize-preview' ),
 		'',
-		true 
+		true
 	);
-}	
+}
 
 add_action( 'customize_preview_init', 'customize_live' );
+
+
+add_filter( 'kirki_telemetry', '__return_false' );
