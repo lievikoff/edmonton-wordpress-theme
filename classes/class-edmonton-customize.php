@@ -29,60 +29,64 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				] 
 			);
 
+			/** Header General ------------------------------------------------------ */
+
 			Kirki::add_section( 
 				'header_general', 
 				[
-					'title'          => esc_html__( 'My Section', 'kirki' ),
-					'description'    => esc_html__( 'My section description.', 'kirki' ),
+					'title'          => esc_html__( 'General', 'kirki' ),
+					'description'    => esc_html__( 'General description.', 'kirki' ),
 					'panel'          => 'header',
 				]
 			);
 
 			Kirki::add_config( 
-				'kirki_demo', 
+				'header_general_font', 
 				[
 					'capability'    => 'edit_theme_options',
 				]
 			);
 
 			Kirki::add_field( 
-				'kirki_demo', 
+				'header_general_font', 
 				[
-					'type'        => 'color',
-					'settings'    => 'color_setting_hex',
-					'label'       => esc_html__( 'Color Control (hex-only)', 'kirki' ),
-					'description' => esc_html__( 'This is a color control', 'kirki' ),
-					'section'     => 'header_general',
-					'settings'    => 'kirki_demo',
-					'default'     => '#0088CC',
-					'transport'   => 'auto',
-					'output' => [
-						[
-							'element'  => 'body',
-							'property' => 'color',
-						],
+				'type'        => 'typography',
+				'settings'    => 'header_general_font',
+				'label'       => esc_html__( 'Font Style', 'kirki' ),
+				'section'     => 'header_general',
+				'default'     => [
+					'font-family'    => 'Roboto',
+					'variant'        => 'regular',
+					'font-size'      => '16px',
+					'color'          => '#ffffff',
+				],
+				'priority'    => 10,
+				'transport'   => 'auto',
+				'output'      => [
+					[
+						'element' => '.site-description',
 					],
-				] 
-			);
+				],
+			] );
 
 			Kirki::add_config( 
-				'my_theme', 
+				'header_general_color', 
 				[
 					'capability'    => 'edit_theme_options',
 				]
 			);
 
 			Kirki::add_field( 
-				'my_theme', 
+				'header_general_color', 
 				[
 					'type'      => 'color',
 					'settings'  => 'title_text',
-					'label'     => esc_attr__( 'Header title color', 'text-domain' ),
+					'label'     => esc_attr__( 'Header color', 'text-domain' ),
 					'section'   => 'header_general',
-					'settings'  => 'my_theme',
-					'default'   => '#ffffff',
+					'settings'  => 'header_general_color',
+					'default'   => '#202020',
 					'transport' => 'auto',
-					'output' => [
+					'output'    => [
 						[
 							'element' => '#site-header',
 							'property' => 'background-color'
@@ -91,6 +95,119 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				]
 			);
 
+			Kirki::add_config( 
+				'header_general_border_bottom_color', 
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field( 
+				'header_general_border_bottom_color', 
+				[
+					'type'      => 'color',
+					'label'     => esc_attr__( 'Bottom border color', 'text-domain' ),
+					'section'   => 'header_general',
+					'settings'  => 'header_general_border_bottom_color',
+					'default'   => '#303030',
+					'transport' => 'auto',
+					'output'    => [
+						[
+							'element' => '#site-header',
+							'property' => 'border-bottom-color'
+						],
+					],
+				]
+			);
+
+			Kirki::add_config( 
+				'header_general_border_bottom_width', 
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field( 
+				'header_general_border_bottom_width', 
+				[
+					'type'      => 'slider',
+					'label'     => esc_attr__( 'Bottom border width', 'text-domain' ),
+					'section'   => 'header_general',
+					'settings'  => 'header_general_border_bottom_width',
+					'default'     => 1,
+					'transport' => 'auto',
+					'output'    => [
+						[
+							'element' => '#site-header',
+							'property' => 'border-bottom-width',
+							'suffix'  => 'px',
+						],
+					],
+					'choices'     => [
+						'min'  => 0,
+						'max'  => 10,
+						'step' => 1,
+					],
+				]
+			);
+
+			/*Kirki::add_config( 
+				'header_general_bottom_border_second_color', 
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field( 
+				'header_general_bottom_border_second_color', 
+				[
+					'type'      => 'color',
+					'label'     => esc_attr__( 'Bottom border color (second line)', 'text-domain' ),
+					'section'   => 'header_general',
+					'settings'  => 'header_general_bottom_border_second_color',
+					'default'   => '#000000',
+					'transport' => 'auto',
+					'output'    => [
+						[
+							'element' => 'nav.primary-menu-wrapper',
+							'property' => 'border-top-color'
+						],
+					],
+				]
+			);
+
+			Kirki::add_config( 
+				'header_general_bottom_border_width', 
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field( 
+				'header_general_bottom_border_second_width', 
+				[
+					'type'      => 'slider',
+					'label'     => esc_attr__( 'Bottom border width (second line)', 'text-domain' ),
+					'section'   => 'header_general',
+					'settings'  => 'header_general_bottom_border_width',
+					'default'     => 1,
+					'transport' => 'auto',
+					'output'    => [
+						[
+							'element' => 'nav.primary-menu-wrapper',
+							'property' => 'border-top-width',
+							'suffix'  => 'px',
+						],
+					],
+					'choices'     => [
+						'min'  => 0,
+						'max'  => 10,
+						'step' => 1,
+					],
+				]
+			);*/
+
+			
 
 			/**
 			 * Social Media
