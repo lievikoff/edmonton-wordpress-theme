@@ -1601,10 +1601,6 @@ ul.primary-menu > li > .children {
 	text-transform: none;
 }
 
-ul.primary-menu > li > a, .primary-menu .icon{
-	color: #fff !important;
-}
-
 ul.primary-menu > li > a{
 	padding: 10px 20px;
 }
@@ -5807,6 +5803,7 @@ a.to-the-top > * {
 		min-height: 50px;
 		background-color: #202020;
 		border-top: 1px solid black;
+		border-bottom: 0px solid black;
 	}
 
 	.site-title {
