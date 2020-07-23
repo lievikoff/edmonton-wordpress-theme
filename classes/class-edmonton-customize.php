@@ -254,12 +254,12 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			);
 
 			Kirki::add_field( 
-				'header_navigation_border_top_second_width', 
+				'header_navigation_border_top_width', 
 				[
 					'type'      => 'slider',
 					'label'     => esc_attr__( 'Border top width', 'text-domain' ),
 					'section'   => 'header_navigation',
-					'settings'  => 'header_navigation_top_border_width',
+					'settings'  => 'header_navigation_border_top_width',
 					'default'     => 1,
 					'transport' => 'auto',
 					'output'    => [
@@ -310,12 +310,12 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			);
 
 			Kirki::add_field( 
-				'header_general_border_bottom_second_width', 
+				'header_general_border_bottom_width', 
 				[
 					'type'      => 'slider',
 					'label'     => esc_attr__( 'Border bottom width', 'text-domain' ),
 					'section'   => 'header_navigation',
-					'settings'  => 'header_general_bottom_border_width',
+					'settings'  => 'header_general_border_bottom_width',
 					'default'     => 0,
 					'transport' => 'auto',
 					'output'    => [
@@ -369,7 +369,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'header_navigation_left_side_separator_width', 
 				[
 					'type'      => 'slider',
-					'label'     => esc_attr__( 'Left side of separator', 'text-domain' ),
+					'label'     => esc_attr__( 'Left side of separator width', 'text-domain' ),
 					'section'   => 'header_navigation',
 					'settings'  => 'header_navigation_left_side_separator_width',
 					'default'     => 1,
@@ -426,7 +426,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'header_navigation_right_side_separator_width', 
 				[
 					'type'      => 'slider',
-					'label'     => esc_attr__( 'Right side of separator', 'text-domain' ),
+					'label'     => esc_attr__( 'Right side of separator width', 'text-domain' ),
 					'section'   => 'header_navigation',
 					'settings'  => 'header_navigation_right_side_separator_width',
 					'default'     => 1,
@@ -437,6 +437,184 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 							'property'  => 'border-right-width',
 							'suffix'    => 'px',
 							'exclude'   => '.primary-menu > li:first-child',
+						],
+					],
+					'choices'     => [
+						'min'  => 0,
+						'max'  => 5,
+						'step' => 1,
+					],
+				]
+			);
+
+			/** Header Bar ----------------------------------------------------------------- */
+
+			Kirki::add_section( 
+				'header_bar', 
+				[
+					'title'          => esc_html__( 'Bar', 'kirki' ),
+					'description'    => esc_html__( 'Bar description.', 'kirki' ),
+					'panel'          => 'header',
+				]
+			);
+
+			Kirki::add_config( 
+				'header_bar_font', 
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field( 
+				'header_bar_font', 
+				[
+					'type'        => 'typography',
+					'settings'    => 'header_bar_font',
+					'label'       => esc_html__( 'Font Style', 'kirki' ),
+					'section'     => 'header_bar',
+					'default'     => [
+						'font-family'    => 'Roboto',
+						'variant'        => 'regular',
+						'font-size'      => '14px',
+						'color'          => '#202020',
+					],
+					'priority'    => 10,
+					'transport'   => 'auto',
+					'output'      => [
+						[
+							'element' => '.alt-navigation-search input, .alt-navigation-search input::-webkit-input-placeholder, .alt-navigation-search input::-moz-placeholder',
+						],
+					],
+				] 
+			);
+
+			Kirki::add_config( 
+				'header_bar_color', 
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field( 
+				'header_bar_color', 
+				[
+					'type'      => 'color',
+					'label'     => esc_attr__( 'Bar color', 'text-domain' ),
+					'section'   => 'header_bar',
+					'settings'  => 'header_bar_color',
+					'default'   => '#ffffff',
+					'transport' => 'auto',
+					'output'    => [
+						[
+							'element' => '.alt-navigation-wrapper',
+							'property' => 'background-color'
+						],
+					],
+				]
+			);
+			
+			Kirki::add_config( 
+				'header_bar_border_bottom_color', 
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field( 
+				'header_bar_border_bottom_color', 
+				[
+					'type'      => 'color',
+					'label'     => esc_attr__( 'Border bottom color', 'text-domain' ),
+					'section'   => 'header_bar',
+					'settings'  => 'header_bar_border_bottom_color',
+					'default'   => '#E5E5E5',
+					'transport' => 'auto',
+					'output'    => [
+						[
+							'element' => '.alt-navigation-wrapper',
+							'property' => 'border-bottom-color'
+						],
+					],
+				]
+			);
+
+			Kirki::add_config( 
+				'header_bar_border_bottom_width', 
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field( 
+				'header_bar_border_bottom_width', 
+				[
+					'type'      => 'slider',
+					'label'     => esc_attr__( 'Border bottom width', 'text-domain' ),
+					'section'   => 'header_bar',
+					'settings'  => 'header_bar_border_bottom_width',
+					'default'     => 2,
+					'transport' => 'auto',
+					'output'    => [
+						[
+							'element' => '.alt-navigation-wrapper',
+							'property' => 'border-bottom-width',
+							'suffix'  => 'px',
+						],
+					],
+					'choices'     => [
+						'min'  => 0,
+						'max'  => 10,
+						'step' => 1,
+					],
+				]
+			);
+
+			Kirki::add_config( 
+				'header_bar_separator_color', 
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field( 
+				'header_bar_separator_color', 
+				[
+					'type'      => 'color',
+					'label'     => esc_attr__( 'Separator color', 'text-domain' ),
+					'section'   => 'header_bar',
+					'settings'  => 'header_bar_separator_color',
+					'default'   => '#f8f8f8',
+					'transport' => 'auto',
+					'output'    => [
+						[
+							'element' => '.alt-navigation-wrapper .alt-navigation-social-media .social-media, .menu-bottom .social-media',
+							'property' => 'border-right-color'
+						],
+					],
+				]
+			);
+
+			Kirki::add_config( 
+				'header_bar_separator_width', 
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field( 
+				'header_bar_separator_width', 
+				[
+					'type'      => 'slider',
+					'label'     => esc_attr__( 'Separator width', 'text-domain' ),
+					'section'   => 'header_bar',
+					'settings'  => 'header_bar_separator_width',
+					'default'     => 1,
+					'transport' => 'auto',
+					'output'    => [
+						[
+							'element' => '.alt-navigation-wrapper .alt-navigation-social-media .social-media, .menu-bottom .social-media',
+							'property' => 'border-right-width',
+							'suffix'  => 'px',
 						],
 					],
 					'choices'     => [
