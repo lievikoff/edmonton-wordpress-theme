@@ -36,10 +36,10 @@ class Kirki_Control_Radio_Image extends Kirki_Control_Base {
 		parent::to_json();
 		foreach ( $this->input_attrs as $attr => $value ) {
 			if ( 'style' !== $attr ) {
-				$this->json['inputAttrs'] .= $attr . '="' . esc_attr( $value ) . '" ';
+				$this->json['inputAttrs'] .= $attr . '="' . esc_attr__( $value ) . '" ';
 				continue;
 			}
-			$this->json['labelStyle'] = 'style="' . esc_attr( $value ) . '" ';
+			$this->json['labelStyle'] = 'style="' . ( $value ) . '" ';
 		}
 
 	}
@@ -66,8 +66,13 @@ class Kirki_Control_Radio_Image extends Kirki_Control_Base {
 				<input {{{ data.inputAttrs }}} class="image-select" type="radio" value="{{ key }}" name="_customize-radio-{{ data.id }}" id="{{ data.id }}{{ key }}" {{{ data.link }}}<# if ( data.value === key ) { #> checked="checked"<# } #> data-alt="{{ dataAlt }}">
 					<label for="{{ data.id }}{{ key }}" {{{ data.labelStyle }}} class="{{{ data.id + key }}}">
 						<# if ( _.isObject( data.choices[ key ] ) ) { #>
-							<img src="{{ data.choices[ key ].src }}" alt="{{ data.choices[ key ].alt }}">
-							<span class="image-label"><span class="inner">{{ data.choices[ key ].alt }}</span></span>
+							<# if ( data.choices[ key ].src ) { #>
+								<img src="{{ data.choices[ key ].src }}" alt="{{ data.choices[ key ].alt }}">
+								<span class="image-label"><span class="inner">{{ data.choices[ key ].alt }}</span></span>
+							<# } else if ( data.choices[ key ].path ) { #>
+								{{{ data.choices[ key ].path }}} 
+								<span class="image-label"><span class="inner">{{ data.choices[ key ].alt }}</span></span>
+							<# } #>
 						<# } else { #>
 							<img src="{{ data.choices[ key ] }}">
 						<# } #>

@@ -24,38 +24,23 @@
         });
     });
 
-    wp.customize( 'header_width', function ( value )  {
-        value.bind( function ( newValue )  {
-            console.log( 'newValue: ', newValue );
-            //$( '#_customize-input-header_width_text' ).attr( 'value', newValue );
-            //$( '#_customize-input-header_width_text' ).val( newValue );
-            var api = wp.customize;
-            var _wpCustomizeSettings = {
-                    "theme":{
-                        "stylesheet":"genesis-skins",
-                        "active":true
-                    },
-                    "url":{
-                        "preview":"http:\/\/mysite.com\/",
-                        "parent":"http:\/\/mysite.com\/wp-admin\/",
-                        "activated":"http:\/\/mysite.com\/wp-admin\/themes.php?activated=true&previewed",
-                        "ajax":"\/wp-admin\/admin-ajax.php",
-                        "allowed":["http:\/\/mysite.com\/"],
-                        "isCrossDomain":false,
-                    }
-                };
-            api.setting = window._wpCustomizeSettings;
-            api.instance('my_theme_options[header_width_text]').set( newValue );
-            
-            newValue = 'width: ' + newValue + 'px; ';
+    wp.customize( 'header_logo_position', function ( value )  {
+        value.bind( function ( value )  {
 
-            $( 'header' ).attr( 'style', newValue );
-	        $( '.header-navigation-wrapper' ).attr( 'style', newValue );
-	        $( '.alt-navigation-wrapper' ).attr( 'style', newValue );
-	        $( '#site-content' ).attr( 'style', newValue );
-            $( '.footer-nav-widgets-wrappe' ).attr( 'style', newValue );
-            //newValue = 'fill: ' + newValue + ' !important;' + ' cursor: pointer !important';
-            //$( '.social-media-block svg' ).attr( 'style', newValue );
+            switch ( value ) {
+
+                case 'left':
+                    $( '#site-header' ).after( $( 'style' ).html( '@media (min-width: 1000px) { .header-titles { display: flex; flex-direction: row; justify-content: flex-start; align-items: center;  margin-top: 0.5em; } .site-description { margin-left: 60px; } }' ) );
+                    break;
+
+                case 'center':
+                    $( '#site-header' ).after( $( 'style' ).html( '@media (min-width: 1000px) { .header-titles { display: flex; flex-direction: column; justify-content: center; align-items: center; } }' ) );
+                    break;
+
+                case 'right':                
+                    $( '#site-header' ).after( $( 'style' ).html( '@media (min-width: 1000px) { .header-titles { display: flex; flex-direction: row-reverse; justify-content: flex-start; align-items: center; margin-top: 0.5em; } .site-title { margin-left: 60px !important; } }' ) );
+                    break;
+            }
         });
     });
 }( jQuery ) );

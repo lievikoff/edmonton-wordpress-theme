@@ -351,6 +351,7 @@
 .customize-control-kirki-radio-image label {
   position: relative;
   display: inline-block;
+  margin-left: 4px;
 }
 .customize-control-kirki-radio-image label .image-label {
   display: none;
@@ -725,9 +726,10 @@
 .customize-control-kirki-toggle label {
   display: flex;
   flex-wrap: wrap;
+  align-items: baseline;
 }
 .customize-control-kirki-toggle label .customize-control-title {
-  width: calc(100% - 40px);
+  width: calc(100% - 75px);
 }
 .customize-control-kirki-toggle label .description {
   order: 99;
@@ -745,6 +747,7 @@
   cursor: pointer;
   user-select: none;
   transition: background 350ms ease;
+  margin-left: 5px;
 }
 .customize-control-kirki-toggle .switch:after, .customize-control-kirki-toggle .switch:before {
   content: "";
@@ -835,6 +838,23 @@
 }
 .customize-control-kirki-typography .wrapper .color {
   width: auto;
+}
+
+.customize-control-title {
+  display: block;
+  padding: 13px 12px;
+  margin: 0;
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: #ddd;
+  background-color: #fff;
+  color: #0085ba;
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 7px;
 }
 
 /*# sourceMappingURL=styles.css.map */

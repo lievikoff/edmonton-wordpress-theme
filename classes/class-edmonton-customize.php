@@ -151,6 +151,41 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				]
 			);
 
+			Kirki::add_config( 
+				'header_logo_position', 
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'     => 'postMessage',
+				]
+			);
+
+			Kirki::add_field( 
+				'header_logo_position', 
+				[
+					'type'      => 'radio-image',
+					'label'     => esc_attr__( 'Layout', 'text-domain' ),
+					'section'   => 'header_general',
+					'settings'	=> 'radio_image_setting',
+					'settings'  => 'header_logo_position',
+					'style'		=> 'margin: 2px',
+					'default'	=> 'center',
+					'choices'   => [
+						'left' => [
+							'label' => esc_attr__( 'Logo Left' ),
+							'path'  => '<svg version="1.0" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"  width="84px" height="57px" viewBox="0 0 1200.000000 810.000000" preserveAspectRatio="xMidYMid meet"> <g transform="translate(0.000000,810.000000) scale(0.100000,-0.100000)" fill="#0085BA" stroke="none"> <path d="M0 4050 l0 -4050 6000 0 6000 0 0 4050 0 4050 -6000 0 -6000 0 0 -4050z m11880 3130 l0 -800 -5880 0 -5880 0 0 800 0 800 5880 0 5880 0 0 -800z m0 -3970 l0 -3090 -5880 0 -5880 0 0 3090 0 3090 5880 0 5880 0 0 -3090z"/> <path d="M1864 7416 l-34 -34 0 -176 c0 -193 7 -222 55 -244 19 -9 198 -12 695 -12 497 0 676 3 695 12 48 22 55 51 55 244 l0 176 -34 34 -34 34 -682 0 -682 0 -34 -34z"/> <path d="M5164 7296 c-30 -30 -34 -40 -34 -85 0 -27 5 -62 12 -76 27 -59 -164 -55 2687 -55 2010 0 2626 3 2646 12 36 16 55 57 55 119 0 45 -4 55 -34 85 l-34 34 -2632 0 -2632 0 -34 -34z"/> </g> </svg>',
+						],
+						'center' => [
+							'label' => esc_attr__( 'Logo Center' ),
+							'path'	=> '<svg version="1.0" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"  width="84px" height="57px" viewBox="0 0 1200.000000 810.000000" preserveAspectRatio="xMidYMid meet"> <g transform="translate(0.000000,810.000000) scale(0.100000,-0.100000)" fill="#0085BA" stroke="none"> <path d="M0 4050 l0 -4050 6000 0 6000 0 0 4050 0 4050 -6000 0 -6000 0 0 -4050z m11880 3130 l0 -800 -5880 0 -5880 0 0 800 0 800 5880 0 5880 0 0 -800z m0 -3970 l0 -3090 -5880 0 -5880 0 0 3090 0 3090 5880 0 5880 0 0 -3090z"/> <path d="M5284 7666 l-34 -34 0 -176 c0 -193 7 -222 55 -244 19 -9 198 -12 695 -12 497 0 676 3 695 12 48 22 55 51 55 244 l0 176 -34 34 -34 34 -682 0 -682 0 -34 -34z"/> <path d="M3334 6846 c-30 -30 -34 -40 -34 -85 0 -27 5 -62 12 -76 27 -59 -164 -55 2687 -55 2010 0 2626 3 2646 12 36 16 55 57 55 119 0 45 -4 55 -34 85 l-34 34 -2632 0 -2632 0 -34 -34z"/> </g> </svg>',
+						],
+						'right' => [
+							'label' => esc_attr__( 'Logo Right' ),
+							'path'  => '<svg version="1.0" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"  width="84px" height="57px" viewBox="0 0 1200.000000 810.000000" preserveAspectRatio="xMidYMid meet"> <g transform="translate(0.000000,810.000000) scale(0.100000,-0.100000)" fill="#0085BA" stroke="none"> <path d="M0 4050 l0 -4050 6000 0 6000 0 0 4050 0 4050 -6000 0 -6000 0 0 -4050z m11880 3130 l0 -800 -5880 0 -5880 0 0 800 0 800 5880 0 5880 0 0 -800z m0 -3970 l0 -3090 -5880 0 -5880 0 0 3090 0 3090 5880 0 5880 0 0 -3090z"/> <path d="M9214 7406 l-34 -34 0 -176 c0 -193 7 -222 55 -244 19 -9 198 -12 695 -12 497 0 676 3 695 12 48 22 55 51 55 244 l0 176 -34 34 -34 34 -682 0 -682 0 -34 -34z"/> <path d="M1864 7286 c-30 -30 -34 -40 -34 -85 0 -27 5 -62 12 -76 27 -59 -164 -55 2687 -55 2010 0 2626 3 2646 12 36 16 55 57 55 119 0 45 -4 55 -34 85 l-34 34 -2632 0 -2632 0 -34 -34z"/> </g> </svg>',
+						],
+					],
+				]
+			);	
+
 			/** Header Navigation --------------------------------------------------------------------- */
 			Kirki::add_section( 
 				'header_navigation', 
@@ -648,6 +683,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'title'      => esc_html__( 'Display setting', 'kirki' ),
 					'priority'   => 40,
 					'panel'      => 'social_media',
+					'icon'		 => 'dashicons-admin-generic',
 				]
 			);
 
@@ -712,10 +748,42 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			);
 
 			Kirki::add_config(
+				'border_radius_social_icon_background',
+				[
+					'capability'        => 'edit_theme_options',
+					'transport'         => 'auto',
+				]
+			);
+			
+			Kirki::add_field(
+				'border_radius_social_icon_background',
+				[
+					'type'	   => 'slider',
+					'settings' => 'slider_setting',
+					'settings' => 'border_radius_social_icon_background',
+					'label'    => esc_html__( 'Border-radius of social media icon', 'kirki' ),
+					'section'  => 'display_setting',
+					'default'  => 6,
+					'choices'  => [
+						'min'	=> 1,
+						'max'	=> 25,
+						'step'	=> 1,
+					],
+					'output'   => [
+						[
+							'element'	=> '.alt-navigation-social-media a',
+							'property'	=> 'border-radius',
+							'suffix'    => 'px',
+						],
+					],
+				]
+			);
+
+			Kirki::add_config(
 				'href_target',
 				[
 					'capability'        => 'edit_theme_options',
-					'transport'         => 'postMessage',
+					'transport'         => 'auto',
 				]
 			);
 			
@@ -740,6 +808,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'description'   => esc_html__( 'Here you can change the order in which social media icons are displayed on your website.', 'kirki' ),
 					'priority'   	=> 40,
 					'panel'      	=> 'social_media',
+					'icon'			=> 'dashicons-visibility',
 				]
 			);
 

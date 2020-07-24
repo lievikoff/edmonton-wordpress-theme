@@ -1395,6 +1395,10 @@ ul.social-icons li {
 	width: 100%;
 }
 
+.header-titles {
+	width: 100%;
+}
+
 body:not(.enable-search-modal) .header-titles-wrapper {
 	padding-left: 0;
 }
@@ -1419,7 +1423,6 @@ body:not(.enable-search-modal) .header-titles-wrapper {
 
 
 .site-description {
-	margin-top: 1rem;
 	color: #6d6d6d;
 	font-size: 1.8rem;
 	font-weight: 500;
@@ -4567,6 +4570,7 @@ a.to-the-top > * {
 .menu-bottom .social-media {
 	padding-right: 5px;
 	margin: 3px;
+	margin-left: 0px;
 	border-right: 2px solid #f8f8f8;
 }
 
@@ -5776,13 +5780,13 @@ a.to-the-top > * {
 	}
 
 	.header-titles {
-		margin: -1rem 0 0 -2.4rem;
+		margin: -0.6rem 0 0 -2.4rem;
 	}
 
 	.header-titles .site-title,
 	.header-titles .site-logo,
 	.header-titles .site-description {
-		margin: 1rem 0 0 2.4rem;
+		margin: 0.5rem 0 0 2.4rem;
 	}
 
 	.wp-custom-logo .header-titles {

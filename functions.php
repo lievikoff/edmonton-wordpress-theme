@@ -837,6 +837,79 @@ function icon_color () {
 
 add_action( 'wp_head', 'icon_color' );
 
+function header_title_position () {
+
+	$logo_position = get_theme_mod( 'header_logo_position' );
+			
+	if ( $logo_position ) {
+		
+		switch ($logo_position) {
+			case 'left':
+				?>
+				
+				<style type="text/css">
+					@media (min-width: 1000px) {
+						.header-titles {
+							display: flex;
+							flex-direction: row;
+							justify-content: flex-start;
+							align-items: center;
+							margin-top: 0.5em;
+						}
+
+						.site-description {
+							margin-left: 60px;
+						}
+					}
+				</style>	
+
+				<?php
+				break;
+			
+			case 'center':
+				?>
+				
+				<style type="text/css">
+					@media (min-width: 1000px) {
+						.header-titles {
+							display: flex;
+							flex-direction: column;
+							justify-content: center;
+							align-items: center;
+						}
+					}
+				</style>	
+
+				<?php
+				break;
+
+			case 'right':
+				?>
+				
+				<style type="text/css">
+					@media (min-width: 1000px) {
+						.header-titles {
+							display: flex;
+							flex-direction: row-reverse;
+							justify-content: flex-start;
+							align-items: center;
+							margin-top: 0.5em;
+						}
+
+						.site-title {
+							margin-left: 60px !important;
+						}
+					}
+				</style>	
+
+				<?php
+				break;
+		}
+	} 
+}
+
+add_action( 'wp_head', 'header_title_position' );
+
 function  customize_live () {
 	wp_enqueue_script(
 		'edmonton-customize-live',
