@@ -922,5 +922,15 @@ function  customize_live () {
 
 add_action( 'customize_preview_init', 'customize_live' );
 
-
 add_filter( 'kirki_telemetry', '__return_false' );
+
+add_filter( 'excerpt_more', 'new_excerpt_more' );
+
+function new_excerpt_more( $more ){
+	global $post;
+	return '...';
+}
+
+add_filter( 'excerpt_length', function(){
+	return 40;
+} );
