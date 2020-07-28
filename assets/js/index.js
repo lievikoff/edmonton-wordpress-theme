@@ -342,6 +342,7 @@ twentytwenty.modalMenu = {
 		// If the current menu item is in a sub level, expand all the levels higher up on load.
 		this.expandLevel();
 		this.keepFocusInModal();
+		this.closeModal();
 	},
 
 	expandLevel: function() {
@@ -379,6 +380,8 @@ twentytwenty.modalMenu = {
 				if ( '.menu-modal' === toggleTarget ) {
 					menuType = window.matchMedia( '(min-width: 1000px)' ).matches;
 					menuType = menuType ? '.expanded-menu' : '.mobile-menu';
+					
+					
 
 					elements = elements.filter( function( element ) {
 						return null !== element.closest( menuType ) && null !== element.offsetParent;
@@ -412,6 +415,15 @@ twentytwenty.modalMenu = {
 				}
 			}
 		} );
+	},
+
+	closeModal: function() {
+		var menuModal = document.querySelector('.menu-modal');
+		window.onresize = function() {
+			if( window.matchMedia("(min-width: 1000px)").matches && menuModal.classList.contains('active')) {
+				menuModal.classList.remove('active');
+			}
+		}
 	}
 }; // twentytwenty.modalMenu
 

@@ -1869,6 +1869,13 @@ body.touch-enabled .primary-menu ul li.menu-item-has-children > a {
 	}
 }
 
+@media (min-width: 1100px) {
+
+	.menu-modal.active {
+		display: none;
+	}
+}
+
 .menu-modal.show-modal {
 	display: flex;
 }
@@ -5990,6 +5997,7 @@ a.to-the-top > * {
 	}
 
 	.menu-modal.active {
+		display: none;
 		background: rgba(0, 0, 0, 0.2);
 		transition: background-color 0.3s ease-out;
 	}

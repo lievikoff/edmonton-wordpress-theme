@@ -76,7 +76,7 @@ class Kirki_Control_Radio_Image extends Kirki_Control_Base {
 						<# } else { #>
 							<img src="{{ data.choices[ key ] }}">
 						<# } #>
-						<span class="image-clickable"></span>
+						<span class="image-clickable" title="{{ data.choices[ key ].title }}"></span>
 					</label>
 				</input>
 			<# } #>
