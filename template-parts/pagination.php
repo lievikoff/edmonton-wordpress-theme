@@ -15,14 +15,14 @@
  */
 
 $prev_text = sprintf(
-	'%s <span class="nav-prev-text">%s</span>',
-	'<span aria-hidden="true">&larr;</span>',
-	__( 'Newer <span class="nav-short">Posts</span>', 'edmonton' )
+	'<svg width="14" height="20" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg" id="left-pagination-arrow">
+	<path d="M13.1667 2.33333L10.8333 0L0.833344 10L10.8333 20L13.1667 17.6667L5.50001 10L13.1667 2.33333Z" fill="white"/>
+	</svg>'
 );
 $next_text = sprintf(
-	'<span class="nav-next-text">%s</span> %s',
-	__( 'Older <span class="nav-short">Posts</span>', 'edmonton' ),
-	'<span aria-hidden="true">&rarr;</span>'
+	'<svg width="14" height="20" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg" id="right-pagination-arrow">
+	<path d="M0.833322 17.6667L3.16666 20L13.1667 10L3.16666 1.03312e-06L0.833323 2.33333L8.49999 10L0.833322 17.6667Z" fill="white"/>
+	</svg>'
 );
 
 $posts_pagination = get_the_posts_pagination(
