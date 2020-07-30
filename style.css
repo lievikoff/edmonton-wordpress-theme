@@ -4154,8 +4154,9 @@ div.comment:first-of-type {
 
 
 .pagination .nav-links {
-	align-items: baseline;
+	align-items: center;
 	display: flex;
+	justify-content: center;
 	flex-wrap: wrap;
 	font-size: 1.8rem;
 	font-weight: 600;
@@ -4168,12 +4169,22 @@ div.comment:first-of-type {
 }
 
 .nav-links > * {
-	margin: 1.5rem 0 0 2.5rem;
+	margin: 1.5rem 0 1rem 2.5rem;
 }
 
 .nav-links .placeholder {
 	display: none;
 	visibility: hidden;
+}
+
+.next.page-numbers,  .prev.page-numbers {
+	padding: 18px 23px;
+	background-color: #202020;
+}
+
+.next.page-numbers:hover svg,  .prev.page-numbers:hover svg {
+	transform: scale(1.5);
+	transition: all 1s ease-in-out;
 }
 
 .pagination a {
@@ -4188,6 +4199,10 @@ div.comment:first-of-type {
 .pagination .dots {
 	transform: translateY(-0.3em);
 	color: #6d6d6d;
+}
+
+.pagination-wrapper {
+	margin-bottom: 30px;
 }
 
 .nav-short {
