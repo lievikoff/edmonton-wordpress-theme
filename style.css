@@ -4834,6 +4834,10 @@ article {
 	width: 100%;
 }
 
+#main {
+	display: block;
+}
+
 /* -------------------------------------------------------------------------- */
 
 /*	17. Media Queries
@@ -6175,7 +6179,7 @@ article {
 	#site-header,
 	.header-navigation-wrapper,
 	.alt-navigation-wrapper,
-	#site-content,
+	#main,
 	.footer-nav-widgets-wrapper {
 		width: 85%;
 	}
