@@ -23,7 +23,7 @@ if ( is_singular() ) {
 		if ( is_singular() ) {
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		} else {
-			the_title( '<h2 class="entry-title-catalog"><a href="' . esc_url( get_permalink() ) . '">', '</a></h2>' );
+			the_title( '<h2 class="entry-title-catalog"><a href="' . esc_url( get_permalink() ) . '" title="' . get_the_title() . '">', '</a></h2>' );
 		}
 		?>
 
@@ -35,7 +35,7 @@ if ( is_singular() ) {
 			$name = get_the_author_meta( 'display_name' , $author_id ); 
 
 			echo 'By ' . '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . $name . '</a> in ';
-			the_category( ', ' );
+			get_the_category_custom( 4 );
 			?>
 
 		</div>

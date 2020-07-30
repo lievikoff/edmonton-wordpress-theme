@@ -9,6 +9,7 @@
  */
 
 get_header();
+setPostViews( get_the_ID() );
 ?>
 
 <main id="site-content" role="main">
