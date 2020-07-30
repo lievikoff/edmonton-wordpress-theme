@@ -121,7 +121,6 @@ get_header();
 			
 			
 	?>
-
 			
 		</div>
 
