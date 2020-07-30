@@ -28,5 +28,3 @@ $featured_media_inner_classes = '';
 	</a>
 
 </figure><!-- .featured-media -->
-
-<?php

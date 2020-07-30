@@ -14,7 +14,7 @@
         <div class="comments-footer-catalog block-footer-catalog">
             
             <?php
-            comments_popup_link( 'No comments', '1 comment', '% comments', false, '');
+            comments_popup_link( 'No comments', '1 comment', '% comments', false);
             ?>
 
         </div>

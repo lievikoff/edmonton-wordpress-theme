@@ -88,12 +88,11 @@ get_header();
 			<?php
 		}
 
-		if ( is_home() ) {
 			if ( have_posts() ) {
 
 				$i = 0;
 
-				while ( have_posts() ) {
+				while ( have_posts(array( 'posts_per_page' => 3 )) ) {
 					$i++;
 					the_post();
 
@@ -117,40 +116,7 @@ get_header();
 
 				<?php
 			}
-		} else {
-
-			if ( have_posts() ) {
-
-				$i = 0;
-
-				while ( have_posts() ) {
-					$i++;
-					if ( $i > 1 ) {
-						echo '<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" />';
-					}
-					the_post();
-
-					get_template_part( 'template-parts/content', get_post_type() );
-
-				}
-			} elseif ( is_search() ) {
-				?>
-
-				<div class="no-search-results-form section-inner thin">
-
-					<?php
-					get_search_form(
-						array(
-							'label' => __( 'search again', 'edmonton' ),
-						)
-					);
-					?>
-
-				</div><!-- .no-search-results -->
-
-				<?php
-			}
-		}
+		
 		
 		?>
 
@@ -158,11 +124,21 @@ get_header();
 	</div>
 
 	<div id="site-content-sitebar">
-		<!-- sitebar -->		
+		<!-- sitebar -->
+		<?php if ( is_active_sidebar( 'sidebar' ) ) { ?>
+ 
+		<div id="true-side" class="sidebar">
+
+			<?php dynamic_sidebar( 'sidebar' ); ?>
+
+		</div>
+
+		<?php } ?>
+
 	</div>
 
 </main><!-- #site-content -->
 
 
 <?php
-get_footer();
+
