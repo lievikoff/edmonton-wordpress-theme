@@ -6119,12 +6119,39 @@ article {
 		padding: 1em 0;
 	}
 
+	.center-position.header-inner {
+		padding: 0.5em 0;
+	}
+
 	.header-titles-wrapper {
 		padding: 0;
 	}
 
 	.alt-navigation-search {
 		display: block;
+	}
+
+	.left-position.header-titles {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+		margin-top: 0.5em;  
+	}
+
+	.center-position.header-titles {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.right-position.header-titles {
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: flex-start;
+		align-items: center;
+		margin-top: 0.5em;
 	}
 
 	.header-titles {
