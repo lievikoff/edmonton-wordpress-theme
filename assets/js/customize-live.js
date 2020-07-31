@@ -10,8 +10,12 @@
 ( function( $ ) {
 	wp.customize( 'color_icon_background', function ( value )  {
 		value.bind( function ( newValue )  {
-			newValue = 'background-color: ' + newValue + ' !important;' + ' cursor: pointer !important';
-            $( '.social-media-block' ).attr( 'style', newValue );
+			newValue = 'background-color: ' + newValue + ' !important;' + ' cursor: pointer !important;';
+            //$( '.social-media-block' ).attr( 'style', newValue );
+            if($('#_customize-input-show_icon_background', window.parent.document).prop('checked')){
+                $( '.social-media-block' ).attr( 'style', newValue );
+                console.log($('#customize-control-color_icon .kirki-input-container .wp-picker-container .button.wp-color-result .color-alpha', window.parent.document).css('background-color'));
+            }
 		});
     });
     
@@ -26,21 +30,28 @@
 
     wp.customize( 'header_logo_position', function ( value )  {
         value.bind( function ( value )  {
-
+            
             switch ( value ) {
 
                 case 'left':
-                    $( '#site-header' ).after( $( 'style' ).html( '@media (min-width: 1000px) { .header-titles { display: flex; flex-direction: row; justify-content: flex-start; align-items: center;  margin-top: 0.5em; } .site-description { margin-left: 60px; } }' ) );
+                    $( '.header-titles' ).removeClass('center-position right-position');
+                    $( '.header-titles' ).addClass('left-position');
+                    $(' .header-inner ').removeClass('center-position');
                     break;
 
                 case 'center':
-                    $( '#site-header' ).after( $( 'style' ).html( '@media (min-width: 1000px) { .header-titles { display: flex; flex-direction: column; justify-content: center; align-items: center; } }' ) );
+                    $( '.header-titles' ).removeClass('left-position right-position');
+                    $( '.header-titles' ).addClass('center-position');
+                    $(' .header-inner ').addClass('center-position');
                     break;
 
                 case 'right':                
-                    $( '#site-header' ).after( $( 'style' ).html( '@media (min-width: 1000px) { .header-titles { display: flex; flex-direction: row-reverse; justify-content: flex-start; align-items: center; margin-top: 0.5em; } .site-title { margin-left: 60px !important; } }' ) );
+                    $( '.header-titles' ).removeClass('left-position center-position');
+                    $( '.header-titles' ).addClass('right-position');
+                    $(' .header-inner ').removeClass('center-position');
                     break;
             }
+
         });
     });
 }( jQuery ) );
