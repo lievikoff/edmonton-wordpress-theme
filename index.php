@@ -33,7 +33,6 @@ get_header();
 
 		if ( $wp_query->found_posts ) {
 			$archive_subtitle = sprintf(
-				/* translators: %s: Number of search results. */
 				_n(
 					'We found %s result for your search.',
 					'We found %s results for your search.',
@@ -96,20 +95,18 @@ get_header();
 
 				if ( have_posts() ) {
 
-					$i = 0;
+					while ( have_posts() ) {
 
-					while ( have_posts(array( 'posts_per_page' => 3 )) ) {
-						$i++;
 						the_post();
-
 						get_template_part( 'template-parts/content-catalog', get_post_type() );
 
 					}
 				} elseif ( is_search() ) {
 					?>
 
+					
 					<div class="no-search-results-form section-inner thin">
-
+					Search more
 						<?php
 						get_search_form(
 							array(
@@ -128,9 +125,11 @@ get_header();
 			
 		</div>
 
+		<?php if ( is_active_sidebar( 'sidebar' ) ) { ?>
+
 		<div id="site-content-sitebar">
 			<!-- sitebar -->
-			<?php if ( is_active_sidebar( 'sidebar' ) ) { ?>
+
 	
 			<div id="true-side" class="sidebar">
 
@@ -138,9 +137,10 @@ get_header();
 
 			</div>
 
-			<?php } ?>
-
 		</div>
+
+		<?php } ?>
+
 
 	</main><!-- #site-content -->
 

@@ -759,8 +759,9 @@ function edmonton_get_elements_array() {
 
 
 
-function icon_background_show () {
-	if (get_theme_mod( 'show_icon_background' ) ) {
+function customize () {
+
+	if ( get_theme_mod( 'show_icon_background' ) ) {
 		?>
 
 		<style type="text/css">
@@ -771,11 +772,7 @@ function icon_background_show () {
 
 		<?php
 	}
-}
 
-add_action( 'wp_head', 'icon_background_show' );
-
-function icon_backgorund_color () {
 	if ( get_theme_mod( 'show_icon_background' ) )	{
 
 	?>
@@ -798,11 +795,7 @@ function icon_backgorund_color () {
 
 	<?php
 	}
-}
 
-add_action( 'wp_head', 'icon_backgorund_color' );
-
-function icon_color () {
 	if ( get_theme_mod( 'color_icon' ) )	{
 
 	?>
@@ -833,82 +826,161 @@ function icon_color () {
 
 	<?php
 	}
+
+	if ( get_theme_mod( 'header_logo_position' ) ) {
+
+		$logo_position = get_theme_mod( 'header_logo_position' );
+				
+		if ( $logo_position ) {
+			
+			switch ($logo_position) {
+				case 'left':
+					?>
+					
+					<style type="text/css">
+						@media (min-width: 1000px) {
+							.header-titles {
+								display: flex;
+								flex-direction: row;
+								justify-content: flex-start;
+								align-items: center;
+								margin-top: 0.5em;
+							}
+
+							.site-description {
+								margin-left: 60px;
+							}
+						}
+					</style>	
+
+					<?php
+					break;
+				
+				case 'center':
+					?>
+					
+					<style type="text/css">
+						@media (min-width: 1000px) {
+							.header-titles {
+								display: flex;
+								flex-direction: column;
+								justify-content: center;
+								align-items: center;
+							}
+						}
+					</style>	
+
+					<?php
+					break;
+
+				case 'right':
+					?>
+					
+					<style type="text/css">
+						@media (min-width: 1000px) {
+							.header-titles {
+								display: flex;
+								flex-direction: row-reverse;
+								justify-content: flex-start;
+								align-items: center;
+								margin-top: 0.5em;
+							}
+
+							.site-title {
+								margin-left: 60px !important;
+							}
+						}
+					</style>	
+
+					<?php
+					break;
+			}
+		} 
+	}
+
+	if ( get_theme_mod( 'content_sidebar_position' ) ) {
+
+		$sidebar_position = get_theme_mod( 'content_sidebar_position' );
+				
+		if ( $sidebar_position ) {
+
+			switch ($sidebar_position) {
+				case 'left':
+					?>
+					
+					<style type="text/css">
+						.catalog-item {
+							margin: 30px 0 0 30px;
+						}
+
+						@media (min-width: 1000px) {
+							main {
+								flex-direction: row-reverse;
+							}
+						}
+					</style>	
+
+					<?php
+					break;
+				
+				case 'right':
+					?>
+					
+					<style type="text/css">
+						.catalog-item {
+							margin: 30px 30px 0 0;
+						}
+
+						@media (min-width: 1000px) {
+							main {
+								flex-direction: row;
+							}
+						}
+					</style>	
+
+					<?php
+					break;
+
+				case 'top':
+					?>
+					
+					<style type="text/css">
+						.catalog-item {
+							margin: 30px 0 0 0;
+						}
+
+						@media (min-width: 1000px) {
+							main {
+								flex-direction: column;
+							}
+						}
+					</style>	
+
+					<?php
+					break;
+				case 'buttom':
+					?>
+					
+					<style type="text/css">
+						.catalog-item {
+							margin: 30px 0 0 0;
+						}
+
+						@media (min-width: 1000px) {
+							main {
+								flex-direction: column-reverse;
+							}
+						}
+					</style>	
+
+					<?php
+					break;
+			}
+		} 
+	}
 }
 
-add_action( 'wp_head', 'icon_color' );
-
-function header_title_position () {
-
-	$logo_position = get_theme_mod( 'header_logo_position' );
-			
-	if ( $logo_position ) {
-		
-		switch ($logo_position) {
-			case 'left':
-				?>
-				
-				<style type="text/css">
-					@media (min-width: 1000px) {
-						.header-titles {
-							display: flex;
-							flex-direction: row;
-							justify-content: flex-start;
-							align-items: center;
-							margin-top: 0.5em;
-						}
-
-						.site-description {
-							margin-left: 60px;
-						}
-					}
-				</style>	
-
-				<?php
-				break;
-			
-			case 'center':
-				?>
-				
-				<style type="text/css">
-					@media (min-width: 1000px) {
-						.header-titles {
-							display: flex;
-							flex-direction: column;
-							justify-content: center;
-							align-items: center;
-						}
-					}
-				</style>	
-
-				<?php
-				break;
-
-			case 'right':
-				?>
-				
-				<style type="text/css">
-					@media (min-width: 1000px) {
-						.header-titles {
-							display: flex;
-							flex-direction: row-reverse;
-							justify-content: flex-start;
-							align-items: center;
-							margin-top: 0.5em;
-						}
-
-						.site-title {
-							margin-left: 60px !important;
-						}
-					}
-				</style>	
-
-				<?php
-				break;
-		}
-	} 
-}
-
-add_action( 'wp_head', 'header_title_position' );
+add_action( 'wp_head', 'customize' );
 
 function  customize_live () {
 	wp_enqueue_script(

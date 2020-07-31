@@ -43,4 +43,32 @@
             }
         });
     });
+
+    wp.customize( 'content_sidebar_position', function ( value )  {
+        value.bind( function ( value )  {
+
+            switch ( value ) {
+
+                case 'left':
+                    $( '.catalog-item' ).css( 'margin', '30px 0 0 30px' );
+                    $( 'main' ).css( 'flex-direction', 'row-reverse' );
+                    break;
+
+                case 'right':
+                    $( '.catalog-item' ).css( 'margin', '30px 30px 0 0' );
+                    $( 'main' ).css( 'flex-direction', 'row' );
+                    break;
+
+                case 'top':                
+                    $( '.catalog-item' ).css( 'margin', '30px 0 0 0' );
+                    $( 'main' ).css( 'flex-direction', 'column-reverse' );
+                    break;
+
+                case 'buttom ':                
+                    $( '.catalog-item' ).css( 'margin', '30px 0 0 0' );
+                    $( 'main' ).css( 'flex-direction', 'column' );
+                    break;
+            }
+        });
+    });
 }( jQuery ) );
