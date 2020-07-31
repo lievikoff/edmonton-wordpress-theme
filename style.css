@@ -304,11 +304,6 @@ Inter variable font. Usage:
 /* ---------------------------------------------*---------------------------- */
 
 
-main {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-}
 
 h1,
 h2,
@@ -2419,11 +2414,11 @@ body.template-full-width [class*="wp-block"].alignfull:not(.has-background) [cla
 
 .archive-header {
 	background-color: #fff;
-	padding: 4rem 0;
+	padding: 0.3rem 0;
 }
 
 .reduced-spacing .archive-header {
-	padding-bottom: 2rem;
+	padding-bottom: 0.2rem;
 }
 
 .archive-title {
@@ -4724,7 +4719,7 @@ a.to-the-top > * {
 }
 
 #site-content-sitebar {
-	display: none;
+	display: block;
 	height: fit-content;
 	padding-bottom: 15px;
 }
@@ -4753,7 +4748,7 @@ a.to-the-top > * {
 
 .author-post-catalog {
 	margin: 6px 15px 0 15px;
-	width: 100%;
+	width: calc( 100% - 30px);
 }
 
 .author-post-catalog,
@@ -4780,12 +4775,13 @@ a.to-the-top > * {
 	font-weight: bold;
 	font-size: 14px;
 	line-height: 17px;
+	width: calc( 100% - 30px );
 	/* identical to box height */
 
 	text-transform: uppercase;
 
 	color: #101010;
-	margin: 19px 0 35px 15px !important;
+	margin: 19px 15px 35px 15px !important;
 }
 
 .side {
@@ -4811,10 +4807,13 @@ a.to-the-top > * {
 
 .sidebar-content {
 	width: calc( 100% - 60px );
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .sidebar-title {
-	margin: 13px 0 0 12px;
+	margin: 0 0 0 12px;
 
 	font-family: Inter;
 	font-style: normal;
@@ -4851,6 +4850,17 @@ article {
 
 #main {
 	display: block;
+}
+
+
+#site-content-sitebar {
+	background: #ffffff;
+	box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.02);
+}
+
+.sidebar-main {
+	display: grid;
+	grid-template-columns: 1fr;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -5407,11 +5417,11 @@ article {
 	/* Post: Archive ------------------------- */
 
 	.archive-header {
-		padding: 8rem 0;
+		padding: 0.3rem 0;
 	}
 
 	.reduced-spacing .archive-header {
-		padding-bottom: 3rem;
+		padding-bottom: 0.2rem;
 	}
 
 	.archive-title {
@@ -5455,7 +5465,7 @@ article {
 
 	.intro-text {
 		font-size: 2rem;
-		margin-top: 2.5rem;
+		margin-top: 0.4rem;
 	}
 
 	.singular .intro-text {
@@ -6008,6 +6018,11 @@ article {
 		grid-template-columns: 1fr 1fr;
 	}
 
+	.sidebar-main {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
 }
 
 @media (min-width: 782px) {
@@ -6058,6 +6073,29 @@ article {
 	#site-content-main {
 		padding: 0 30px 0 0;
 	}
+	
+	main {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: nowrap;
+	}
+
+	#site-content-sitebar {
+		display: block;
+		width: calc( 100% - 60px );
+		margin: 30px 30px 0 30px;
+		background: #ffffff;
+		box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.02);
+	}
+
+	.sidebar-item {
+		min-width: 270px;
+	}
+
+	.widget-title {
+		text-align: center;
+	}
+
 }
 
 @media ( min-width: 1000px ) {
@@ -6431,11 +6469,8 @@ article {
 	}
 	
 	#site-content-sitebar {
-		display: block;
 		width: 280px;
 		margin: 30px 0 0 0;
-		background: #ffffff;
-		box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.02);
 	}
 
 	.entry-content > .alignleft,
@@ -6605,6 +6640,18 @@ article {
 
 	.footer-menu li {
 		margin: 1.2rem 0 0 2.4rem;
+	}
+
+	
+	main {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+	}
+
+	.sidebar-main {
+		display: grid;
+		grid-template-columns: 1fr;
 	}
 }
 

@@ -1083,6 +1083,11 @@ class theMostPopularArticle extends WP_Widget {
 
 		$all_popular_posts = json_decode( json_encode( $all_popular_posts ), true );
 		
+		?>
+
+		<div class="sidebar-main">
+
+		<?php
 		$i = 0;
 		while ($i < count($all_popular_posts)) {
 			?>
@@ -1132,6 +1137,12 @@ class theMostPopularArticle extends WP_Widget {
 			<?php
 			$i++;
 		}
+
+		?>
+
+		</div>
+
+		<?php
  
 		echo $args['after_widget'];
 	}
