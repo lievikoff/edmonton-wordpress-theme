@@ -75,7 +75,7 @@
                     $( 'main' ).css( 'flex-direction', 'column-reverse' );
                     break;
 
-                case 'buttom ':                
+                case 'bottom':                
                     $( '.catalog-item' ).css( 'margin', '30px 0 0 0' );
                     $( 'main' ).css( 'flex-direction', 'column' );
                     break;

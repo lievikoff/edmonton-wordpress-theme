@@ -958,7 +958,7 @@ function customize () {
 
 					<?php
 					break;
-				case 'buttom':
+				case 'bottom':
 					?>
 					
 					<style type="text/css">
