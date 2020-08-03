@@ -1946,6 +1946,7 @@ button.close-nav-toggle .toggle-text {
 
 .modal-menu > li > a,
 .modal-menu > li > .ancestor-wrapper > a {
+	color: #707070;
 	font-size: 2rem;
 	font-weight: 700;
 	letter-spacing: -0.0375em;
@@ -2003,7 +2004,7 @@ button.sub-menu-toggle.active svg {
 }
 
 .modal-menu ul li a {
-	color: inherit;
+	color: #707070;
 	font-weight: 500;
 }
 
@@ -6096,6 +6097,20 @@ article {
 		text-align: center;
 	}
 
+	/* Menu Mobile --------------------------- */
+
+	.mobile-menu .modal-menu li ul{
+		background-color: rgba(211, 211, 211, .1);
+	}
+
+	.mobile-menu .modal-menu li ul li ul{
+		background-color: rgba(211, 211, 211, .3);
+	}
+
+	.mobile-menu .modal-menu li {
+		border-color: white;
+	}
+
 }
 
 @media ( min-width: 1000px ) {
@@ -6625,7 +6640,7 @@ article {
 	/* Site Pagination ----------------------- */
 
 	.pagination .nav-links {
-		justify-content: space-between;
+		justify-content: center;
 		margin: 0;
 		width: 100%;
 	}
@@ -6640,12 +6655,12 @@ article {
 	}
 
 	.pagination .prev {
-		margin: 0 auto 0 0;
+		margin: 0 4rem 0 0;
 	}
 
 	.pagination .next {
 		text-align: right;
-		margin: 0 0 0 auto;
+		margin: 0 0 0 4rem;
 	}
 
 	/* Site Footer --------------------------- */
