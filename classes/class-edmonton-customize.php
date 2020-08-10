@@ -667,66 +667,6 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				]
 			);
 
-			
-			/**
-			 * Content
-			 */
-
-			Kirki::add_panel( 
-				'content', 
-				[
-					'title'          => esc_html__( 'Content', 'kirki' ),
-					'priority'       => 90,
-				] 
-			);
-
-			/** Content General ------------------------------------------------------ */
-
-			Kirki::add_section( 
-				'content_general', 
-				[
-					'title'          => esc_html__( 'General', 'kirki' ),
-					'panel'          => 'content',
-				]
-			);
-
-			Kirki::add_config( 
-				'content_sidebar_position', 
-				[
-					'capability'    => 'edit_theme_options',
-					'transport'     => 'postMessage',
-				]
-			);
-
-			Kirki::add_field( 
-				'content_sidebar_position', 
-				[
-					'type'      => 'radio-image',
-					'label'     => esc_attr__( 'Layout', 'text-domain' ),
-					'section'   => 'content_general',
-					'settings'  => 'content_sidebar_position',
-					'default'	=> 'right',
-					'choices'   => [
-						'left' => [
-							'title' => esc_attr__( 'Main sidebar Left' ),
-							'path'  => '<svg width="85" height="57" viewBox="0 0 85 57" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="85" height="57" transform="matrix(-1 0 0 1 85 0)" fill="none"/><path d="M84.7214 28.5V57H42.371H0.0206504V28.5V-1.22935e-07H42.371H84.7214V28.5ZM0.867658 11.1537V21.463H42.371H83.8744V11.1537V0.844444H42.371H0.867658V11.1537ZM0.867658 39.0907V56.1556H42.371H83.8744V39.0907V22.0259H42.371H0.867658V39.0907Z" fill="#004BA4"/><path d="M23.8992 7.34667C24.0404 7.48037 24.238 7.76186 24.3368 7.98L24.5133 8.38111V11.407V14.44L24.3015 14.8833C24.1745 15.1437 23.991 15.397 23.8498 15.5096L23.6027 15.6926H15.655H7.70724L7.4602 15.5096C7.31903 15.397 7.13551 15.1437 7.00846 14.8833L6.79671 14.44V11.4V8.36L7.00846 7.91667C7.13551 7.6563 7.31903 7.40297 7.4602 7.29037L7.70724 7.10741H15.6691H23.638L23.8992 7.34667Z" fill="#004BA4"/><path d="M79.357 9.9926C79.4135 10.0207 79.5476 10.0841 79.6535 10.1193C79.9923 10.253 80.0981 10.5133 80.0981 11.1889C80.0981 11.7237 80.077 11.8152 79.9217 12.0193C79.8229 12.1389 79.6323 12.2726 79.4982 12.3148C79.3217 12.3711 72.3551 12.3852 55.6267 12.3711L31.9952 12.35L31.7693 12.1248C31.5505 11.8996 31.5435 11.8856 31.5435 11.2382C31.5364 10.4641 31.6211 10.253 32.0093 10.0559C32.2634 9.92223 32.7787 9.92223 55.7608 9.92926C68.6777 9.92926 79.3005 9.95741 79.357 9.9926Z" fill="#004BA4"/></svg>',
-						],
-						'right' => [
-							'title' => esc_attr__( 'Main sidebar Right' ),
-							'path'	=> '<svg width="85" height="57" viewBox="0 0 85 57" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="85" height="57" transform="matrix(-1 0 0 1 85 0)" fill="none"/><path d="M84.7214 28.5V57H42.371H0.0206504V28.5V-1.22935e-07H42.371H84.7214V28.5ZM0.867658 11.1537V21.463H42.371H83.8744V11.1537V0.844444H42.371H0.867658V11.1537ZM0.867658 39.0907V56.1556H42.371H83.8744V39.0907V22.0259H42.371H0.867658V39.0907Z" fill="#004BA4"/><path d="M50.1025 4.23926C50.2436 4.37297 50.4413 4.65445 50.5401 4.8726L50.7166 5.27371V8.29963V11.3326L50.5048 11.7759C50.3777 12.0363 50.1942 12.2896 50.0531 12.4022L49.806 12.5852H41.8583H33.9105L33.6635 12.4022C33.5223 12.2896 33.3388 12.0363 33.2117 11.7759L33 11.3326V8.2926V5.2526L33.2117 4.80926C33.3388 4.54889 33.5223 4.29556 33.6635 4.18297L33.9105 4H41.8724H49.8413L50.1025 4.23926Z" fill="#004BA4"/><path d="M65.814 15.0657C65.8704 15.0939 66.0045 15.1572 66.1104 15.1924C66.4492 15.3261 66.5551 15.5865 66.5551 16.262C66.5551 16.7968 66.5339 16.8883 66.3786 17.0924C66.2798 17.212 66.0892 17.3457 65.9551 17.3879C65.7787 17.4442 58.812 17.4583 42.0836 17.4442L18.4521 17.4231L18.2263 17.1979C18.0075 16.9728 18.0004 16.9587 18.0004 16.3113C17.9933 15.5372 18.078 15.3261 18.4663 15.129C18.7204 14.9953 19.2356 14.9953 42.2177 15.0024C55.1346 15.0024 65.7575 15.0305 65.814 15.0657Z" fill="#004BA4"/></svg>',
-						],
-						'top' => [
-							'title' => esc_attr__( 'Main sidebar Top' ),
-							'path'  => '<svg width="85" height="57" viewBox="0 0 85 57" fill="none" xmlns="http://www.w3.org/2000/svg" id="first-layout"><rect width="85" height="57" fill="none"/><path d="M0.278625 28.5V57H42.629H84.9793V28.5V-1.22935e-07H42.629H0.278625V28.5ZM84.1323 11.1537V21.463H42.629H1.12563V11.1537V0.844444H42.629H84.1323V11.1537ZM84.1323 39.0907V56.1556H42.629H1.12563V39.0907V22.0259H42.629H84.1323V39.0907Z" fill="#004BA4"/><path d="M61.1008 7.34667C60.9596 7.48037 60.762 7.76186 60.6632 7.98L60.4867 8.38111V11.407V14.44L60.6985 14.8833C60.8255 15.1437 61.009 15.397 61.1502 15.5096L61.3973 15.6926H69.345H77.2928L77.5398 15.5096C77.681 15.397 77.8645 15.1437 77.9915 14.8833L78.2033 14.44V11.4V8.36L77.9915 7.91667C77.8645 7.6563 77.681 7.40297 77.5398 7.29037L77.2928 7.10741H69.3309H61.362L61.1008 7.34667Z" fill="#004BA4"/><path d="M5.64299 9.9926C5.58652 10.0207 5.45241 10.0841 5.34653 10.1193C5.00773 10.253 4.90186 10.5133 4.90186 11.1889C4.90186 11.7237 4.92303 11.8152 5.07832 12.0193C5.17713 12.1389 5.36771 12.2726 5.50182 12.3148C5.67828 12.3711 12.6449 12.3852 29.3733 12.3711L53.0048 12.35L53.2307 12.1248C53.4495 11.8996 53.4565 11.8856 53.4565 11.2382C53.4636 10.4641 53.3789 10.253 52.9907 10.0559C52.7366 9.92223 52.2213 9.92223 29.2392 9.92926C16.3223 9.92926 5.69945 9.95741 5.64299 9.9926Z" fill="#004BA4"/></svg>',
-						],
-						'bottom' => [
-							'title' => esc_attr__( 'Main sidebar Buttom' ),
-							'path'  => '<svg width="85" height="57" viewBox="0 0 85 57" fill="none" xmlns="http://www.w3.org/2000/svg" id="first-layout"><rect width="85" height="57" fill="none"/><path d="M0.278625 28.5V57H42.629H84.9793V28.5V-1.22935e-07H42.629H0.278625V28.5ZM84.1323 11.1537V21.463H42.629H1.12563V11.1537V0.844444H42.629H84.1323V11.1537ZM84.1323 39.0907V56.1556H42.629H1.12563V39.0907V22.0259H42.629H84.1323V39.0907Z" fill="#004BA4"/><path d="M61.1008 7.34667C60.9596 7.48037 60.762 7.76186 60.6632 7.98L60.4867 8.38111V11.407V14.44L60.6985 14.8833C60.8255 15.1437 61.009 15.397 61.1502 15.5096L61.3973 15.6926H69.345H77.2928L77.5398 15.5096C77.681 15.397 77.8645 15.1437 77.9915 14.8833L78.2033 14.44V11.4V8.36L77.9915 7.91667C77.8645 7.6563 77.681 7.40297 77.5398 7.29037L77.2928 7.10741H69.3309H61.362L61.1008 7.34667Z" fill="#004BA4"/><path d="M5.64299 9.9926C5.58652 10.0207 5.45241 10.0841 5.34653 10.1193C5.00773 10.253 4.90186 10.5133 4.90186 11.1889C4.90186 11.7237 4.92303 11.8152 5.07832 12.0193C5.17713 12.1389 5.36771 12.2726 5.50182 12.3148C5.67828 12.3711 12.6449 12.3852 29.3733 12.3711L53.0048 12.35L53.2307 12.1248C53.4495 11.8996 53.4565 11.8856 53.4565 11.2382C53.4636 10.4641 53.3789 10.253 52.9907 10.0559C52.7366 9.92223 52.2213 9.92223 29.2392 9.92926C16.3223 9.92926 5.69945 9.95741 5.64299 9.9926Z" fill="#004BA4"/></svg>',
-						],
-					],
-				]
-			);	
-
 			/* Icon display setting ----------------------------------------------- */
 
 			Kirki::add_section(
@@ -1850,7 +1790,6 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'url_oK',
 				[
 					'type'     		=> 'link',
-					'settings' 		=> 'link_setting',
 					'settings' 		=> 'url_oK',
 					'section'  		=> 'oK',
 					'priority' 		=> 10,
@@ -1879,6 +1818,160 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'label'    		=> esc_html__( 'Icon', 'kirki' ),
 				]
 			);
+
+			/**
+			 * Content
+			 */
+
+			Kirki::add_panel( 
+				'content', 
+				[
+					'title'          => esc_html__( 'Content', 'kirki' ),
+					'priority'       => 90,
+				] 
+			);
+
+			/** Content General ------------------------------------------------------ */
+
+			Kirki::add_section( 
+				'content_general', 
+				[
+					'title'          => esc_html__( 'General', 'kirki' ),
+					'panel'          => 'content',
+				]
+			);
+
+			Kirki::add_config( 
+				'content_sidebar_position', 
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'     => 'postMessage',
+				]
+			);
+
+			Kirki::add_field( 
+				'content_sidebar_position', 
+				[
+					'type'      => 'radio-image',
+					'label'     => esc_attr__( 'Layout', 'text-domain' ),
+					'section'   => 'content_general',
+					'settings'  => 'content_sidebar_position',
+					'default'	=> 'right',
+					'choices'   => [
+						'left' => [
+							'title' => esc_attr__( 'Main sidebar Left' ),
+							'path'  => '<svg width="85" height="57" viewBox="0 0 85 57" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="85" height="57" transform="matrix(-1 0 0 1 85 0)" fill="none"/><path d="M85 28.5V57H42.5H-2.75671e-06V28.5V-1.22935e-07H42.5H85V28.5ZM0.849997 5.41852V9.99259H42.5H84.15V5.41852V0.844444H42.5H0.849997V5.41852ZM0.835831 16.0937C0.821664 19.1056 0.821664 29.3515 0.835831 38.8656L0.849997 56.1556H42.5H84.15L84.1642 38.8585C84.1783 29.3515 84.1783 19.1056 84.1642 16.0937L84.15 10.6259H42.5H0.849997L0.835831 16.0937Z" fill="#3157E2"/><path d="M54.1166 14.7778C66.5266 14.7989 76.6841 14.827 76.6912 14.8341C76.7053 14.8411 76.7124 22.8282 76.7124 32.5815V50.3148H59.762C50.4474 50.3148 40.1199 50.2937 36.812 50.2656L30.8124 50.2233V32.4619V14.7074L31.1807 14.7215C31.3862 14.7285 41.7066 14.7567 54.1166 14.7778Z" fill="#3157E2"/><path d="M23.729 32.5463V50.3148H15.654H7.57894V32.5463V14.7778H15.654H23.729V32.5463Z" fill="#3157E2"/></svg>',
+						],
+						'right' => [
+							'title' => esc_attr__( 'Main sidebar Right' ),
+							'path'	=> '<svg width="85" height="57" viewBox="0 0 85 57" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="85" height="57" fill="none"/><path d="M0 28.5V57H42.5H85V28.5V-1.22935e-07H42.5H0V28.5ZM84.15 5.41852V9.99259H42.5H0.85V5.41852V0.844444H42.5H84.15V5.41852ZM84.1642 16.0937C84.1783 19.1056 84.1783 29.3515 84.1642 38.8656L84.15 56.1556H42.5H0.85L0.835833 38.8585C0.821667 29.3515 0.821667 19.1056 0.835833 16.0937L0.85 10.6259H42.5H84.15L84.1642 16.0937Z" fill="#3157E2"/><path d="M30.8834 14.7778C18.4734 14.7989 8.31593 14.827 8.30885 14.8341C8.29468 14.8411 8.2876 22.8282 8.2876 32.5815V50.3148H25.238C34.5526 50.3148 44.8801 50.2937 48.188 50.2656L54.1876 50.2233V32.4619V14.7074L53.8193 14.7215C53.6138 14.7285 43.2934 14.7567 30.8834 14.7778Z" fill="#3157E2"/><path d="M61.271 32.5463V50.3148H69.346H77.4211V32.5463V14.7778H69.346H61.271V32.5463Z" fill="#3157E2"/></svg>',
+						],
+						'top' => [
+							'title' => esc_attr__( 'Main sidebar Top' ),
+							'path'  => '<svg width="85" height="57" viewBox="0 0 85 57" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="85" height="57" transform="matrix(-1 0 0 1 85 0)" fill="none"/><path d="M85 28.5V57H42.5H-2.75671e-06V28.5V-1.22935e-07H42.5H85V28.5ZM0.849997 5.41852V9.99259H42.5H84.15V5.41852V0.844444H42.5H0.849997V5.41852ZM0.835831 16.0937C0.821664 19.1056 0.821664 29.3515 0.835831 38.8656L0.849997 56.1556H42.5H84.15L84.1642 38.8585C84.1783 29.3515 84.1783 19.1056 84.1642 16.0937L84.15 10.6259H42.5H0.849997L0.835831 16.0937Z" fill="#3157E2"/><path d="M43.017 26.0553C61.1318 26.0719 75.9586 26.0941 75.969 26.0996C75.9897 26.1051 76 32.3858 76 40.0553V54H51.2576C37.6611 54 22.5861 53.9834 17.7576 53.9613L9 53.9281V39.9613V26L9.53766 26.0111C9.8375 26.0166 24.9022 26.0387 43.017 26.0553Z" fill="#3157E2"/><path d="M42.4999 12H75.9999V18V24H42.4999H8.99993V18V12H42.4999Z" fill="#3157E2"/></svg>',
+						],
+						'bottom' => [
+							'title' => esc_attr__( 'Main sidebar Buttom' ),
+							'path'  => '<svg width="85" height="57" viewBox="0 0 85 57" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="85" height="57" transform="matrix(-1 0 0 1 85 0)" fill="none"/><path d="M85 28.5V57H42.5H-2.75671e-06V28.5V-1.22935e-07H42.5H85V28.5ZM0.849997 5.41852V9.99259H42.5H84.15V5.41852V0.844444H42.5H0.849997V5.41852ZM0.835831 16.0937C0.821664 19.1056 0.821664 29.3515 0.835831 38.8656L0.849997 56.1556H42.5H84.15L84.1642 38.8585C84.1783 29.3515 84.1783 19.1056 84.1642 16.0937L84.15 10.6259H42.5H0.849997L0.835831 16.0937Z" fill="#3157E2"/><path d="M43.017 12.0553C61.1318 12.0719 75.9586 12.0941 75.969 12.0996C75.9897 12.1051 76 18.3858 76 26.0553V40H51.2576C37.6611 40 22.5861 39.9834 17.7576 39.9613L9 39.9281V25.9613V12L9.53766 12.0111C9.8375 12.0166 24.9022 12.0387 43.017 12.0553Z" fill="#3157E2"/><path d="M42.5 41.5H76V47.5V53.5H42.5H9V47.5V41.5H42.5Z" fill="#3157E2"/></svg>',
+						],
+					],
+				]
+			);	
+
+			/* Content Post ----------------------------------------------------------*/
+
+			Kirki::add_section(
+				'content_post',
+				[
+					'title'          => esc_html__( 'Post', 'kirki' ),
+					'panel'          => 'content',
+				]
+			);
+
+			Kirki::add_config( 
+				'content_post_item_font', 
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'     => 'postMessage',
+				]
+			);
+
+			Kirki::add_field( 
+				'content_post_item_font', 
+				[
+					'type'        => 'select',
+					'settings'    => 'content_post_item_font',
+					'label'       => esc_html__( 'Font', 'kirki' ),
+					'section'     => 'content_post',
+					'default'     => '',
+					'placeholder' => esc_html__( 'Select text to change font...', 'kirki' ),
+					'priority'    => 10,
+					'multiple'    => 1,
+					'choices'     => [
+						'h2.entry-title-catalog, .entry-title-catalog a' => esc_html__( 'Header', 'kirki' ),
+						'.author-post-catalog, .author-post-catalog a' => esc_html__( 'Author', 'kirki' ),
+						'.entry-content-catalog p' => esc_html__( 'Main Text', 'kirki' ),
+						'.block-footer-catalog, .block-footer-catalog a' => esc_html__( 'Bottom Line', 'kirki' ),
+					],
+				] 
+			);
+
+			Kirki::add_config( 
+				'content_post_font', 
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'     => 'postMessage',
+				]
+			);
+
+			Kirki::add_field( 
+				'content_post_font', 
+				[
+				'type'        => 'typography',
+				'settings'    => 'content_post_font',
+				'section'     => 'content_post',
+				'default'     => [
+					'font-family'    => 'Roboto',
+					'variant'        => 'regular',
+					'font-size'      => '16px',
+					'color'          => '#ffffff',
+				],
+				'priority'    => 10,
+				'transport'   => 'auto',
+				'output'      => [
+					[
+						'element' => 'content_post_item_font',
+					],
+				],
+				] 
+			);
+
+			Kirki::add_config( 
+				'content_post_color', 
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field( 
+				'content_post_color', 
+				[
+					'type'      => 'color',
+					'settings'  => 'title_text',
+					'label'     => esc_attr__( 'Post background color', 'text-domain' ),
+					'section'   => 'content_post',
+					'settings'  => 'content_post_color',
+					'default'   => '#ffffff',
+					'transport' => 'auto',
+					'output'    => [
+						[
+							'element' => '.catalog-item',
+							'property' => 'background-color'
+						],
+					],
+				]
+			);
+
 		}
 	}
 

@@ -13,9 +13,7 @@
 			newValue = 'background-color: ' + newValue + ' !important;' + ' cursor: pointer !important;';
             //$( '.social-media-block' ).attr( 'style', newValue );
             if($('#_customize-input-show_icon_background', window.parent.document).prop('checked')){
-                $( '.social-media-block' ).attr( 'style', newValue );
-                console.log($('#customize-control-color_icon .kirki-input-container .wp-picker-container .button.wp-color-result .color-alpha', window.parent.document).css('background-color'));
-            }
+                $( '.social-media-block' ).attr( 'style', newValue );            }
 		});
     });
     
@@ -80,6 +78,13 @@
                     $( 'main' ).css( 'flex-direction', 'column' );
                     break;
             }
+        });
+    });
+
+    wp.customize( 'content_post_font', function ( value )  {
+        value.bind( function ( value )  {
+            let item = $('select[data-id="content_post_item_font"]', window.parent.document).val();
+            $(item).css(value);
         });
     });
 }( jQuery ) );

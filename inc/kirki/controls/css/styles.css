@@ -397,6 +397,13 @@
   fill: white;
 }
 
+#content_sidebar_positionright:checked + .content_sidebar_positionright svg rect,
+#content_sidebar_positionleft:checked + .content_sidebar_positionleft svg rect,
+#content_sidebar_positiontop:checked + .content_sidebar_positiontop svg rect,
+#content_sidebar_positionbottom:checked + .content_sidebar_positionbottom svg rect {
+  fill: white;
+}
+
 .customize-control-kirki-radio {
   position: relative;
 }
