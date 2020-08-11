@@ -22,10 +22,22 @@
 		<?php wp_head(); ?>
 
 	</head>
-
+	
 	<body <?php body_class(); ?>>
 
-		<?php
+		<?php 
+		if( is_404() ) {
+			?>
+
+				<script>
+					'use strict';
+
+					document.querySelector('.error404').style.height = window.innerHeight + "px";
+				</script>
+
+			<?php
+		}
+
 		wp_body_open();
 		?>
 

@@ -11,7 +11,7 @@
  */
 
 ?>
-			<footer id="site-footer" role="contentinfo" class="header-footer-group">
+			<footer id="site-footer" role="contentinfo" class="<?php if( is_404() ) echo 'footer-404'?> header-footer-group">
 
 				<div class="section-inner">
 

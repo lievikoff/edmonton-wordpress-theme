@@ -852,7 +852,7 @@
 
 .customize-control-title {
   display: block;
-  padding: 13px 12px;
+  padding: 13px 12px !important;
   margin: 0;
   border-width: 1px 0;
   border-style: solid;

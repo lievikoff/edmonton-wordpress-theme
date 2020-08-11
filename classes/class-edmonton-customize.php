@@ -617,7 +617,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'output'    => [
 						[
 							'element' => '.alt-navigation-wrapper .alt-navigation-social-media .social-media, .menu-bottom .social-media',
-							'property' => 'border-right-color'
+							'property' => 'border-left-color'
 						],
 					],
 				]
@@ -642,7 +642,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'output'    => [
 						[
 							'element' => '.alt-navigation-wrapper .alt-navigation-social-media .social-media, .menu-bottom .social-media',
-							'property' => 'border-right-width',
+							'property' => 'border-left-width',
 							'suffix'  => 'px',
 						],
 					],

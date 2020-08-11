@@ -909,11 +909,11 @@ function customize () {
 					?>
 					
 					<style type="text/css">
-						.catalog-item {
-							margin: 30px 0 0 30px;
-						}
-
 						@media (min-width: 1000px) {
+							.catalog-item {
+								margin: 30px 0 0 0;
+							}
+
 							main {
 								flex-direction: row-reverse;
 							}
@@ -927,11 +927,11 @@ function customize () {
 					?>
 					
 					<style type="text/css">
-						.catalog-item {
-							margin: 30px 30px 0 0;
-						}
-
 						@media (min-width: 1000px) {
+							.catalog-item {
+								margin: 30px 0 0 0;
+							}
+
 							main {
 								flex-direction: row;
 							}
@@ -945,13 +945,31 @@ function customize () {
 					?>
 					
 					<style type="text/css">
-						.catalog-item {
-							margin: 30px 0 0 0;
+						@media (min-width: 1000px) {
+							.catalog-item {
+								margin: 30px 0 0 0;
+							}
+
+							main {
+								flex-direction: column-reverse;
+							}
+
+							#site-content-main {
+								width: 100%;
+								grid-template-columns: 1fr 1fr 1fr;
+							}
 						}
 
-						@media (min-width: 1000px) {
-							main {
-								flex-direction: column;
+						@media (min-width: 1240px) {
+							#site-content-main {
+								width: 100%;
+								grid-template-columns: 1fr 1fr 1fr 1fr;
+							}
+						}
+
+						@media ( min-width: 1850px ) {
+							#site-content-main {
+								grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 							}
 						}
 					</style>	
@@ -962,13 +980,31 @@ function customize () {
 					?>
 					
 					<style type="text/css">
-						.catalog-item {
-							margin: 30px 0 0 0;
+						@media (min-width: 1000px) {
+							.catalog-item {
+								margin: 30px 0 0 0;
+							}
+
+							main {
+								flex-direction: column;
+							}
+
+							#site-content-main {
+								width: 100%;
+								grid-template-columns: 1fr 1fr 1fr;
+							}
 						}
 
-						@media (min-width: 1000px) {
-							main {
-								flex-direction: column-reverse;
+						@media (min-width: 1240px) {
+							#site-content-main {
+								width: 100%;
+								grid-template-columns: 1fr 1fr 1fr 1fr;
+							}
+						}
+
+						@media ( min-width: 1850px ) {
+							#site-content-main {
+								grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 							}
 						}
 					</style>	
