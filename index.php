@@ -72,26 +72,62 @@ get_header();
 
 		<?php
 	}
-	?>
 
-	<main id="site-content" role="main">
+	$site_content = '';
+	$site_content_main = '';
+	$site_content_sidebar = '';
+
+	if ( get_theme_mod( 'content_sidebar_position' ) ) {
+
+		$sidebar_position = get_theme_mod( 'content_sidebar_position' );
+		
+		if ( $sidebar_position ) {
+
+			switch ($sidebar_position) {
+				case 'left':
+					$site_content = 'site-content-row-reverse';
+					$site_content_main = 'site-content-main-cut';
+					$site_content_sidebar = 'main-sidebar-left';
+					break;
+				
+				case 'right':
+					$site_content = 'site-content-row';
+					$site_content_main = 'site-content-main-cut';
+					$site_content_sidebar = 'main-sidebar-right';
+					break;
+
+				case 'top':
+					$site_content = 'site-content-column-reverse';
+					$site_content_main = 'site-content-main-full';
+					$site_content_sidebar = 'main-sidebar-top';
+					break;
+
+				case 'bottom':
+					$site_content = 'site-content-column';
+					$site_content_main = 'site-content-main-full';
+					$site_content_sidebar = 'main-sidebar-bottom';
+					break;
+			}
+		}
+	}
+	
+	?>
+	<main id="site-content" class="<?php echo $site_content ?>" role="main">
 
 	<?php
 		if ( is_home() ) {
 			?>
 		
-			<div id="site-content-main" class="catalog-grid">
+			<div id="site-content-main" class="catalog-grid <?php echo $site_content_main ?>">
 
 			<?php
 		} else {
 			?>
 
-			<div id="site-content-main">
+			<div id="site-content-main" class="<?php echo $site_content_main ?>">
 			
 			<?php
 		}
-
-			
 
 				if ( have_posts() ) {
 
@@ -127,7 +163,7 @@ get_header();
 
 		<?php if ( is_active_sidebar( 'sidebar' ) ) { ?>
 
-		<div id="site-content-sitebar">
+		<div id="site-content-sitebar" class="<?php echo $site_content_sidebar ?>">
 			<!-- sitebar -->
 
 	

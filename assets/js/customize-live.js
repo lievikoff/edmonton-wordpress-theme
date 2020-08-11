@@ -59,23 +59,39 @@
             switch ( value ) {
 
                 case 'left':
-                    $( '.catalog-item' ).css( 'margin', '30px 0 0 30px' );
-                    $( 'main' ).css( 'flex-direction', 'row-reverse' );
+                    $( '#site-content' ).removeClass( 'site-content-row site-content-column site-content-column-reverse' ); 
+                    $( '#site-content' ).addClass( 'site-content-row-reverse' );
+                    $( '#site-content-main' ).removeClass( 'site-content-main-full' );
+                    $( '#site-content-main' ).addClass( 'site-content-main-cut' );
+                    $( '#site-content-sitebar' ).removeClass( 'main-sidebar-right main-sidebar-top main-sidebar-bottom' ); 
+                    $( '#site-content-sitebar' ).addClass( 'main-sidebar-left' );
                     break;
-
+                    
                 case 'right':
-                    $( '.catalog-item' ).css( 'margin', '30px 30px 0 0' );
-                    $( 'main' ).css( 'flex-direction', 'row' );
+                    $( '#site-content' ).removeClass( 'site-content-row-reverse site-content-column site-content-column-reverse' ); 
+                    $( '#site-content' ).addClass( 'site-content-row' );
+                    $( '#site-content-main' ).removeClass( 'site-content-main-full' );
+                    $( '#site-content-main' ).addClass( 'site-content-main-cut' );
+                    $( '#site-content-sitebar' ).removeClass( 'main-sidebar-left main-sidebar-top main-sidebar-bottom' ); 
+                    $( '#site-content-sitebar' ).addClass( 'main-sidebar-right' );
                     break;
 
                 case 'top':                
-                    $( '.catalog-item' ).css( 'margin', '30px 0 0 0' );
-                    $( 'main' ).css( 'flex-direction', 'column-reverse' );
+                    $( '#site-content' ).removeClass( 'site-content-row site-content-row-reverse site-content-column' ); 
+                    $( '#site-content' ).addClass( 'site-content-column-reverse' );
+                    $( '#site-content-main' ).removeClass( 'site-content-main-cut' );
+                    $( '#site-content-main' ).addClass( 'site-content-main-full' );
+                    $( '#site-content-sitebar' ).removeClass( 'main-sidebar-left main-sidebar-right main-sidebar-bottom' ); 
+                    $( '#site-content-sitebar' ).addClass( 'main-sidebar-top' );
                     break;
 
                 case 'bottom':                
-                    $( '.catalog-item' ).css( 'margin', '30px 0 0 0' );
-                    $( 'main' ).css( 'flex-direction', 'column' );
+                    $( '#site-content' ).removeClass( 'site-content-row site-content-row-reverse site-content-column-reverse' ); 
+                    $( '#site-content' ).addClass( 'site-content-column' );
+                    $( '#site-content-main' ).removeClass( 'site-content-main-cut' );
+                    $( '#site-content-main' ).addClass( 'site-content-main-full' );
+                    $( '#site-content-sitebar' ).removeClass( 'main-sidebar-left main-sidebar-right main-sidebar-top' ); 
+                    $( '#site-content-sitebar' ).addClass( 'main-sidebar-bottom' );
                     break;
             }
         });

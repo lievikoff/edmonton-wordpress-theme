@@ -4736,7 +4736,7 @@ a.to-the-top > * {
 #site-content-main {
 	width: 100%;
 	display: grid;
-	grid-template-columns: 1fr;
+	margin: 30px 0 0 0;
 }
 
 #site-content-sitebar {
@@ -4753,7 +4753,6 @@ a.to-the-top > * {
 	height: 549px;
 	background-color: #ffffff;
 	box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.02);
-	margin: 30px 30px 0 0;
 	border-bottom: 2px solid #F0F0F0;
 	overflow: hidden;
 	position: relative;
@@ -4918,12 +4917,9 @@ article {
 		margin: 3em 0 0 0;
 	}
 
-	.catalog-item {
-		margin: 15px 15px 0 15px;
-	}
-
-	#site-content-main {
-		grid-template-columns: 1fr ;
+	.site-content-main-cut,
+	.site-content-main-full {
+		grid-template-columns: 1fr;
 	}
 
 }
@@ -4975,15 +4971,17 @@ article {
 
 @media ( max-width: 550px ) {
 
-	#site-content-main {
+	.site-content-main-cut,
+	.site-content-main-full {
 		grid-template-columns: 1fr;
 	}
 }
 
 @media ( min-width: 550px ) {
 
-	#site-content-main {
-		grid-template-columns: 1fr 1fr;
+	.site-content-main-cut,
+	.site-content-main-full {
+		grid-template-columns: repeat( auto-fill, minmax(255px, 1fr) ) !important;
 	}
 }
 
@@ -6044,16 +6042,6 @@ article {
 	.to-the-top-short {
 		display: none;
 	}
-
-	#site-content-main {
-		grid-template-columns: 1fr 1fr;
-	}
-
-	.sidebar-main {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-	}
-
 }
 
 @media (min-width: 782px) {
@@ -6072,14 +6060,7 @@ article {
 	}
 }
 
-@media (min-width: 840px) {
-
-	#site-content-main {
-		grid-template-columns: 1fr 1fr 1fr;
-	}
-}
-
-@media ( max-width: 1000px ) {
+@media ( max-width: 999px ) {
 
 	.site-title {
 		color: #fff;
@@ -6096,13 +6077,10 @@ article {
 		border-bottom: 2px solid #E5E5E5;
 		height: 50px;
 	}
-
-	.catalog-item {
-		margin: 30px 0 0 30px;
-	}
-
-	#site-content-main {
-		padding: 0 30px 0 0;
+	
+	.site-content-main-full, 
+	.site-content-main-cut {
+		padding: 0 30px 0 30px;
 	}
 	
 	main {
@@ -6111,12 +6089,28 @@ article {
 		flex-wrap: nowrap;
 	}
 
+	.site-content-row,
+	.site-content-row-reverse,
+	.site-content-column {
+		flex-direction: column;
+	}
+
+	.site-content-column-reverse {
+		flex-direction: column-reverse;
+	}
+
 	#site-content-sitebar {
 		display: block;
 		width: calc( 100% - 60px );
-		margin: 30px 30px 0 30px;
 		background: #ffffff;
 		box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.02);
+	}
+
+	.main-sidebar-left,
+	.main-sidebar-right,
+	.main-sidebar-top,
+	.main-sidebar-bottom {
+		margin: 30px 30px 0 30px;
 	}
 
 	.widget-title {
@@ -6528,17 +6522,43 @@ article {
 	/* Entry Content ------------------------- */
 
 	/* ALIGNMENT CLASSES */
-
 	
-	#site-content-main {
-		width: calc( 100% - 280px );
-		grid-template-columns: 1fr 1fr;
+	.site-content-row {
+		flex-direction: row;
 	}
-	
+
+	.site-content-row-reverse {
+		flex-direction: row-reverse;
+	}
+
+	.site-content-column {
+		flex-direction: column;
+	}
+
+	.site-content-column-reverse {
+		flex-direction: column-reverse;
+	}
+
 	#site-content-sitebar {
 		width: 280px;
+	}
+	
+	.main-sidebar-left {
+		margin: 30px 30px 0 0;
+	}
+
+	.main-sidebar-right {
+		margin: 30px 0 0 30px;
+	}
+
+	.main-sidebar-top {
 		margin: 30px 0 0 0;
 	}
+
+	.main-sidebar-bottom {
+		margin: 30px 0 0 0;
+	}
+
 
 	.entry-content > .alignleft,
 	.entry-content > p .alignleft,
@@ -6714,11 +6734,6 @@ article {
 		display: flex;
 		flex-direction: row;
 		flex-wrap: nowrap;
-	}
-
-	.sidebar-main {
-		display: grid;
-		grid-template-columns: 100%;
 	}
 }
 
@@ -6930,10 +6945,6 @@ article {
 		margin-right: calc(( 100vw - 120rem ) / 2);
 	}
 
-	#site-content-main {
-		grid-template-columns: 1fr 1fr 1fr;
-	}
-
 	.error404-content .entry-title {
 		font-size: 250px;
 	}
@@ -7045,10 +7056,6 @@ article {
 	#site-content-sitebar {	
 		width: 380px;
 	}
-
-	#site-content-main {
-		width: 100%;
-	}
 }
 
 @media ( min-width: 1330px ) {
@@ -7099,16 +7106,8 @@ article {
 	#site-content-sitebar {
 		display: block;
 		width: 380px;
-		margin: 30px 0 0 0;
 		background: #ffffff;
 		box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.02);
 	}
 	
-}
-
-@media ( min-width: 1850px ) {
-	
-	#site-content-main {
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-	}
 }
