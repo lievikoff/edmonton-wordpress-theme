@@ -21,9 +21,7 @@ if ( $next_post || $prev_post ) {
 
 	?>
 
-	<nav class="pagination-single section-inner<?php echo esc_attr( $pagination_classes ); ?>" aria-label="<?php esc_attr_e( 'Post', 'edmonton' ); ?>" role="navigation">
-
-		<hr class="styled-separator is-style-wide" aria-hidden="true" />
+	<nav class="pagination-single<?php echo esc_attr( $pagination_classes ); ?>" aria-label="<?php esc_attr_e( 'Post', 'edmonton' ); ?>" role="navigation">
 
 		<div class="pagination-single-inner">
 
@@ -51,8 +49,6 @@ if ( $next_post || $prev_post ) {
 			?>
 
 		</div><!-- .pagination-single-inner -->
-
-		<hr class="styled-separator is-style-wide" aria-hidden="true" />
 
 	</nav><!-- .pagination-single -->
 
