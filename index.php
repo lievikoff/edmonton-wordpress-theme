@@ -27,8 +27,8 @@ get_header();
 
 		$archive_title = sprintf(
 			'%1$s %2$s',
-			'<span class="color-accent">' . __( 'Search:', 'edmonton' ) . '</span>',
-			'&ldquo;' . get_search_query() . '&rdquo;'
+			__( 'Search:', 'edmonton' ),
+			'&ldquo;' . get_search_query() . '&rdquo;, ' . __('results:', 'edmonton')
 		);
 
 		if ( $wp_query->found_posts ) {
@@ -56,14 +56,14 @@ get_header();
 
 		<header class="archive-header has-text-align-center header-footer-group">
 
-			<div class="archive-header-inner section-inner medium">
+			<div class="archive-header-inner archive-section-inner medium">
 
 				<?php if ( $archive_title ) { ?>
 					<h1 class="archive-title"><?php echo wp_kses_post( $archive_title ); ?></h1>
 				<?php } ?>
 
 				<?php if ( $archive_subtitle ) { ?>
-					<div class="archive-subtitle section-inner thin max-percentage intro-text"><?php echo wp_kses_post( wpautop( $archive_subtitle ) ); ?></div>
+					<div class="archive-subtitle archive-section-inner-result thin max-percentage"><?php echo wp_kses_post( wpautop( $archive_subtitle ) ); ?></div>
 				<?php } ?>
 
 			</div><!-- .archive-header-inner -->

@@ -11,9 +11,9 @@
 	wp.customize( 'color_icon_background', function ( value )  {
 		value.bind( function ( newValue )  {
 			newValue = 'background-color: ' + newValue + ' !important;' + ' cursor: pointer !important;';
-            //$( '.social-media-block' ).attr( 'style', newValue );
-            if($('#_customize-input-show_icon_background', window.parent.document).prop('checked')){
-                $( '.social-media-block' ).attr( 'style', newValue );            }
+            if( $( '#_customize-input-show_icon_background', window.parent.document ).prop( 'checked' ) ) {
+                $( '.social-media-block' ).attr( 'style', newValue );             
+            }
 		});
     });
     
@@ -118,17 +118,23 @@
 
     wp.customize( 'cover_image', function ( value )  {
         value.bind( function ( value )  {
-            let image = 'no-repeat 100%/ cover url('+ value+')';
-            $('.cover').css('background', image);
-            let coverColor = $('input[data-id="cover_color"]', window.parent.document).val();
-            $('[data-id="cover_color"] div button .color-alpha', window.parent.document).css('background', 'inherit');
-            coverColor = 'none';
+            if ( $( '#_customize-input-cover_enable', window.parent.document ).children().length == 1 ) {
+                let image = 'no-repeat 100%/ cover url('+ value+')';
+                $('.cover').css('background', image);
+                let coverColor = $('input[data-id="cover_color"]', window.parent.document).val();
+                $('[data-id="cover_color"] div button .color-alpha', window.parent.document).css('background', 'inherit');
+                coverColor = 'none';
+            }
         });
     });
-
+    
     wp.customize( 'cover_color', function ( value )  {
         value.bind( function ( value )  {
-            $('.cover').css('background', value);
+            if ( $( '#_customize-input-cover_enable', window.parent.document ).children().length == 1 ) {
+                if ( $( '#customize-control-cover_image', window.parent.document ).children( '.image-wrapper' ).children( '.thumbnail' ).length == 0 ) {
+                    $('.cover').css('background', value); 
+                }
+            }
         });
     });
 

@@ -784,10 +784,11 @@ function customize () {
 
 	<?php
 	}
+
 	if (get_theme_mod( 'cover_enable' ) ) {
     	if ( get_theme_mod( 'cover_image' ) )  {
-			
-    ?>
+	?>
+	
         <style type="text/css">
             .cover {
                 background-image: url(<?php echo get_theme_mod( 'cover_image' )?>);
@@ -796,24 +797,32 @@ function customize () {
                 background-size: cover;
                 background-color: inherit;
             }
-        </style>
+		</style>
+		
     <?php
-    } else {
-         if ( get_theme_mod( 'cover_color' ) )   {
-         ?>
-             <style type="text/css">
-                 .cover {
-                     background-color: <?php echo get_theme_mod( 'cover_color' )?>;
-                     background-image: none;
-                 }
-             </style>
-         <?php
-		 }
-     }
-}
-	if( get_theme_mod( 'content_post_font' ) ) {
+		} else {
+			if ( get_theme_mod( 'cover_color' ) )   {
+			?>
 
+				<style type="text/css">
+					.cover {
+						background-color: <?php echo get_theme_mod( 'cover_color' )?>;
+						background-image: none;
+					}
+				</style>
+				
+			<?php
+			}
+		}
+	}
+
+	if( get_theme_mod( 'content_post_font' ) ) {
+<<<<<<< Updated upstream
+
+=======
+>>>>>>> Stashed changes
 	?>
+
 		<style type="text/css">
 			<?php echo get_theme_mod( 'content_post_item_font' ).' {'; ?> 
 				<?php foreach(get_theme_mod( 'content_post_font' ) as $property => $value){
