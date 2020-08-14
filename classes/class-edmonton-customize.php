@@ -684,7 +684,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			);
 
 			Kirki::add_config( 
-				'cover_image', 
+				'cover_image', 	
 				[
 					'capability'    => 'edit_theme_options',
 					'transport'		=> 'postMessage',
@@ -696,10 +696,10 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				[
 					'type'        => 'image',
 					'settings'    => 'cover_image',
+					'settings'    => 'image_setting_url',
 					'label'       => esc_html__( 'Cover Image', 'kirki' ),
 					'section'     => 'header_cover',
 					'default'     => '',
-					
 				]
 			);
 
