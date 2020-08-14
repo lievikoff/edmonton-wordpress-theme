@@ -1082,7 +1082,8 @@ class theMostPopularArticle extends WP_Widget {
 		while ($i < count($all_popular_posts)) {
 			?>
 
-			<a href="<?php the_permalink($all_popular_posts[$i]['post_id']); ?>" class="sidebar-item">
+			<a href="<?php the_permalink($all_popular_posts[$i]['post_id']); ?>" class="sidebar-item" 
+				title="<?php echo $all_popular_posts[$i]['post_title']; ?>">
 
 				<div class="sidebar-thumbnail">
 
