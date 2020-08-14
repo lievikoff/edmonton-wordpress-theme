@@ -16,22 +16,12 @@ if ( has_post_thumbnail() && ! post_password_required() ) {
 	}
 	?>
 
-	<figure class="featured-media">
+	<figure class="featured-media-post">
 
-		<div class="featured-media-inner section-inner<?php echo $featured_media_inner_classes; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static output ?>">
+		<div class="featured-media-inner-post">
 
 			<?php
 			the_post_thumbnail();
-
-			$caption = get_the_post_thumbnail_caption();
-
-			if ( $caption ) {
-				?>
-
-				<figcaption class="wp-caption-text"><?php echo wp_kses_post( $caption ); ?></figcaption>
-
-				<?php
-			}
 			?>
 
 		</div><!-- .featured-media-inner -->

@@ -774,22 +774,11 @@ function customize () {
 	}
 
 	if ( get_theme_mod( 'show_icon_background' ) )	{
-
-	?>
-
-	<style type="text/css">
-		.social-media-block {
-			background: <?php echo get_theme_mod('color_icon_background', 'blue'); ?> !important;
-		}
-	</style>
-
-	<?php
-	} else {
 		?>
 
 		<style type="text/css">
 			.social-media-block {
-				background: none !important;
+				background: <?php echo get_theme_mod('color_icon_background', 'blue'); ?> !important;
 			}
 		</style>
 
@@ -839,33 +828,44 @@ function customize () {
 	}
 	if ( get_theme_mod( 'color_icon' ) )	{
 
-	?>
+			<style type="text/css">
+				.social-media-block {
+					background: none !important;
+				}
+			</style>
 
-	<style type="text/css">
-		.social-media-block svg {
-			fill: <?php echo get_theme_mod('color_icon', '#202020'); ?> !important;
-		}
+		<?php
+	}
 
-		.social-media-block img {
-			color: <?php echo get_theme_mod('color_icon', '#202020'); ?> !important;
-		}
-	</style>
+	if ( get_theme_mod( 'color_icon' ) )	{
 
-	<?php
-	} else {
 		?>
 
 		<style type="text/css">
 			.social-media-block svg {
-				fill: #202020 !important;
+				fill: <?php echo get_theme_mod('color_icon', '#202020'); ?> !important;
 			}
 
 			.social-media-block img {
-				color: #202020 !important;
+				color: <?php echo get_theme_mod('color_icon', '#202020'); ?> !important;
 			}
 		</style>
 
-	<?php
+		<?php
+		} else {
+			?>
+
+			<style type="text/css">
+				.social-media-block svg {
+					fill: #202020 !important;
+				}
+
+				.social-media-block img {
+					color: #202020 !important;
+				}
+			</style>
+
+		<?php
 	}
 
 	if ( get_theme_mod( 'header_logo_position' ) ) {
@@ -1124,7 +1124,8 @@ class theMostPopularArticle extends WP_Widget {
 		while ($i < count($all_popular_posts)) {
 			?>
 
-			<a href="<?php the_permalink($all_popular_posts[$i]['post_id']); ?>" class="sidebar-item">
+			<a href="<?php the_permalink($all_popular_posts[$i]['post_id']); ?>" class="sidebar-item" 
+				title="<?php echo $all_popular_posts[$i]['post_title']; ?>">
 
 				<div class="sidebar-thumbnail">
 
@@ -1335,6 +1336,8 @@ function get_the_category_custom ( $num ) {
 	$count = count( $temp );
 	$category_return = '';
 	
+	( $num == 0 || $num == '' || $num == NULL ) ? $num = $count : $num = $num; 
+	
 	for( $i = 0; $i < $num && $i < $count; $i++ ) {
 
 		$category_return .= '<a href="' . get_category_link( $temp[$i]->cat_ID ) . '">' . $temp[$i]->cat_name . '</a>';
@@ -1343,6 +1346,10 @@ function get_the_category_custom ( $num ) {
 		
 			$category_return .= ', ';
 		}
+	}
+
+	if ( $category_return == '' ) {
+		return $temp;
 	}
 
 	echo $category_return;

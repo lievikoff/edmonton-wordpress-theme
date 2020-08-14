@@ -124,7 +124,7 @@ get_header();
 		} else {
 			?>
 
-			<div id="site-content-main" class="<?php echo $site_content_main ?>">
+			<div id="site-content-main" class="catalog-grid <?php echo $site_content_main ?>">
 			
 			<?php
 		}
@@ -163,23 +163,22 @@ get_header();
 
 		<?php if ( is_active_sidebar( 'sidebar' ) ) { ?>
 
-		<div id="site-content-sitebar" class="<?php echo $site_content_sidebar ?>">
-			<!-- sitebar -->
+			<div id="site-content-sitebar" class="<?php echo $site_content_sidebar ?>">
+				<!-- sitebar -->
 
-	
-			<div id="true-side" class="sidebar">
+		
+				<div id="true-side" class="sidebar">
 
-				<?php dynamic_sidebar( 'sidebar' ); ?>
+					<?php dynamic_sidebar( 'sidebar' ); ?>
+
+				</div>
 
 			</div>
 
-		</div>
-
 		<?php } ?>
 
-
 	</main><!-- #site-content -->
-
+	
 	<?php get_template_part( 'template-parts/pagination' ); ?>
 
 </main>
