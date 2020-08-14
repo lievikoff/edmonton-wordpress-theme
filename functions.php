@@ -812,8 +812,7 @@ function customize () {
      }
 }
 	if( get_theme_mod( 'content_post_font' ) ) {
-		
-		
+
 	?>
 		<style type="text/css">
 			<?php echo get_theme_mod( 'content_post_item_font' ).' {'; ?> 
@@ -821,7 +820,6 @@ function customize () {
 					echo $property.': '.$value.';';
 				}
 			echo ' }';?>
-			
 		</style>
 
 	<?php
