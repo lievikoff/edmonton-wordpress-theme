@@ -193,6 +193,7 @@
 			</div>
 
 		</div>
+		<div class="cover"></div>
 		<?php
 		// Output the menu modal.
 		get_template_part( 'template-parts/modal-menu' );

@@ -103,4 +103,38 @@
             $(item).css(value);
         });
     });
+
+    wp.customize( 'cover_enable', function ( value )  {
+        value.bind( function ( value )  {
+            if ( value ) {
+                $('.cover').css('display','block');
+            }
+            else {
+                $('.cover').css('display','none');
+            }
+        });
+    });
+
+    wp.customize( 'cover_image', function ( value )  {
+        value.bind( function ( value )  {
+            let image = 'no-repeat 100%/ cover url('+ value+')';
+            $('.cover').css('background', image);
+            let coverColor = $('input[data-id="cover_color"]', window.parent.document).val();
+            $('[data-id="cover_color"] div button .color-alpha', window.parent.document).css('background', 'inherit');
+            coverColor = 'none';
+        });
+    });
+
+    wp.customize( 'cover_color', function ( value )  {
+        value.bind( function ( value )  {
+            $('.cover').css('background', value);
+        });
+    });
+
+    wp.customize( 'cover_opacity', function ( value )  {
+        value.bind( function ( value )  {
+            $('.cover').css('opacity', value);
+        });
+    });
+
 }( jQuery ) );

@@ -654,6 +654,104 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				]
 			);
 
+			/** Header Cover ----------------------------------------- */
+
+			Kirki::add_section( 
+				'header_cover', 
+				[
+					'title'          => esc_html__( 'Cover', 'kirki' ),
+					'panel'          => 'header',
+				]
+			);
+
+			Kirki::add_config( 
+				'cover_enable', 
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'		=> 'postMessage',
+				]
+			);
+			
+			Kirki::add_field( 
+				'cover_enable', 
+				[
+					'type'        => 'checkbox',
+					'settings'    => 'cover_enable',
+					'label'       => esc_html__( 'Cover Enable', 'kirki' ),
+					'section'     => 'header_cover',
+					'default'     => true,
+				] 
+			);
+
+			Kirki::add_config( 
+				'cover_image', 
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'		=> 'postMessage',
+				]
+			);
+
+			Kirki::add_field( 
+				'cover_image', 
+				[
+					'type'        => 'image',
+					'settings'    => 'cover_image',
+					'label'       => esc_html__( 'Cover Image', 'kirki' ),
+					'section'     => 'header_cover',
+					'default'     => '',
+					
+				]
+			);
+
+			Kirki::add_config( 
+				'cover_color', 
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'		=> 'postMessage',
+				]
+			);
+
+			Kirki::add_field(
+				'cover_color',
+				[
+					'type'        => 'color',
+					'settings'    => 'cover_color',
+					'section'     => 'header_cover',
+					'priority'    => 10,
+					'label'       => esc_html__( 'Cover Color', 'kirki' ),
+					'description' => esc_html__( 'Before choosing a color remove image', 'kirki' ),
+				]
+			);
+
+			Kirki::add_config( 
+				'cover_opacity', 
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'		=> 'postMessage',
+				]
+			);
+
+			Kirki::add_field( 'cover_opacity', [
+				'type'        => 'slider',
+				'settings'    => 'cover_opacity',
+				'label'       => esc_html__( 'Opacity', 'kirki' ),
+				'section'     => 'header_cover',
+				'default'     => 0.7,
+				'choices'     => [
+					'min'  => 0,
+					'max'  => 1,
+					'step' => 0.01,
+				],
+				'output'    => [
+						[
+							'element' => '.cover',
+							'property' => 'opacity',
+						],
+					],
+			] );
+
+
+
 			/**
 			 * Social Media
 			 */

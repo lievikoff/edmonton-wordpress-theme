@@ -1701,6 +1701,18 @@ ul.primary-menu > li:last-child {
 	text-decoration: none;
 }
 
+/** Cover Header -------------------------------------------------*/
+
+@media(min-width:1100px){
+	.cover {
+		height: 350px;
+		width: 100%;
+		background: aliceblue;
+		position: absolute;
+		z-index: 0;
+	}
+}
+
 /* SUB MENU */
 
 .primary-menu ul {
@@ -6209,6 +6221,7 @@ article {
 		align-items: center;
 		display: flex;
 		min-height: 50px;
+		z-index: 2;
 	}
 
 	.primary-menu-wrapper {
@@ -6245,6 +6258,7 @@ article {
 		background: #FFFFFF;
 		border-bottom: 2px solid #E5E5E5;
 		height: 50px;
+		z-index: 2;
 	}
 
 	.alt-navigation-search,
@@ -6734,6 +6748,8 @@ article {
 		display: flex;
 		flex-direction: row;
 		flex-wrap: nowrap;
+		z-index: 2;
+		
 	}
 }
 
