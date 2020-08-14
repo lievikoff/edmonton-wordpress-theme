@@ -828,6 +828,8 @@ function customize () {
 	}
 	if ( get_theme_mod( 'color_icon' ) )	{
 
+	?>
+
 			<style type="text/css">
 				.social-media-block {
 					background: none !important;
