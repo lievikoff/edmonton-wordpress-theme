@@ -330,7 +330,7 @@ function edmonton_get_post_meta( $post_id = null, $location = 'single-top' ) {
 				 * Allow output of additional post meta info to be added by child themes and plugins.
 				 *
 				 * @since Edmonton 1.0
-				 * @since Twenty Twenty 1.1 Added the `$post_meta` and `$location` parameters.
+				 * @since Edmonton 1.1 Added the `$post_meta` and `$location` parameters.
 				 *
 				 * @param int    $post_id   Post ID.
 				 * @param array  $post_meta An array of post meta information.
@@ -457,7 +457,7 @@ function edmonton_get_post_meta( $post_id = null, $location = 'single-top' ) {
 				 * Allow output of additional post meta info to be added by child themes and plugins.
 				 *
 				 * @since Edmonton 1.0
-				 * @since Twenty Twenty 1.1 Added the `$post_meta` and `$location` parameters.
+				 * @since Edmonton 1.1 Added the `$post_meta` and `$location` parameters.
 				 *
 				 * @param int    $post_id   Post ID.
 				 * @param array  $post_meta An array of post meta information.
@@ -588,7 +588,7 @@ add_filter( 'nav_menu_item_args', 'edmonton_add_sub_toggles_to_main_menu', 10, 3
 function edmonton_nav_menu_social_icons( $item_output, $item, $depth, $args ) {
 	// Change SVG icon inside social links menu if there is supported URL.
 	if ( 'social' === $args->theme_location ) {
-		$svg = TwentyTwenty_SVG_Icons::get_social_link_svg( $item->url );
+		$svg = Edmonton_SVG_Icons::get_social_link_svg( $item->url );
 		if ( empty( $svg ) ) {
 			$svg = edmonton_get_theme_svg( 'link' );
 		}

@@ -1,6 +1,6 @@
 <?php
 /**
- * Twenty Twenty Custom CSS
+ * Edmonton Custom CSS
  *
  * @package Edmonton
  * @since Edmonton 1.0

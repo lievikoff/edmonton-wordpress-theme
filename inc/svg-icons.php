@@ -1,6 +1,6 @@
 <?php
 /**
- * Twenty Twenty SVG Icon helper functions
+ * Edmonton SVG Icon helper functions
  *
  * @package Edmonton
  * @since Edmonton 1.0
@@ -33,7 +33,7 @@ if ( ! function_exists( 'edmonton_get_theme_svg' ) ) {
 
 		// Make sure that only our allowed tags and attributes are included.
 		$svg = wp_kses(
-			TwentyTwenty_SVG_Icons::get_svg( $svg_name, $group, $color ),
+			Edmonton_SVG_Icons::get_svg( $svg_name, $group, $color ),
 			array(
 				'svg'     => array(
 					'class'       => true,

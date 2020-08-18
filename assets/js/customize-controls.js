@@ -102,7 +102,7 @@
 	/**
 	 * Shows or hides the "retina_logo" setting based on the given value.
 	 *
-	 * @since Twenty Twenty 1.3
+	 * @since Edmonton 1.3
 	 *
 	 * @param {boolean} visible The visible value.
 	 *

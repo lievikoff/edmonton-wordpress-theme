@@ -1,7 +1,7 @@
 <?php
 /**
  * The template file for displaying the comments and comment form for the
- * Twenty Twenty theme.
+ * Edmonton theme.
  *
  * @package Edmonton
  * @since Edmonton 1.0
@@ -54,12 +54,12 @@ if ( $comments ) {
 
 		</div><!-- .comments-header -->
 
-		<div class="comments-inner section-inner thin max-percentage">
+		<div class="comments-inner thin max-percentage">
 
 			<?php
 			wp_list_comments(
 				array(
-					'walker'      => new TwentyTwenty_Walker_Comment(),
+					'walker'      => new Edmonton_Walker_Comment(),
 					'avatar_size' => 120,
 					'style'       => 'div',
 				)
@@ -102,12 +102,12 @@ if ( $comments ) {
 if ( comments_open() || pings_open() ) {
 
 	if ( $comments ) {
-		echo '<hr class="styled-separator is-style-wide" aria-hidden="true" />';
+		echo '<hr class="separator"/>';
 	}
 
 	comment_form(
 		array(
-			'class_form'         => 'section-inner thin max-percentage',
+			'class_form'         => 'thin max-percentage',
 			'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
 			'title_reply_after'  => '</h2>',
 		)
@@ -116,7 +116,7 @@ if ( comments_open() || pings_open() ) {
 } elseif ( is_single() ) {
 
 	if ( $comments ) {
-		echo '<hr class="styled-separator is-style-wide" aria-hidden="true" />';
+		echo '<hr class="separator"/>';
 	}
 
 	?>

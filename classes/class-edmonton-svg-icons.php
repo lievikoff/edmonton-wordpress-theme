@@ -6,12 +6,11 @@
  * @since Edmonton 1.0
  */
 
-if ( ! class_exists( 'TwentyTwenty_SVG_Icons' ) ) {
+if ( ! class_exists( 'Edmonton_SVG_Icons' ) ) {
 	/**
 	 * SVG ICONS CLASS
-	 * Retrieve the SVG code for the specified icon. Based on a solution in Twenty Nineteen.
 	 */
-	class TwentyTwenty_SVG_Icons {
+	class Edmonton_SVG_Icons {
 		/**
 		 * GET SVG CODE
 		 * Get the SVG code for the specified icon
@@ -30,12 +29,12 @@ if ( ! class_exists( 'TwentyTwenty_SVG_Icons' ) ) {
 			}
 
 			/**
-			 * Filters Twenty Twenty's array of icons.
+			 * Filters Edmonton's array of icons.
 			 *
 			 * The dynamic portion of the hook name, `$group`, refers to
 			 * the name of the group of icons, either "ui" or "social".
 			 *
-			 * @since Twenty Twenty 1.5
+			 * @since Edmonton 1.5
 			 *
 			 * @param array $arr Array of icons.
 			 */
@@ -44,7 +43,7 @@ if ( ! class_exists( 'TwentyTwenty_SVG_Icons' ) ) {
 			/**
 			 * Filters an SVG icon's color.
 			 *
-			 * @since Twenty Twenty 1.5
+			 * @since Edmonton 1.5
 			 *
 			 * @param string $color The icon color.
 			 * @param string $icon  The icon name.
@@ -76,21 +75,21 @@ if ( ! class_exists( 'TwentyTwenty_SVG_Icons' ) ) {
 				$regex_map = array();
 
 				/**
-				 * Filters Twenty Twenty's array of domain mappings for social icons.
+				 * Filters Edmonton's array of domain mappings for social icons.
 				 *
 				 * By default, each Icon ID is matched against a .com TLD. To override this behavior,
 				 * specify all the domains it covers (including the .com TLD too, if applicable).
 				 *
-				 * @since Twenty Twenty 1.5
+				 * @since Edmonton 1.5
 				 *
 				 * @param array $social_icons_map Array of default social icons.
 				 */
 				$map = apply_filters( 'edmonton_social_icons_map', self::$social_icons_map );
 
 				/**
-				 * Filters Twenty Twenty's array of social icons.
+				 * Filters Edmonton's array of social icons.
 				 *
-				 * @since Twenty Twenty 1.5
+				 * @since Edmonton 1.5
 				 *
 				 * @param array $social_icons Array of default social icons.
 				 */

@@ -1,6 +1,6 @@
 <?php
 /**
- * Header file for the Twenty Twenty WordPress default theme.
+ * Header file for the Edmonton WordPress default theme.
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
@@ -120,7 +120,7 @@
 									'match_menu_classes' => true,
 									'show_sub_menu_icons' => true,
 									'title_li' => false,
-									'walker'   => new TwentyTwenty_Walker_Page(),
+									'walker'   => new Edmonton_Walker_Page(),
 								)
 							);
 

@@ -423,7 +423,11 @@ hr {
 	border-style: solid;
 	border-width: 0.1rem 0 0 0;
 	border-color: #dcd7ca;
-	margin: 4rem 0;
+	margin: 15px 0;
+}
+
+.separator {
+	border: 1px #e5e5e5 solid;;
 }
 
 .entry-content hr,
@@ -1093,28 +1097,12 @@ button.toggle {
 
 /* Colors ------------------------------------ */
 
-/* COLOR */
-
-.color-accent,
-.color-accent-hover:focus,
-.color-accent-hover:hover {
-	color: #cd2653;
-}
-
 /* BACKGROUND COLOR */
 
 .bg-accent,
 .bg-accent-hover:focus,
 .bg-accent-hover:hover {
 	background-color: #cd2653;
-}
-
-/* BORDER COLOR */
-
-.border-color-accent,
-.border-color-accent-hover:focus,
-.border-color-accent-hover:hover {
-	border-color: #cd2653;
 }
 
 /* FILL COLOR */
@@ -2435,7 +2423,7 @@ body.template-full-width [class*="wp-block"].alignfull:not(.has-background) [cla
 	font-size: 18px;
 	line-height: 22px;
 
-	color: #101010;
+	color: #101010 !important;
 	margin: 0;
 }
 
@@ -3656,7 +3644,7 @@ figure.wp-block-table.is-style-stripes {
 }
 
 .entry-content hr {
-	margin: 4rem auto;
+	margin: 15px;
 }
 
 .post-inner .entry-content > .wp-block-cover.alignwide:first-child,
@@ -3839,11 +3827,12 @@ figure.wp-block-table.is-style-stripes {
 /* Comment Headers ----------------------------- */
 
 .comments-wrapper {
-	margin-top: 5rem;
+	margin-top: 30px;
+	background: #ffffff;
 }
 
 .comment-reply-title {
-	margin: 0 0 4rem 0;
+	margin: 0 0 15px 0;
 	text-align: center;
 }
 
@@ -4056,7 +4045,6 @@ div.comment:first-of-type {
 	color: #6d6d6d;
 	font-size: 1.6rem;
 	line-height: 1.4;
-	margin: -3rem 0 4rem 0;
 	text-align: center;
 }
 
@@ -4131,15 +4119,6 @@ div.comment:first-of-type {
 .comments .comment-respond .comment-notes,
 .comments .comment-respond .logged-in-as {
 	text-align: left;
-}
-
-.comment-reply-title small {
-	display: block;
-	font-size: 1.6rem;
-	font-weight: 600;
-	letter-spacing: -0.0277em;
-	margin: 0.5rem 0 0 0;
-	white-space: nowrap;
 }
 
 .comment-reply-title small a {
@@ -4901,6 +4880,15 @@ article {
 	margin: 20px 15px 0 15px;
 }
 
+/* Comments ------------------------------ */
+
+.depth-1 {
+	border-bottom: 2px solid #E5E5E5;
+}
+
+.depth-1:last-child {
+	border-bottom: 0px;
+}
 
 /* -------------------------------------------------------------------------- */
 /*	17. Media Queries
@@ -5166,7 +5154,7 @@ article {
 	}
 
 	hr {
-		margin: 8rem auto;
+		margin: 15px;
 	}
 
 	table {
@@ -5757,18 +5745,13 @@ article {
 	/* Comments ------------------------------ */
 
 	.comments-wrapper {
-		margin-top: 8rem;
-	}
-
-	.comment-reply-title {
-		margin-bottom: 4.6rem;
+		margin-top: 30px;
 	}
 
 	.comment-respond p.comment-notes,
 	.comment-respond p.logged-in-as {
 		font-size: 1.8rem;
 		letter-spacing: -0.025em;
-		margin: -2.5rem 0 4.4rem 0;
 	}
 
 	.comments .comment,
@@ -5826,10 +5809,6 @@ article {
 		margin-bottom: 2.5rem;
 	}
 
-	.comment-form p.logged-in-as {
-		margin: -2.5rem 0 4.4rem 0;
-	}
-
 	.comment-respond .comment-form-author,
 	.comment-respond .comment-form-email {
 		float: left;
@@ -5846,7 +5825,6 @@ article {
 
 	.comment-reply-title small {
 		display: inline;
-		margin: 0 0 0 0.5rem;
 	}
 
 	/* Site Pagination ----------------------- */
@@ -6571,16 +6549,6 @@ article {
 		width: calc(100% - 10rem);
 	}
 
-	/* Comments ------------------------------ */
-
-	.comment-meta {
-		padding-left: 0;
-	}
-
-	.comment-meta .avatar {
-		left: -8rem;
-	}
-
 	/* Site Pagination ----------------------- */
 
 	.pagination .nav-links {
@@ -6728,27 +6696,6 @@ article {
 		left: calc((100% - 58rem) / 2 + 58rem + 6rem);
 	}
 
-	/* Comments ------------------------------ */
-
-	.comment-reply-title {
-		font-size: 5.6rem;
-		line-height: 1.2;
-		margin-bottom: 6rem;
-	}
-
-	.comment-respond p.comment-notes,
-	.comment-respond p.logged-in-as {
-		margin: -4rem 0 6rem 0;
-	}
-
-	.comments .comment-respond .comment-reply-title {
-		font-size: 4.8rem;
-	}
-
-	.comments .comment-respond p.comment-notes,
-	.comments .comment-respond p.logged-in-as {
-		margin: -4.5rem 0 4rem 0;
-	}
 
 	/* Site Pagination ----------------------- */
 

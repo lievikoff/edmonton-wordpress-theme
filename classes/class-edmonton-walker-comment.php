@@ -6,12 +6,11 @@
  * @since Edmonton 1.0
  */
 
-if ( ! class_exists( 'TwentyTwenty_Walker_Comment' ) ) {
+if ( ! class_exists( 'Edmonton_Walker_Comment' ) ) {
 	/**
 	 * CUSTOM COMMENT WALKER
-	 * A custom walker for comments, based on the walker in Twenty Nineteen.
 	 */
-	class TwentyTwenty_Walker_Comment extends Walker_Comment {
+	class Edmonton_Walker_Comment extends Walker_Comment {
 
 		/**
 		 * Outputs a comment in the HTML5 format.

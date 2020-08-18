@@ -1,6 +1,6 @@
 <?php
 /**
- * Twenty Twenty functions and definitions
+ * Edmonton functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -110,7 +110,7 @@ function edmonton_theme_support() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on Twenty Twenty, use a find and replace
+	 * If you're building a theme based on Edmonton, use a find and replace
 	 * to change 'edmonton' to the name of your theme in all the template files.
 	 */
 	load_theme_textdomain( 'edmonton' );
@@ -138,7 +138,7 @@ function edmonton_theme_support() {
 	 * Adds `async` and `defer` support for scripts registered or enqueued
 	 * by the theme.
 	 */
-	$loader = new TwentyTwenty_Script_Loader();
+	$loader = new Edmonton_Script_Loader();
 	add_filter( 'script_loader_tag', array( $loader, 'filter_script_loader_tag' ), 10, 2 );
 
 }
@@ -242,7 +242,7 @@ add_action( 'wp_print_footer_scripts', 'edmonton_skip_link_focus_fix' );
  * @return void
  */
 function edmonton_non_latin_languages() {
-	$custom_css = TwentyTwenty_Non_Latin_Languages::get_non_latin_css( 'front-end' );
+	$custom_css = Edmonton_Non_Latin_Languages::get_non_latin_css( 'front-end' );
 
 	if ( $custom_css ) {
 		wp_add_inline_style( 'edmonton-style', $custom_css );
@@ -400,7 +400,7 @@ function edmonton_block_editor_styles() {
 	wp_add_inline_style( 'edmonton-block-editor-styles', edmonton_get_customizer_css( 'block-editor' ) );
 
 	// Add inline style for non-latin fonts.
-	wp_add_inline_style( 'edmonton-block-editor-styles', TwentyTwenty_Non_Latin_Languages::get_non_latin_css( 'block-editor' ) );
+	wp_add_inline_style( 'edmonton-block-editor-styles', Edmonton_Non_Latin_Languages::get_non_latin_css( 'block-editor' ) );
 
 	// Enqueue the editor script.
 	wp_enqueue_script( 'edmonton-block-editor-script', get_theme_file_uri( '/assets/js/editor-script-block.js' ), array( 'wp-blocks', 'wp-dom' ), wp_get_theme()->get( 'Version' ), true );
@@ -455,7 +455,7 @@ add_filter( 'tiny_mce_before_init', 'edmonton_add_classic_editor_customizer_styl
  */
 function edmonton_add_classic_editor_non_latin_styles( $mce_init ) {
 
-	$styles = TwentyTwenty_Non_Latin_Languages::get_non_latin_css( 'classic-editor' );
+	$styles = Edmonton_Non_Latin_Languages::get_non_latin_css( 'classic-editor' );
 
 	// Return if there are no styles to add.
 	if ( ! $styles ) {
@@ -748,7 +748,7 @@ function edmonton_get_elements_array() {
 	);
 
 	/**
-	* Filters Twenty Twenty theme elements
+	* Filters Edmonton theme elements
 	*
 	* @since Edmonton 1.0
 	*
@@ -1121,8 +1121,7 @@ class theMostPopularArticle extends WP_Widget {
 				break;
 		}
 
-		$all_popular_posts = $wpdb->get_results( "SELECT * FROM $wpdb->posts INNER JOIN $wpdb->postmeta ON post_id = ID $where $order_by DESC LIMIT $posts_per_page" );
-
+		$all_popular_posts = $wpdb->get_results( "SELECT *, CAST(meta_value AS UNSIGNED) as meta_value FROM $wpdb->posts INNER JOIN $wpdb->postmeta ON post_id = ID $where $order_by DESC LIMIT $posts_per_page" );
 		$all_popular_posts = json_decode( json_encode( $all_popular_posts ), true );
 		
 		?>
@@ -1180,7 +1179,8 @@ class theMostPopularArticle extends WP_Widget {
 			<?php
 			$i++;
 		}
-
+		
+		unset( $all_popular_posts );
 		?>
 
 		</div>

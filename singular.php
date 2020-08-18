@@ -9,8 +9,9 @@
  */
 
 get_header();
-
-setPostViews( get_the_ID() );
+if ( is_single() || is_page() ) {
+	setPostViews( get_the_ID() );
+}
 
 $site_content = '';
 $site_content_main = '';

@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying the 404 template in the Twenty Twenty theme.
+ * The template for displaying the 404 template in the Edmonton theme.
  *
  * @package Edmonton
  * @since Edmonton 1.0
