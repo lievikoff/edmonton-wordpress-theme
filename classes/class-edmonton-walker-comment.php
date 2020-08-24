@@ -64,7 +64,7 @@ if ( ! class_exists( 'Edmonton_Walker_Comment' ) ) {
 							<a href="<?php echo esc_url( get_comment_link( $comment, $args ) ); ?>">
 								<?php
 								/* translators: 1: Comment date, 2: Comment time. */
-								$comment_timestamp = sprintf( __( '%1$s at %2$s', 'edmonton' ), get_comment_date( '', $comment ), get_comment_time() );
+								$comment_timestamp = sprintf( __( 'on %1$s at %2$s', 'edmonton' ), get_comment_date( '', $comment ), get_comment_time() );
 								?>
 								<time datetime="<?php comment_time( 'c' ); ?>" title="<?php echo esc_attr( $comment_timestamp ); ?>">
 									<?php echo esc_html( $comment_timestamp ); ?>
@@ -77,60 +77,62 @@ if ( ! class_exists( 'Edmonton_Walker_Comment' ) ) {
 							?>
 						</div><!-- .comment-metadata -->
 
-					</footer><!-- .comment-meta -->
+					
 
-					<div class="comment-content entry-content">
+						<div class="comment-content entry-content">
+
+							<?php
+
+							comment_text();
+
+							if ( '0' === $comment->comment_approved ) {
+								?>
+								<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'edmonton' ); ?></p>
+								<?php
+							}
+
+							?>
+
+						</div><!-- .comment-content -->
 
 						<?php
 
-						comment_text();
+						$comment_reply_link = get_comment_reply_link(
+							array_merge(
+								$args,
+								array(
+									'add_below' 	=> 'div-comment',
+									'depth'     	=> $depth,
+									'reply_text'	=> 'Reply &darr;',
+									'max_depth' 	=> $args['max_depth'],
+									'before'    	=> '<span class="comment-reply">',
+									'after'     	=> '</span>',
+								)
+							)
+						);
 
-						if ( '0' === $comment->comment_approved ) {
+						$by_post_author = edmonton_is_comment_by_post_author( $comment );
+
+						if ( $comment_reply_link || $by_post_author ) {
 							?>
-							<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'edmonton' ); ?></p>
+
+							<footer class="comment-footer-meta">
+
+								<?php
+								if ( $comment_reply_link ) {
+									echo $comment_reply_link; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Link is escaped in https://developer.wordpress.org/reference/functions/get_comment_reply_link/
+								}
+								if ( $by_post_author ) {
+									echo '<span class="by-post-author">' . __( 'By Post Author', 'edmonton' ) . '</span>';
+								}
+								?>
+
+							</footer>
+
 							<?php
 						}
-
 						?>
-
-					</div><!-- .comment-content -->
-
-					<?php
-
-					$comment_reply_link = get_comment_reply_link(
-						array_merge(
-							$args,
-							array(
-								'add_below' => 'div-comment',
-								'depth'     => $depth,
-								'max_depth' => $args['max_depth'],
-								'before'    => '<span class="comment-reply">',
-								'after'     => '</span>',
-							)
-						)
-					);
-
-					$by_post_author = edmonton_is_comment_by_post_author( $comment );
-
-					if ( $comment_reply_link || $by_post_author ) {
-						?>
-
-						<footer class="comment-footer-meta">
-
-							<?php
-							if ( $comment_reply_link ) {
-								echo $comment_reply_link; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Link is escaped in https://developer.wordpress.org/reference/functions/get_comment_reply_link/
-							}
-							if ( $by_post_author ) {
-								echo '<span class="by-post-author">' . __( 'By Post Author', 'edmonton' ) . '</span>';
-							}
-							?>
-
-						</footer>
-
-						<?php
-					}
-					?>
+					</footer><!-- .comment-meta -->
 
 				</article><!-- .comment-body -->
 

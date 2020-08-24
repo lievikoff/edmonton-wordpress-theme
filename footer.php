@@ -10,7 +10,11 @@
  * @since Edmonton 1.0
  */
 
-?>
+?>		
+		<div id="footer-container">
+
+			<?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>
+
 			<footer id="site-footer" role="contentinfo" class="<?php if( is_404() ) echo 'footer-404'?> header-footer-group">
 
 				<div class="section-inner">
@@ -53,6 +57,8 @@
 				</div><!-- .section-inner -->
 
 			</footer><!-- #site-footer -->
+
+		</div><!-- #footer-container -->
 
 		<?php wp_footer(); ?>
 

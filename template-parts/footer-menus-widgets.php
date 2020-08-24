@@ -30,7 +30,7 @@ if ( $has_footer_menu || $has_social_menu || $has_sidebar_1 || $has_sidebar_2 ) 
 
 			if ( $has_footer_menu || $has_social_menu ) {
 				?>
-				<div class="footer-top<?php echo $footer_top_classes; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static output ?>">
+				<div class="footer-top footer-widgets-cl<?php echo $footer_top_classes; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static output ?>">
 					<?php if ( $has_footer_menu ) { ?>
 
 						<nav aria-label="<?php esc_attr_e( 'Footer', 'edmonton' ); ?>" role="navigation" class="footer-menu-wrapper">
@@ -85,7 +85,7 @@ if ( $has_footer_menu || $has_social_menu || $has_sidebar_1 || $has_sidebar_2 ) 
 
 			<?php if ( $has_sidebar_1 || $has_sidebar_2 ) { ?>
 
-				<aside class="footer-widgets-outer-wrapper" role="complementary">
+				<aside class="footer-widgets-outer-wrapper footer-widgets-cl" role="complementary">
 
 					<div class="footer-widgets-wrapper">
 

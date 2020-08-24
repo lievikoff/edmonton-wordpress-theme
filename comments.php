@@ -33,13 +33,13 @@ if ( $comments ) {
 				_e( 'Leave a comment', 'edmonton' );
 			} elseif ( 1 === $comments_number ) {
 				/* translators: %s: Post title. */
-				printf( _x( 'One reply on &ldquo;%s&rdquo;', 'comments title', 'edmonton' ), get_the_title() );
+				printf( _x( 'One comment on &ldquo;%s&rdquo;', 'comments title', 'edmonton' ), get_the_title() );
 			} else {
 				printf(
 					/* translators: 1: Number of comments, 2: Post title. */
 					_nx(
-						'%1$s reply on &ldquo;%2$s&rdquo;',
-						'%1$s replies on &ldquo;%2$s&rdquo;',
+						'%1$s comment on &ldquo;%2$s&rdquo;',
+						'%1$s comments on &ldquo;%2$s&rdquo;',
 						$comments_number,
 						'comments title',
 						'edmonton'
@@ -108,7 +108,7 @@ if ( comments_open() || pings_open() ) {
 	comment_form(
 		array(
 			'class_form'         => 'thin max-percentage',
-			'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
+			'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title-left">',
 			'title_reply_after'  => '</h2>',
 		)
 	);
