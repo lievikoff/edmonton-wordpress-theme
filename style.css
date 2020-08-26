@@ -816,6 +816,10 @@ textarea {
 	width: 100%;
 }
 
+.placeholder {
+
+}
+
 input::-webkit-input-placeholder {
 	line-height: normal;
 }
@@ -2874,6 +2878,7 @@ h2.entry-title {
 
 	align-items: baseline;
 	display: flex;
+    align-items: center;
 	text-decoration: none;
 	flex: 1;
 }
@@ -3846,7 +3851,7 @@ figure.wp-block-table.is-style-stripes {
 }
 
 .comment-reply-title {
-	width: 100%;
+	width: calc( 100% - 36px );
 	padding-bottom: 15px;
 	margin-bottom: 15px;
 	border-bottom: 2px solid #e5e5e5;
@@ -3879,10 +3884,6 @@ div.comment:first-of-type {
 
 .comment .comment {
 	padding-left: 5%;
-}
-
-.comment-reply-title {
-	
 }
 
 .comments-inner {
@@ -4181,7 +4182,7 @@ padding: 0 18px 0 18px;
 
 #cancel-comment-reply-link {
 	margin-left: 5px;
-	color: #a1a1a1;
+	color: #6d6d6d;
 	text-decoration-color: #cd2653;
 }
 
@@ -4217,7 +4218,7 @@ padding: 0 18px 0 18px;
 	font-size: 1.8rem;
 	font-weight: 600;
 	margin: -1.5rem 0 0 -2.5rem;
-	width: calc(100% + 2.5rem);
+	width: calc( 100% + 2.5rem );
 }
 
 .pagination-separator {
@@ -4226,6 +4227,10 @@ padding: 0 18px 0 18px;
 
 .separator {
 	margin: 15px;
+}
+
+.nav-links > * {
+	margin: 1rem 0 0.6rem 1.5rem;
 }
 
 .nav-links .placeholder {
@@ -4876,6 +4881,7 @@ a.to-the-top > * {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	overflow: hidden;
 	
 	background-color: #FFFFFF;
 	margin-top: 30px;
@@ -4944,6 +4950,7 @@ article {
 #post-content {
 	background-color: white;
 	padding: 18px;
+	margin-bottom: 30px;
 }
 
 #main {
@@ -5858,7 +5865,7 @@ article {
 	.comments-wrapper {
 		padding-bottom: 15px;
 		margin-top: 30px;
-		margin-bottom: 15px;
+		margin-bottom: 30px;
 	}
 
 	.comment-respond p.comment-notes,
@@ -6513,7 +6520,12 @@ article {
 	/* Entry Content ------------------------- */
 
 	/* ALIGNMENT CLASSES */
-	
+		
+	#site-content-post,
+	#site-content-main {
+		width: calc( 100% - 350px );
+	}
+
 	.site-content-row {
 		flex-direction: row;
 	}
