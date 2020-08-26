@@ -9,7 +9,20 @@
  */
 
  
- 
+function true_remove_default_widget() {
+	unregister_widget('WP_Widget_Archives');
+	//unregister_widget('WP_Widget_Calendar'); 
+	//unregister_widget('WP_Widget_Categories'); 
+	unregister_widget('WP_Widget_Meta'); 
+	//unregister_widget('WP_Widget_Pages'); 
+	unregister_widget('WP_Widget_Recent_Comments'); 
+	unregister_widget('WP_Widget_Recent_Posts'); 
+	//unregister_widget('WP_Widget_RSS'); 
+	unregister_widget('WP_Widget_Search'); 
+	unregister_widget('WP_Widget_Tag_Cloud');
+	unregister_widget('WP_Widget_Text');
+	unregister_widget('WP_Nav_Menu_Widget');
+}
 
 
 class theMostPopularArticle extends WP_Widget {
@@ -166,7 +179,7 @@ class theMostPopularArticle extends WP_Widget {
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'posts_per_page' ); ?>"> Number of posts: </label> 
-			<input id="<?php echo $this->get_field_id( 'posts_per_page' ); ?>" name="<?php echo $this->get_field_name( 'posts_per_page' ); ?>" type="number" value="<?php echo ( ( !empty( $posts_per_page ) ) && ( $posts_per_page ) ) ? esc_attr( $posts_per_page ) : '6'; ?>" step="1" min="1" size="3" />
+			<input id="<?php echo $this->get_field_id( 'posts_per_page' ); ?>" name="<?php echo $this->get_field_name( 'posts_per_page' ); ?>" type="number" style="width: 55px;" value="<?php echo ( ( !empty( $posts_per_page ) ) && ( $posts_per_page ) ) ? esc_attr( $posts_per_page ) : '6'; ?>" step="1" min="1" max="99" size="3" />
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'popular_feature' ); ?>"> Popularity for: </label> 
@@ -252,3 +265,187 @@ function the_most_popular_article() {
 }
 
 add_action( 'widgets_init', 'the_most_popular_article' );
+
+/*class aboutUsWidgets extends WP_Widget {
+ 
+	function __construct() {
+		parent::__construct(
+			'popular_article', 
+			'Popular article',
+			array( 'description' => 'Allows you to display posts sorted by the number of views or comments.' ) 
+		);
+	}
+ 
+	public function widget( $args, $instance ) {
+		global $wpdb;
+
+		$title = apply_filters( 'widget_title', $instance['title'] ); 
+		$posts_per_page = $instance['posts_per_page'];
+		$popular_feature = $instance['popular_feature'];
+		$time_period = $instance['time_period'];
+		
+		echo $args['before_widget'];
+ 
+		if ( ! empty( $title ) ) echo $args['before_title'] . $title . $args['after_title'];
+
+		
+		
+		
+		$all_popular_posts = $wpdb->get_results( "SELECT *, CAST(meta_value AS UNSIGNED) as meta_value FROM $wpdb->posts INNER JOIN $wpdb->postmeta ON post_id = ID $where $order_by DESC LIMIT $posts_per_page" );
+		$all_popular_posts = json_decode( json_encode( $all_popular_posts ), true );
+		
+		?>
+
+		<div class="sidebar-main">
+
+		
+		</div>
+
+		<?php
+ 
+		echo $args['after_widget'];
+	}
+ 
+	public function form( $instance ) {
+
+		if ( isset( $instance['title'] ) ) {
+			$title = $instance['title'];
+		}
+
+		if ( isset( $instance['posts_per_page'] ) ) {
+			$posts_per_page = $instance['posts_per_page'];
+		}
+
+		if ( isset( $instance['popular_feature'] ) ) {
+			$popular_feature = $instance['popular_feature'];
+		}
+
+		if ( isset( $instance['time_period'] ) ) {
+			$time_period = $instance['time_period'];
+		}
+		?>
+
+		<p>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"> Title </label> 
+			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo ( ( !empty( $title ) ) && ( $title ) ) ? esc_attr( $title ) : ''; ?>" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'posts_per_page' ); ?>"> Number of posts: </label> 
+			<input id="<?php echo $this->get_field_id( 'posts_per_page' ); ?>" name="<?php echo $this->get_field_name( 'posts_per_page' ); ?>" type="number" value="<?php echo ( ( !empty( $posts_per_page ) ) && ( $posts_per_page ) ) ? esc_attr( $posts_per_page ) : '6'; ?>" step="1" min="1" size="3" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'popular_feature' ); ?>"> Popularity for: </label> 
+		</p>
+		
+		<?php 
+	}
+ 
+	public function update( $new_instance, $old_instance ) {
+
+		$instance = array();
+		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+		$instance['posts_per_page'] = ( is_numeric( $new_instance['posts_per_page'] ) && isset( $new_instance['posts_per_page'] ) ) ? $new_instance['posts_per_page'] : '10'; 
+		$instance['popular_feature'] = ( ! empty( $new_instance['popular_feature'] ) ) ? strip_tags( $new_instance['popular_feature'] ) : 'post_views_count';
+		$instance['time_period'] = ( ! empty( $new_instance['time_period'] ) ) ? strip_tags( $new_instance['time_period'] ) : 'all_time';
+
+		return $instance;
+	}
+}
+ 
+function about_us_widgets() {
+	register_widget( 'aboutUsWidgets' );
+}
+
+add_action( 'widgets_init', 'about_us_widgets' );
+
+class latestPost extends WP_Widget {
+ 
+	function __construct() {
+		parent::__construct(
+			'popular_article', 
+			'Popular article',
+			array( 'description' => 'Allows you to display posts sorted by the number of views or comments.' ) 
+		);
+	}
+ 
+	public function widget( $args, $instance ) {
+		global $wpdb;
+
+		$title = apply_filters( 'widget_title', $instance['title'] ); 
+		$posts_per_page = $instance['posts_per_page'];
+		$popular_feature = $instance['popular_feature'];
+		$time_period = $instance['time_period'];
+		
+		echo $args['before_widget'];
+ 
+		if ( ! empty( $title ) ) echo $args['before_title'] . $title . $args['after_title'];
+
+		
+		
+		
+		$all_popular_posts = $wpdb->get_results( "SELECT *, CAST(meta_value AS UNSIGNED) as meta_value FROM $wpdb->posts INNER JOIN $wpdb->postmeta ON post_id = ID $where $order_by DESC LIMIT $posts_per_page" );
+		$all_popular_posts = json_decode( json_encode( $all_popular_posts ), true );
+		
+		?>
+
+		<div class="sidebar-main">
+
+		
+		</div>
+
+		<?php
+ 
+		echo $args['after_widget'];
+	}
+ 
+	public function form( $instance ) {
+
+		if ( isset( $instance['title'] ) ) {
+			$title = $instance['title'];
+		}
+
+		if ( isset( $instance['posts_per_page'] ) ) {
+			$posts_per_page = $instance['posts_per_page'];
+		}
+
+		if ( isset( $instance['popular_feature'] ) ) {
+			$popular_feature = $instance['popular_feature'];
+		}
+
+		if ( isset( $instance['time_period'] ) ) {
+			$time_period = $instance['time_period'];
+		}
+		?>
+
+		<p>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"> Title </label> 
+			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo ( ( !empty( $title ) ) && ( $title ) ) ? esc_attr( $title ) : ''; ?>" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'posts_per_page' ); ?>"> Number of posts: </label> 
+			<input id="<?php echo $this->get_field_id( 'posts_per_page' ); ?>" name="<?php echo $this->get_field_name( 'posts_per_page' ); ?>" type="number" value="<?php echo ( ( !empty( $posts_per_page ) ) && ( $posts_per_page ) ) ? esc_attr( $posts_per_page ) : '6'; ?>" step="1" min="1" size="3" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'popular_feature' ); ?>"> Popularity for: </label> 
+		</p>
+		
+		<?php 
+	}
+ 
+	public function update( $new_instance, $old_instance ) {
+
+		$instance = array();
+		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+		$instance['posts_per_page'] = ( is_numeric( $new_instance['posts_per_page'] ) && isset( $new_instance['posts_per_page'] ) ) ? $new_instance['posts_per_page'] : '10'; 
+		$instance['popular_feature'] = ( ! empty( $new_instance['popular_feature'] ) ) ? strip_tags( $new_instance['popular_feature'] ) : 'post_views_count';
+		$instance['time_period'] = ( ! empty( $new_instance['time_period'] ) ) ? strip_tags( $new_instance['time_period'] ) : 'all_time';
+
+		return $instance;
+	}
+}
+ 
+function latest_post() {
+	register_widget( 'latestPost' );
+}
+
+add_action( 'widgets_init', 'latest_post' );*/
