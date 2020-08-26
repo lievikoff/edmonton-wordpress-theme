@@ -4224,17 +4224,10 @@ padding: 0 18px 0 18px;
 	margin: 5rem 0;
 }
 
-<<<<<<< Updated upstream
-=======
 .separator {
 	margin: 15px;
 }
 
-.nav-links > * {
-	margin: 1rem 0 0.6rem 1.5rem;
-}
-
->>>>>>> Stashed changes
 .nav-links .placeholder {
 	display: none;
 	visibility: hidden;
@@ -4613,6 +4606,14 @@ padding: 0 18px 0 18px;
 	border-bottom: 1px solid #303030;
 }
 
+.footer-inner {
+	padding: 0px 0px 30px 0px;
+	display: grid;
+	grid-template-rows: 1fr 20%;
+	grid-template-columns: 1fr;
+	border-bottom: 1px solid #303030;
+}
+
 .footer-top-visible .footer-nav-widgets-wrapper,
 .footer-top-hidden #site-footer {
 	margin-top: 2rem;
@@ -4633,10 +4634,45 @@ padding: 0 18px 0 18px;
 /* Footer Top -------------------------------- */
 
 .footer-top {
-	display: flex;
-	justify-content: space-between;
+	display: grid;
+	justify-items: center;
+    grid-template-columns: 60% 40%;
 }
 
+.footer-menu-wrapper {
+	display: none;
+}
+
+@media( max-width: 1000px ) {
+	.footer-top {
+		grid-template-columns: 100%;
+		row-gap: 20px;
+	}
+
+	.footer-menu-wrapper {
+		width: 100%;
+	}
+
+	.footer-menu {
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
+	}
+
+	.footer-menu a {
+		font-size: 12px !important;
+		font-weight: 400;
+	}
+
+	.footer-nav-widgets-wrapper {
+		width: 90%;
+	}
+
+	.footer-widgets {
+		display: grid;
+		grid-template-columns: 1fr;
+	}
+}
 /* FOOTER MENU */
 
 .footer-menu {
@@ -4654,6 +4690,9 @@ padding: 0 18px 0 18px;
 	text-decoration: none;
 	word-break: normal;
 	word-wrap: normal;
+	color: white !important;
+    font-size: 19px;
+    font-family: Roboto;
 }
 
 .footer-menu a:hover,
@@ -4663,31 +4702,12 @@ padding: 0 18px 0 18px;
 
 /* FOOTER SOCIAL */
 
-.footer-social-wrapper {
-	margin: 0;
-	width: 100%;
-}
-
-.has-footer-menu .footer-social-wrapper {
-	flex-shrink: 0;
-	margin-left: 1rem;
-	width: 50%;
-}
-
-ul.footer-social {
-	margin: -0.5rem 0 0 -0.5rem;
-}
-
-.has-footer-menu .footer-social {
-	justify-content: flex-end;
-}
-
 ul.footer-social li {
 	margin: 0.5rem 0 0 0.5rem;
 }
 
 .footer-social a {
-	background-color: #cd2653;
+	background-color: inherit !important;
 	height: 3.6rem;
 	width: 3.6rem;
 }
@@ -4702,7 +4722,6 @@ ul.footer-social li {
 }
 
 .footer-widgets-cl {
-	border-bottom: 0.1rem solid;
 	border-bottom-color: #303030 !important;
 }
 
@@ -4714,12 +4733,13 @@ ul.footer-social li {
 
 #site-footer {
 	font-size: 1.6rem;
+	border-top: 1px solid #101010 !important;
 }
 
 #site-footer .section-inner {
 	align-items: baseline;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 }
 
 #site-footer a {
@@ -4741,18 +4761,25 @@ ul.footer-social li {
 	color: #6d6d6d;
 }
 
+.to-the-top {
+	margin-left: 10px;
+}
+
 a.to-the-top > * {
 	pointer-events: none;
 }
 
 .footer-copyright {
-	font-weight: 600;
+	font-weight: normal;
+	font-family: Roboto;
+	font-size: 16px;
 	margin: 0;
+	color: #ffffff;
 }
 
 .powered-by-wordpress {
 	display: none;
-	margin: 0 0 0 2.4rem;
+	margin: 0 0 0 0.5rem;
 }
 
 .to-the-top-long {
@@ -5953,8 +5980,10 @@ article {
 	/* FOOTER TOP */
 
 	.footer-top {
-		padding: 3.7rem 0;
+		padding: 1.7rem 0;
 	}
+
+	
 
 	.footer-menu {
 		font-size: 2.4rem;
@@ -5967,26 +5996,14 @@ article {
 
 	.has-footer-menu .footer-social-wrapper {
 		flex: 1;
-		margin-left: 4rem;
+		justify-self: start;
 		width: auto;
 	}
 
 	/* FOOTER WIDGETS */
 
 	.footer-widgets-outer-wrapper {
-		padding: 8rem 0;
-	}
-
-	.footer-widgets-wrapper {
-		display: flex;
-		justify-content: space-between;
-		margin-left: -4rem;
-		width: calc(100% + 4rem);
-	}
-
-	.footer-widgets {
-		margin-left: 4rem;
-		width: 50%;
+		padding: 3rem 0;
 	}
 
 	.footer-widgets + .footer-widgets {
@@ -6006,19 +6023,19 @@ article {
 
 	#site-footer {
 		font-size: 1.8rem;
-		padding: 1rem 0;
+		padding: 3rem 0;
 	}
 
 	.footer-credits {
 		display: flex;
 	}
 
-	.footer-copyright {
-		font-weight: 700;
-	}
-
 	.powered-by-wordpress {
 		display: block;
+		font-family: Roboto;
+		font-weight: normal;
+		font-size: 16px;
+		color: #ffffff !important;
 	}
 
 	.to-the-top-long {
@@ -6689,6 +6706,11 @@ article {
 	.sidebar-item {
 		width: 320px;
 	}
+
+	.footer-widgets {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
 }
 
 
@@ -6794,10 +6816,6 @@ article {
 
 	.footer-menu li {
 		margin: 1.5rem 0 0 3rem;
-	}
-
-	ul.footer-social {
-		margin: -1rem 0 0 -1rem;
 	}
 
 	ul.footer-social li {

@@ -33,26 +33,11 @@
 
 						<p class="powered-by-wordpress">
 							<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'edmonton' ) ); ?>">
-								<?php _e( 'Powered by WordPress', 'edmonton' ); ?>
+								<?php _e( 'by Chapak. All Right Reserved.', 'edmonton' ); ?>
 							</a>
 						</p><!-- .powered-by-wordpress -->
 
 					</div><!-- .footer-credits -->
-
-					<a class="to-the-top" href="#site-header">
-						<span class="to-the-top-long">
-							<?php
-							/* translators: %s: HTML character for up arrow. */
-							printf( __( 'To the top %s', 'edmonton' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
-							?>
-						</span><!-- .to-the-top-long -->
-						<span class="to-the-top-short">
-							<?php
-							/* translators: %s: HTML character for up arrow. */
-							printf( __( 'Up %s', 'edmonton' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
-							?>
-						</span><!-- .to-the-top-short -->
-					</a><!-- .to-the-top -->
 
 				</div><!-- .section-inner -->
 
