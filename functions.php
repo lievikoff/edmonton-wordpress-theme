@@ -177,7 +177,7 @@ require get_template_directory() . '/classes/class-edmonton-script-loader.php';
 require get_template_directory() . '/classes/class-edmonton-non-latin-languages.php';
 
 // Widgets.
-require get_template_directory() . '/classes/edmonton-widgets.php';
+require get_template_directory() . '/classes/class-edmonton-widgets.php';
 
 // Custom CSS.
 require get_template_directory() . '/inc/custom-css.php';
