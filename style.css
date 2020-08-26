@@ -4218,7 +4218,7 @@ padding: 0 18px 0 18px;
 	font-size: 1.8rem;
 	font-weight: 600;
 	margin: -1.5rem 0 0 -2.5rem;
-	width: calc(100% + 2.5rem);
+	width: calc( 100% + 2.5rem );
 }
 
 .pagination-separator {
@@ -4916,6 +4916,7 @@ article {
 #post-content {
 	background-color: white;
 	padding: 18px;
+	margin-bottom: 30px;
 }
 
 #main {
@@ -5830,7 +5831,7 @@ article {
 	.comments-wrapper {
 		padding-bottom: 15px;
 		margin-top: 30px;
-		margin-bottom: 15px;
+		margin-bottom: 30px;
 	}
 
 	.comment-respond p.comment-notes,
