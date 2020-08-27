@@ -4665,9 +4665,12 @@ padding: 0 18px 0 18px;
 /* Footer Top -------------------------------- */
 
 .footer-top {
-	display: grid;
-	justify-items: center;
-    grid-template-columns: 60% 40%;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.footer-top .social-media {
+	margin: 0px 10px;
 }
 
 .footer-menu-wrapper {
