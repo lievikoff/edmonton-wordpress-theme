@@ -16,7 +16,7 @@ function true_remove_default_widget() {
 	unregister_widget('WP_Widget_Meta'); 
 	unregister_widget('WP_Widget_Pages'); 
 	unregister_widget('WP_Widget_Recent_Comments'); 
-	//unregister_widget('WP_Widget_Recent_Posts'); 
+	unregister_widget('WP_Widget_Recent_Posts'); 
 	unregister_widget('WP_Widget_RSS'); 
 	unregister_widget('WP_Widget_Search'); 
 	unregister_widget('WP_Widget_Tag_Cloud');
@@ -281,7 +281,6 @@ class quickLinks extends WP_Widget {
 		global $wpdb;
 
 		$title = apply_filters( 'widget_title', $instance['title_quick_link'] ); 
-		$new_tab = $instance['new_tab'];
 		
 		echo $args['before_widget'];
 		
@@ -304,19 +303,11 @@ class quickLinks extends WP_Widget {
 		if ( isset( $instance['title_quick_link'] ) ) {
 			$title = $instance['title_quick_link'];
 		}
-
-		if ( isset( $instance['new_tab'] ) ) {
-			$new_tab = $instance['new_tab'];
-		}
 		?>
 
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title_quick_link' ); ?>"> Title </label> 
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title_quick_link' ); ?>" name="<?php echo $this->get_field_name( 'title_quick_link' ); ?>" type="text" value="<?php echo ( ( !empty( $title ) ) && ( $title ) ) ? esc_attr( $title ) : ''; ?>" />
-		</p>
-		<p>
-			<label for="<?php echo $this->get_field_id( 'new_tab' ); ?>"> Open link in new tab? </label> 
-			<input id="<?php echo $this->get_field_id( 'new_tab' ); ?>" name="<?php echo $this->get_field_name( 'new_tab' ); ?>" type="checkbox" value="1" <?php ( $new_tab ) ? checked( '1', $new_tab) : '' ?>/>
 		</p>
 
 		<?php 
@@ -327,7 +318,6 @@ class quickLinks extends WP_Widget {
 		$instance = array();
 		
 		$instance['title_quick_link'] = ( ! empty( $new_instance['title_quick_link'] ) ) ? strip_tags( $new_instance['title_quick_link'] ) : '';
-		$instance['new_tab'] = ( $new_instance['new_tab'] ) ? $new_instance['new_tab'] : '0'; 
 
 		return $instance;
 	}
@@ -339,38 +329,76 @@ function quick_links() {
 
 add_action( 'widgets_init', 'quick_links' );
 
-/*class latestPost extends WP_Widget {
+class resentPosts extends WP_Widget {
  
 	function __construct() {
 		parent::__construct(
-			'popular_article', 
-			'Popular article',
-			array( 'description' => 'Allows you to display posts sorted by the number of views or comments.' ) 
+			'resent_posts', 
+			'Resent posts',
+			array( 'description' => 'Your site’s most recent Posts.' ) 
 		);
 	}
  
 	public function widget( $args, $instance ) {
 		global $wpdb;
 
-		$title = apply_filters( 'widget_title', $instance['title'] ); 
-		$posts_per_page = $instance['posts_per_page'];
-		$popular_feature = $instance['popular_feature'];
-		$time_period = $instance['time_period'];
+		$title = apply_filters( 'widget_title', $instance['title_resent_posts'] ); 
+		$count_posts = $instance['count_resent_posts'];
 		
 		echo $args['before_widget'];
  
 		if ( ! empty( $title ) ) echo $args['before_title'] . $title . $args['after_title'];
+		
 
-		
-		
-		
-		$all_popular_posts = $wpdb->get_results( "SELECT *, CAST(meta_value AS UNSIGNED) as meta_value FROM $wpdb->posts INNER JOIN $wpdb->postmeta ON post_id = ID $where $order_by DESC LIMIT $posts_per_page" );
-		$all_popular_posts = json_decode( json_encode( $all_popular_posts ), true );
-		
+		$resent_posts = $wpdb->get_results( "SELECT * FROM wp_posts INNER JOIN wp_postmeta ON post_id = ID WHERE post_status = 'publish' AND post_type = 'post' ORDER BY `post_date` DESC LIMIT $count_posts" );
+		$resent_posts = json_decode( json_encode( $resent_posts ), true );
 		?>
 
 		<div class="sidebar-main">
 
+		<?php
+		$i = 0;
+		while ( $i < count( $resent_posts ) ) {
+			?>
+
+			<a href="<?php the_permalink( $resent_posts[$i]['post_id'] ); ?>" class="sidebar-item" 
+				title="<?php echo $resent_posts[$i]['post_title']; ?>">
+
+				<div class="sidebar-thumbnail">
+
+					<img src="<?php echo get_the_post_thumbnail_url( $resent_posts[$i]['post_id'], 'thumbnail' )?>">
+
+				</div>
+
+				<div class="sidebar-content">
+
+						<div class="sidebar-title">
+							
+							<?php
+							echo $resent_posts[$i]['post_title'];
+							?>
+
+						</div>
+
+						<div class="sidebar-post-data">
+
+							<?php
+							$date = date( 'F j, Y', strtotime( $resent_posts[$i]['post_date'] ) );
+							echo $date;
+							?>
+
+						</div>
+
+				</div>
+
+			</a>
+
+			<?php
+			$i++;
+		}
+		
+		unset( $all_popular_posts );
+		?>
 		
 		</div>
 
@@ -381,52 +409,39 @@ add_action( 'widgets_init', 'quick_links' );
  
 	public function form( $instance ) {
 
-		if ( isset( $instance['title'] ) ) {
-			$title = $instance['title'];
+		if ( isset( $instance['title_resent_posts'] ) ) {
+			$title = $instance['title_resent_posts'];
 		}
 
-		if ( isset( $instance['posts_per_page'] ) ) {
-			$posts_per_page = $instance['posts_per_page'];
-		}
-
-		if ( isset( $instance['popular_feature'] ) ) {
-			$popular_feature = $instance['popular_feature'];
-		}
-
-		if ( isset( $instance['time_period'] ) ) {
-			$time_period = $instance['time_period'];
+		if ( isset( $instance['count_resent_posts'] ) ) {
+			$count_posts = $instance['count_resent_posts'];
 		}
 		?>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"> Title </label> 
-			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo ( ( !empty( $title ) ) && ( $title ) ) ? esc_attr( $title ) : ''; ?>" />
+			<label for="<?php echo $this->get_field_id( 'title_resent_posts' ); ?>"> Title </label> 
+			<input class="widefat" id="<?php echo $this->get_field_id( 'title_resent_posts' ); ?>" name="<?php echo $this->get_field_name( 'title_resent_posts' ); ?>" type="text" value="<?php echo ( ( !empty( $title ) ) && ( $title ) ) ? esc_attr( $title ) : ''; ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'posts_per_page' ); ?>"> Number of posts: </label> 
-			<input id="<?php echo $this->get_field_id( 'posts_per_page' ); ?>" name="<?php echo $this->get_field_name( 'posts_per_page' ); ?>" type="number" value="<?php echo ( ( !empty( $posts_per_page ) ) && ( $posts_per_page ) ) ? esc_attr( $posts_per_page ) : '6'; ?>" step="1" min="1" size="3" />
+			<label for="<?php echo $this->get_field_id( 'count_resent_posts' ); ?>"> Number of posts: </label> 
+			<input id="<?php echo $this->get_field_id( 'count_resent_posts' ); ?>" name="<?php echo $this->get_field_name( 'count_resent_posts' ); ?>" type="number" style="width: 55px;" value="<?php echo ( ( !empty( $count_posts ) ) && ( $count_posts ) ) ? esc_attr( $count_posts ) : '3'; ?>" step="1" min="1" max="99" size="3" />
 		</p>
-		<p>
-			<label for="<?php echo $this->get_field_id( 'popular_feature' ); ?>"> Popularity for: </label> 
-		</p>
-		
+
 		<?php 
 	}
  
 	public function update( $new_instance, $old_instance ) {
 
 		$instance = array();
-		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
-		$instance['posts_per_page'] = ( is_numeric( $new_instance['posts_per_page'] ) && isset( $new_instance['posts_per_page'] ) ) ? $new_instance['posts_per_page'] : '10'; 
-		$instance['popular_feature'] = ( ! empty( $new_instance['popular_feature'] ) ) ? strip_tags( $new_instance['popular_feature'] ) : 'post_views_count';
-		$instance['time_period'] = ( ! empty( $new_instance['time_period'] ) ) ? strip_tags( $new_instance['time_period'] ) : 'all_time';
+		$instance['title_resent_posts'] = ( ! empty( $new_instance['title_resent_posts'] ) ) ? strip_tags( $new_instance['title_resent_posts'] ) : '';
+		$instance['count_resent_posts'] = ( is_numeric( $new_instance['count_resent_posts'] ) && isset( $new_instance['count_resent_posts'] ) ) ? $new_instance['count_resent_posts'] : '3'; 
 
 		return $instance;
 	}
 }
  
-function latest_post() {
-	register_widget( 'latestPost' );
+function resent_posts() {
+	register_widget( 'resentPosts' );
 }
 
-add_action( 'widgets_init', 'latest_post' );*/
+add_action( 'widgets_init', 'resent_posts' );
