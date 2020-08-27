@@ -4639,11 +4639,34 @@ padding: 0 18px 0 18px;
 	width: 250px;
 }
 
+.footer-widgets .widget-title {
+	margin: 0 0 30px 0 !important;
+	font-family: Inter;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 22px;
+	text-transform: none;
+	letter-spacing: 0.1em;
+}
 
+.footer-widgets li,
+.footer-widgets a {
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 19px;
+	letter-spacing: 0.1em;
+	text-decoration: none;
+	list-style-type: none;
 
-.footer-widgets  {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
+	color: #ffffff !important;
+}
+
+.footer-widgets li:hover,
+.footer-widgets a:hover {
+	text-decoration: underline;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -6766,6 +6789,7 @@ article {
 	.footer-widgets {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-column-gap: 30px;
 	}
 }
 

@@ -111,58 +111,13 @@
 
 			<div class="menu-bottom">
 
-				<?php if ( has_nav_menu( 'social' ) ) { ?>
+				<div class="alt-navigation-social-media">
 
-					<div class="alt-navigation-social-media">
-
-				<?php 
-				
-				$social_media_list = array (
-					'deviantArt',
-					'facebook',
-					'flickr',
-					'gitHub',
-					'instagram',
-					'linkedIn',
-					'pinterest',
-					'snapchat',
-					'telegram',
-					'tikTok',
-					'tumblr',
-					'twitter',
-					'viber',
-					'wattpad',
-					'whatsApp',
-					'youTube',
-					'vK',
-					'oK',
-				);
-
-				foreach ( $social_media_list as $social_media ) {
+					<?php 
+					get_template_part( 'template-parts/social-media' );
+					?>	
 					
-					if ( get_theme_mod( 'show_'.$social_media ) ) {
-						
-						?>
-
-						<div class="social-media">
-							<a class="social-media-block" href="<?php echo esc_url( get_theme_mod( 'url_'.$social_media ) );?>">
-								<?php if ( get_theme_mod( 'icon_'.$social_media ) ) { ?>
-
-								<img src="<?php echo esc_url( get_theme_mod( 'icon_'.$social_media ) );?>">
-
-								<?php 
-									} else {
-										edmonton_the_theme_svg(strtolower($social_media), 'social', '#ffffff');
-									}
-								?>
-							</a>
-						</div>
-						<?php
-					}
-				}
-				?>
 				</div>
-				<?php } ?>
 
 			</div><!-- .menu-bottom -->
 

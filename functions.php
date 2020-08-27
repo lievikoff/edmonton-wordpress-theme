@@ -260,11 +260,12 @@ add_action( 'wp_enqueue_scripts', 'edmonton_non_latin_languages' );
 function edmonton_menus() {
 
 	$locations = array(
-		'primary'  => __( 'Desktop Horizontal Menu', 'edmonton' ),
-		'expanded' => __( 'Desktop Expanded Menu', 'edmonton' ),
-		'mobile'   => __( 'Mobile Menu', 'edmonton' ),
-		'footer'   => __( 'Footer Menu', 'edmonton' ),
-		'social'   => __( 'Social Menu', 'edmonton' ),
+		'primary'  		=> __( 'Desktop Horizontal Menu', 'edmonton' ),
+		'expanded' 		=> __( 'Desktop Expanded Menu', 'edmonton' ),
+		'mobile'   		=> __( 'Mobile Menu', 'edmonton' ),
+		'footer'   		=> __( 'Footer Menu', 'edmonton' ),
+		'social'   		=> __( 'Social Menu', 'edmonton' ),
+		'quick_link'	=> __( 'Quick link', 'edmonton' ),
 	);
 
 	register_nav_menus( $locations );
