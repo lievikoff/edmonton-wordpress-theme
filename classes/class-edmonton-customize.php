@@ -696,7 +696,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				[
 					'type'        => 'image',
 					'settings'    => 'cover_image',
-					'settings'    => 'image_setting_url',
+					'settings'    => 'cover_image',
 					'label'       => esc_html__( 'Cover Image', 'kirki' ),
 					'section'     => 'header_cover',
 					'default'     => '',
@@ -2069,6 +2069,118 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					],
 				]
 			);
+
+			/**
+			 * Color Scheme
+			 */
+
+			Kirki::add_panel( 
+				'color', 
+				[
+					'title'          => esc_html__( 'Color', 'kirki' ),
+					'priority'       => 90,
+				] 
+			);
+
+			Kirki::add_section( 
+				'color_scheme', 
+				[
+					'title'          => esc_html__( 'Color Scheme', 'kirki' ),
+					'priority'       => 90,
+					'panel'			 => 'color',
+				] 
+			);
+
+			Kirki::add_config( 
+				'primary_color', 
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field( 
+				'primary_color', 
+				[
+					'type'        => 'color-palette',
+					'settings'    => 'primary_color',
+					'label'       => esc_html__( 'Primary Color', 'kirki' ),
+					'description' => esc_html__( 'Select the main color', 'kirki' ),
+					'section'     => 'color_scheme',
+					'default'     => '#e5e5e5',
+					'choices'     => [
+						'colors'  => Kirki_Helper::get_material_design_colors( 'A100' ),
+						'size'	  => 15,
+					],
+					'output'      => [
+						[
+							'element'  => 'body',
+							'property' => 'background-color',
+							'suffix'   => '!important',
+						],
+					],
+				] 
+			);
+
+			Kirki::add_config( 
+				'secondary_color', 
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field( 
+				'secondary_color', 
+				[
+					'type'        => 'color-palette',
+					'settings'    => 'secondary_color',
+					'label'       => esc_html__( 'Secondary Color', 'kirki' ),
+					'description' => esc_html__( 'Select header and footer color', 'kirki' ),
+					'section'     => 'color_scheme',
+					'default'     => '#202020',
+					'choices'     => [
+						'colors' => [ '#000000','#101010', '#202020', '#303030', '#404040', '#505050', '#606060', '#707070', '#808080', '№909090' ],
+					],
+					'output'      => [
+						[
+							'element'  => '#footer-container, #site-header, .primary-menu-wrapper',
+							'property' => 'background-color',
+							'suffix'   => '!important',
+						],
+					],
+				] 
+			);
+
+			Kirki::add_config( 
+				'predefined_colors', 
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field( 
+				'predefined_colors', 
+				[
+					'type'      => 'palette',
+					'label'     => esc_attr__( 'Predefined Сolors', 'text-domain' ),
+					'section'     => 'color_scheme',
+					'settings'  => 'predefined_colors',
+					'default'   => 'standart',
+					'transport' => 'auto',
+					'choices'     => [
+						'standart' => [
+							'#202020',
+							'#e5e5e5',
+						],
+						'dark' => [
+							'#37474F',
+							'#FFFFFF',
+							'#F9A825',
+						],
+					],
+				]
+			);
+
+			
 
 		}
 	}

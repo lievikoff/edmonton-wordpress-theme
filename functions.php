@@ -781,7 +781,7 @@ function customize () {
 		
     	if ( get_theme_mod( 'cover_image' ) )  {
 		?>
-
+			
 			<style type="text/css">
 				.cover {
 					background-image: url(<?php echo get_theme_mod( 'cover_image' )?>);
@@ -868,6 +868,44 @@ function customize () {
 			</style>
 
 		<?php
+	}
+
+	if ( get_theme_mod( 'predefined_colors' ) ) {
+
+		set_theme_mod( 'primary_color', '' );
+		set_theme_mod( 'secondary_color', '' );
+
+		if ( get_theme_mod( 'predefined_colors' ) == 'standart' ) {
+			
+			$bgcolor = '#e5e5e5';
+			$header_footer_color = '#202020';
+			?>
+
+			<style type="text/css">
+				html, body {
+					background-color: <?php echo $bgcolor?> !important;
+				}
+				#footer-container,
+				#site-header,
+				.primary-menu-wrapper {
+					background-color: <?php echo $header_footer_color?> !important;
+				}
+			</style>
+			<?php
+
+		}
+	}
+
+	if ( get_theme_mod( 'primary_color' ) ) {
+
+		set_theme_mod( 'predefined_colors', '' );
+
+	}
+
+	if ( get_theme_mod( 'secondary_color' ) ) {
+
+		set_theme_mod( 'predefined_colors', '' );
+
 	}
 
 	if ( get_theme_mod( 'header_logo_position' ) ) {

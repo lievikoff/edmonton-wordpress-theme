@@ -118,7 +118,7 @@
 
     wp.customize( 'cover_image', function ( value )  {
         value.bind( function ( value )  {
-            if ( $( '#_customize-input-cover_enable', window.parent.document ).children().length == 1 ) {
+            if ( $( '#_customize-input-cover_enable', window.parent.document ).prop('checked') ) {
                 let image = 'no-repeat 100%/ cover url('+ value+')';
                 $('.cover').css('background', image);
                 let coverColor = $('input[data-id="cover_color"]', window.parent.document).val();
@@ -130,7 +130,7 @@
     
     wp.customize( 'cover_color', function ( value )  {
         value.bind( function ( value )  {
-            if ( $( '#_customize-input-cover_enable', window.parent.document ).children().length == 1 ) {
+            if ( $( '#_customize-input-cover_enable', window.parent.document ).prop('checked') ) {
                 if ( $( '#customize-control-cover_image', window.parent.document ).children( '.image-wrapper' ).children( '.thumbnail' ).length == 0 ) {
                     $('.cover').css('background', value); 
                 }
