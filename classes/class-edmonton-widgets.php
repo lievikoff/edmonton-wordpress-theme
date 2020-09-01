@@ -365,8 +365,12 @@ class resentPosts extends WP_Widget {
 				title="<?php echo $resent_posts[$i]['post_title']; ?>">
 
 				<div class="sidebar-thumbnail">
+					
+					<?php if ( get_the_post_thumbnail_url( $resent_posts[$i]['post_id'], 'thumbnail' ) ) { ?>
 
-					<img src="<?php echo get_the_post_thumbnail_url( $resent_posts[$i]['post_id'], 'thumbnail' )?>">
+						<img src="<?php echo get_the_post_thumbnail_url( $resent_posts[$i]['post_id'], 'thumbnail' );?>">
+					
+					<?php } ?>
 
 				</div>
 

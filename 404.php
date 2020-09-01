@@ -9,27 +9,29 @@
 get_header();
 ?>
 
-<main id="site-content" role="main">
+<main id="main">
 
-	<div class="section-inner thin error404-content">
+	<main id="site-content" role="main">
 
-		<h1 class="entry-title"><?php _e( 'Page Not Found', 'edmonton' ); ?></h1>
+		<div class="section-inner thin error404-content">
 
-		<div class="intro-text"><p><?php _e( 'The page you were looking for could not be found. It might have been removed, renamed, or did not exist in the first place.', 'edmonton' ); ?></p></div>
+			<h1 class="entry-title"><?php _e( 'Page Not Found', 'edmonton' ); ?></h1>
 
-		<?php
-		get_search_form(
-			array(
-				'label' => __( '404 not found', 'edmonton' ),
-			)
-		);
-		?>
+			<div class="intro-text"><p><?php _e( 'The page you were looking for could not be found. It might have been removed, renamed, or did not exist in the first place.', 'edmonton' ); ?></p></div>
 
-	</div><!-- .section-inner -->
+			<?php
+			get_search_form(
+				array(
+					'label' => __( '404 not found', 'edmonton' ),
+				)
+			);
+			?>
 
-</main><!-- #site-content -->
+		</div><!-- .section-inner -->
 
-<?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>
+	</main><!-- #site-content -->
+
+</main>
 
 <?php
 get_footer();

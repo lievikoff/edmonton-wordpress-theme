@@ -1022,7 +1022,7 @@ function true_register_wp_sidebars() {
  
 	register_sidebar(
 		array(
-			'id' 			=> 'sidebar',
+			'id' 			=> 'main_sidebar',
 			'name' 			=> 'Main sitebar', 
 			'description' 	=> 'Drag and drop widgets here to add them to the sidebar.',
 			'before_widget' => '<div id="%1$s" class="side widget %2$s">',

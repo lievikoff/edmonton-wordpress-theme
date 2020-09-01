@@ -3819,7 +3819,7 @@ figure.wp-block-table.is-style-stripes {
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 58rem;
-	width: calc(100% - 4rem);
+	width: calc( 100% - 4rem );
 }
 
 
@@ -3834,6 +3834,10 @@ figure.wp-block-table.is-style-stripes {
 .comments-wrapper {
 	margin-top: 30px;
 	background: #ffffff;
+}
+
+.comment-respond {
+	padding-top: 18px;
 }
 
 .comment-reply-title,
@@ -4283,7 +4287,6 @@ padding: 0 18px 0 18px;
 /* -------------------------------------------------------------------------- */
 
 .error404 {
-	position: relative;
 	background-color: #303030 !important;
 }
 
@@ -4312,7 +4315,6 @@ padding: 0 18px 0 18px;
 }
 
 .footer-404 {
-	position: absolute;
 	bottom: 0px;
 	width: 100%;
 	height: 50px;
@@ -4620,6 +4622,12 @@ padding: 0 18px 0 18px;
 .footer-widgets footer,
 .footer-widgets content {
 	color: #ffffff;
+}
+
+.footer-widgets .sidebar-thumbnail,
+.footer-widgets .sidebar-thumbnail img {
+	width: 100px;
+	height: 54px;
 }
 
 /* ------------------------------------------------------------------ */
@@ -5035,6 +5043,10 @@ article {
 
 .depth-1:last-child {
 	border-bottom: 0px;
+}
+
+.site-content-main-full {
+	width: 100%;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -6884,11 +6896,6 @@ article {
 		margin-bottom: 0;
 	}
 	
-	.footer-widgets .sidebar-thumbnail {
-		width: 100px;
-		height: 54px;
-	}
-	
 	.footer-widgets .sidebar-title {
 		font-style: normal;
 		font-weight: bold;
@@ -7212,5 +7219,6 @@ article {
 		width: 380px;
 		box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.02);
 	}
-	
 }
+	
+	
