@@ -4298,10 +4298,20 @@ padding: 0 18px 0 18px;
 	text-align: center;
 }
 
+.error404 #site-content {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin-bottom: 40px;
+}
+
 .error404-content .entry-title {
 	color: rgba(0, 0, 0, 0.205);
 	font-family: Roboto;
-	font-size: 200px;
+	font-size: 100px;
+	line-height: 1;
+	padding: 80px 0 80px 0;
+	text-align: center;
 }
 
 .error404-content .intro-text {
@@ -5054,12 +5064,15 @@ article {
 /* -------------------------------------------------------------------------- */
 
 @media ( max-width: 400px ) {
-	.error404-content .entry-title {
-		font-size: 150px;
-	}
+	
 }
 
 @media ( max-width: 479px ) {
+
+	.error404-content .entry-title {
+		font-size: 80px;
+		padding: 20px 0 20px 0;
+	}
 
 	/* Blocks -------------------------------- */
 
@@ -6003,7 +6016,7 @@ article {
 	/* Error 404 ----------------------------- */
 
 	.error404 #site-content {
-		padding-top: 8rem;
+		padding-top: 4rem;
 	}
 
 	/* Widgets ------------------------------- */
@@ -7067,7 +7080,7 @@ article {
 	}
 
 	.error404-content .entry-title {
-		font-size: 250px;
+		font-size: 150px;
 	}
 }
 
