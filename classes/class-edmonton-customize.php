@@ -716,6 +716,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				[
 					'type'        => 'color',
 					'settings'    => 'cover_color',
+					'settings'	  => 'color_setting_url',
 					'section'     => 'header_cover',
 					'priority'    => 10,
 					'label'       => esc_html__( 'Cover Color', 'kirki' ),

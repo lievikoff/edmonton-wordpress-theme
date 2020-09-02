@@ -1691,7 +1691,7 @@ ul.primary-menu > li:last-child {
 
 /** Cover Header -------------------------------------------------*/
 
-@media(min-width:1100px){
+@media(min-width:1140px){
 	.cover {
 		height: 350px;
 		width: 100%;
@@ -4695,7 +4695,7 @@ padding: 0 18px 0 18px;
 	display: none;
 }
 
-@media( max-width: 1000px ) {
+@media( max-width: 1140px ) {
 	.footer-top {
 		grid-template-columns: 100%;
 		row-gap: 20px;
@@ -4994,10 +4994,16 @@ article {
 	width: 100%;
 }
 
-#post-content {
+#post-content  {
 	background-color: white;
 	padding: 18px;
 	margin-bottom: 30px;
+}
+
+#post-content-about-us {
+	margin: 30px 0 0 0;
+	background-color: white;
+	padding: 18px;
 }
 
 #main {
@@ -5026,6 +5032,10 @@ article {
 	color: #101010;
 }
 
+.title-default {
+	text-align: center;
+	font-size: 40px;
+}
 
 .entry-content,
 .entry-content p,
@@ -6119,7 +6129,7 @@ article {
 
 }
 
-@media ( max-width: 999px ) {
+@media ( max-width: 1139px ) {
 
 	.site-title {
 		color: #fff;
@@ -6281,7 +6291,7 @@ article {
 	}
 }
 
-@media ( min-width: 1000px ) {
+@media ( min-width: 1140px ) {
 
 
 	/* Document Setup ------------------------ */

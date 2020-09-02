@@ -919,7 +919,7 @@ function customize () {
 					?>
 					
 					<style type="text/css">
-						@media (min-width: 1000px) {
+						@media (min-width: 1140px) {
 							.header-titles {
 								display: flex;
 								flex-direction: row;
@@ -941,7 +941,7 @@ function customize () {
 					?>
 					
 					<style type="text/css">
-						@media (min-width: 1000px) {
+						@media (min-width: 1140px) {
 							.header-titles {
 								display: flex;
 								flex-direction: column;
@@ -958,7 +958,7 @@ function customize () {
 					?>
 					
 					<style type="text/css">
-						@media (min-width: 1000px) {
+						@media (min-width: 1140px) {
 							.header-titles {
 								display: flex;
 								flex-direction: row-reverse;

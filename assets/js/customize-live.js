@@ -27,9 +27,9 @@
     });
 
     wp.customize( 'header_logo_position', function ( value )  {
-        value.bind( function ( value )  {
+        value.bind( function ( newValue )  {
             
-            switch ( value ) {
+            switch ( newValue ) {
 
                 case 'left':
                     $( '.header-titles' ).removeClass( 'center-position right-position' );
@@ -54,9 +54,9 @@
     });
 
     wp.customize( 'content_sidebar_position', function ( value )  {
-        value.bind( function ( value )  {
+        value.bind( function ( newValue )  {
 
-            switch ( value ) {
+            switch ( newValue ) {
 
                 case 'left':
                     $( '#site-content' ).removeClass( 'site-content-row site-content-column site-content-column-reverse' ); 
@@ -98,16 +98,15 @@
     });
 
     wp.customize( 'content_post_font', function ( value )  {
-        value.bind( function ( value )  {
-            
+        value.bind( function ( newValue )  {
             let item = $( 'select[data-id="content_post_item_font"]', window.parent.document ).val();
-            $( item ).css( value );
+            $( item ).css( newValue );
         });
     });
 
     wp.customize( 'cover_enable', function ( value )  {
-        value.bind( function ( value )  {
-            if ( value ) {
+        value.bind( function ( newValue )  {
+            if ( newValue ) {
                 $('.cover').css('display','block');
             }
             else {
@@ -117,9 +116,9 @@
     });
 
     wp.customize( 'cover_image', function ( value )  {
-        value.bind( function ( value )  {
+        value.bind( function ( newValue )  {
             if ( $( '#_customize-input-cover_enable', window.parent.document ).prop('checked') ) {
-                let image = 'no-repeat 100%/ cover url('+ value+')';
+                let image = 'no-repeat 100%/ cover url('+ newValue+')';
                 $('.cover').css('background', image);
                 let coverColor = $('input[data-id="cover_color"]', window.parent.document).val();
                 $('[data-id="cover_color"] div button .color-alpha', window.parent.document).css('background', 'inherit');
@@ -129,18 +128,18 @@
     });
     
     wp.customize( 'cover_color', function ( value )  {
-        value.bind( function ( value )  {
+        value.bind( function ( newValue )  {
             if ( $( '#_customize-input-cover_enable', window.parent.document ).prop('checked') ) {
                 if ( $( '#customize-control-cover_image', window.parent.document ).children( '.image-wrapper' ).children( '.thumbnail' ).length == 0 ) {
-                    $('.cover').css('background', value); 
+                    $('.cover').css('background', newValue); 
                 }
             }
         });
     });
 
     wp.customize( 'cover_opacity', function ( value )  {
-        value.bind( function ( value )  {
-            $('.cover').css('opacity', value);
+        value.bind( function ( newValue )  {
+            $('.cover').css('opacity', newValue);
         });
     });
 
