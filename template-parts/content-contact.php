@@ -14,7 +14,7 @@
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-	<div id="post-content-about-us">
+	<div id="post-content-default">
 		<?php
 		get_template_part( 'template-parts/entry-header-about-and-contact' );
 		?>

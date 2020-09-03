@@ -61,7 +61,7 @@ if ( !is_active_sidebar( 'main_sidebar' ) ) {
 					while ( have_posts() ) {
 
 						the_post();
-						get_template_part( 'template-parts/content-about-us', get_post_type() );
+						get_template_part( 'template-parts/contenёt-about-us', get_post_type() );
 					}
 				}
 
