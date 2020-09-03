@@ -5056,7 +5056,11 @@ article {
 	font-weight: 600 !important;
 	font-size: small !important;
 	font-style: revert !important;
+	color: #6d6d6d !important;
 	line-height: unset !important;
+	border-top: 1px solid #6d6d6d;
+	margin-top: 8px;
+	width: max-content !important;
 }
 
 .entry-content {
@@ -5081,11 +5085,9 @@ article {
 /*	17. Media Queries
 /* -------------------------------------------------------------------------- */
 
-@media ( max-width: 400px ) {
-	
-}
-
 @media ( max-width: 479px ) {
+
+
 
 	.error404-content .entry-title {
 		font-size: 80px;
@@ -5123,6 +5125,28 @@ article {
 	.site-content-main-cut,
 	.site-content-main-full {
 		grid-template-columns: 1fr;
+	}
+
+	.entry-content,
+	.entry-content p,
+	.entry-content figure {
+		margin: 0px;
+		padding: 0px;
+		font-family: Roboto;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 18px;
+		line-height: 27px;
+
+		color: #303030;
+	}
+
+	.comment-awaiting-moderation {
+		font-weight: 600 !important;
+		font-size: 13px !important;
+		font-style: revert !important;
+		color: #6d6d6d !important;
+		line-height: unset !important;
 	}
 
 }
@@ -5168,8 +5192,6 @@ article {
 	.post-nav-links {
 		margin: 3em 0 0 0;
 	}
-
-	
 }
 
 @media ( max-width: 550px ) {
@@ -5977,7 +5999,7 @@ article {
 	}
 
 	.comment-footer-meta {
-		margin-top: 2.5rem;
+		margin-top: 2rem;
 	}
 
 	.comments-pagination {
