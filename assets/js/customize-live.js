@@ -121,9 +121,9 @@
             if ( $( '#_customize-input-cover_enable', window.parent.document ).prop('checked') ) {
                 let image = 'no-repeat 100%/ cover url('+ value+')';
                 $('.cover').css('background', image);
-                let coverColor = $('input[data-id="cover_color"]', window.parent.document).val();
+                /*let coverColor = $('input[data-id="cover_color"]', window.parent.document).val();
                 $('[data-id="cover_color"] div button .color-alpha', window.parent.document).css('background', 'inherit');
-                coverColor = 'none';
+                coverColor = 'none';*/
             }
         });
     });

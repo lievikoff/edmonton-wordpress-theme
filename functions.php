@@ -870,7 +870,7 @@ function customize () {
 		<?php
 	}
 
-	if ( get_theme_mod( 'predefined_colors' ) ) {
+	/*if ( get_theme_mod( 'predefined_colors' ) ) {
 
 		set_theme_mod( 'primary_color', '' );
 		set_theme_mod( 'secondary_color', '' );
@@ -894,17 +894,29 @@ function customize () {
 			<?php
 
 		}
-	}
+	}*/
 
 	if ( get_theme_mod( 'primary_color' ) ) {
 
-		set_theme_mod( 'predefined_colors', '' );
+		set_theme_mod( 'primary_color_custom', '' );
 
 	}
 
 	if ( get_theme_mod( 'secondary_color' ) ) {
 
-		set_theme_mod( 'predefined_colors', '' );
+		set_theme_mod( 'secondary_color_custom', '' );
+
+	}
+
+	if ( get_theme_mod( 'primary_color_custom' ) ) {
+
+		set_theme_mod( 'primary_color', '' );
+
+	}
+
+	if ( get_theme_mod( 'secondary_color_custom' ) ) {
+
+		set_theme_mod( 'secondary_color', '' );
 
 	}
 
