@@ -182,6 +182,54 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					],
 				]
 			);	
+			
+			Kirki::add_config( 
+				'custom_header_width', 
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'     => 'postMessage',
+				]
+			);
+
+			Kirki::add_field( 
+				'custom_header_width', 
+				[
+					'type'        => 'slider',
+					'settings'    => 'custom_header_width',
+					'label'       => esc_html__( 'Custom header width', 'kirki' ),
+					'description' => esc_html__( 'Header, menu and search line will be take up as much width as you specity (px). If you have problems settings the width, check if it is checked in the Content->General->Full width. If it`s checked — remove.', 'kirki' ),
+					'section'     => 'header_general',
+					'default'     => 1110,
+					'choices'     => [
+						'min'  => 1000,
+						'max'  => 1700,
+						'step' => 1,
+					],
+				] 
+			);
+
+			Kirki::add_config( 
+				'header_width_full', 
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'     => 'postMessage',
+				]
+			);
+
+			Kirki::add_field( '
+				header_width_full', 
+				[
+					'type'        => 'checkbox',
+					'settings'    => 'checkbox_setting',
+					'settings'    => 'header_width_full',
+					'label'       => esc_html__( 'Full width', 'kirki' ),
+					'description' => esc_html__( 'Header, menu and search line will be take up the entire of the content.', 'kirki' ),
+					'section'     => 'header_general',
+					'default'     => false,
+				] 
+			);
+
+			
 
 			/** Header Navigation --------------------------------------------------------------------- */
 			Kirki::add_section( 
@@ -1955,6 +2003,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'section'   => 'content_general',
 					'settings'  => 'content_sidebar_position',
 					'default'	=> 'right',
+					'priority'  => 10,
 					'choices'   => [
 						'left' => [
 							'title' => esc_attr__( 'Main sidebar Left' ),
@@ -1975,6 +2024,54 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					],
 				]
 			);	
+
+			Kirki::add_config( 
+				'custom_content_width', 
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'     => 'postMessage',
+				]
+			);
+
+			Kirki::add_field( 
+				'custom_content_width', 
+				[
+					'type'        => 'slider',
+					'settings'    => 'custom_content_width',
+					'label'       => esc_html__( 'Custom content width', 'kirki' ),
+					'description' => esc_html__( 'Content will be take up as much width as you specity. (px)', 'kirki' ),
+					'section'     => 'content_general',
+					'priority'    => 91,
+					'default'     => 1110,
+					'choices'     => [
+						'min'  => 1000,
+						'max'  => 1700,
+						'step' => 1,
+					],
+				] 
+			);
+
+			Kirki::add_config( 
+				'content_full', 
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'     => 'postMessage',
+				]
+			);
+
+			Kirki::add_field( 
+				'content_full', 
+				[
+					'type'        => 'checkbox',
+					'settings'    => 'checkbox_setting',
+					'settings'    => 'content_full',
+					'label'       => esc_html__( 'Full width', 'kirki' ),
+					'description' => esc_html__( 'Content will be take up the entire of the content.', 'kirki' ),
+					'section'     => 'content_general',
+					'priority'    => 92,
+					'default'     => false,
+				] 
+			);
 
 			/* Content Post ----------------------------------------------------------*/
 

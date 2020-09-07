@@ -329,11 +329,11 @@ function quick_links() {
 
 add_action( 'widgets_init', 'quick_links' );
 
-class resentPosts extends WP_Widget {
+class recentPosts extends WP_Widget {
  
 	function __construct() {
 		parent::__construct(
-			'resent_posts', 
+			'recent_posts', 
 			'Resent posts',
 			array( 'description' => 'Your site’s most recent Posts.' ) 
 		);
@@ -342,31 +342,31 @@ class resentPosts extends WP_Widget {
 	public function widget( $args, $instance ) {
 		global $wpdb;
 
-		$title = apply_filters( 'widget_title', $instance['title_resent_posts'] ); 
-		$count_posts = $instance['count_resent_posts'];
+		$title = apply_filters( 'widget_title', $instance['title_recent_posts'] ); 
+		$count_posts = $instance['count_recent_posts'];
 		
 		echo $args['before_widget'];
  
 		if ( ! empty( $title ) ) echo $args['before_title'] . $title . $args['after_title'];
 		
 
-		$resent_posts = $wpdb->get_results( "SELECT * FROM wp_posts INNER JOIN wp_postmeta ON post_id = ID WHERE post_status = 'publish' AND post_type = 'post' ORDER BY `post_date` DESC LIMIT $count_posts" );
-		$resent_posts = json_decode( json_encode( $resent_posts ), true );
+		$recent_posts = $wpdb->get_results( "SELECT * FROM wp_posts INNER JOIN wp_postmeta ON post_id = ID WHERE post_status = 'publish' AND post_type = 'post' ORDER BY `post_date` DESC LIMIT $count_posts" );
+		$recent_posts = json_decode( json_encode( $recent_posts ), true );
 		?>
 
 		<div class="sidebar-main">
 
 		<?php
 		$i = 0;
-		while ( $i < count( $resent_posts ) ) {
+		while ( $i < count( $recent_posts ) ) {
 			?>
 
-			<a href="<?php the_permalink( $resent_posts[$i]['post_id'] ); ?>" class="sidebar-item" 
-				title="<?php echo $resent_posts[$i]['post_title']; ?>">
+			<a href="<?php the_permalink( $recent_posts[$i]['post_id'] ); ?>" class="sidebar-item" 
+				title="<?php echo $recent_posts[$i]['post_title']; ?>">
 
 				<div class="sidebar-thumbnail">
 
-					<img src="<?php echo get_the_post_thumbnail_url( $resent_posts[$i]['post_id'], 'thumbnail' )?>">
+					<img src="<?php echo get_the_post_thumbnail_url( $recent_posts[$i]['post_id'], 'thumbnail' )?>">
 
 				</div>
 
@@ -375,7 +375,7 @@ class resentPosts extends WP_Widget {
 						<div class="sidebar-title">
 							
 							<?php
-							echo $resent_posts[$i]['post_title'];
+							echo $recent_posts[$i]['post_title'];
 							?>
 
 						</div>
@@ -383,7 +383,7 @@ class resentPosts extends WP_Widget {
 						<div class="sidebar-post-data">
 
 							<?php
-							$date = date( 'F j, Y', strtotime( $resent_posts[$i]['post_date'] ) );
+							$date = date( 'F j, Y', strtotime( $recent_posts[$i]['post_date'] ) );
 							echo $date;
 							?>
 
@@ -409,22 +409,22 @@ class resentPosts extends WP_Widget {
  
 	public function form( $instance ) {
 
-		if ( isset( $instance['title_resent_posts'] ) ) {
-			$title = $instance['title_resent_posts'];
+		if ( isset( $instance['title_recent_posts'] ) ) {
+			$title = $instance['title_recent_posts'];
 		}
 
-		if ( isset( $instance['count_resent_posts'] ) ) {
-			$count_posts = $instance['count_resent_posts'];
+		if ( isset( $instance['count_recent_posts'] ) ) {
+			$count_posts = $instance['count_recent_posts'];
 		}
 		?>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title_resent_posts' ); ?>"> Title </label> 
-			<input class="widefat" id="<?php echo $this->get_field_id( 'title_resent_posts' ); ?>" name="<?php echo $this->get_field_name( 'title_resent_posts' ); ?>" type="text" value="<?php echo ( ( !empty( $title ) ) && ( $title ) ) ? esc_attr( $title ) : ''; ?>" />
+			<label for="<?php echo $this->get_field_id( 'title_recent_posts' ); ?>"> Title </label> 
+			<input class="widefat" id="<?php echo $this->get_field_id( 'title_recent_posts' ); ?>" name="<?php echo $this->get_field_name( 'title_recent_posts' ); ?>" type="text" value="<?php echo ( ( !empty( $title ) ) && ( $title ) ) ? esc_attr( $title ) : ''; ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'count_resent_posts' ); ?>"> Number of posts: </label> 
-			<input id="<?php echo $this->get_field_id( 'count_resent_posts' ); ?>" name="<?php echo $this->get_field_name( 'count_resent_posts' ); ?>" type="number" style="width: 55px;" value="<?php echo ( ( !empty( $count_posts ) ) && ( $count_posts ) ) ? esc_attr( $count_posts ) : '3'; ?>" step="1" min="1" max="99" size="3" />
+			<label for="<?php echo $this->get_field_id( 'count_recent_posts' ); ?>"> Number of posts: </label> 
+			<input id="<?php echo $this->get_field_id( 'count_recent_posts' ); ?>" name="<?php echo $this->get_field_name( 'count_recent_posts' ); ?>" type="number" style="width: 55px;" value="<?php echo ( ( !empty( $count_posts ) ) && ( $count_posts ) ) ? esc_attr( $count_posts ) : '3'; ?>" step="1" min="1" max="99" size="3" />
 		</p>
 
 		<?php 
@@ -433,15 +433,15 @@ class resentPosts extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 
 		$instance = array();
-		$instance['title_resent_posts'] = ( ! empty( $new_instance['title_resent_posts'] ) ) ? strip_tags( $new_instance['title_resent_posts'] ) : '';
-		$instance['count_resent_posts'] = ( is_numeric( $new_instance['count_resent_posts'] ) && isset( $new_instance['count_resent_posts'] ) ) ? $new_instance['count_resent_posts'] : '3'; 
+		$instance['title_recent_posts'] = ( ! empty( $new_instance['title_recent_posts'] ) ) ? strip_tags( $new_instance['title_recent_posts'] ) : '';
+		$instance['count_recent_posts'] = ( is_numeric( $new_instance['count_recent_posts'] ) && isset( $new_instance['count_recent_posts'] ) ) ? $new_instance['count_recent_posts'] : '3'; 
 
 		return $instance;
 	}
 }
  
-function resent_posts() {
-	register_widget( 'resentPosts' );
+function recent_posts() {
+	register_widget( 'recentPosts' );
 }
 
-add_action( 'widgets_init', 'resent_posts' );
+add_action( 'widgets_init', 'recent_posts' );

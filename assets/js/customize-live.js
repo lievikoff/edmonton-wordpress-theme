@@ -144,4 +144,61 @@
         });
     });
 
+    wp.customize( 'content_full', function ( value )  {
+        value.bind( function ( value )  {
+                        
+            if ( value ) {
+                
+                $( '#site-header' ).css( 'width', '100%' );
+                $( '.header-navigation-wrapper' ).css( 'width', '100%' );
+                $( '.alt-navigation-wrapper' ).css( 'width', '100%' );
+                $( '#main' ).css( 'width', '100%' ); 
+            } else {
+
+                value = $('input[data-customize-setting-link="custom_content_width"]', window.parent.document).val();
+                
+                if ( value >= 1000 && value <= 1700 ){ 
+
+                    value = value + 'px';
+
+                    if ( $( '#_customize-input-header_width_full', window.parent.document ).prop( 'checked' ) ) {
+                        
+                        $( '#site-header' ).css( 'width', '100%' );
+                        $( '.header-navigation-wrapper' ).css( 'width', '100%' );
+                        $( '.alt-navigation-wrapper' ).css( 'width', '100%' );
+                        $( '#main' ).css( 'width', value ); 
+                    } else {
+
+                        $( '#site-header' ).css( 'width', value );
+                        $( '.header-navigation-wrapper' ).css( 'width', value );
+                        $( '.alt-navigation-wrapper' ).css( 'width', value );
+                    }
+                }
+            }
+        });
+    });
+
+    wp.customize( 'custom_content_width', function ( value )  {
+        value.bind( function ( value )  {
+
+            if ( value >= 1000 && value <= 1700 ){
+             
+                if ( $( '#_customize-input-content_full', window.parent.document ).prop( 'checked' ) ) {
+
+                    alert( 'Unchecked full width.' );
+                } else {
+
+                    if ( $( window ).width() >=  parseInt( value ) + 30 ) {
+           
+                        value = value + 'px';
+                        $( '#site-header' ).css( 'width', value );  
+                        $( '.header-navigation-wrapper' ).css( 'width', value );
+                        $( '.alt-navigation-wrapper' ).css( 'width', value );
+                        $( '#main' ).css( 'width', value ); 
+                    } 
+                }
+            }
+        });
+    });
+    
 }( jQuery ) );

@@ -867,4 +867,8 @@
   margin-bottom: 7px;
 }
 
+.wp-picker-container {
+  width: 100% !important;
+}
+
 /*# sourceMappingURL=styles.css.map */
