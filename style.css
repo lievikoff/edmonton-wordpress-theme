@@ -1691,7 +1691,7 @@ ul.primary-menu > li:last-child {
 
 /** Cover Header -------------------------------------------------*/
 
-@media(min-width:1140px){
+@media(min-width:1100px){
 	.cover {
 		height: 350px;
 		width: 100%;
@@ -3819,7 +3819,7 @@ figure.wp-block-table.is-style-stripes {
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 58rem;
-	width: calc( 100% - 4rem );
+	width: calc(100% - 4rem);
 }
 
 
@@ -3834,10 +3834,6 @@ figure.wp-block-table.is-style-stripes {
 .comments-wrapper {
 	margin-top: 30px;
 	background: #ffffff;
-}
-
-.comment-respond {
-	padding-top: 18px;
 }
 
 .comment-reply-title,
@@ -4287,6 +4283,7 @@ padding: 0 18px 0 18px;
 /* -------------------------------------------------------------------------- */
 
 .error404 {
+	position: relative;
 	background-color: #303030 !important;
 }
 
@@ -4298,20 +4295,10 @@ padding: 0 18px 0 18px;
 	text-align: center;
 }
 
-.error404 #site-content {
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	margin-bottom: 40px;
-}
-
 .error404-content .entry-title {
 	color: rgba(0, 0, 0, 0.205);
 	font-family: Roboto;
-	font-size: 100px;
-	line-height: 1;
-	padding: 80px 0 80px 0;
-	text-align: center;
+	font-size: 200px;
 }
 
 .error404-content .intro-text {
@@ -4325,6 +4312,7 @@ padding: 0 18px 0 18px;
 }
 
 .footer-404 {
+	position: absolute;
 	bottom: 0px;
 	width: 100%;
 	height: 50px;
@@ -4634,12 +4622,6 @@ padding: 0 18px 0 18px;
 	color: #ffffff;
 }
 
-.footer-widgets .sidebar-thumbnail,
-.footer-widgets .sidebar-thumbnail img {
-	width: 100px;
-	height: 54px;
-}
-
 /* ------------------------------------------------------------------ */
 
 /*	16. Site Footer
@@ -4683,19 +4665,16 @@ padding: 0 18px 0 18px;
 /* Footer Top -------------------------------- */
 
 .footer-top {
-	display: flex;
-	justify-content: flex-start;
-}
-
-.footer-top .social-media {
-	margin: 0px 10px;
+	display: grid;
+	justify-items: center;
+    grid-template-columns: 60% 40%;
 }
 
 .footer-menu-wrapper {
 	display: none;
 }
 
-@media( max-width: 1140px ) {
+@media( max-width: 1000px ) {
 	.footer-top {
 		grid-template-columns: 100%;
 		row-gap: 20px;
@@ -4994,16 +4973,10 @@ article {
 	width: 100%;
 }
 
-#post-content  {
+#post-content {
 	background-color: white;
 	padding: 18px;
 	margin-bottom: 30px;
-}
-
-#post-content-default {
-	margin: 30px 0 30px 0;
-	background-color: white;
-	padding: 18px;
 }
 
 #main {
@@ -5032,15 +5005,10 @@ article {
 	color: #101010;
 }
 
-.title-default {
-	text-align: center;
-	font-size: 40px;
-}
 
 .entry-content,
 .entry-content p,
-.entry-content figure,
-.comment-awaiting-moderation {
+.entry-content figure {
 	margin: 0px;
 	padding: 0px;
 	font-family: Roboto;
@@ -5050,17 +5018,6 @@ article {
 	line-height: 27px;
 
 	color: #303030;
-}
-
-.comment-awaiting-moderation {
-	font-weight: 600 !important;
-	font-size: small !important;
-	font-style: revert !important;
-	color: #6d6d6d !important;
-	line-height: unset !important;
-	border-top: 1px solid #6d6d6d;
-	margin-top: 8px;
-	width: max-content !important;
 }
 
 .entry-content {
@@ -5077,22 +5034,17 @@ article {
 	border-bottom: 0px;
 }
 
-.site-content-main-full {
-	width: 100%;
-}
-
 /* -------------------------------------------------------------------------- */
 /*	17. Media Queries
 /* -------------------------------------------------------------------------- */
 
-@media ( max-width: 479px ) {
-
-
-
+@media ( max-width: 400px ) {
 	.error404-content .entry-title {
-		font-size: 80px;
-		padding: 20px 0 20px 0;
+		font-size: 150px;
 	}
+}
+
+@media ( max-width: 479px ) {
 
 	/* Blocks -------------------------------- */
 
@@ -5125,28 +5077,6 @@ article {
 	.site-content-main-cut,
 	.site-content-main-full {
 		grid-template-columns: 1fr;
-	}
-
-	.entry-content,
-	.entry-content p,
-	.entry-content figure {
-		margin: 0px;
-		padding: 0px;
-		font-family: Roboto;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 18px;
-		line-height: 27px;
-
-		color: #303030;
-	}
-
-	.comment-awaiting-moderation {
-		font-weight: 600 !important;
-		font-size: 13px !important;
-		font-style: revert !important;
-		color: #6d6d6d !important;
-		line-height: unset !important;
 	}
 
 }
@@ -5192,6 +5122,8 @@ article {
 	.post-nav-links {
 		margin: 3em 0 0 0;
 	}
+
+	
 }
 
 @media ( max-width: 550px ) {
@@ -5999,7 +5931,7 @@ article {
 	}
 
 	.comment-footer-meta {
-		margin-top: 2rem;
+		margin-top: 2.5rem;
 	}
 
 	.comments-pagination {
@@ -6056,7 +5988,7 @@ article {
 	/* Error 404 ----------------------------- */
 
 	.error404 #site-content {
-		padding-top: 4rem;
+		padding-top: 8rem;
 	}
 
 	/* Widgets ------------------------------- */
@@ -6159,7 +6091,7 @@ article {
 
 }
 
-@media ( max-width: 1139px ) {
+@media ( max-width: 999px ) {
 
 	.site-title {
 		color: #fff;
@@ -6321,7 +6253,7 @@ article {
 	}
 }
 
-@media ( min-width: 1140px ) {
+@media ( min-width: 1000px ) {
 
 
 	/* Document Setup ------------------------ */
@@ -6949,6 +6881,11 @@ article {
 		margin-bottom: 0;
 	}
 	
+	.footer-widgets .sidebar-thumbnail {
+		width: 100px;
+		height: 54px;
+	}
+	
 	.footer-widgets .sidebar-title {
 		font-style: normal;
 		font-weight: bold;
@@ -7120,7 +7057,7 @@ article {
 	}
 
 	.error404-content .entry-title {
-		font-size: 150px;
+		font-size: 250px;
 	}
 }
 
@@ -7272,6 +7209,5 @@ article {
 		width: 380px;
 		box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.02);
 	}
+	
 }
-	
-	

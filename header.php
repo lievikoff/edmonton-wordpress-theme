@@ -25,7 +25,19 @@
 	
 	<body <?php body_class(); ?>>
 
-		<?php
+		<?php 
+		if( is_404() ) {
+			?>
+
+				<script>
+					'use strict';
+
+					document.querySelector('.error404').style.height = window.innerHeight + "px";
+				</script>
+
+			<?php
+		}
+
 		wp_body_open();
 		?>
 
@@ -150,13 +162,7 @@
 			</div>
 
 		</div>
-
-		<?php if ( !is_404() ) {
-		?>
-
 		<div class="cover"></div>
-
-		<?php }?>
 		<?php
 		// Output the menu modal.
 		get_template_part( 'template-parts/modal-menu' );

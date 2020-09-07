@@ -6,7 +6,6 @@
  * @since Edmonton 1.0
  */
 
-
 if ( ! class_exists( 'Edmonton_Walker_Page' ) ) {
 	/**
 	 * CUSTOM PAGE WALKER

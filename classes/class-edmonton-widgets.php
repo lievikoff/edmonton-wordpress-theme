@@ -365,16 +365,8 @@ class recentPosts extends WP_Widget {
 				title="<?php echo $recent_posts[$i]['post_title']; ?>">
 
 				<div class="sidebar-thumbnail">
-					
-					<?php if ( get_the_post_thumbnail_url( $resent_posts[$i]['post_id'], 'thumbnail' ) ) { ?>
 
-<<<<<<< HEAD
 					<img src="<?php echo get_the_post_thumbnail_url( $recent_posts[$i]['post_id'], 'thumbnail' )?>">
-=======
-						<img src="<?php echo get_the_post_thumbnail_url( $resent_posts[$i]['post_id'], 'thumbnail' );?>">
-					
-					<?php } ?>
->>>>>>> f10c78559ea025f56ad821c15c4fd95da59d17a1
 
 				</div>
 

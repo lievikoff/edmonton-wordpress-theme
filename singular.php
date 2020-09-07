@@ -46,63 +46,43 @@ if ( get_theme_mod( 'content_sidebar_position' ) ) {
 		}
 	}
 }
-
-if ( !is_active_sidebar( 'main_sidebar' ) ) {
-	$site_content = 'site-content-column';
-}
 ?>
-
 <main id="main" class="main-post">
-	
-	<?php if ( is_page_template( 'templates/template-about-us.php' ) || is_page_template( 'templates/template-contact.php' ) ) {
 
-				if ( have_posts() ) {
+	<main id="site-content" class="<?php echo $site_content ?>" role="main">
 
-					while ( have_posts() ) {
+		<div id="site-content-post">
 
-						the_post();
-						get_template_part( 'template-parts/content-about-us', get_post_type() );
-					}
+			<?php
+			if ( have_posts() ) {
+
+				while ( have_posts() ) {
+
+					the_post();
+					get_template_part( 'template-parts/content', get_post_type() );
 				}
+			}
+			?>
 
-		} else { ?>
+		</div>
 
-		<main id="site-content" class="<?php echo $site_content ?>" role="main">
+		<?php if ( is_active_sidebar( 'sidebar' ) ) { ?>
 
-			<div id="site-content-post" style="<?php echo ( is_active_sidebar( 'main_sidebar' ) ) ? '' : 'width: 100%;' ?>">
+		<div id="site-content-sitebar" class="<?php echo $site_content_sidebar ?>">
+			<!-- sitebar -->
 
-				<?php
-				if ( have_posts() ) {
 
-					while ( have_posts() ) {
+			<div id="true-side" class="sidebar">
 
-						the_post();
-						get_template_part( 'template-parts/content', get_post_type() );
-					}
-				}
-				?>
+				<?php dynamic_sidebar( 'sidebar' ); ?>
 
 			</div>
 
-			<?php if ( is_active_sidebar( 'main_sidebar' ) ) { ?>
+		</div>
 
-			<div id="site-content-sitebar" class="<?php echo $site_content_sidebar ?>">
-				<!-- sitebar -->
+		<?php } ?>
 
-
-				<div id="true-side" class="sidebar">
-
-					<?php dynamic_sidebar( 'main_sidebar' ); ?>
-
-				</div>
-
-			</div>
-
-			<?php } ?>
-
-		</main><!-- #site-content -->
-
-	<?php } ?>
+	</main><!-- #site-content -->
 
 </main>
 
