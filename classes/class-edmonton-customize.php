@@ -744,6 +744,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				[
 					'type'        => 'image',
 					'settings'    => 'cover_image',
+					'settings'    => 'image_setting_url',
 					'label'       => esc_html__( 'Cover Image', 'kirki' ),
 					'section'     => 'header_cover',
 					'default'     => '',
@@ -763,7 +764,6 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				[
 					'type'        => 'color',
 					'settings'    => 'cover_color',
-					'settings'	  => 'color_setting_url',
 					'section'     => 'header_cover',
 					'priority'    => 10,
 					'label'       => esc_html__( 'Cover Color', 'kirki' ),
@@ -857,6 +857,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'color_icon_background',
 				[
 					'type'        => 'color',
+					'settings'    => 'color_setting_rgba',
 					'settings'    => 'color_icon_background',
 					'section'     => 'display_setting',
 					'priority'    => 10,
@@ -876,6 +877,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'color_icon',
 				[
 					'type'        => 'color',
+					'settings'    => 'color_setting_rgba',
 					'settings'    => 'color_icon',
 					'section'  => 'display_setting',
 					'priority' => 10,
@@ -1049,6 +1051,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'icon_deviantArt',
 				[
 					'type'     		=> 'image',
+					'settings'    	=> 'image_setting_url',
 					'settings'    	=> 'icon_deviantArt',
 					'section'  		=> 'deviantArt',
 					'priority' 		=> 10,
@@ -1102,6 +1105,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'icon_facebook',
 				[
 					'type'     		=> 'image',
+					'settings'    	=> 'image_setting_url',
 					'settings'    	=> 'icon_facebook',
 					'section'  		=> 'facebook',
 					'priority' 		=> 10,
@@ -1154,6 +1158,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'icon_flickr',
 				[
 					'type'     		=> 'image',
+					'settings'    	=> 'image_setting_url',
 					'settings'    	=> 'icon_flickr',
 					'section'  		=> 'flickr',
 					'priority' 		=> 10,
@@ -1207,6 +1212,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'icon_gitHub',
 				[
 					'type'     		=> 'image',
+					'settings'    	=> 'image_setting_url',
 					'settings'    	=> 'icon_gitHub',
 					'section'  		=> 'gitHub',
 					'priority' 		=> 10,
@@ -1260,6 +1266,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'icon_instagram',
 				[
 					'type'     		=> 'image',
+					'settings'    	=> 'image_setting_url',
 					'settings'    	=> 'icon_instagram',
 					'section'  		=> 'instagram',
 					'priority' 		=> 10,
@@ -1312,6 +1319,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'icon_linkedIn',
 				[
 					'type'     		=> 'image',
+					'settings'    	=> 'image_setting_url',
 					'settings'    	=> 'icon_linkedIn',
 					'section'  		=> 'linkedIn',
 					'priority' 		=> 10,
@@ -1365,6 +1373,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'icon_pinterest',
 				[
 					'type'     		=> 'image',
+					'settings'    	=> 'image_setting_url',
 					'settings'    	=> 'icon_pinterest',
 					'section'  		=> 'pinterest',
 					'priority' 		=> 10,
@@ -1417,6 +1426,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'icon_snapchat',
 				[
 					'type'     		=> 'image',
+					'settings'    	=> 'image_setting_url',
 					'settings'    	=> 'icon_snapchat',
 					'section'  		=> 'snapchat',
 					'priority' 		=> 10,
@@ -1469,6 +1479,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'icon_telegram',
 				[
 					'type'     		=> 'image',
+					'settings'    	=> 'image_setting_url',
 					'settings'    	=> 'icon_telegram',
 					'section'  		=> 'telegram',
 					'priority' 		=> 10,
@@ -1521,6 +1532,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'icon_tikTok',
 				[
 					'type'     		=> 'image',
+					'settings'    	=> 'image_setting_url',
 					'settings'    	=> 'icon_tikTok',
 					'section'  		=> 'tikTok',
 					'priority' 		=> 10,
@@ -1573,6 +1585,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'icon_tumblr',
 				[
 					'type'     		=> 'image',
+					'settings'    	=> 'image_setting_url',
 					'settings'    	=> 'icon_tumblr',
 					'section'  		=> 'tumblr',
 					'priority' 		=> 10,
@@ -1626,6 +1639,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'icon_twitter',
 				[
 					'type'     		=> 'image',
+					'settings'    	=> 'image_setting_url',
 					'settings'    	=> 'icon_twitter',
 					'section'  		=> 'twitter',
 					'priority' 		=> 10,
@@ -1678,6 +1692,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'icon_viber',
 				[
 					'type'     		=> 'image',
+					'settings'    	=> 'image_setting_url',
 					'settings'    	=> 'icon_viber',
 					'section'  		=> 'viber',
 					'priority' 		=> 10,
@@ -1730,6 +1745,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'icon_wattpad',
 				[
 					'type'     		=> 'image',
+					'settings'    	=> 'image_setting_url',
 					'settings'    	=> 'icon_wattpad',
 					'section'  		=> 'wattpad',
 					'priority' 		=> 10,
@@ -1782,6 +1798,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'icon_whatsApp',
 				[
 					'type'     		=> 'image',
+					'settings'    	=> 'image_setting_url',
 					'settings'    	=> 'icon_whatsApp',
 					'section'  		=> 'whatsApp',
 					'priority' 		=> 10,
@@ -1835,6 +1852,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'icon_youTube',
 				[
 					'type'     		=> 'image',
+					'settings'    	=> 'image_setting_url',
 					'settings'    	=> 'icon_youTube',
 					'section'  		=> 'youTube',
 					'priority' 		=> 10,
@@ -1887,6 +1905,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'icon_vK',
 				[
 					'type'     		=> 'image',
+					'settings'    	=> 'image_setting_url',
 					'settings'    	=> 'icon_vK',
 					'section'  		=> 'vK',
 					'priority' 		=> 10,
@@ -1938,6 +1957,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'icon_oK',
 				[
 					'type'     		=> 'image',
+					'settings'    	=> 'image_setting_url',
 					'settings'    	=> 'icon_oK',
 					'section'  		=> 'oK',
 					'priority' 		=> 10,
@@ -2147,168 +2167,6 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				]
 			);
 
-			/**
-			 * Color Scheme
-			 */
-
-			Kirki::add_panel( 
-				'color', 
-				[
-					'title'          => esc_html__( 'Color', 'kirki' ),
-					'priority'       => 90,
-				] 
-			);
-
-			Kirki::add_section( 
-				'color_scheme', 
-				[
-					'title'          => esc_html__( 'Color Scheme', 'kirki' ),
-					'priority'       => 90,
-					'panel'			 => 'color',
-				] 
-			);
-
-			Kirki::add_config( 
-				'primary_color', 
-				[
-					'capability'    => 'edit_theme_options',
-				]
-			);
-
-			Kirki::add_field( 
-				'primary_color', 
-				[
-					'type'        => 'color-palette',
-					'settings'    => 'primary_color',
-					'label'       => esc_html__( 'Primary Color', 'kirki' ),
-					'description' => esc_html__( 'Select the main color', 'kirki' ),
-					'section'     => 'color_scheme',
-					'default'     => '#e5e5e5',
-					'choices'     => [
-						'colors'  => Kirki_Helper::get_material_design_colors( 'A100' ),
-						'size'	  => 15,
-					],
-					'output'      => [
-						[
-							'element'  => 'body',
-							'property' => 'background-color',
-							'suffix'   => '!important',
-						],
-					],
-				] 
-			);
-
-			Kirki::add_config( 
-				'secondary_color', 
-				[
-					'capability'    => 'edit_theme_options',
-				]
-			);
-
-			Kirki::add_field( 
-				'secondary_color', 
-				[
-					'type'        => 'color-palette',
-					'settings'    => 'secondary_color',
-					'label'       => esc_html__( 'Secondary Color', 'kirki' ),
-					'description' => esc_html__( 'Select header and footer color', 'kirki' ),
-					'section'     => 'color_scheme',
-					'default'     => '#202020',
-					'choices'     => [
-						'colors' => [ '#000000','#101010', '#202020', '#303030', '#404040', '#505050', '#606060', '#707070', '#808080', '№909090' ],
-					],
-					'output'      => [
-						[
-							'element'  => '#footer-container, #site-header, .primary-menu-wrapper',
-							'property' => 'background-color',
-							'suffix'   => '!important',
-						],
-					],
-				] 
-			);
-
-			Kirki::add_config( 
-				'primary_color_custom', 
-				[
-					'capability'    => 'edit_theme_options',
-				]
-			);
-
-			Kirki::add_field( 
-				'primary_color_custom', 
-				[
-					'type'      => 'color',
-					'settings'  => 'primary_color_custom',
-					'label'     => esc_attr__( 'Primary Color (custom)', 'text-domain' ),
-					'section'   => 'color_scheme',
-					'default'   => '#e5e5e5',
-					'output'      => [
-						[
-							'element'  => 'body',
-							'property' => 'background-color',
-							'suffix'   => '!important',
-						],
-					],
-				]
-			);
-
-
-
-			Kirki::add_config( 
-				'secondary_color_custom', 
-				[
-					'capability'    => 'edit_theme_options',
-				]
-			);
-
-			Kirki::add_field( 
-				'secondary_color_custom', 
-				[
-					'type'      => 'color',
-					'settings'  => 'secondary_color_custom',
-					'label'     => esc_attr__( 'Secondary Color (custom)', 'text-domain' ),
-					'section'   => 'color_scheme',
-					'default'   => '#202020',
-					'output'      => [
-						[
-							'element'  => '#footer-container, #site-header, .primary-menu-wrapper',
-							'property' => 'background-color',
-							'suffix'   => '!important',
-						],
-					],
-				]
-			);
-
-			/*Kirki::add_config( 
-				'predefined_colors', 
-				[
-					'capability'    => 'edit_theme_options',
-				]
-			);
-
-			Kirki::add_field( 
-				'predefined_colors', 
-				[
-					'type'      => 'palette',
-					'label'     => esc_attr__( 'Predefined Сolors', 'text-domain' ),
-					'section'     => 'color_scheme',
-					'settings'  => 'predefined_colors',
-					'default'   => 'standart',
-					'transport' => 'auto',
-					'choices'     => [
-						'standart' => [
-							'#202020',
-							'#e5e5e5',
-						],
-						'dark' => [
-							'#37474F',
-							'#FFFFFF',
-							'#F9A825',
-						],
-					],
-				]
-			);
-			*/
 		}
 	}
 
