@@ -781,7 +781,7 @@ function customize () {
 		
     	if ( get_theme_mod( 'cover_image' ) )  {
 		?>
-
+			
 			<style type="text/css">
 				.cover {
 					background-image: url(<?php echo get_theme_mod( 'cover_image' )?>);
@@ -870,6 +870,56 @@ function customize () {
 		<?php
 	}
 
+	/*if ( get_theme_mod( 'predefined_colors' ) ) {
+
+		set_theme_mod( 'primary_color', '' );
+		set_theme_mod( 'secondary_color', '' );
+
+		if ( get_theme_mod( 'predefined_colors' ) == 'standart' ) {
+			
+			$bgcolor = '#e5e5e5';
+			$header_footer_color = '#202020';
+			?>
+
+			<style type="text/css">
+				html, body {
+					background-color: <?php echo $bgcolor?> !important;
+				}
+				#footer-container,
+				#site-header,
+				.primary-menu-wrapper {
+					background-color: <?php echo $header_footer_color?> !important;
+				}
+			</style>
+			<?php
+
+		}
+	}*/
+
+	if ( get_theme_mod( 'primary_color' ) ) {
+
+		set_theme_mod( 'primary_color_custom', '' );
+
+	}
+
+	if ( get_theme_mod( 'secondary_color' ) ) {
+
+		set_theme_mod( 'secondary_color_custom', '' );
+
+	}
+
+	if ( get_theme_mod( 'primary_color_custom' ) ) {
+
+		set_theme_mod( 'primary_color', '' );
+
+	}
+
+	if ( get_theme_mod( 'secondary_color_custom' ) ) {
+
+		set_theme_mod( 'secondary_color', '' );
+
+	}
+
 	if ( get_theme_mod( 'header_logo_position' ) ) {
 
 		$logo_position = get_theme_mod( 'header_logo_position' );
@@ -881,7 +931,7 @@ function customize () {
 					?>
 					
 					<style type="text/css">
-						@media (min-width: 1000px) {
+						@media (min-width: 1140px) {
 							.header-titles {
 								display: flex;
 								flex-direction: row;
@@ -903,7 +953,7 @@ function customize () {
 					?>
 					
 					<style type="text/css">
-						@media (min-width: 1000px) {
+						@media (min-width: 1140px) {
 							.header-titles {
 								display: flex;
 								flex-direction: column;
@@ -920,7 +970,7 @@ function customize () {
 					?>
 					
 					<style type="text/css">
-						@media (min-width: 1000px) {
+						@media (min-width: 1140px) {
 							.header-titles {
 								display: flex;
 								flex-direction: row-reverse;
@@ -1022,7 +1072,7 @@ function true_register_wp_sidebars() {
  
 	register_sidebar(
 		array(
-			'id' 			=> 'sidebar',
+			'id' 			=> 'main_sidebar',
 			'name' 			=> 'Main sitebar', 
 			'description' 	=> 'Drag and drop widgets here to add them to the sidebar.',
 			'before_widget' => '<div id="%1$s" class="side widget %2$s">',

@@ -15,7 +15,7 @@
 
 			<?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>
 
-			<footer id="site-footer" role="contentinfo" class="<?php if( is_404() ) echo 'footer-404'?> header-footer-group">
+			<footer id="site-footer" role="contentinfo" class="header-footer-group">
 
 				<div class="section-inner">
 
