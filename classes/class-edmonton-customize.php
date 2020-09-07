@@ -216,11 +216,10 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				]
 			);
 
-			Kirki::add_field( '
-				header_width_full', 
+			Kirki::add_field( 
+				'header_width_full', 
 				[
 					'type'        => 'checkbox',
-					'settings'    => 'checkbox_setting',
 					'settings'    => 'header_width_full',
 					'label'       => esc_html__( 'Full width', 'kirki' ),
 					'description' => esc_html__( 'Header, menu and search line will be take up the entire of the content.', 'kirki' ),
