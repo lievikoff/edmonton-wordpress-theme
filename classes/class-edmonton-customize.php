@@ -201,7 +201,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'section'     => 'header_general',
 					'default'     => 1110,
 					'choices'     => [
-						'min'  => 1000,
+						'min'  => 1030,
 						'max'  => 1700,
 						'step' => 1,
 					],
@@ -2023,7 +2023,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'priority'    => 91,
 					'default'     => 1110,
 					'choices'     => [
-						'min'  => 1000,
+						'min'  => 1030,
 						'max'  => 1700,
 						'step' => 1,
 					],

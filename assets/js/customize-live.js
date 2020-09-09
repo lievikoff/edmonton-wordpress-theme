@@ -1,4 +1,3 @@
-/* global edmontonBgColors, edmontonColor, jQuery, casta, _ */
 /**
  * Customizer enhancements for a better user experience.
  *
@@ -156,7 +155,7 @@
 
                 value = $('input[data-customize-setting-link="custom_content_width"]', window.parent.document).val();
                 
-                if ( value >= 1000 && value <= 1700 ){ 
+                if ( value >= 1030 && value <= 1700 ){ 
 
                     value = value + 'px';
 
@@ -166,12 +165,16 @@
                         $( '.header-navigation-wrapper' ).css( 'width', '100%' );
                         $( '.alt-navigation-wrapper' ).css( 'width', '100%' );
                         $( '#main' ).css( 'width', value ); 
+                        $( '.footer-nav-widgets-wrapper' ).css( 'width', value );
+						$( '#site-footer' ).css( 'width', value );
                     } else {
 
                         $( '#site-header' ).css( 'width', value );
                         $( '.header-navigation-wrapper' ).css( 'width', value );
                         $( '.alt-navigation-wrapper' ).css( 'width', value );
                         $( '#main' ).css( 'width', value ); 
+                        $( '.footer-nav-widgets-wrapper' ).css( 'width', value );
+						$( '#site-footer' ).css( 'width', value );
                     }
                 }
             }
@@ -181,7 +184,7 @@
     wp.customize( 'custom_content_width', function ( value )  {
         value.bind( function ( value )  {
 
-            if ( value >= 1000 && value <= 1700 ){
+            if ( value >= 1030 && value <= 1700 ){
              
                 if ( $( '#_customize-input-content_full', window.parent.document ).prop( 'checked' ) ) {
                     alert( 'Please unchecked full width.' );
@@ -190,10 +193,9 @@
                     if ( $( window ).width() >=  parseInt( value ) + 30 ) {
            
                         value = value + 'px';
-                        $( '#site-header' ).css( 'width', value );  
-                        $( '.header-navigation-wrapper' ).css( 'width', value );
-                        $( '.alt-navigation-wrapper' ).css( 'width', value );
                         $( '#main' ).css( 'width', value ); 
+                        $( '.footer-nav-widgets-wrapper' ).css( 'width', value );
+						$( '#site-footer' ).css( 'width', value );
                     } 
                 }
             }
@@ -216,7 +218,7 @@
 
                     value = $('input[data-customize-setting-link="custom_header_width"]', window.parent.document).val();
                     
-                    if ( value >= 1000 && value <= 1700 ){ 
+                    if ( value >= 1030 && value <= 1700 ){ 
 
                         value = value + 'px';
                         $( '#site-header' ).css( 'width', value );  
@@ -231,7 +233,7 @@
     wp.customize( 'custom_header_width', function ( value )  {
         value.bind( function ( value )  {
 
-            if ( value >= 1000 && value <= 1700 ){
+            if ( value >= 1030 && value <= 1700 ){
             
                 if ( $( '#_customize-input-content_full', window.parent.document ).prop( 'checked' ) || $( '#_customize-input-header_width_full', window.parent.document ).prop( 'checked' ) ) {
                     alert( 'Please unchecked full width for header AND content. (In `Content->General->Full width` and `Header->General->Full width`)' );

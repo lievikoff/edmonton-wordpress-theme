@@ -6057,7 +6057,7 @@ article {
 
 }
 
-@media ( max-width: 1139px ) {
+@media ( max-width: 999px ) {
 
 	.site-title {
 		color: #fff;
@@ -6219,7 +6219,7 @@ article {
 	}
 }
 
-@media ( min-width: 1140px ) {
+@media ( min-width: 1000px ) {
 
 
 	/* Document Setup ------------------------ */
