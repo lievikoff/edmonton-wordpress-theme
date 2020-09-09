@@ -2308,6 +2308,47 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				]
 			);
 			*/
+
+			/**
+			 * Breadcrumbs
+			 */
+
+			Kirki::add_panel( 
+				'breadcrumbs', 
+				[
+					'title'          => esc_html__( 'Breadcrumbs', 'kirki' ),
+					'priority'       => 90,
+				] 
+			);
+
+			Kirki::add_section( 
+				'breadcrumbs_general', 
+				[
+					'title'          => esc_html__( 'General', 'kirki' ),
+					'priority'       => 90,
+					'panel'			 => 'breadcrumbs',
+				] 
+			);
+
+			Kirki::add_config( 
+				'breadcrumbs_enable', 
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field( 
+				'breadcrumbs_enable', 
+				[
+					'type'        => 'checkbox',
+					'settings'    => 'breadcrumbs_enable',
+					'label'       => esc_html__( 'Breadcrumbs Enable', 'kirki' ),
+					'section'     => 'breadcrumbs_general',
+					'default'     => true,
+				] 
+			);
+
+
 		}
 	}
 

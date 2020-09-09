@@ -1329,6 +1329,24 @@ ul.social-icons li {
 	text-decoration: none;
 }
 
+/* Breadcrumbs ------------------------------- */
+
+.breadcrumbs {
+	z-index: 1;
+	background: #fff;
+	width: 1110px;
+	padding: 5px;
+}
+
+.breadcrumbs a {
+	color: black;
+	text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+	text-decoration: underline;
+}
+
 
 /* Cover Modals ------------------------------ */
 

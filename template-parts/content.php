@@ -57,7 +57,7 @@
 				</div>
 
 				<div class="post-date-footer block-footer">
-            		<a href="<?php the_permalink(); ?>"><?php the_time( 'j M Y' ); ?></a>
+            		<a href="<?php echo preg_replace('/([^\/]*)\/$/mi', '', get_the_permalink()); ?>"><?php the_time( 'j M Y' ); ?></a>
        			</div>
 
 			</div>
