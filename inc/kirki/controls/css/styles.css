@@ -630,12 +630,17 @@
 }
 .customize-control-kirki-slider .wrapper input[type=text] {
   font-size: 13px;
-  background: transparent;
+  background: #ffffff;
   border: none;
-  box-shadow: none;
-  text-align: right;
-  padding: 0;
+  box-shadow: inset 0px 0px 3px 1px rgba(0,0,0,0.45);;
+  text-align: center;
+  padding: 0; 
+  margin-left: 10px;
   width: 40px;
+}
+.customize-control-kirki-slider .wrapper input[type=text]:focus {
+  border: 2px solid rgb(0 115 203 / 70%);
+  box-shadow: none;
 }
 .customize-control-kirki-slider .wrapper .value {
   display: flex;
