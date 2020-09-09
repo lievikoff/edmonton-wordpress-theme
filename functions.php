@@ -1313,12 +1313,17 @@ function posts_custom_column_views( $column_name, $id ) {
     }
 }
 
-function the_breadcrumb(){
+function the_breadcrumb( $sep ){
  
 	// получаем номер текущей страницы
 	$pageNum = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
- 
-	$separator = ' &raquo; '; //  »
+	
+	if( get_theme_mod( 'breadcrumbs_separator' ) ) {
+		$separator = ' '.$sep.' ';
+	} else {
+		$separator = ' &raquo; ';
+	}
+	
 	
 	echo '<div class="breadcrumbs">';
 	// если главная страница сайта

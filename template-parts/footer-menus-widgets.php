@@ -69,7 +69,12 @@ if ( $has_footer_menu || $has_sidebar_1 ) {
 						</nav><!-- .site-nav -->
 
 					<?php } ?>
-					<?php get_template_part( 'template-parts/social-media' );?>
+					<?php 
+					if( get_theme_mod( 'social_footer_enable' ) ) {
+
+						get_template_part( 'template-parts/social-media' );
+						
+					}?>
 				</div><!-- .footer-top -->
 
 			<?php } ?>

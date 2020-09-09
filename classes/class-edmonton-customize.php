@@ -824,6 +824,65 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				]
 			);
 
+			
+			Kirki::add_config(
+				'social_header_enable',
+				[
+					'capability'        => 'edit_theme_options',
+					'default'           => true,
+				]
+			);
+			
+			Kirki::add_field(
+				'social_header_enable',
+				[
+					'type'        => 'checkbox',
+					'settings'    => 'social_header_enable',
+					'section'  	  => 'display_setting',
+					'priority' 	  => 10,
+					'label'    	  => esc_html__( 'Display social in header', 'kirki' ),
+				]
+			);
+
+			Kirki::add_config(
+				'social_footer_enable',
+				[
+					'capability'        => 'edit_theme_options',
+					'default'           => true,
+				]
+			);
+			
+			Kirki::add_field(
+				'social_footer_enable',
+				[
+					'type'        => 'checkbox',
+					'settings'    => 'social_footer_enable',
+					'section'  	  => 'display_setting',
+					'priority' 	  => 10,
+					'label'    	  => esc_html__( 'Display social in footer', 'kirki' ),
+				]
+			);
+
+			Kirki::add_config(
+				'social_mobile_menu_enable',
+				[
+					'capability'        => 'edit_theme_options',
+					'default'           => true,
+				]
+			);
+			
+			Kirki::add_field(
+				'social_mobile_menu_enable',
+				[
+					'type'        => 'checkbox',
+					'settings'    => 'social_mobile_menu_enable',
+					'section'  	  => 'display_setting',
+					'priority' 	  => 10,
+					'label'    	  => esc_html__( 'Display social in mobile menu', 'kirki' ),
+				]
+			);
+
+
 			Kirki::add_config(
 				'show_icon_background',
 				[
@@ -2345,6 +2404,29 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'label'       => esc_html__( 'Breadcrumbs Enable', 'kirki' ),
 					'section'     => 'breadcrumbs_general',
 					'default'     => true,
+				] 
+			);
+
+			Kirki::add_config( 
+				'breadcrumbs_separator', 
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field( 
+				'breadcrumbs_separator', 
+				[
+					'type'        => 'generic',
+					'settings'    => 'breadcrumbs_separator',
+					'label'       => esc_html__( 'Separator', 'kirki' ),
+					'description' => esc_html__( 'Add your separator', 'kirki' ),
+					'section'     => 'breadcrumbs_general',
+					'default'     => '',
+					'choices'     => [
+						'element'  => 'input',
+						'type'     => 'text',
+					],
 				] 
 			);
 

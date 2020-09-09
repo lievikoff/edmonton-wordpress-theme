@@ -114,8 +114,12 @@
 				<div class="alt-navigation-social-media">
 
 					<?php 
-					get_template_part( 'template-parts/social-media' );
-					?>	
+
+					if( get_theme_mod( 'social_mobile_menu_enable' ) ) {
+
+						get_template_part( 'template-parts/social-media' );
+
+					}?>	
 					
 				</div>
 

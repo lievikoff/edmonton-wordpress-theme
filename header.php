@@ -138,7 +138,12 @@
 			<div class="alt-navigation-social-media">
 
 				<?php 
-				get_template_part( 'template-parts/social-media' );
+				if( get_theme_mod( 'social_header_enable' ) ) {
+
+					get_template_part( 'template-parts/social-media' );
+
+				}
+				
 
 				if ( true === $enable_header_search ) {
 
@@ -165,7 +170,7 @@
 
 			if( !is_front_page() && $pageNum == 0  || is_front_page() && $pageNum != 0){
 
-				the_breadcrumb();
+				the_breadcrumb( get_theme_mod( 'breadcrumbs_separator' ) );
 
 			}
 
