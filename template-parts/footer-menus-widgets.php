@@ -39,36 +39,8 @@ if ( $has_footer_menu || $has_sidebar_1 ) {
 
 			<?php } ?>
 
-			<?php
-			$footer_top_classes = '';
-
-			$footer_top_classes .= $has_footer_menu ? ' has-footer-menu' : '';
-
-			if ( $has_footer_menu ) {
-				?>
-
-				<div class="footer-top footer-widgets-cl<?php echo $footer_top_classes; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static output ?>">
-					<?php if ( $has_footer_menu ) { ?>
-
-						<nav aria-label="<?php esc_attr_e( 'Footer', 'edmonton' ); ?>" role="navigation" class="footer-menu-wrapper">
-
-							<ul class="footer-menu reset-list-style">
-
-								<?php
-								wp_nav_menu(
-									array(
-										'container'      => '',
-										'depth'          => 1,
-										'items_wrap'     => '%3$s',
-										'theme_location' => 'footer',
-									)
-								);
-								?>
-
-							</ul>
-						</nav><!-- .site-nav -->
-
-					<?php } ?>
+				<div class="footer-top footer-widgets-cl">
+					
 					<?php 
 					if( get_theme_mod( 'social_footer_enable' ) ) {
 
@@ -77,7 +49,7 @@ if ( $has_footer_menu || $has_sidebar_1 ) {
 					}?>
 				</div><!-- .footer-top -->
 
-			<?php } ?>
+			
 
 		</div><!-- .footer-inner -->
 

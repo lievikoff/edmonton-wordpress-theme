@@ -778,6 +778,8 @@ function customize () {
 	}
 
 	if ( get_theme_mod( 'cover_enable' ) ) {
+
+		
 		
     	if ( get_theme_mod( 'cover_image' ) )  {
 		?>

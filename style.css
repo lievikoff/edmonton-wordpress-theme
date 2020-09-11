@@ -1003,7 +1003,7 @@ section {
 }
 
 .section-inner {
-	padding: 20px 0 0 0;
+	padding: 20px 10px 20px 10px;
 }
 
 .archive-section-inner {
@@ -1713,9 +1713,13 @@ ul.primary-menu > li:last-child {
 	.cover {
 		height: 350px;
 		width: 100%;
-		background: aliceblue;
+		background: url( './assets/images/alt-image-background.png' );
 		position: absolute;
 		z-index: 0;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		background-color: inherit;
 	}
 }
 

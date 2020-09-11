@@ -159,7 +159,7 @@
 		<?php if ( !is_404() ) {
 		?>
 
-		<div class="cover"></div>
+		<div class="cover" ></div>
 
 		<?php }?>
 		<?php
