@@ -1152,10 +1152,7 @@ function customize () {
 
 					#site-header,
 					.header-navigation-wrapper,
-					.alt-navigation-wrapper {
-						width: 100%;
-					}
-
+					.alt-navigation-wrapper,
 					#site-footer,
 					.footer-nav-widgets-wrapper,
 					#main {
