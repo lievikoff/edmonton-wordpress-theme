@@ -203,6 +203,16 @@ function edmonton_register_styles() {
 add_action( 'wp_enqueue_scripts', 'edmonton_register_styles' );
 
 /**
+ * Register and Enqueue Fonts.
+ */
+function edmonton_register_fonts() {
+	wp_enqueue_style( 'edmonton-roboto-font', 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap' );
+	wp_enqueue_style( 'edmonton-inter-font', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap' );
+}
+
+add_action( 'wp_enqueue_scripts', 'edmonton_register_fonts' );
+
+/**
  * Register and Enqueue Scripts.
  */
 function edmonton_register_scripts() {

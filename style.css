@@ -60,6 +60,7 @@ body {
 	margin: 0;
 	padding: 0;
 	background-color: #E5E5E5 !important;
+	font-family: "Roboto", sans-serif;
 }
 
 h1,
@@ -1381,7 +1382,6 @@ ul.social-icons li {
 
 #site-header {
 	position: relative;
-	height: 80px;
 }
 
 .header-inner {
@@ -1615,16 +1615,9 @@ ul.primary-menu > li > a{
 }
 
 ul.primary-menu > li {
+	position: relative;
 	border-right: 1px solid #303030;
-	border-left: 1px solid black;
-}
-
-ul.primary-menu > li:first-child {
-	border-left: none;
-}
-
-ul.primary-menu > li:last-child {
-	border-right: none;
+	box-shadow: 1px 0 0 0 #101010;
 }
 
 .primary-menu .icon {
@@ -1654,21 +1647,6 @@ ul.primary-menu > li:last-child {
 .primary-menu .icon::after {
 	height: 0.2rem;
 	width: 0.9rem;
-}
-
-.primary-menu li {
-	font-family: Roboto;
-	font-size: 14px;
-	line-height: 16px;
-	position: relative;
-}
-
-.primary-menu > li {
-	/*margin: 0.8rem 0 0.8rem 0rem;*/
-}
-
-.primary-menu > li:first-child {
-	/*margin: 0.8rem 0 0.8rem 15px;*/
 }
 
 .primary-menu > li.menu-item-has-children > a {
@@ -6368,7 +6346,6 @@ article {
 
 	#site-header {
 		z-index: 2;
-		height: 80px;
 	}
 
 	.header-inner {
@@ -6413,10 +6390,6 @@ article {
 		margin-top: 0.5em;
 	}
 
-	.header-titles {
-		margin: -0.6rem 0 0 -2.4rem;
-	}
-
 	.header-titles .site-title,
 	.header-titles .site-logo,
 	.header-titles .site-description {
@@ -6453,9 +6426,6 @@ article {
 		font-size: 28px;
 		line-height: 34px;
 		text-transform: uppercase;
-		/* identical to box height */
-
-		letter-spacing: 0.1em;
 	}
 
 	.site-title:hover {
