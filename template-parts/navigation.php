@@ -15,7 +15,7 @@ if ( $next_post || $prev_post ) {
 
 	if ( ! $next_post ) {
 		$pagination_classes = ' only-one only-prev';
-	} elseif ( ! $prev_post ) {
+	} else if ( ! $prev_post ) {
 		$pagination_classes = ' only-one only-next';
 	}
 

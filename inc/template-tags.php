@@ -280,7 +280,7 @@ function edmonton_get_post_meta( $post_id = null, $location = 'single-top' ) {
 
 		$post_meta_wrapper_classes = ' post-meta-single post-meta-single-top';
 
-	} elseif ( 'single-bottom' === $location ) {
+	} else if ( 'single-bottom' === $location ) {
 
 		/**
 		 * Filters post tags visibility.
@@ -562,7 +562,7 @@ function edmonton_add_sub_toggles_to_main_menu( $args, $item, $depth ) {
 		$args->after .= '</div><!-- .ancestor-wrapper -->';
 
 		// Add sub menu icons to the primary menu without toggles.
-	} elseif ( 'primary' === $args->theme_location ) {
+	} else if ( 'primary' === $args->theme_location ) {
 		if ( in_array( 'menu-item-has-children', $item->classes, true ) ) {
 			$args->after = '<span class="icon"></span>';
 		} else {
@@ -653,7 +653,7 @@ function edmonton_body_classes( $classes ) {
 	// Check for post thumbnail.
 	if ( is_singular() && has_post_thumbnail() ) {
 		$classes[] = 'has-post-thumbnail';
-	} elseif ( is_singular() ) {
+	} else if ( is_singular() ) {
 		$classes[] = 'missing-post-thumbnail';
 	}
 

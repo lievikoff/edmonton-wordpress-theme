@@ -54,10 +54,10 @@ if ( ! class_exists( 'Edmonton_Walker_Page' ) ) {
 				}
 				if ( $page->ID === $current_page ) {
 					$css_class[] = 'current_page_item';
-				} elseif ( $_current_page && $page->ID === $_current_page->post_parent ) {
+				} else if ( $_current_page && $page->ID === $_current_page->post_parent ) {
 					$css_class[] = 'current_page_parent';
 				}
-			} elseif ( get_option( 'page_for_posts' ) === $page->ID ) {
+			} else if ( get_option( 'page_for_posts' ) === $page->ID ) {
 				$css_class[] = 'current_page_parent';
 			}
 

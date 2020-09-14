@@ -740,7 +740,7 @@ function edmonton_get_elements_array() {
 				'border-left-color'   => array( 'body:not(.overlay-header) .primary-menu ul ul:after' ),
 			),
 			'secondary'  => array(
-				'color' => array( '.site-description', 'body:not(.overlay-header) .toggle-inner .toggle-text', '.widget .post-date', '.widget .rss-date', '.widget_archive li', '.widget_categories li', '.widget cite', '.widget_pages li', '.widget_meta li', '.widget_nav_menu li', '.powered-by-wordpress', '.to-the-top', '.singular .entry-header .post-meta', '.singular:not(.overlay-header) .entry-header .post-meta a' ),
+				'color' => array( '.site-description', 'body:not(.overlay-header) .toggle-inner .toggle-text', '.widget .post-date', '.widget .rss-date', '.widget_archive li', '.widget_categories li', '.widget cite', '.widget_pages li', '.widget_meta li', '.widget_nav_menu li', '.powered-by-edmonton', '.to-the-top', '.singular .entry-header .post-meta', '.singular:not(.overlay-header) .entry-header .post-meta a' ),
 			),
 			'borders'    => array(
 				'border-color'     => array( '.header-footer-group pre', '.header-footer-group fieldset', '.header-footer-group input', '.header-footer-group textarea', '.header-footer-group table', '.header-footer-group table *', '.footer-nav-widgets-wrapper', '#site-footer', '.menu-modal nav *', '.footer-widgets-outer-wrapper', '.footer-top' ),
@@ -1274,7 +1274,7 @@ add_filter( 'excerpt_length', function(){
 	return 40;
 } );
 
-function getPostViews( $postID ){
+function get_post_views( $postID ){
 	
 	$count_key = 'post_views_count';
 	$count = get_post_meta($postID, $count_key, true);
@@ -1290,7 +1290,7 @@ function getPostViews( $postID ){
 	return $count;
 }
 
-function setPostViews($postID) {
+function set_post_views($postID) {
 	
 	$count_key = 'post_views_count';
 	$count = get_post_meta($postID, $count_key, true);
@@ -1318,7 +1318,7 @@ function posts_column_views( $defaults ) {
 function posts_custom_column_views( $column_name, $id ) {
 
     if( $column_name === 'post_views' ) {
-        echo getPostViews( get_the_ID() );
+        echo get_post_views( get_the_ID() );
     }
 }
 
@@ -1351,40 +1351,40 @@ function the_breadcrumb( $sep ){
  
 			echo get_the_category_custom(1); echo $separator; the_title();
  
-		} elseif ( is_page() ){ // страницы WordPress 
+		} else if ( is_page() ){ // страницы WordPress 
  
 			the_title();
  
-		} elseif ( is_category() ) {
+		} else if ( is_category() ) {
  
 			single_cat_title();
  
-		} elseif( is_tag() ) {
+		} else if( is_tag() ) {
  
 			single_tag_title();
  
-		} elseif ( is_day() ) { // архивы (по дням)
+		} else if ( is_day() ) { // архивы (по дням)
  
 			echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a>' . $separator;
 			echo '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a>' . $separator;
 			echo get_the_time('d');
  
-		} elseif ( is_month() ) { // архивы (по месяцам)
+		} else if ( is_month() ) { // архивы (по месяцам)
  
 			echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a>' . $separator;
 			echo get_the_time('F');
  
-		} elseif ( is_year() ) { // архивы (по годам)
+		} else if ( is_year() ) { // архивы (по годам)
  
 			echo get_the_time('Y');
  
-		} elseif ( is_author() ) { // архивы по авторам
+		} else if ( is_author() ) { // архивы по авторам
  
 			global $author;
 			$userdata = get_userdata($author);
 			echo 'Опубликовал(а) ' . $userdata->display_name;
  
-		} elseif ( is_404() ) { // если страницы не существует
+		} else if ( is_404() ) { // если страницы не существует
  
 			echo 'Ошибка 404';
  
@@ -1415,12 +1415,12 @@ function true_register_wp_sidebars() {
  
 add_action( 'widgets_init', 'true_register_wp_sidebars' );
 
-add_action( 'loop_start', 'wpse_77028_switch_filter' );
-add_action( 'loop_end',   'wpse_77028_switch_filter' );
+add_action( 'loop_start', 'switch_comment_filter' );
+add_action( 'loop_end',   'switch_comment_filter' );
 
 /**
  * Turn comment text filter on or off depending on global $post object.
- *
+ *	
  * @wp-hook loop_start
  * @wp-hook loop_end
  * @return  void
@@ -1428,10 +1428,10 @@ add_action( 'loop_end',   'wpse_77028_switch_filter' );
  * @since Edmonton 1.0
  */
 
-function wpse_77028_switch_filter()
+function switch_comment_filter()
 {
     $func = 'loop_start' === current_filter() ? 'add_filter' : 'remove_filter';
-    $func( 'gettext',    'wpse_77028_comment_num_text', 10, 3 );
+    $func( 'gettext',    'comment_number_text', 10, 3 );
 }
 
 /**
@@ -1446,7 +1446,7 @@ function wpse_77028_switch_filter()
  * @since Edmonton 1.0
  */
 
-function wpse_77028_comment_num_text( $translated, $original, $domain ) {
+function comment_number_text( $translated, $original, $domain ) {
 
     if ( 'Enter your password to view comments.' === $original and 'default' === $domain )
         return ' ';

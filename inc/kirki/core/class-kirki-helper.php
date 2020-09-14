@@ -118,7 +118,7 @@ class Kirki_Helper {
 			// Set connection type.
 			if ( ( defined( 'FTP_SSL' ) && FTP_SSL ) && 'ftpext' === $method ) {
 				$credentials['connection_type'] = 'ftps';
-			} elseif ( ! array_filter( $credentials ) ) {
+			} else if ( ! array_filter( $credentials ) ) {
 				$credentials['connection_type'] = null;
 			} else {
 				$credentials['connection_type'] = 'ftp';
@@ -196,7 +196,7 @@ class Kirki_Helper {
 					'suppress_filters' => false,
 				)
 			);
-		} elseif ( is_array( $args ) && ! isset( $args['suppress_filters'] ) ) {
+		} else if ( is_array( $args ) && ! isset( $args['suppress_filters'] ) ) {
 			$args['suppress_filters'] = false;
 		}
 
@@ -340,13 +340,13 @@ class Kirki_Helper {
 				if ( 'A100' === $context ) {
 					$key = 10;
 					unset( $colors['grey'] );
-				} elseif ( 'A200' === $context ) {
+				} else if ( 'A200' === $context ) {
 					$key = 11;
 					unset( $colors['grey'] );
-				} elseif ( 'A400' === $context ) {
+				} else if ( 'A400' === $context ) {
 					$key = 12;
 					unset( $colors['grey'] );
-				} elseif ( 'A700' === $context ) {
+				} else if ( 'A700' === $context ) {
 					$key = 13;
 					unset( $colors['grey'] );
 				}

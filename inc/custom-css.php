@@ -116,7 +116,7 @@ if ( ! function_exists( 'edmonton_get_customizer_css' ) ) {
 			}
 
 			// Block Editor Styles.
-		} elseif ( 'block-editor' === $type ) {
+		} else if ( 'block-editor' === $type ) {
 
 			// Colors.
 			// Accent color.
@@ -152,7 +152,7 @@ if ( ! function_exists( 'edmonton_get_customizer_css' ) ) {
 			if ( $header_footer_background && $header_footer_background !== $header_footer_background_default ) {
 				edmonton_generate_css( '.editor-styles-wrapper .wp-block-pullquote::before', 'background-color', $header_footer_background );
 			}
-		} elseif ( 'classic-editor' === $type ) {
+		} else if ( 'classic-editor' === $type ) {
 
 			// Colors.
 			// Accent color.

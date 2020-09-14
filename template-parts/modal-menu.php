@@ -28,9 +28,9 @@
 				// If the mobile menu location is not set, use the primary and expanded locations as fallbacks, in that order.
 				if ( has_nav_menu( 'mobile' ) ) {
 					$mobile_menu_location = 'mobile';
-				} elseif ( has_nav_menu( 'primary' ) ) {
+				} else if ( has_nav_menu( 'primary' ) ) {
 					$mobile_menu_location = 'primary';
-				} elseif ( has_nav_menu( 'expanded' ) ) {
+				} else if ( has_nav_menu( 'expanded' ) ) {
 					$mobile_menu_location = 'expanded';
 				}
 

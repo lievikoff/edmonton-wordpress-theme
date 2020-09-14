@@ -10,7 +10,7 @@
 
 get_header();
 if ( is_single() || is_page() ) {
-	setPostViews( get_the_ID() );
+	set_post_views( get_the_ID() );
 }
 
 $site_content = '';

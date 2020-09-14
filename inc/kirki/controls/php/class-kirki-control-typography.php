@@ -245,7 +245,7 @@ class Kirki_Control_Typography extends Kirki_Control_Base {
 					'id'    => $variant,
 					'label' => isset( $all_variants[ $variant ] ) ? $all_variants[ $variant ] : $variant,
 				);
-			} elseif ( is_array( $variant ) && isset( $variant['id'] ) && isset( $variant['label'] ) ) {
+			} else if ( is_array( $variant ) && isset( $variant['id'] ) && isset( $variant['label'] ) ) {
 				$final_variants[] = $variant;
 			}
 		}

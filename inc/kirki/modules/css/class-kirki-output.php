@@ -249,7 +249,7 @@ class Kirki_Output {
 				if ( ! isset( $output['context'] ) || ! in_array( 'editor', $output['context'], true ) ) {
 					continue;
 				}
-			} elseif ( isset( $output['context'] ) && ! in_array( 'front', $output['context'], true ) ) {
+			} else if ( isset( $output['context'] ) && ! in_array( 'front', $output['context'], true ) ) {
 
 				// Check if this is a frontend style.
 				continue;

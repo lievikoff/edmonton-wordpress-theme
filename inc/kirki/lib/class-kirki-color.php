@@ -257,9 +257,9 @@ final class Kirki_Color extends ariColor {
 			$del_b = ( ( ( $var_max - $var_b ) / 6 ) + ( $del_max / 2 ) ) / $del_max;
 			if ( $var_r == $var_max ) {
 				$h = $del_b - $del_g;
-			} elseif ( $var_g == $var_max ) {
+			} else if ( $var_g == $var_max ) {
 				$h = ( 1 / 3 ) + $del_r - $del_b;
-			} elseif ( $var_b == $var_max ) {
+			} else if ( $var_b == $var_max ) {
 				$h = ( 2 / 3 ) + $del_g - $del_r;
 			}
 			if ( $h < 0 ) {

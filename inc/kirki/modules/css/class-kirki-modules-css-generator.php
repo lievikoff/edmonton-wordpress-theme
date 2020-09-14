@@ -194,7 +194,7 @@ final class Kirki_Modules_CSS_Generator {
 				foreach ( $style_array as $property => $value ) {
 					if ( is_string( $value ) && '' !== $value ) {
 						$css_for_style .= $property . ':' . $value . ';';
-					} elseif ( is_array( $value ) ) {
+					} else if ( is_array( $value ) ) {
 						foreach ( $value as $subvalue ) {
 							if ( is_string( $subvalue ) && '' !== $subvalue ) {
 								$css_for_style .= $property . ':' . $subvalue . ';';

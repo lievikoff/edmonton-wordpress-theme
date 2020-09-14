@@ -817,10 +817,6 @@ textarea {
 	width: 100%;
 }
 
-.placeholder {
-
-}
-
 input::-webkit-input-placeholder {
 	line-height: normal;
 }
@@ -1310,7 +1306,6 @@ ul.social-icons li {
 .social-icons a,
 .alt-navigation-social-media a {
 	align-items: center;
-	background: #cd2653;
 	border-radius: 6px;
 	color: #fff;
 	display: flex;
@@ -4663,13 +4658,11 @@ padding: 0 18px 0 18px;
 	border-bottom: 1px solid #303030;
 }
 
-.footer-top-visible .footer-nav-widgets-wrapper,
-.footer-top-hidden #site-footer {
+.footer-top-visible .footer-nav-widgets-wrapper {
 	margin-top: 2rem;
 }
 
-.reduced-spacing.footer-top-visible .footer-nav-widgets-wrapper,
-.reduced-spacing.footer-top-hidden #site-footer {
+.reduced-spacing.footer-top-visible .footer-nav-widgets-wrapper {
 	border-top-width: 0.1rem;
 }
 
@@ -4714,7 +4707,7 @@ padding: 0 18px 0 18px;
 
 	.footer-menu a {
 		font-size: 12px !important;
-		font-weight: 400;
+		font-weight: ё;
 	}
 
 	.footer-nav-widgets-wrapper {
@@ -4771,9 +4764,6 @@ ul.footer-social li {
 
 /* Footer Widgets ---------------------------- */
 
-.footer-widgets-outer-wrapper {
-}
-
 .footer-widgets-cl {
 	border-bottom-color: #303030 !important;
 }
@@ -4805,12 +4795,14 @@ ul.footer-social li {
 }
 
 .footer-copyright a,
-.powered-by-wordpress a {
+.powered-by-edmonton a {
 	color: inherit;
+	cursor: pointer;
 }
 
-.powered-by-wordpress,
-.to-the-top {
+.powered-by-edmonton,
+.to-the-top,
+.after-powered-by-edmonton {
 	color: #6d6d6d;
 }
 
@@ -4830,7 +4822,8 @@ a.to-the-top > * {
 	color: #ffffff;
 }
 
-.powered-by-wordpress {
+.powered-by-edmonton,
+.after-powered-by-edmonton {
 	display: none;
 	margin: 0 0 0 0.5rem;
 }
@@ -6073,8 +6066,7 @@ article {
 
 	/* Site Footer --------------------------- */
 
-	.footer-top-visible .footer-nav-widgets-wrapper,
-	.footer-top-hidden #site-footer {
+	.footer-top-visible .footer-nav-widgets-wrapper {
 		margin-top: 1rem;
 	}
 
@@ -6131,7 +6123,8 @@ article {
 		display: flex;
 	}
 
-	.powered-by-wordpress {
+	.powered-by-edmonton,
+	.after-powered-by-edmonton {
 		display: block;
 		font-family: Roboto;
 		font-weight: normal;
@@ -6397,9 +6390,8 @@ article {
 	}
 
 	.header-titles .site-title,
-	.header-titles .site-logo,
-	.header-titles .site-description {
-		margin: 0.5rem 0 0 2.4rem;
+	.header-titles .site-logo {
+		margin: 0.5rem 2.4rem 0 2.4rem;
 	}
 
 	.wp-custom-logo .header-titles {

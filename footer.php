@@ -31,11 +31,15 @@
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
 						</p><!-- .footer-copyright -->
 
-						<p class="powered-by-wordpress">
-							<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'edmonton' ) ); ?>">
-								<?php _e( 'by Chapak. All Right Reserved.', 'edmonton' ); ?>
+						<p class="powered-by-edmonton">
+							<a href="<?php echo esc_url( __( '#', 'edmonton' ) ); ?>">
+								<?php echo __( 'by Chapak. ', 'edmonton' ); ?>
 							</a>
-						</p><!-- .powered-by-wordpress -->
+						</p><!-- .powered-by-edmonton -->
+
+						<p class="after-powered-by-edmonton">
+							<?php _e( 'All Right Reserved.', 'edmonton' ); ?>
+						</p><!-- .after-powered-by-edmonton -->
 
 					</div><!-- .footer-credits -->
 

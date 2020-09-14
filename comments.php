@@ -31,7 +31,7 @@ if ( $comments ) {
 			<?php
 			if ( ! have_comments() ) {
 				_e( 'Leave a comment', 'edmonton' );
-			} elseif ( 1 === $comments_number ) {
+			} else if ( 1 === $comments_number ) {
 				/* translators: %s: Post title. */
 				printf( _x( 'One comment on &ldquo;%s&rdquo;', 'comments title', 'edmonton' ), get_the_title() );
 			} else {
@@ -113,7 +113,7 @@ if ( comments_open() || pings_open() ) {
 		)
 	);
 
-} elseif ( is_single() ) {
+} else if ( is_single() ) {
 
 	if ( $comments ) {
 		echo '<hr class="separator"/>';

@@ -103,7 +103,7 @@
 								)
 							);
 
-						} elseif ( ! has_nav_menu( 'expanded' ) ) {
+						} else if ( ! has_nav_menu( 'expanded' ) ) {
 
 							wp_list_pages(
 								array(

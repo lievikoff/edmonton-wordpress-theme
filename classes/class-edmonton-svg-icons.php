@@ -22,7 +22,7 @@ if ( ! class_exists( 'Edmonton_SVG_Icons' ) ) {
 		public static function get_svg( $icon, $group = 'ui', $color = '#1A1A1B' ) {
 			if ( 'ui' === $group ) {
 				$arr = self::$ui_icons;
-			} elseif ( 'social' === $group ) {
+			} else if ( 'social' === $group ) {
 				$arr = self::$social_icons;
 			} else {
 				$arr = array();

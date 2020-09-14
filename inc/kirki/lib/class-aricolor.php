@@ -261,31 +261,31 @@ if ( ! class_exists( 'ariColor' ) ) {
 				$value = max( 0, min( 255, $value ) );
 				if ( 'red' === $property ) {
 					return self::new_color( 'rgba(' . $value . ',' . $this->green . ',' . $this->blue . ',' . $this->alpha . ')', 'rgba' );
-				} elseif ( 'green' === $property ) {
+				} else if ( 'green' === $property ) {
 					return self::new_color( 'rgba(' . $this->red . ',' . $value . ',' . $this->blue . ',' . $this->alpha . ')', 'rgba' );
-				} elseif ( 'blue' === $property ) {
+				} else if ( 'blue' === $property ) {
 					return self::new_color( 'rgba(' . $this->red . ',' . $this->green . ',' . $value . ',' . $this->alpha . ')', 'rgba' );
-				} elseif ( 'alpha' === $property ) {
+				} else if ( 'alpha' === $property ) {
 					return self::new_color( 'rgba(' . $this->red . ',' . $this->green . ',' . $this->blue . ',' . $value . ')', 'rgba' );
 				}
-			} elseif ( in_array( $property, array( 'hue', 'saturation', 'lightness' ), true ) ) {
+			} else if ( in_array( $property, array( 'hue', 'saturation', 'lightness' ), true ) ) {
 				// Check if we're changing any of the hsl values.
 				$value = ( 'hue' === $property ) ? max( 0, min( 360, $value ) ) : max( 0, min( 100, $value ) );
 
 				if ( 'hue' === $property ) {
 					return self::new_color( 'hsla(' . $value . ',' . $this->saturation . '%,' . $this->lightness . '%,' . $this->alpha . ')', 'hsla' );
-				} elseif ( 'saturation' === $property ) {
+				} else if ( 'saturation' === $property ) {
 					return self::new_color( 'hsla(' . $this->hue . ',' . $value . '%,' . $this->lightness . '%,' . $this->alpha . ')', 'hsla' );
-				} elseif ( 'lightness' === $property ) {
+				} else if ( 'lightness' === $property ) {
 					return self::new_color( 'hsla(' . $this->hue . ',' . $this->saturation . '%,' . $value . '%,' . $this->alpha . ')', 'hsla' );
 				}
-			} elseif ( 'brightness' === $property ) {
+			} else if ( 'brightness' === $property ) {
 				// Check if we're changing the brightness.
 				if ( $value < $this->brightness['total'] ) {
 					$red   = max( 0, min( 255, $this->red - ( $this->brightness['total'] - $value ) ) );
 					$green = max( 0, min( 255, $this->green - ( $this->brightness['total'] - $value ) ) );
 					$blue  = max( 0, min( 255, $this->blue - ( $this->brightness['total'] - $value ) ) );
-				} elseif ( $value > $this->brightness['total'] ) {
+				} else if ( $value > $this->brightness['total'] ) {
 					$red   = max( 0, min( 255, $this->red + ( $value - $this->brightness['total'] ) ) );
 					$green = max( 0, min( 255, $this->green + ( $value - $this->brightness['total'] ) ) );
 					$blue  = max( 0, min( 255, $this->blue + ( $value - $this->brightness['total'] ) ) );
@@ -335,7 +335,7 @@ if ( ! class_exists( 'ariColor' ) ) {
 				if ( isset( $color['rgba'] ) ) {
 					$this->color = $color['rgba'];
 					return 'rgba';
-				} elseif ( isset( $color['color'] ) ) {
+				} else if ( isset( $color['color'] ) ) {
 					// Does the array have a 'color' key?
 					$this->color = $color['color'];
 					if ( is_string( $color['color'] ) && false !== strpos( $color['color'], 'rgba' ) ) {
@@ -347,7 +347,7 @@ if ( ! class_exists( 'ariColor' ) ) {
 				if ( 4 === count( $color ) && isset( $color[0] ) && isset( $color[1] ) && isset( $color[2] ) && isset( $color[3] ) ) {
 					$this->color = 'rgba(' . intval( $color[0] ) . ',' . intval( $color[1] ) . ',' . intval( $color[2] ) . ',' . intval( $color[3] ) . ')';
 					return 'rgba';
-				} elseif ( 3 === count( $color ) && isset( $color[0] ) && isset( $color[1] ) && isset( $color[2] ) ) {
+				} else if ( 3 === count( $color ) && isset( $color[0] ) && isset( $color[1] ) && isset( $color[2] ) ) {
 					// Is this a simple array with 3 items?
 					$this->color = 'rgba(' . intval( $color[0] ) . ',' . intval( $color[1] ) . ',' . intval( $color[2] ) . ',1)';
 					return 'rgba';

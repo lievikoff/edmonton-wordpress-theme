@@ -44,9 +44,9 @@ get_header();
 		} else {
 			$archive_subtitle = __( 'We could not find any results for your search. You can give it another try through the search form below.', 'edmonton' );
 		}
-	} elseif ( is_archive() && ! have_posts() ) {
+	} else if ( is_archive() && ! have_posts() ) {
 		$archive_title = __( 'Nothing Found', 'edmonton' );
-	} elseif ( ! is_home() ) {
+	} else if ( ! is_home() ) {
 		$archive_title    = get_the_archive_title();
 		$archive_subtitle = get_the_archive_description();
 	}
@@ -142,7 +142,7 @@ get_header();
 						get_template_part( 'template-parts/content-catalog', get_post_type() );
 
 					}
-				} elseif ( is_search() ) {
+				} else if ( is_search() ) {
 					?>
 
 					

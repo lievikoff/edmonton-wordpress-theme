@@ -171,7 +171,7 @@ final class Kirki_Fonts_Google {
 						if ( ! array_key_exists( $value, $this->fonts ) ) {
 							$this->fonts[ $value ] = array();
 						}
-					} elseif ( 'font-weight' === $output['property'] ) {
+					} else if ( 'font-weight' === $output['property'] ) {
 						foreach ( $this->fonts as $font => $variants ) {
 							if ( ! in_array( $value, $variants, true ) ) {
 								$this->fonts[ $font ][] = $value;

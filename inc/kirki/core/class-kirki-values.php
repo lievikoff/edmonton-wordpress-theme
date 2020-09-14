@@ -139,7 +139,7 @@ class Kirki_Values {
 		$value = $field['default'];
 		if ( isset( $field['option_type'] ) && 'theme_mod' === $field['option_type'] ) {
 			$value = get_theme_mod( $field['settings'], $field['default'] );
-		} elseif ( isset( $field['option_type'] ) && 'option' === $field['option_type'] ) {
+		} else if ( isset( $field['option_type'] ) && 'option' === $field['option_type'] ) {
 			if ( isset( $field['option_name'] ) && '' !== $field['option_name'] ) {
 				$all_values     = get_option( $field['option_name'], array() );
 				$sub_setting_id = str_replace( array( ']', $field['option_name'] . '[' ), '', $field['settings'] );
