@@ -1478,3 +1478,4 @@ function get_the_category_custom ( $num ) {
 
 	echo $category_return;
 }
+
