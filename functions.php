@@ -1454,7 +1454,7 @@ function comment_number_text( $translated, $original, $domain ) {
     return $translated;
 }
 
-function get_the_category_custom ( $num ) {
+function get_the_category_custom ( $num = NULL ) {
 	
 	$temp = get_the_category();
 	$count = count( $temp );
@@ -1466,9 +1466,26 @@ function get_the_category_custom ( $num ) {
 
 		$category_return .= '<a href="' . get_category_link( $temp[$i]->cat_ID ) . '">' . $temp[$i]->cat_name . '</a>';
 		
-		if ( $i != $num - 1 && $i + 1 < $count ) {
+		if ( $num == $count ) {
+
+			if ( $i != $num - 2 && $i != $num - 1 ) {
+
+				$category_return .= ', ';
+			} else if ( $i == $num - 2 ) {
+
+				$category_return .= __( ' and ' , edmonton);
+			}
+		} else if ( $num < $count ) {
+
+			if ( $i != $num - 1 && $i + 1 < $count ) {
 		
-			$category_return .= ', ';
+				$category_return .= ', ';
+			} else if ( $i == $num - 1 && $num < $count ) {
+	
+				$category_return .= __( ' and other' , edmonton);
+			}
+		} else if ( $num > $count ) {
+			//выводить `,` между и перед последним `and`
 		}
 	}
 
@@ -1478,4 +1495,3 @@ function get_the_category_custom ( $num ) {
 
 	echo $category_return;
 }
-

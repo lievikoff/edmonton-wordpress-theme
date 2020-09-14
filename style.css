@@ -1023,6 +1023,16 @@ section {
 	margin: 7px 3px 0 18px;
 }
 
+.breadcrumbs {
+	font-family: Roboto;
+	font-style: normal;
+	font-size: 18px;
+	line-height: 22px;
+
+	color: #101010;
+	padding: 1.5rem 1.8rem;
+}
+
 .archive-section-inner-result {
 	padding: 0;
 	margin-top: 7px;
@@ -1330,8 +1340,6 @@ ul.social-icons li {
 .breadcrumbs {
 	z-index: 1;
 	background: #fff;
-	width: 1110px;
-	padding: 5px;
 }
 
 .breadcrumbs a {
@@ -2560,13 +2568,12 @@ h2.entry-title {
 	display: block;
 	margin: 0 0 0 0;
 	width: 100%;
-	white-space: nowrap;
 	overflow: hidden;
-	text-overflow: ellipsis;
 }
 
 .entry-header-inner-catalog {
 	height: 100%;
+	margin-top: 15px;
 }
 
 .entry-title-catalog a:hover {
@@ -2724,7 +2731,7 @@ h2.entry-title {
 }
 
 .featured-media-inner-catalog {
-	margin: 15px;
+	margin: 15px 15px 0 15px;
     width: calc( 100% - 30px );
     height: 250px;
     background-color: rgb(229, 229, 229);
@@ -3669,17 +3676,12 @@ figure.wp-block-table.is-style-stripes {
     font-weight: normal;
     font-size: 16px;
 	line-height: 26px;
-	height: 133px;
+	height: max-content;
 	
 	overflow: hidden;
     text-overflow: ellipsis;
 	color: #303030;
 	margin: 0 0 0 0;
-
-	display: -webkit-box;
-	-webkit-line-clamp: 5;
-	-webkit-box-orient: vertical;
-	overflow-y: hidden;
 }
 
 .entry-content h1,
@@ -4871,13 +4873,13 @@ a.to-the-top > * {
 }
 
 .catalog-item {
-	height: 549px;
+	height: max-content;
 	background-color: #ffffff;
 	box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.02);
 	border-bottom: 2px solid #F0F0F0;
 	overflow: hidden;
 	position: relative;
-
+	padding-bottom: 53px;
 	transition: all 0.4s ease-out;	
 }
 
@@ -4939,6 +4941,7 @@ a.to-the-top > * {
 }
 
 .sidebar-thumbnail {
+	margin: 0 12px 0 0;
     width: 60px;
     height: 60px;
     background-color: rgb(229, 229, 229);
@@ -4952,7 +4955,6 @@ a.to-the-top > * {
 }
 
 .sidebar-title {
-	margin: 0 0 0 12px;
 	width: calc( 100% - 12px);
 
 	font-family: Inter;
@@ -4969,7 +4971,7 @@ a.to-the-top > * {
 }
 
 .sidebar-post-data {
-	margin: 5px 0 0 12px;
+	margin: 5px 0 0 0;
 
 	font-family: Roboto;
 	font-style: normal;
@@ -4981,7 +4983,7 @@ a.to-the-top > * {
 }
 
 .post-inner-catalog{
-	height: 133px;
+	height: auto;
 }
 
 article {

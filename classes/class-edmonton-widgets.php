@@ -101,9 +101,13 @@ class theMostPopularArticle extends WP_Widget {
 			<a href="<?php the_permalink( $all_popular_posts[$i]['post_id'] ); ?>" class="sidebar-item" 
 				title="<?php echo $all_popular_posts[$i]['post_title']; ?>">
 
-				<div class="sidebar-thumbnail">
+				<div class="sidebar-thumbnail" style="display: <?php if ( !has_post_thumbnail( $all_popular_posts[$i]['post_id'] ) ) echo 'none'; ?>;">
 
-					<img src="<?php echo get_the_post_thumbnail_url( $all_popular_posts[$i]['post_id'], 'thumbnail' )?>">
+					<?php if ( get_the_post_thumbnail_url( $all_popular_posts[$i]['post_id'], 'thumbnail' ) ) { ?>
+
+						<img src="<?php echo get_the_post_thumbnail_url( $all_popular_posts[$i]['post_id'], 'thumbnail' )?>">
+
+					<?php } ?>
 
 				</div>
 
@@ -364,17 +368,13 @@ class recentPosts extends WP_Widget {
 			<a href="<?php the_permalink( $recent_posts[$i]['post_id'] ); ?>" class="sidebar-item" 
 				title="<?php echo $recent_posts[$i]['post_title']; ?>">
 
-				<div class="sidebar-thumbnail">
+				<div class="sidebar-thumbnail" style="display: <?php if ( !has_post_thumbnail( $resent_posts[$i]['post_id'] ) ) echo 'none'; ?>;">
 					
 					<?php if ( get_the_post_thumbnail_url( $resent_posts[$i]['post_id'], 'thumbnail' ) ) { ?>
 
-<<<<<<< HEAD
-					<img src="<?php echo get_the_post_thumbnail_url( $recent_posts[$i]['post_id'], 'thumbnail' )?>">
-=======
 						<img src="<?php echo get_the_post_thumbnail_url( $resent_posts[$i]['post_id'], 'thumbnail' );?>">
 					
 					<?php } ?>
->>>>>>> f10c78559ea025f56ad821c15c4fd95da59d17a1
 
 				</div>
 

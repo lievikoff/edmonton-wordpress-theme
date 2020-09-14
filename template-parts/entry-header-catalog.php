@@ -35,7 +35,7 @@ if ( is_singular() ) {
 			$name = get_the_author_meta( 'display_name' , $author_id ); 
 
 			echo 'Posted by ' . '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . $name . '</a> in ';
-			get_the_category_custom( 4 );
+			get_the_category_custom( 3 );
 			?>
 
 		</div>

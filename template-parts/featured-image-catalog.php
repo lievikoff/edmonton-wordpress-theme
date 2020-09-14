@@ -17,7 +17,7 @@ $featured_media_inner_classes = '';
 
 	<a href="<?php the_permalink(); ?>">
 
-		<div class="featured-media-inner-catalog">
+		<div class="featured-media-inner-catalog" style="display: <?php if ( !has_post_thumbnail() ) echo 'none'; ?>;">
 
 			<?php
 			the_post_thumbnail();

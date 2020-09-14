@@ -51,7 +51,7 @@
 					if ( count( get_the_category() ) != 0 ) {
 						echo " in ";
 					}
-					get_the_category_custom( NULL );
+					get_the_category_custom();
 					?>
 
 				</div>
