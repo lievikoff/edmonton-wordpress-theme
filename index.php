@@ -16,7 +16,7 @@
 get_header();
 ?>
 
-<main id="main">
+<main id="main" <?php echo ( is_search() ) ? 'style="min-height: 150px;"' : ''; ?>>
 	
 	<?php
 	$archive_title    = '';

@@ -1486,6 +1486,14 @@ function get_the_category_custom ( $num = NULL ) {
 			}
 		} else if ( $num > $count ) {
 			//выводить `,` между и перед последним `and`
+
+			if ( $i == $count - 2 ) {
+
+				$category_return .= __( ' and ' , edmonton);
+			} else if ( $i != $count - 1 ) {
+
+				$category_return .= ', ';
+			}
 		}
 	}
 
