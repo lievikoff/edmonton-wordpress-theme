@@ -1030,7 +1030,7 @@ section {
 	line-height: 22px;
 
 	color: #101010;
-	padding: 1.5rem 1.8rem;
+	padding: 1.5rem 1.8rem 0.3rem 1.8rem;
 }
 
 .archive-section-inner-result {
@@ -6031,7 +6031,6 @@ article {
 
 	.comment-respond .comment-form-author,
 	.comment-respond .comment-form-email {
-		float: left;
 		width: calc(50% - 1rem);
 	}
 

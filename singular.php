@@ -9,7 +9,7 @@
  */
 
 get_header();
-if ( is_single() || is_page() ) {
+if ( is_single() || is_page() && !is_page_template( 'templates/template-about-us.php' ) && !is_page_template( 'templates/template-contact.php' ) ) {
 	set_post_views( get_the_ID() );
 }
 
@@ -56,16 +56,16 @@ if ( !is_active_sidebar( 'main_sidebar' ) ) {
 	
 	<?php if ( is_page_template( 'templates/template-about-us.php' ) || is_page_template( 'templates/template-contact.php' ) ) {
 
-				if ( have_posts() ) {
+		if ( have_posts() ) {
 
-					while ( have_posts() ) {
+			while ( have_posts() ) {
 
-						the_post();
-						get_template_part( 'template-parts/content-about-us', get_post_type() );
-					}
-				}
+				the_post();
+				get_template_part( 'template-parts/content-about-us', get_post_type() );
+			}
+		}
 
-		} else { ?>
+	} else { ?>
 
 		<main id="site-content" class="<?php echo $site_content ?>" role="main">
 

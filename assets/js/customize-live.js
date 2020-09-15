@@ -119,9 +119,6 @@
             if ( $( '#_customize-input-cover_enable', window.parent.document ).prop('checked') ) {
                 let image = 'no-repeat 100%/ cover url('+ newValue+')';
                 $('.cover').css('background', image);
-                /*let coverColor = $('input[data-id="cover_color"]', window.parent.document).val();
-                $('[data-id="cover_color"] div button .color-alpha', window.parent.document).css('background', 'inherit');
-                coverColor = 'none';*/
             }
         });
     });
@@ -150,6 +147,7 @@
                 $( '#site-header' ).css( 'width', '100%' );
                 $( '.header-navigation-wrapper' ).css( 'width', '100%' );
                 $( '.alt-navigation-wrapper' ).css( 'width', '100%' );
+                $( '.breadcrumbs ' ).css( 'width', '100%' );
                 $( '#main' ).css( 'width', '100%' ); 
             } else {
 
@@ -164,6 +162,7 @@
                         $( '#site-header' ).css( 'width', '100%' );
                         $( '.header-navigation-wrapper' ).css( 'width', '100%' );
                         $( '.alt-navigation-wrapper' ).css( 'width', '100%' );
+                        $( '.breadcrumbs ' ).css( 'width', '100%' );
                         $( '#main' ).css( 'width', value ); 
                         $( '.footer-nav-widgets-wrapper' ).css( 'width', value );
 						$( '#site-footer' ).css( 'width', value );
@@ -172,6 +171,7 @@
                         $( '#site-header' ).css( 'width', value );
                         $( '.header-navigation-wrapper' ).css( 'width', value );
                         $( '.alt-navigation-wrapper' ).css( 'width', value );
+                        $( '.breadcrumbs ' ).css( 'width', value );
                         $( '#main' ).css( 'width', value ); 
                         $( '.footer-nav-widgets-wrapper' ).css( 'width', value );
 						$( '#site-footer' ).css( 'width', value );
@@ -210,6 +210,7 @@
                 $( '#site-header' ).css( 'width', '100%' );
                 $( '.header-navigation-wrapper' ).css( 'width', '100%' );
                 $( '.alt-navigation-wrapper' ).css( 'width', '100%' );
+                $( '.breadcrumbs ' ).css( 'width', '100%' );
             } else {
                 
                 if ( $( '#_customize-input-content_full', window.parent.document ).prop( 'checked' ) ) {
@@ -224,6 +225,7 @@
                         $( '#site-header' ).css( 'width', value );  
                         $( '.header-navigation-wrapper' ).css( 'width', value );
                         $( '.alt-navigation-wrapper' ).css( 'width', value );
+                        $( '.breadcrumbs ' ).css( 'width', value );
                     }
                 }
             }
@@ -245,6 +247,7 @@
                         $( '#site-header' ).css( 'width', value );  
                         $( '.header-navigation-wrapper' ).css( 'width', value );
                         $( '.alt-navigation-wrapper' ).css( 'width', value );
+                        $( '.breadcrumbs ' ).css( 'width', value );
                     } 
                 }
             }

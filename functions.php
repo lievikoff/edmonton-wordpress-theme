@@ -946,7 +946,8 @@ function customize () {
 					.alt-navigation-wrapper,
 					#main,
 					.footer-nav-widgets-wrapper,
-					#site-footer {
+					#site-footer,
+					.breadcrumbs {
 						width: 100%;
 					}
 
@@ -971,7 +972,8 @@ function customize () {
 					@media (min-width: 1000px) {
 						#site-header,
 						.header-navigation-wrapper,
-						.alt-navigation-wrapper {
+						.alt-navigation-wrapper,
+						.breadcrumbs {
 							width: 100%;
 						}
 
@@ -985,7 +987,8 @@ function customize () {
 					@media (min-width: <?php echo $min_width; ?>) {
 						#site-header,
 						.header-navigation-wrapper,
-						.alt-navigation-wrapper {
+						.alt-navigation-wrapper,
+						.breadcrumbs {
 							width: 100%;
 						}
 
@@ -1002,14 +1005,11 @@ function customize () {
 				?>
 
 				<style type="text/css">
-					@media (max-width: 999px) {
-
-					}
-
 					@media (min-width: 1000px) {
 						#site-header,
 						.header-navigation-wrapper,
-						.alt-navigation-wrapper {
+						.alt-navigation-wrapper,
+						.breadcrumbs {
 							width: 100%;
 						}
 
@@ -1028,7 +1028,8 @@ function customize () {
 					@media (min-width: 1140px) {
 						#site-header,
 						.header-navigation-wrapper,
-						.alt-navigation-wrapper {
+						.alt-navigation-wrapper,
+						.breadcrumbs {
 							width: 100%;
 						}
 
@@ -1054,7 +1055,8 @@ function customize () {
 					@media (min-width: 1000px) {
 						#site-header,
 						.header-navigation-wrapper,
-						.alt-navigation-wrapper {
+						.alt-navigation-wrapper,
+						.breadcrumbs {
 							width: calc( 100% - 30px );
 						}
 					}
@@ -1062,7 +1064,8 @@ function customize () {
 					@media (min-width: <?php echo get_theme_mod( 'custom_header_width' ) + 30 . 'px'; ?>) {
 						#site-header,
 						.header-navigation-wrapper,
-						.alt-navigation-wrapper {
+						.alt-navigation-wrapper,
+						.breadcrumbs {
 							width: <?php echo get_theme_mod( 'custom_header_width' ) . 'px'; ?>;
 						}
 					}
@@ -1076,7 +1079,8 @@ function customize () {
 					@media (min-width: 1000px) {
 						#site-header,
 						.header-navigation-wrapper,
-						.alt-navigation-wrapper {
+						.alt-navigation-wrapper,
+						.breadcrumbs {
 							width: calc( 100% - 30px );
 						}
 					}
@@ -1084,7 +1088,8 @@ function customize () {
 					@media (min-width: 1140px) {
 						#site-header,
 						.header-navigation-wrapper,
-						.alt-navigation-wrapper {
+						.alt-navigation-wrapper,
+						.breadcrumbs {
 							width: 1110px;
 						}
 					}
@@ -1142,10 +1147,6 @@ function customize () {
 			?>
 
 			<style type="text/css">
-				@media (max-width: 999px) {
-
-				}
-
 				@media (min-width: 1000px) {
 
 					#site-header,
@@ -1153,6 +1154,7 @@ function customize () {
 					.alt-navigation-wrapper,
 					#site-footer,
 					.footer-nav-widgets-wrapper,
+					.breadcrumbs,
 					#main {
 						width: calc( 100% - 30px );
 					}
@@ -1165,6 +1167,7 @@ function customize () {
 					.alt-navigation-wrapper,
 					#site-footer,
 					.footer-nav-widgets-wrapper,
+					.breadcrumbs,
 					#main {
 						width: 1110px;
 					}
