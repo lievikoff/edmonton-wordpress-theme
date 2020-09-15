@@ -1476,7 +1476,7 @@ function get_the_category_custom ( $num = NULL ) {
 				$category_return .= ', ';
 			} else if ( $i == $num - 2 ) {
 
-				$category_return .= __( ' and ' , 'edmonton');
+				$category_return .= __( ' and ' , 'edmonton' );
 			}
 		} else if ( $num < $count ) {
 
@@ -1485,14 +1485,14 @@ function get_the_category_custom ( $num = NULL ) {
 				$category_return .= ', ';
 			} else if ( $i == $num - 1 && $num < $count ) {
 	
-				$category_return .= __( ' and other' , 'edmonton');
+				$category_return .= __( ' and other' , 'edmonton' );
 			}
 		} else if ( $num > $count ) {
 			//выводить `,` между и перед последним `and`
 
 			if ( $i == $count - 2 ) {
 
-				$category_return .= __( ' and ' , 'edmonton');
+				$category_return .= __( ' and ' , 'edmonton' );
 			} else if ( $i != $count - 1 ) {
 
 				$category_return .= ', ';
