@@ -4770,11 +4770,11 @@ ul.footer-social li {
 }
 
 .footer-copyright a,
-.powered-by-edmonton a {
+.powered-by a {
 	color: inherit;
 }
 
-.powered-by-edmonton,
+.powered-by,
 .to-the-top {
 	color: #6d6d6d;
 }
@@ -4795,7 +4795,7 @@ a.to-the-top > * {
 	color: #ffffff;
 }
 
-.powered-by-edmonton {
+.powered-by {
 	display: none;
 	margin: 0 0.5rem 0 0;
 }
@@ -6023,7 +6023,7 @@ article {
 		display: flex;
 	}
 
-	.powered-by-edmonton {
+	.powered-by {
 		display: block;
 		font-family: Roboto;
 		font-weight: normal;
