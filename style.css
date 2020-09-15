@@ -4794,12 +4794,12 @@ ul.footer-social li {
 }
 
 .footer-copyright a,
-.powered-by a {
+.powered-by-edmonton a {
 	color: inherit;
 	cursor: pointer;
 }
 
-.powered-by,
+.powered-by-edmonton,
 .to-the-top,
 .after-powered-by-edmonton {
 	color: #6d6d6d;
@@ -4821,7 +4821,7 @@ a.to-the-top > * {
 	color: #ffffff;
 }
 
-.powered-by,
+.powered-by-edmonton,
 .after-powered-by-edmonton {
 	display: none;
 	margin: 0 0 0 0.5rem;
@@ -4968,7 +4968,7 @@ a.to-the-top > * {
 }
 
 .sidebar-post-data {
-	margin: 5px 0 0 12px;
+	margin: 5px 0 0;
 	color: #000000;
 	font-family: Roboto;
 	font-style: normal;
@@ -6135,7 +6135,7 @@ article {
 		display: flex;
 	}
 
-	.powered-by,
+	.powered-by-edmonton,
 	.after-powered-by-edmonton {
 		display: block;
 		font-family: Roboto;
