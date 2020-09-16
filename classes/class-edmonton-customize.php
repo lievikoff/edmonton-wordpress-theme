@@ -129,20 +129,20 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			Kirki::add_field( 
 				'header_general_border_bottom_width', 
 				[
-					'type'      => 'slider',
-					'label'     => esc_attr__( 'Bottom border width', 'text-domain' ),
-					'section'   => 'header_general',
+					'type'		=> 'slider',
+					'label'		=> esc_attr__( 'Bottom border width', 'text-domain' ),
+					'section'	=> 'header_general',
 					'settings'  => 'header_general_border_bottom_width',
-					'default'     => 1,
-					'transport' => 'auto',
-					'output'    => [
+					'default'	=> 1,
+					'transport'	=> 'auto',
+					'output'	=> [
 						[
 							'element' => '#site-header',
 							'property' => 'border-bottom-width',
 							'suffix'  => 'px',
 						],
 					],
-					'choices'     => [
+					'choices'	=> [
 						'min'  => 0,
 						'max'  => 5,
 						'step' => 1,
@@ -182,6 +182,30 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					],
 				]
 			);	
+
+			Kirki::add_config( 
+				'show_tagline', 
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'     => 'postMessage',
+				]
+			);
+
+			Kirki::add_field( 
+				'show_tagline', 
+				[
+					'type'        => 'switch',
+					'settings'    => 'show_tagline',
+					'label'       => esc_html__( 'Show site description?', 'kirki' ),
+					'section'     => 'header_general',
+					'default'     => 'on',
+					'priority'    => 10,
+					'choices'     => [
+						'on'  	=> esc_html__( 'yes', 'kirki' ),
+						'off' 	=> esc_html__( 'no', 'kirki' ),
+					],
+				] 
+			);
 			
 			Kirki::add_config( 
 				'custom_header_width', 

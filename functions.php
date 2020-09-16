@@ -1248,6 +1248,28 @@ function customize () {
 			}
 		} 
 	}	
+
+	if ( true == get_theme_mod( 'show_tagline', true ) ) {
+		?>
+		
+		<style type="text/css">
+			.site-description {
+				display: block;
+			}
+		</style>
+
+		<?php 
+	} else {
+		?>
+
+		<style type="text/css">
+			.site-description {
+				display: none;
+			}
+		</style>
+
+		<?php
+	}
 }
 
 add_action( 'wp_head', 'customize' );

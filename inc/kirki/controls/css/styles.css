@@ -679,7 +679,7 @@
 .customize-control-kirki-switch .switch-on {
   color: #fff;
   opacity: 0;
-  padding-right: 0;
+  padding-right: 6px;
 }
 .customize-control-kirki-switch .switch-off {
   color: #777;

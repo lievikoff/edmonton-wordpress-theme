@@ -254,4 +254,16 @@
         });
     });
 
+    wp.customize( 'show_tagline', function ( value )  {
+        value.bind( function ( value )  {
+
+            if ( value == true ) {
+                $( '.site-description' ).css( 'display', 'block' );
+            } else {
+                $( '.site-description' ).css( 'display', 'none' );
+            }
+        });
+    });
+
+
 }( jQuery ) );
