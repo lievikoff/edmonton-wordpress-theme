@@ -393,13 +393,13 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'label'     => esc_attr__( 'Border bottom width', 'text-domain' ),
 					'section'   => 'header_navigation',
 					'settings'  => 'header_navigation_border_bottom_width',
-					'default'     => 0,
+					'default'	=> 0,
 					'transport' => 'auto',
 					'output'    => [
 						[
-							'element' => 'nav.primary-menu-wrapper',
-							'property' => 'border-bottom-width',
-							'suffix'  => 'px',
+							'element'	=> 'nav.primary-menu-wrapper',
+							'property'	=> 'border-bottom-width',
+							'suffix' 	=> 'px',
 						],
 					],
 					'choices'     => [
@@ -413,7 +413,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			Kirki::add_config( 
 				'header_navigation_left_side_separator_color', 
 				[
-					'capability'    => 'edit_theme_options',
+					'capability'	=> 'edit_theme_options',
 				]
 			);
 
@@ -424,12 +424,12 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'label'     => esc_attr__( 'Left side of separator color', 'text-domain' ),
 					'section'   => 'header_navigation',
 					'settings'  => 'header_navigation_left_side_separator_color',
-					'default'   => '#000000',
+					'default'   => '#303030',
 					'transport' => 'auto',
 					'output'    => [
 						[
-							'element' => 'ul.primary-menu > li',
-							'property' => 'border-left-color'
+							'element'	=> 'ul.primary-menu > li',
+							'property'	=> 'border-right-color'
 						],
 					],
 				]
@@ -454,9 +454,8 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'output'    => [
 						[
 							'element' 	=> 'ul.primary-menu > li',
-							'property'  => 'border-left-width',
+							'property'  => 'border-right-width',
 							'suffix'    => 'px',
-							'exclude'   => '.primary-menu > li:first-child',
 						],
 					],
 					'choices'     => [
@@ -481,12 +480,16 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'label'     => esc_attr__( 'Right side of separator color', 'text-domain' ),
 					'section'   => 'header_navigation',
 					'settings'  => 'header_navigation_right_side_separator_color',
-					'default'   => '#303030',
+					'default'   => '#101010',
 					'transport' => 'auto',
 					'output'    => [
 						[
-							'element' => 'ul.primary-menu > li',
-							'property' => 'border-right-color'
+							'element' 			=> 'ul.primary-menu > li',
+							'property' 			=> 'box-shadow',
+							'value_pattern'		=> 'border_widthpx 0 0 0 $',
+							'pattern_replace'	=> array(
+								'border_width'    => 'header_navigation_right_side_separator_width',
+							),
 						],
 					],
 				]
@@ -510,10 +513,12 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'transport' => 'auto',
 					'output'    => [
 						[
-							'element' 	=> 'ul.primary-menu > li',
-							'property'  => 'border-right-width',
-							'suffix'    => 'px',
-							'exclude'   => '.primary-menu > li:first-child',
+							'element' 			=> 'ul.primary-menu > li',
+							'property' 			=> 'box-shadow',
+							'value_pattern'		=> '$px 0 0 0 border_color',
+							'pattern_replace'	=> array(
+								'border_color'    => 'header_navigation_right_side_separator_color',
+							),
 						],
 					],
 					'choices'     => [

@@ -1344,7 +1344,7 @@ ul.social-icons li {
 }
 
 .breadcrumbs a {
-	color: black;
+	color:#000000;
 	text-decoration: none;
 }
 
@@ -1619,7 +1619,9 @@ ul.primary-menu > li > a{
 
 ul.primary-menu > li {
 	position: relative;
-	border-right: 1px solid #303030;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #303030;
 	box-shadow: 1px 0 0 0 #101010;
 }
 
@@ -4247,7 +4249,7 @@ padding: 0 18px 0 18px;
 
 .page-numbers.dots {
 	padding: 3px;
-	color: #000000 !important;
+	color: #000000;
 }
 
 .page-numbers.current {
@@ -4257,7 +4259,7 @@ padding: 0 18px 0 18px;
 .pagination a,
 .page-numbers.current {
 	text-decoration: none;
-	color: black;
+	color: #000000;
 	font-family: "Inter var";
 	font-style: normal;
 	font-weight: normal;
@@ -5030,9 +5032,8 @@ article {
 }
 
 .entry-content,
-.entry-content p,
-.entry-content figure,
-.comment-awaiting-moderation {
+.entry-content p:first-child,
+.entry-content figure {
 	margin: 0px;
 	padding: 0px;
 	font-family: Roboto;
@@ -5040,19 +5041,20 @@ article {
 	font-weight: normal;
 	font-size: 22px;
 	line-height: 27px;
-
 	color: #303030;
 }
 
 .comment-awaiting-moderation {
-	font-weight: 600 !important;
-	font-size: small !important;
-	font-style: revert !important;
-	color: #6d6d6d !important;
-	line-height: unset !important;
+	margin: 0px;
+	padding: 0px;
+	font-weight: 600;
+	font-size: small;
+	font-style: normal;
+	line-height: unset;
 	border-top: 1px solid #6d6d6d;
 	margin-top: 8px;
-	width: max-content !important;
+	width: max-content;
+	color: #303030;
 }
 
 .entry-content {
@@ -5138,7 +5140,7 @@ article {
 	}
 
 	.entry-content,
-	.entry-content p,
+	.entry-content p:first-child,
 	.entry-content figure {
 		margin: 0px;
 		padding: 0px;
@@ -5152,11 +5154,11 @@ article {
 	}
 
 	.comment-awaiting-moderation {
-		font-weight: 600 !important;
-		font-size: 13px !important;
-		font-style: revert !important;
-		color: #6d6d6d !important;
-		line-height: unset !important;
+		font-weight: 600;
+		font-size: 13px;
+		font-style: revert;
+		color: #6d6d6d;
+		line-height: unset;
 	}
 
 }
@@ -6140,7 +6142,7 @@ article {
 		font-family: Roboto;
 		font-weight: normal;
 		font-size: 16px;
-		color: #ffffff !important;
+		color: #ffffff;
 	}
 
 	.to-the-top-long {
@@ -6423,8 +6425,8 @@ article {
 		width: 100%;
 		min-height: 50px;
 		background-color: #202020;
-		border-top: 1px solid black;
-		border-bottom: 0px solid black;
+		border-top: 1px solid#101010;
+		border-bottom: 0px solid #101010;
 	}
 
 	.site-title {
