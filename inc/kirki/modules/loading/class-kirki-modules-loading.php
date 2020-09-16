@@ -113,20 +113,9 @@ class Kirki_Modules_Loading {
 				opacity: 0;
 				-webkit-transition: opacity 0.5s;
 				transition: opacity 0.5s;
-
-				<?php if ( !get_site_icon_url( ) ) { ?>
-
-					background-image: url("<?php echo esc_url_raw( Kirki::$url ); ?>/assets/images/edmonton.svg");
-
-				<?php } else { ?>
-
-					background-image: url("<?php echo get_site_icon_url( '50px' ); ?>");
-
-				<?php }?>
-
+				background-image: url("<?php echo esc_url_raw( Kirki::$url ); ?>/assets/images/kirki-logo.svg");
 				background-repeat: no-repeat;
 				background-position: center center;
-				background-size: 50px 50px;
 			}
 			body.wp-customizer-unloading .kirki-customizer-loading-wrapper {
 				display: block;
