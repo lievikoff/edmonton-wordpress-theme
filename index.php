@@ -25,24 +25,18 @@ get_header();
 	if ( is_search() ) {
 		global $wp_query;
 
-		$archive_title = sprintf(
-			'%1$s %2$s',
-			__( 'Search:', 'edmonton' ),
-			'&ldquo;' . get_search_query() . '&rdquo;, ' . __('results:', 'edmonton')
-		);
-
 		if ( $wp_query->found_posts ) {
-			$archive_subtitle = sprintf(
-				_n(
-					'We found %s result for your search.',
-					'We found %s results for your search.',
-					$wp_query->found_posts,
-					'edmonton'
-				),
-				number_format_i18n( $wp_query->found_posts )
-			);
+			$archive_title = sprintf(
+				'%1$s %2$s',
+				__( 'Results for ', 'edmonton' ),
+				'&ldquo;' . get_search_query() . '&rdquo;'
+			);	
 		} else {
-			$archive_subtitle = __( 'We could not find any results for your search. You can give it another try through the search form below.', 'edmonton' );
+			$archive_title = sprintf(
+				'%1$s %2$s',
+				__( 'No results for ', 'edmonton' ),
+				'&ldquo;' . get_search_query() . '&rdquo;'
+			);		
 		}
 	} else if ( is_archive() && ! have_posts() ) {
 		$archive_title = __( 'Nothing Found', 'edmonton' );

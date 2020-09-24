@@ -1024,12 +1024,11 @@ section {
 }
 
 .breadcrumbs {
-	font-family: Roboto;
 	font-style: normal;
-	font-size: 18px;
 	line-height: 22px;
 
-	color: #101010;
+	border-bottom: 2px solid #E5E5E5;
+
 	padding: 0.3rem 1.8rem 0.3rem 1.8rem;
 }
 
@@ -2419,6 +2418,7 @@ body.template-full-width [class*="wp-block"].alignfull:not(.has-background) [cla
 .archive-header {
 	background-color: #fff;
 	padding: 0.3rem 0;
+	border-bottom: 2px solid #E5E5E5;
 }
 
 .reduced-spacing .archive-header {

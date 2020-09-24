@@ -1361,7 +1361,6 @@ function posts_custom_column_views( $column_name, $id ) {
 
 function the_breadcrumb( $sep ){
  
-	// получаем номер текущей страницы
 	$pageNum = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 	
 	if( get_theme_mod( 'breadcrumbs_separator' ) ) {
@@ -1370,69 +1369,75 @@ function the_breadcrumb( $sep ){
 		$separator = ' &raquo; ';
 	}
 	
+	if ( !is_search() ) {
+		echo '<div class="breadcrumbs">';
+
+		if ( is_front_page() ) {
 	
-	echo '<div class="breadcrumbs">';
-	// если главная страница сайта
-	if( is_front_page() ){
- 
-		if( $pageNum > 1 ) {
-			echo '<a href="' . site_url() . '">Главная</a>' . $separator . $pageNum . '-я страница';
-		} 
- 
-	} else { // не главная
- 
-		echo '<a href="' . site_url() . '">Главная</a>' . $separator;
- 
- 
-		if( is_single() ){ // записи
- 
-			echo get_the_category_custom(1); echo $separator; the_title();
- 
-		} else if ( is_page() ){ // страницы WordPress 
- 
-			the_title();
- 
-		} else if ( is_category() ) {
- 
-			single_cat_title();
- 
-		} else if( is_tag() ) {
- 
-			single_tag_title();
- 
-		} else if ( is_day() ) { // архивы (по дням)
- 
-			echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a>' . $separator;
-			echo '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a>' . $separator;
-			echo get_the_time('d');
- 
-		} else if ( is_month() ) { // архивы (по месяцам)
- 
-			echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a>' . $separator;
-			echo get_the_time('F');
- 
-		} else if ( is_year() ) { // архивы (по годам)
- 
-			echo get_the_time('Y');
- 
-		} else if ( is_author() ) { // архивы по авторам
- 
-			global $author;
-			$userdata = get_userdata($author);
-			echo 'Опубликовал(а) ' . $userdata->display_name;
- 
-		} else if ( is_404() ) { // если страницы не существует
- 
-			echo 'Ошибка 404';
- 
+			if( $pageNum > 1 ) {
+				echo '<a href="' . site_url() . '">' . __( 'Main', 'edmonton' ) . '</a>' . $separator . $pageNum . __( '`s page', 'edmonton' );
+			} 
+	
+		} else { 
+	
+			echo '<a href="' . site_url() . '">' . __( 'Main', 'edmonton' ) . '</a>' . $separator;
+	
+	
+			if( is_single() ){ 
+	
+				echo get_the_category_custom(1); 
+				echo $separator; 
+				the_title();
+	
+			} else if ( is_page() ){ 
+	
+				the_title();
+	
+			} else if ( is_category() ) {
+	
+				single_cat_title();
+	
+			} else if( is_tag() ) {
+	
+				single_tag_title();
+	
+			} else if ( is_day() ) { 
+	
+				echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a>' . $separator;
+				echo '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a>' . $separator;
+				echo get_the_time('d');
+	
+			} else if ( is_month() ) { 
+	
+				echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a>' . $separator;
+				echo get_the_time('F');
+	
+			} else if ( is_year() ) { 
+	
+				echo get_the_time('Y');
+	
+			} else if ( is_author() ) { 
+	
+				global $author;
+				$userdata = get_userdata($author);
+				echo __( 'Published by ', 'edmonton' ) . $userdata->display_name;
+	
+			} else if ( is_404() ) { 
+	
+				echo __( '', 'edmonton' );
+	
+			} else if ( is_search() ) {
+
+				echo __( '', 'edmonton' );
+			}
+	
+			if ( $pageNum > 1 ) { 
+				echo ' (' . $pageNum .  __( '`s page', 'edmonton' ) .')';
+			}
+	
 		}
- 
-		if ( $pageNum > 1 ) { // номер текущей страницы
-			echo ' (' . $pageNum . '-я страница)';
-		}
- 
+		echo '</div>';
 	}
-	echo '</div>';
 }
 
 function true_register_wp_sidebars() {
