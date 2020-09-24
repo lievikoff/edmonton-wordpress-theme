@@ -470,7 +470,7 @@ hr.styled-separator::after {
 }
 
 a {
-	color: #cd2653;
+	color: #8492A6;
 	text-decoration: underline;
 }
 
@@ -548,7 +548,7 @@ dd + dt {
 /* Quotes ------------------------------------ */
 
 blockquote {
-	border-color: #cd2653;
+	border-color: #8492A6;
 	border-style: solid;
 	border-width: 0 0 0 0.2rem;
 	color: inherit;
@@ -843,7 +843,7 @@ input[type="reset"],
 input[type="submit"] {
 	-webkit-appearance: none;
 	-moz-appearance: none;
-	background: #cd2653;
+	background: #8492A6;
 	border: none;
 	border-radius: 0;
 	color: #fff;
@@ -1100,14 +1100,14 @@ button.toggle {
 .bg-accent,
 .bg-accent-hover:focus,
 .bg-accent-hover:hover {
-	background-color: #cd2653;
+	background-color: #8492A6;
 }
 
 /* FILL COLOR */
 
 .fill-children-accent,
 .fill-children-accent * {
-	fill: #cd2653;
+	fill: #8492A6;
 }
 
 .fill-children-current-color,
@@ -1303,7 +1303,7 @@ ul.social-icons li {
 .social-icons a,
 .alt-navigation-social-media a {
 	align-items: center;
-	background: #cd2653;
+	background: #8492A6;
 	border-radius: 6px;
 	color: #fff;
 	display: flex;
@@ -2903,11 +2903,11 @@ h2.entry-title {
 /* CUSTOM COLORS */
 
 :root .has-accent-color {
-	color: #cd2653;
+	color: #8492A6;
 }
 
 :root .has-accent-background-color {
-	background-color: #cd2653;
+	background-color: #8492A6;
 	color: #fff;
 }
 
@@ -2963,7 +2963,7 @@ h2.entry-title {
 }
 
 .has-drop-cap:not(:focus)::first-letter {
-	color: #cd2653;
+	color: #8492A6;
 	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
 	font-size: 5.1em;
 	font-weight: 800;
@@ -3182,7 +3182,7 @@ h2.entry-title {
 }
 
 .wp-block-button.is-style-outline {
-	color: #cd2653;
+	color: #8492A6;
 }
 
 .is-style-outline .wp-block-button__link:not(.has-text-color) {
@@ -3314,7 +3314,7 @@ h2.entry-title {
 .wp-block-pullquote::before {
 	background: #fff;
 	border-radius: 50%;
-	color: #cd2653;
+	color: #8492A6;
 	content: "”";
 	display: block;
 	font-size: 6.2rem;
@@ -3991,7 +3991,7 @@ padding: 0 18px 0 18px;
 }
 
 .comment-reply-link {
-	background-color: #cd2653;
+	background-color: #8492A6;
 	color: #fff;
 	display: block;
 	padding: 0.7rem;
@@ -4153,7 +4153,7 @@ padding: 0 18px 0 18px;
 #cancel-comment-reply-link {
 	margin-right: 5px;
 	color: #6d6d6d;
-	text-decoration-color: #cd2653;
+	text-decoration-color: #8492A6;
 }
 
 /* Reply Respond ---------------------------- */

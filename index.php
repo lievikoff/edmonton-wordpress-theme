@@ -80,7 +80,7 @@ get_header();
 	if ( get_theme_mod( 'content_sidebar_position' ) ) {
 
 		$sidebar_position = get_theme_mod( 'content_sidebar_position' );
-		
+
 		if ( $sidebar_position ) {
 
 			switch ($sidebar_position) {
@@ -147,7 +147,7 @@ get_header();
 
 					
 					<div class="no-search-results-form section-inner thin">
-					Search more
+		
 						<?php
 						get_search_form(
 							array(

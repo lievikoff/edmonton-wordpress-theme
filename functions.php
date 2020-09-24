@@ -644,13 +644,13 @@ function edmonton_get_color_for_area( $area = 'content', $context = 'text' ) {
 		array(
 			'content'       => array(
 				'text'      => '#000000',
-				'accent'    => '#cd2653',
+				'accent'    => '#8492A6',
 				'secondary' => '#6d6d6d',
 				'borders'   => '#dcd7ca',
 			),
 			'header-footer' => array(
 				'text'      => '#000000',
-				'accent'    => '#cd2653',
+				'accent'    => '#8492A6',
 				'secondary' => '#6d6d6d',
 				'borders'   => '#dcd7ca',
 			),
@@ -1267,6 +1267,18 @@ function customize () {
 				display: none;
 			}
 		</style>
+
+		<?php
+	}
+	
+	if ( get_theme_mod( 'breadcrumbs_position' ) ) {
+		?>
+
+			<style type="text/css">
+				.breadcrumbs {
+					text-align: <?php echo get_theme_mod( 'breadcrumbs_position' ); ?>;
+				}
+			</style>
 
 		<?php
 	}

@@ -265,5 +265,10 @@
         });
     });
 
+    wp.customize( 'breadcrumbs_position', function ( value )  {
+        value.bind( function ( newValue )  {
+            $( '.breadcrumbs' ).css( 'text-align', newValue );
+        });
+    });
 
 }( jQuery ) );
