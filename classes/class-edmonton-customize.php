@@ -558,7 +558,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			Kirki::add_section( 
 				'header_bar', 
 				[
-					'title'          => esc_html__( 'Bar (Search line, archive and breadcrumbs)', 'kirki' ),
+					'title'          => esc_html__( 'Bar', 'kirki' ),
 					'panel'          => 'header',
 				]
 			);
@@ -2486,37 +2486,6 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					],
 				]
 			);
-
-			/*Kirki::add_config( 
-				'predefined_colors', 
-				[
-					'capability'    => 'edit_theme_options',
-				]
-			);
-
-			Kirki::add_field( 
-				'predefined_colors', 
-				[
-					'type'      => 'palette',
-					'label'     => esc_attr__( 'Predefined Сolors', 'text-domain' ),
-					'section'     => 'color_scheme',
-					'settings'  => 'predefined_colors',
-					'default'   => 'standart',
-					'transport' => 'auto',
-					'choices'     => [
-						'standart' => [
-							'#202020',
-							'#e5e5e5',
-						],
-						'dark' => [
-							'#37474F',
-							'#FFFFFF',
-							'#F9A825',
-						],
-					],
-				]
-			);
-			*/
 
 			/**
 			 * Breadcrumbs

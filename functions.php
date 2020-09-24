@@ -1307,6 +1307,14 @@ function new_excerpt_more( $more ){
 	return '...';
 }
 
+add_action( 'customize_register', 'my_customize_register', 11 );
+
+function my_customize_register( WP_Customize_Manager $wp_customize ){     
+	$wp_customize->remove_section( 'background_image' );
+	$wp_customize->remove_section( 'static_front_page' );
+	$wp_customize->remove_section( 'colors' );
+} 
+
 add_filter( 'excerpt_length', function(){
 	return 40;
 } );
