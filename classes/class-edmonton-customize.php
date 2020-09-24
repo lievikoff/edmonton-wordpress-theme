@@ -2272,7 +2272,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			);
 
 			Kirki::add_config( 
-				'content_post_item_font', 
+				'content_post_header_font', 
 				[
 					'capability'    => 'edit_theme_options',
 					'transport'     => 'postMessage',
@@ -2280,50 +2280,112 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			);
 
 			Kirki::add_field( 
-				'content_post_item_font', 
-				[
-					'type'        => 'select',
-					'settings'    => 'content_post_item_font',
-					'label'       => esc_html__( 'Font', 'kirki' ),
-					'section'     => 'content_post',
-					'default'     => '',
-					'placeholder' => esc_html__( 'Select text to change font...', 'kirki' ),
-					'priority'    => 10,
-					'multiple'    => 1,
-					'choices'     => [
-						'h2.entry-title-catalog, .entry-title-catalog a' => esc_html__( 'Header', 'kirki' ),
-						'.author-post-catalog, .author-post-catalog a' => esc_html__( 'Author', 'kirki' ),
-						'.entry-content-catalog p' => esc_html__( 'Main Text', 'kirki' ),
-						'.block-footer-catalog, .block-footer-catalog a' => esc_html__( 'Bottom Line', 'kirki' ),
-					],
-				] 
-			);
-
-			Kirki::add_config( 
-				'content_post_font', 
-				[
-					'capability'    => 'edit_theme_options',
-					'transport'     => 'postMessage',
-				]
-			);
-
-			Kirki::add_field( 
-				'content_post_font', 
+				'content_post_header_font', 
 				[
 				'type'        => 'typography',
-				'settings'    => 'content_post_font',
+				'settings'    => 'content_post_header_font',
 				'section'     => 'content_post',
 				'default'     => [
-					'font-family'    => 'Roboto',
-					'variant'        => 'regular',
-					'font-size'      => '16px',
-					'color'          => '#ffffff',
+					'font-family'    => 'Inter',
+					'variant'        => '700',
+					'font-size'      => '18px',
+					'color'          => '#101010',
 				],
 				'priority'    => 10,
 				'transport'   => 'auto',
 				'output'      => [
 					[
-						'element' => 'content_post_item_font',
+						'element' => 'h2.entry-title-catalog, .entry-title-catalog a',
+					],
+				],
+				] 
+			);
+
+			Kirki::add_config( 
+				'content_post_author_font', 
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'     => 'postMessage',
+				]
+			);
+
+			Kirki::add_field( 
+				'content_post_author_font', 
+				[
+				'type'        => 'typography',
+				'settings'    => 'content_post_author_font',
+				'section'     => 'content_post',
+				'default'     => [
+					'font-family'    => 'Roboto',
+					'variant'        => 'regular',
+					'font-size'      => '15px',
+					'color'          => '#8492A6',
+				],
+				'priority'    => 10,
+				'transport'   => 'auto',
+				'output'      => [
+					[
+						'element' => '.author-post-catalog, .author-post-catalog a',
+					],
+				],
+				] 
+			);
+
+			Kirki::add_config( 
+				'content_post_main_text_font', 
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'     => 'postMessage',
+				]
+			);
+
+			Kirki::add_field( 
+				'content_post_main_text_font', 
+				[
+				'type'        => 'typography',
+				'settings'    => 'content_post_main_text_font',
+				'section'     => 'content_post',
+				'default'     => [
+					'font-family'    => 'Roboto',
+					'variant'        => 'regular',
+					'font-size'      => '16px',
+					'color'          => '#303030',
+				],
+				'priority'    => 10,
+				'transport'   => 'auto',
+				'output'      => [
+					[
+						'element' => '.entry-content-catalog p',
+					],
+				],
+				] 
+			);
+
+			Kirki::add_config( 
+				'content_post_bottom_line_font', 
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'     => 'postMessage',
+				]
+			);
+
+			Kirki::add_field( 
+				'content_post_bottom_line_font', 
+				[
+				'type'        => 'typography',
+				'settings'    => 'content_post_bottom_line_font',
+				'section'     => 'content_post',
+				'default'     => [
+					'font-family'    => 'Roboto',
+					'variant'        => 'regular',
+					'font-size'      => '15px',
+					'color'          => '#8492A6',
+				],
+				'priority'    => 10,
+				'transport'   => 'auto',
+				'output'      => [
+					[
+						'element' => '.block-footer-catalog, .block-footer-catalog a',
 					],
 				],
 				] 
