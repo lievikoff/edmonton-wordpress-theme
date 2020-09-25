@@ -1081,8 +1081,9 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			Kirki::add_config(
 				'show_icon_background',
 				[
-					'capability'        => 'edit_theme_options',
-					'default'           => false,
+					'capability'	=> 'edit_theme_options',
+					'default'		=> false,
+					'transport'		=> 'refresh',
 				]
 			);
 			
@@ -2465,7 +2466,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			/**
 			 * Color Scheme
 			 */
-
+/*
 			Kirki::add_panel( 
 				'color', 
 				[
@@ -2473,13 +2474,13 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'priority'       => 93,
 				] 
 			);
-
+*/
 			Kirki::add_section( 
 				'color_scheme', 
 				[
 					'title'          => esc_html__( 'Color Scheme', 'kirki' ),
-					'priority'       => 90,
-					'panel'			 => 'color',
+					'priority'       => 93,
+					//'panel'			 => 'color',
 				] 
 			);
 

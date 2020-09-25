@@ -763,7 +763,7 @@ function edmonton_get_elements_array() {
 
 function customize () {
 
-	if ( get_theme_mod( 'show_icon_background' ) ) {
+	if ( false == get_theme_mod( 'show_icon_background' ) ) {
 		?>
 
 		<style type="text/css">
@@ -775,12 +775,12 @@ function customize () {
 		<?php
 	}
 
-	if ( get_theme_mod( 'show_icon_background' ) )	{
+	if ( true == get_theme_mod( 'show_icon_background' ) )	{
 		?>
 
 		<style type="text/css">
 			.social-media-block {
-				background: <?php echo get_theme_mod('color_icon_background', 'blue'); ?> !important;
+				background-color: <?php echo get_theme_mod('color_icon_background', 'blue'); ?> !important;
 			}
 		</style>
 
@@ -838,21 +838,8 @@ function customize () {
 
 	<?php
 	}
-	if ( get_theme_mod( 'color_icon' ) )	{
 
-	?>
-
-			<style type="text/css">
-				.social-media-block {
-					background: none !important;
-				}
-			</style>
-
-		<?php
-	}
-
-
-	if ( get_theme_mod( 'color_icon' ) )	{
+	if ( get_theme_mod( 'color_icon' ) ) {
 
 		?>
 
@@ -867,18 +854,18 @@ function customize () {
 		</style>
 
 		<?php
-		} else {
-			?>
+	} else {
+		?>
 
-			<style type="text/css">
-				.social-media-block svg {
-					fill: #202020 !important;
-				}
+		<style type="text/css">
+			.social-media-block svg {
+				fill: #202020 !important;
+			}
 
-				.social-media-block img {
-					color: #202020 !important;
-				}
-			</style>
+			.social-media-block img {
+				color: #202020 !important;
+			}
+		</style>
 
 		<?php
 	}

@@ -140,21 +140,18 @@
 			<div class="alt-navigation-social-media">
 
 				<?php 
-				if( get_theme_mod( 'social_header_enable' ) ) {
-
 					get_template_part( 'template-parts/social-media' );
-
-				}
-				
-
-				if ( true === $enable_header_search ) {
-
-					get_template_part( 'template-parts/modal-search' );
-
-				}
 				?>
 
 			</div>
+
+			<?php				
+			if ( true === $enable_header_search ) {
+
+				get_template_part( 'template-parts/modal-search' );
+
+			}
+			?>
 
 		</div>
 
