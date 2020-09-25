@@ -252,8 +252,6 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				] 
 			);
 
-			
-
 			/** Header Navigation --------------------------------------------------------------------- */
 			Kirki::add_section( 
 				'header_navigation', 
@@ -947,7 +945,54 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					],
 			] );
 
+			/**
+			 * Footer
+			 */
+/*
+			Kirki::add_panel(
+				'footer',
+				[
+					'title'      => esc_html__( 'Footer', 'kirki' ),
+					'priority'   => 70,
+				]
+			);
+*/
+			/* Footer general ---------------------------------------------------- */
 
+			Kirki::add_section(
+				'footer_general',
+				[
+					'title'      => esc_html__( 'Footer', 'kirki' ),
+					'priority'   => 91,
+					//'panel'      => 'footer',
+					'capability' => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_config(
+				'footer_text',
+				[
+					'capability'	=> 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field( 
+				'footer_text', 
+				[
+					'type'     	=> 'textarea',
+					'settings' 	=> 'footer_text',
+					'label'    	=> esc_html__( 'Footer text', 'kirki' ),
+					'section'  	=> 'footer_general',
+					'transport' => 'postMessage',
+					'priority' 	=> 10,
+					'js_vars'   => [
+						[
+							'element'  => '.footer-user-text',
+							'function' => 'html',
+						],
+					]
+				] 
+			);
 
 			/**
 			 * Social Media
@@ -2425,7 +2470,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'color', 
 				[
 					'title'          => esc_html__( 'Color', 'kirki' ),
-					'priority'       => 90,
+					'priority'       => 93,
 				] 
 			);
 
@@ -2552,7 +2597,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			/**
 			 * Breadcrumbs
 			 */
-
+/*
 			Kirki::add_panel( 
 				'breadcrumbs', 
 				[
@@ -2560,13 +2605,14 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'priority'       => 90,
 				] 
 			);
+*/
 
 			Kirki::add_section( 
 				'breadcrumbs_general', 
 				[
-					'title'          => esc_html__( 'General', 'kirki' ),
-					'priority'       => 90,
-					'panel'			 => 'breadcrumbs',
+					'title'          => esc_html__( 'Breadcrumbs', 'kirki' ),
+					'priority'       => 92,
+					//'panel'			 => 'breadcrumbs',
 				] 
 			);
 

@@ -17,7 +17,17 @@
 
 			<footer id="site-footer" role="contentinfo" class="header-footer-group">
 
-				<div class="section-inner">
+				<div id="footer-user-text" class="section-inner">
+					
+					<p class="footer-copyright footer-user-text">
+						
+						<?php
+						if ( get_theme_mod( 'footer_text' ) ) {
+							echo get_theme_mod( 'footer_text' );
+						}
+						?>
+
+					</p>
 
 					<div class="footer-credits">
 

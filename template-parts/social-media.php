@@ -14,32 +14,29 @@
  * The text inside the span with the class nav-short will be hidden on small screens.
  */
 
+$social_media_list = get_theme_mod( 'social_media_order', [ 'facebook', 'gitHub', 'instagram', 'pinterest', 'twitter', 'youTube' ] );
 
-if( get_theme_mod( 'social_media_order' ) ) {
+foreach ( $social_media_list as $social_media ) {
+    ?>
 
-    $social_media_list = get_theme_mod( 'social_media_order' );
-    
-    foreach ( $social_media_list as $social_media ) {
-        ?>
+    <div class="social-media">
+        
+        <a class="social-media-block" style="cursor: pointer !important;" href="<?php echo esc_url( get_theme_mod( 'url_'.$social_media ) );?>">
+        
+            <?php if ( get_theme_mod( 'icon_'.$social_media ) ) { ?>
 
-        <div class="social-media">
-            <a class="social-media-block" style="cursor: pointer !important;" href="<?php echo esc_url( get_theme_mod( 'url_'.$social_media ) );?>">
-            
-                <?php if ( get_theme_mod( 'icon_'.$social_media ) ) { ?>
+            <img src="<?php echo esc_url( get_theme_mod( 'icon_'.$social_media ) );?>">
 
-                <img src="<?php echo esc_url( get_theme_mod( 'icon_'.$social_media ) );?>">
+            <?php 
+            } else {
+                edmonton_the_theme_svg( strtolower( $social_media ), 'social');
+            }
+            ?>	
 
-                <?php 
-                } else {
-                    edmonton_the_theme_svg( strtolower( $social_media ), 'social');
-                }
-                ?>	
+        </a>
 
-            </a>
-        </div>
+    </div>
 
-
-        <?php
-    }
+    <?php
 }
 ?>

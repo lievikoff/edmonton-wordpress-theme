@@ -4779,10 +4779,11 @@ ul.footer-social li {
 	width: 90%
 }
 
-#site-footer .section-inner {
-	align-items: baseline;
+#footer-user-text {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
+	align-items: center;
 }
 
 #site-footer a {
@@ -4820,6 +4821,7 @@ a.to-the-top > * {
 	font-size: 16px;
 	margin: 0;
 	color: #ffffff;
+	text-align: center;
 }
 
 .powered-by-edmonton,
