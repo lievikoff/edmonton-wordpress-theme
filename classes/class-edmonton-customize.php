@@ -1043,7 +1043,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'social_footer_enable',
 				[
 					'capability'        => 'edit_theme_options',
-					'default'           => true,
+					'default'           => false,
 				]
 			);
 			

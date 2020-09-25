@@ -115,7 +115,7 @@
 
 					<?php 
 
-					if( get_theme_mod( 'social_mobile_menu_enable' ) ) {
+					if( get_theme_mod( 'social_mobile_menu_enable', true ) ) {
 
 						get_template_part( 'template-parts/social-media' );
 

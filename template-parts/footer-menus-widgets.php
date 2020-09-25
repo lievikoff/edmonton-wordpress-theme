@@ -11,7 +11,7 @@ $has_footer_menu = has_nav_menu( 'footer' );
 $has_sidebar_1 = is_active_sidebar( 'sidebar-1' );
 
 // Only output the container if there are elements to display.
-if ( $has_footer_menu || $has_sidebar_1 ) {
+if ( $has_footer_menu || $has_sidebar_1 || get_theme_mod( 'social_footer_enable', false ) ) {
 	?>
 
 	<div class="footer-nav-widgets-wrapper header-footer-group">
@@ -42,7 +42,7 @@ if ( $has_footer_menu || $has_sidebar_1 ) {
 			<div class="footer-top footer-widgets-cl">
 				
 				<?php 
-				if ( get_theme_mod( 'social_footer_enable', true ) ) {
+				if ( get_theme_mod( 'social_footer_enable', false ) ) {
 
 					get_template_part( 'template-parts/social-media' );
 					
