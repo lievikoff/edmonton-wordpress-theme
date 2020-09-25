@@ -39,17 +39,17 @@ if ( $has_footer_menu || $has_sidebar_1 ) {
 
 			<?php } ?>
 
-				<div class="footer-top footer-widgets-cl">
+			<div class="footer-top footer-widgets-cl">
+				
+				<?php 
+				if ( get_theme_mod( 'social_footer_enable', true ) ) {
+
+					get_template_part( 'template-parts/social-media' );
 					
-					<?php 
-					if( get_theme_mod( 'social_footer_enable' ) ) {
+				}
+				?>
 
-						get_template_part( 'template-parts/social-media' );
-						
-					}?>
-				</div><!-- .footer-top -->
-
-			
+			</div><!-- .footer-top -->
 
 		</div><!-- .footer-inner -->
 

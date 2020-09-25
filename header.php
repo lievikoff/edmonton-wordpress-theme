@@ -140,7 +140,11 @@
 			<div class="alt-navigation-social-media">
 
 				<?php 
+				if( get_theme_mod( 'social_header_enable', true ) ) {
+
 					get_template_part( 'template-parts/social-media' );
+
+				}
 				?>
 
 			</div>
