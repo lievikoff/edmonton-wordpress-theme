@@ -17,7 +17,7 @@ get_header();
 ?>
 
 <main id="main" <?php echo ( is_search() ) ? 'style="min-height: 150px;"' : ''; ?>>
-	
+
 	<?php
 	$archive_title    = '';
 	$archive_subtitle = '';
@@ -30,13 +30,13 @@ get_header();
 				'%1$s %2$s',
 				__( 'Results for ', 'edmonton' ),
 				'&ldquo;' . get_search_query() . '&rdquo;'
-			);	
+			);
 		} else {
 			$archive_title = sprintf(
 				'%1$s %2$s',
 				__( 'No results for ', 'edmonton' ),
 				'&ldquo;' . get_search_query() . '&rdquo;'
-			);		
+			);
 		}
 	} else if ( is_archive() && ! have_posts() ) {
 		$archive_title = __( 'Nothing Found', 'edmonton' );
@@ -49,9 +49,7 @@ get_header();
 		?>
 
 		<header class="archive-header has-text-align-center header-footer-group">
-
 			<div class="archive-header-inner archive-section-inner medium">
-
 				<?php if ( $archive_title ) { ?>
 					<h1 class="archive-title"><?php echo wp_kses_post( $archive_title ); ?></h1>
 				<?php } ?>
@@ -59,11 +57,8 @@ get_header();
 				<?php if ( $archive_subtitle ) { ?>
 					<div class="archive-subtitle archive-section-inner-result thin max-percentage"><?php echo wp_kses_post( wpautop( $archive_subtitle ) ); ?></div>
 				<?php } ?>
-
 			</div><!-- .archive-header-inner -->
-
 		</header><!-- .archive-header -->
-
 		<?php
 	}
 
@@ -83,7 +78,7 @@ get_header();
 					$site_content_main = 'site-content-main-cut';
 					$site_content_sidebar = 'main-sidebar-left';
 					break;
-				
+
 				case 'right':
 					$site_content = 'site-content-row';
 					$site_content_main = 'site-content-main-cut';
@@ -109,55 +104,29 @@ get_header();
 		$site_content_main = 'site-content-main-full';
 		$site_content = 'site-content-column';
 	}
-	
+
 	?>
 	<main id="site-content" class="<?php echo $site_content ?>" role="main">
 
 	<?php
 		if ( is_home() ) {
 			?>
-		
 			<div id="site-content-main" style="<?php echo ( is_active_sidebar( 'main_sidebar' ) ) ? '' : 'width: 100%;' ?>" class="catalog-grid <?php echo $site_content_main ?>">
-
 			<?php
 		} else {
 			?>
-
 			<div id="site-content-main" style="<?php echo ( is_active_sidebar( 'main_sidebar' ) ) ? '' : 'width: 100%;' ?>" class="catalog-grid <?php echo $site_content_main ?>">
-			
 			<?php
 		}
 
-				if ( have_posts() ) {
-
-					while ( have_posts() ) {
-
-						the_post();
-						get_template_part( 'template-parts/content-catalog', get_post_type() );
-
-					}
-				} else if ( is_search() ) {
-					?>
-
-					
-					<div class="no-search-results-form section-inner thin">
-		
-						<?php
-						get_search_form(
-							array(
-								'label' => __( 'search again', 'edmonton' ),
-							)
-						);
-						?>
-
-					</div><!-- .no-search-results -->
-
-					<?php
+			if ( have_posts() ) {
+				while ( have_posts() ) {
+					the_post();
+					get_template_part( 'template-parts/content-catalog', get_post_type() );
 				}
-			
-			
+			}
 	?>
-			
+
 		</div>
 
 		<?php if ( is_active_sidebar( 'main_sidebar' ) ) { ?>
@@ -165,7 +134,6 @@ get_header();
 			<div id="site-content-sitebar" class="<?php echo $site_content_sidebar ?>">
 				<!-- sitebar -->
 
-		
 				<div id="true-side" class="sidebar">
 
 					<?php dynamic_sidebar( 'main_sidebar' ); ?>
@@ -177,11 +145,10 @@ get_header();
 		<?php } ?>
 
 	</main><!-- #site-content -->
-	
+
 	<?php get_template_part( 'template-parts/pagination' ); ?>
 
 </main>
 
 <?php
-
 get_footer( );

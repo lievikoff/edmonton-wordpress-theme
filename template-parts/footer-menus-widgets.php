@@ -28,7 +28,7 @@ if ( $has_footer_menu || $has_sidebar_1 || get_theme_mod( 'social_footer_enable'
 
 							<div class="footer-widgets column-one grid-item">
 								<?php dynamic_sidebar( 'sidebar-1' ); ?>
-									
+
 							</div>
 
 						<?php } ?>
@@ -40,12 +40,12 @@ if ( $has_footer_menu || $has_sidebar_1 || get_theme_mod( 'social_footer_enable'
 			<?php } ?>
 
 			<div class="footer-top footer-widgets-cl">
-				
-				<?php 
+
+				<?php
 				if ( get_theme_mod( 'social_footer_enable', false ) ) {
 
 					get_template_part( 'template-parts/social-media' );
-					
+
 				}
 				?>
 
