@@ -14,29 +14,33 @@
 
 <div class="catalog-item" id="post-<?php the_ID(); ?>">
 
-	<?php
+	<div class="catalog-content">
 
-    
-    get_template_part( 'template-parts/featured-image-catalog' );
+		<?php
 
-	get_template_part( 'template-parts/entry-header-catalog' );
+		
+		get_template_part( 'template-parts/featured-image-catalog' );
 
-	?>
+		get_template_part( 'template-parts/entry-header-catalog' );
 
-	<div class="post-inner-catalog">
+		?>
 
-		<div class="entry-content-catalog">
+		<div class="post-inner-catalog">
 
-			<?php
-			the_excerpt();
-			?>
+			<div class="entry-content-catalog">
 
-		</div><!-- .entry-content -->
+				<?php
+				the_excerpt();
+				?>
 
-    </div><!-- .post-inner -->
-    
-    <?php
-    get_template_part( 'template-parts/entry-footer-catalog' );
-    ?>
+			</div><!-- .entry-content -->
+
+		</div><!-- .post-inner -->
+		
+		<?php
+		get_template_part( 'template-parts/entry-footer-catalog' );
+		?>
+
+	</div>
 
 </div><!-- .post -->

@@ -4684,6 +4684,8 @@ a.to-the-top > * {
 
 #site-content-main {
 	display: grid;
+	height: max-content;
+	grid-auto-rows: 15px;
 }
 
 #site-content-sitebar {
@@ -4698,14 +4700,21 @@ a.to-the-top > * {
 }
 
 .catalog-item {
-	height: max-content;
 	background-color: #ffffff;
 	box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.02);
 	border-bottom: 2px solid #F0F0F0;
+	transition: all 0.4s ease-out;	
+}
+
+.catalog-content {
+	height: max-content;
 	overflow: hidden;
 	position: relative;
 	padding-bottom: 53px;
+<<<<<<< Updated upstream
 	transition: all 0.4s ease-out;
+=======
+>>>>>>> Stashed changes
 }
 
 .author-post-catalog {
@@ -4829,6 +4838,86 @@ article {
 	grid-template-columns: 1fr;
 }
 
+<<<<<<< Updated upstream
+=======
+.sidebar .widget_media_audio {
+	padding: 0 15px 15px 15px;
+}
+
+div[id*='media_audio'] {
+	width: 100%;
+}
+
+.custom-html-widget {
+	margin: 0 15px 0 15px;
+}
+
+.custom-html-widget a {
+	text-decoration: none;
+	color: #606060;
+}
+
+.custom-html-widget a:hover {
+	text-decoration: underline;
+}
+
+div[id*='media_video'], 
+div[id*='media_gallery'], 
+div[id*='calendar'], 
+div[id*='text'] {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.sidebar div[id*='text'] .textwidget {
+	width: calc( 100% - 30px );
+}
+
+div[id*='gallery'] {
+	padding-top: 7.5px;
+	padding-bottom: 15px;
+}
+
+.wp-video{
+	width: calc( 100% - 30px );
+}
+
+.calendar_wrap {
+	width: calc( 100% - 30px );
+}
+
+.wp-calendar-table {
+	margin: 0px;
+}
+
+.sidebar .gallery {
+	width: calc( 100% - 30px ); 
+	display: grid;
+	grid-template-columns: repeat( auto-fill, minmax(95px, 1fr));
+	grid-gap: 22.5px;
+}
+
+.sidebar .gallery-item {
+	margin: 0;
+	padding: 0;
+}
+
+.sidebar .gallery-item, 
+.sidebar .gallery-icon,
+.sidebar .gallery-item a,
+.sidebar .gallery-item img {
+	width: 95px !important;
+	height: 95px !important;
+}
+
+.sidebar .widget_media_audio .widget-title {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+>>>>>>> Stashed changes
 .entry-title {
 	text-align: left;
 	font-family: Inter;
@@ -5442,6 +5531,10 @@ article {
 		padding-bottom: 0.2rem;
 	}
 
+	.archive-header-inner .archive-title {
+		margin-left: 0px;
+	}
+
 	body:not(.singular) main > article:first-of-type {
 		padding: 8rem 0 0;
 	}
@@ -5992,7 +6085,7 @@ article {
 	#site-content-sitebar {
 		display: block;
 		width: calc( 100% - 60px );
-		box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.02);
+		box-shadow: 0px 15px 30px rgba(141, 135, 135, 0.02);
 	}
 
 	.main-sidebar-left,
@@ -6019,6 +6112,10 @@ article {
 	.mobile-menu .modal-menu li {
 		border-color: white;
 	}
+
+	/* Main sidebar and Footer widget -------- */
+
+	
 
 	.footer-widgets p {
 		font-family: Roboto;

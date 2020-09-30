@@ -8,7 +8,7 @@
  */
 
 $has_footer_menu = has_nav_menu( 'footer' );
-$has_sidebar_1 = is_active_sidebar( 'sidebar-1' );
+$has_sidebar_1 = is_active_sidebar( 'footer-widgets-1' );
 
 // Only output the container if there are elements to display.
 if ( $has_footer_menu || $has_sidebar_1 || get_theme_mod( 'social_footer_enable', false ) ) {
@@ -27,8 +27,13 @@ if ( $has_footer_menu || $has_sidebar_1 || get_theme_mod( 'social_footer_enable'
 						<?php if ( $has_sidebar_1 ) { ?>
 
 							<div class="footer-widgets column-one grid-item">
+<<<<<<< Updated upstream
 								<?php dynamic_sidebar( 'sidebar-1' ); ?>
 
+=======
+								<?php dynamic_sidebar( 'footer-widgets-1' ); ?>
+									
+>>>>>>> Stashed changes
 							</div>
 
 						<?php } ?>

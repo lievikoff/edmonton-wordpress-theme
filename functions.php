@@ -373,13 +373,26 @@ function edmonton_sidebar_registration() {
 		'after_widget'  => '</div></div>',
 	);
 
+	// Main sidebar
+	register_sidebar(
+		array(
+			'id' 			=> 'sidebar-1',
+			'name' 			=> 'Main sitebar', 
+			'description' 	=> 'Drag and drop widgets here to add them to the sidebar.',
+			'before_widget' => '<div id="%1$s" class="side widget %2$s">',
+			'after_widget' 	=> '</div>',
+			'before_title' 	=> '<h3 class="widget-title">',
+			'after_title' 	=> '</h3>'
+		)
+	);
+
 	// Footer #1.
 	register_sidebar(
 		array_merge(
 			$shared_args,
 			array(
 				'name'        => __( 'Footer', 'edmonton' ),
-				'id'          => 'sidebar-1',
+				'id'          => 'footer-widgets-1',
 				'description' => __( 'Widgets in this area will be displayed in the footer.', 'edmonton' ),
 			)
 		)
@@ -1434,23 +1447,6 @@ function the_breadcrumb( $sep ){
 		echo '</div>';
 	}
 }
-
-function true_register_wp_sidebars() {
- 
-	register_sidebar(
-		array(
-			'id' 			=> 'main_sidebar',
-			'name' 			=> 'Main sitebar', 
-			'description' 	=> 'Drag and drop widgets here to add them to the sidebar.',
-			'before_widget' => '<div id="%1$s" class="side widget %2$s">',
-			'after_widget' 	=> '</div>',
-			'before_title' 	=> '<h3 class="widget-title">',
-			'after_title' 	=> '</h3>'
-		)
-	);
-}
- 
-add_action( 'widgets_init', 'true_register_wp_sidebars' );
 
 add_action( 'loop_start', 'switch_comment_filter' );
 add_action( 'loop_end',   'switch_comment_filter' );

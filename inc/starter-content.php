@@ -23,7 +23,7 @@ function edmonton_get_starter_content() {
 	$starter_content = array(
 		'widgets'     => array(
 			// Place one core-defined widgets in the first footer widget area.
-			'sidebar-1' => array(
+			'footer-widgets-1' => array(
 				'text_about',
 			),
 			// Place one core-defined widgets in the second footer widget area.

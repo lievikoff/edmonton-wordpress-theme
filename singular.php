@@ -47,7 +47,7 @@ if ( get_theme_mod( 'content_sidebar_position' ) ) {
 	}
 }
 
-if ( !is_active_sidebar( 'main_sidebar' ) ) {
+if ( !is_active_sidebar( 'sidebar-1' ) ) {
 	$site_content = 'site-content-column';
 }
 ?>
@@ -69,7 +69,7 @@ if ( !is_active_sidebar( 'main_sidebar' ) ) {
 
 		<main id="site-content" class="<?php echo $site_content ?>" role="main">
 
-			<div id="site-content-post" style="<?php echo ( is_active_sidebar( 'main_sidebar' ) ) ? '' : 'width: 100%;' ?>">
+			<div id="site-content-post" style="<?php echo ( is_active_sidebar( 'sidebar-1' ) ) ? '' : 'width: 100%;' ?>">
 
 				<?php
 				if ( have_posts() ) {
@@ -84,7 +84,7 @@ if ( !is_active_sidebar( 'main_sidebar' ) ) {
 
 			</div>
 
-			<?php if ( is_active_sidebar( 'main_sidebar' ) ) { ?>
+			<?php if ( is_active_sidebar( 'sidebar-1' ) ) { ?>
 
 			<div id="site-content-sitebar" class="<?php echo $site_content_sidebar ?>">
 				<!-- sitebar -->
@@ -92,7 +92,7 @@ if ( !is_active_sidebar( 'main_sidebar' ) ) {
 
 				<div id="true-side" class="sidebar">
 
-					<?php dynamic_sidebar( 'main_sidebar' ); ?>
+					<?php dynamic_sidebar( 'sidebar-1' ); ?>
 
 				</div>
 

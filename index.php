@@ -100,7 +100,7 @@ get_header();
 		}
 	}
 
-	if ( !is_active_sidebar( 'main_sidebar' ) ) {
+	if ( !is_active_sidebar( 'sidebar-1' ) ) {
 		$site_content_main = 'site-content-main-full';
 		$site_content = 'site-content-column';
 	}
@@ -111,11 +111,23 @@ get_header();
 	<?php
 		if ( is_home() ) {
 			?>
+<<<<<<< Updated upstream
 			<div id="site-content-main" style="<?php echo ( is_active_sidebar( 'main_sidebar' ) ) ? '' : 'width: 100%;' ?>" class="catalog-grid <?php echo $site_content_main ?>">
 			<?php
 		} else {
 			?>
 			<div id="site-content-main" style="<?php echo ( is_active_sidebar( 'main_sidebar' ) ) ? '' : 'width: 100%;' ?>" class="catalog-grid <?php echo $site_content_main ?>">
+=======
+		
+			<div id="site-content-main" style="<?php echo ( is_active_sidebar( 'sidebar-1' ) ) ? '' : 'width: 100%;' ?>" class="catalog-grid <?php echo $site_content_main ?>">
+
+			<?php
+		} else {
+			?>
+
+			<div id="site-content-main" style="<?php echo ( is_active_sidebar( 'sidebar-1' ) ) ? '' : 'width: 100%;' ?>" class="catalog-grid <?php echo $site_content_main ?>">
+			
+>>>>>>> Stashed changes
 			<?php
 		}
 
@@ -129,14 +141,14 @@ get_header();
 
 		</div>
 
-		<?php if ( is_active_sidebar( 'main_sidebar' ) ) { ?>
+		<?php if ( is_active_sidebar( 'sidebar-1' ) ) { ?>
 
 			<div id="site-content-sitebar" class="<?php echo $site_content_sidebar ?>">
 				<!-- sitebar -->
 
 				<div id="true-side" class="sidebar">
 
-					<?php dynamic_sidebar( 'main_sidebar' ); ?>
+					<?php dynamic_sidebar( 'sidebar-1' ); ?>
 
 				</div>
 
@@ -149,6 +161,39 @@ get_header();
 	<?php get_template_part( 'template-parts/pagination' ); ?>
 
 </main>
+
+<script>
+	function resizeGridItem(item){
+		grid = document.getElementsByClassName("catalog-grid")[0];
+		rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
+	console.log(rowHeight);
+		rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
+	console.log(rowGap);
+		rowSpan = Math.ceil((item.querySelector('.catalog-content').getBoundingClientRect().height+rowGap)/(rowHeight+rowGap));
+		item.style.gridRowEnd = "span "+rowSpan;
+	}
+
+	function resizeAllGridItems(){
+		allItems = document.getElementsByClassName("catalog-item");
+		for(x=0;x<allItems.length;x++){
+		resizeGridItem(allItems[x]);
+		}
+	}
+
+	window.onload = resizeAllGridItems();
+
+	window.addEventListener("resize", resizeAllGridItems);
+
+	allItems = document.getElementsByClassName("catalog-item");
+	for(x=0;x<allItems.length;x++){
+		imagesLoaded( allItems[x], resizeInstance);
+	}
+
+	function resizeInstance(instance){
+		item = instance.elements[0];
+		resizeGridItem(item);
+	}
+</script>
 
 <?php
 get_footer( );
