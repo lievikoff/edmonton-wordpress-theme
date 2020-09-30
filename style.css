@@ -4685,7 +4685,7 @@ a.to-the-top > * {
 #site-content-main {
 	display: grid;
 	height: max-content;
-	grid-auto-rows: 15px;
+	grid-auto-rows: 5px;
 }
 
 #site-content-sitebar {
@@ -4700,6 +4700,8 @@ a.to-the-top > * {
 }
 
 .catalog-item {
+	height: max-content;
+
 	background-color: #ffffff;
 	box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.02);
 	border-bottom: 2px solid #F0F0F0;
