@@ -1635,6 +1635,11 @@ ul.primary-menu > li:not(:last-child) {
 	top: calc(50% - 0.4rem);
 }
 
+.primary-menu > li > .sub-menu li .icon {
+	right: 0.9rem;
+	top: calc(50% - 4.3rem);
+}
+
 .primary-menu a {
 	color: inherit;
 	display: block;

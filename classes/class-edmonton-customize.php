@@ -2826,6 +2826,102 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					],
 				]
 			);
+
+			/**  Pagination -------------------------------------------------------------------------------------------------------------------------------- */
+
+			Kirki::add_section(
+				'pagination_general',
+				[
+					'title'          => esc_html__( 'Pagination', 'kirki' ),
+					'priority'       => 92,
+				]
+			);
+
+			Kirki::add_config(
+				'active_page_color',
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field(
+				'active_page_color',
+				[
+					'type'      => 'color',
+					'settings'  => 'active_page_color',
+					'label'     => esc_attr__( 'Active page marker color', 'text-domain' ),
+					'section'   => 'pagination_general',
+					'default'   => '#FFE022',
+					'transport' => 'auto',
+					'output'    => [
+						[
+							'element' => '.page-numbers.current',
+							'property' => 'background-color'
+						],
+					],
+				]
+			);
+
+			Kirki::add_config(
+				'pagination_font',
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field(
+				'pagination_font',
+				[
+				'type'        => 'typography',
+				'settings'    => 'pagination_font',
+				'label'       => esc_html__( 'Pagination Font Style', 'kirki' ),
+				'section'     => 'pagination_general',
+				'default'     => [
+					'font-family'    => 'Inter',
+					'variant'        => 'regular',
+					'font-size'      => '16px',
+					'color'          => '#000000',
+				],
+				'priority'    => 10,
+				'transport'   => 'auto',
+				'output'      => [
+					[
+						'element' => '.pagination a, .page-numbers.current',
+					],
+				],
+			]);
+
+			Kirki::add_config(
+				'border_radius_pagination_marker',
+				[
+					'capability'        => 'edit_theme_options',
+					'transport'         => 'auto',
+				]
+			);
+
+			Kirki::add_field(
+				'border_radius_pagination_marker',
+				[
+					'type'	   => 'slider',
+					'settings' => 'border_radius_pagination_marker',
+					'label'    => esc_html__( 'Roundness of the marker', 'kirki' ),
+					'section'  => 'pagination_general',
+					'default'  => 0,
+					'choices'  => [
+						'min'	=> 1,
+						'max'	=> 25,
+						'step'	=> 1,
+					],
+					'output'   => [
+						[
+							'element'	=> '.page-numbers.current',
+							'property'	=> 'border-radius',
+							'suffix'    => 'px',
+						],
+					],
+				]
+			);
+
 		}
 	}
 
