@@ -2308,7 +2308,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			);
 			
 			Kirki::add_config(
-				'mesonry',
+				'masonry',
 				[
 					'capability'    => 'edit_theme_options',
 					'transport'     => 'refresh',
@@ -2316,11 +2316,11 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			);
 
 			Kirki::add_field( 
-				'mesonry', 
+				'masonry', 
 				[
 					'type'        => 'toggle',
-					'settings'    => 'mesonry',
-					'label'       => esc_html__( 'Mesonry', 'kirki' ),
+					'settings'    => 'masonry',
+					'label'       => esc_html__( 'masonry', 'kirki' ),
 					'section'     => 'content_general',
 					'default'     => 'false',
 					'priority'    => 10,

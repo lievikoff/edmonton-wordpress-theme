@@ -117,13 +117,13 @@ get_header();
 		if ( is_home() ) {
 			?>
 		
-			<div id="site-content-main" style="<?php echo ( is_active_sidebar( 'sidebar-1' ) ) ? '' : 'width: 100%;'; echo ( get_theme_mod( 'mesonry', false ) ) ? 'grid-auto-rows: 5px;' : ''; ?>" class="catalog-grid <?php echo $site_content_main ?>">
+			<div id="site-content-main" style="<?php echo ( is_active_sidebar( 'sidebar-1' ) ) ? '' : 'width: 100%;'; echo ( get_theme_mod( 'masonry', false ) ) ? 'grid-auto-rows: 5px;' : ''; ?>" class="catalog-grid <?php echo $site_content_main ?>">
 
 			<?php
 		} else {
 			?>
 
-			<div id="site-content-main" style="<?php echo ( is_active_sidebar( 'sidebar-1' ) ) ? '' : 'width: 100%;'; echo ( get_theme_mod( 'mesonry', false ) ) ? 'grid-auto-rows: 5px;' : ''; ?>" class="catalog-grid <?php echo $site_content_main ?>">
+			<div id="site-content-main" style="<?php echo ( is_active_sidebar( 'sidebar-1' ) ) ? '' : 'width: 100%;'; echo ( get_theme_mod( 'masonry', false ) ) ? 'grid-auto-rows: 5px;' : ''; ?>" class="catalog-grid <?php echo $site_content_main ?>">
 			
 			<?php
 		}
@@ -184,7 +184,7 @@ get_header();
 
 <?php
 
-if ( get_theme_mod( 'mesonry', false ) ) {
+if ( get_theme_mod( 'masonry', false ) ) {
 	?>
 
 	<script>
