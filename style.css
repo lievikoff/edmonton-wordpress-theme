@@ -4685,7 +4685,7 @@ a.to-the-top > * {
 #site-content-main {
 	display: grid;
 	height: max-content;
-	grid-auto-rows: 5px;
+	
 }
 
 #site-content-sitebar {

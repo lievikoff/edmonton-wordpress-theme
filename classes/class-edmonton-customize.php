@@ -2275,7 +2275,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'label'       => esc_html__( 'Custom content width', 'kirki' ),
 					'description' => esc_html__( 'Content will be take up as much width as you specity. (px)', 'kirki' ),
 					'section'     => 'content_general',
-					'priority'    => 91,
+					'priority'    => 10,
 					'default'     => 1110,
 					'choices'     => [
 						'min'  => 1030,
@@ -2302,9 +2302,29 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'label'       => esc_html__( 'Full width', 'kirki' ),
 					'description' => esc_html__( 'Content will be take up the entire of the content.', 'kirki' ),
 					'section'     => 'content_general',
-					'priority'    => 92,
+					'priority'    => 10,
 					'default'     => false,
 				]
+			);
+			
+			Kirki::add_config(
+				'mesonry',
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'     => 'refresh',
+				]
+			);
+
+			Kirki::add_field( 
+				'mesonry', 
+				[
+					'type'        => 'toggle',
+					'settings'    => 'mesonry',
+					'label'       => esc_html__( 'Mesonry', 'kirki' ),
+					'section'     => 'content_general',
+					'default'     => 'false',
+					'priority'    => 10,
+				] 
 			);
 
 			/* Content Post ----------------------------------------------------------*/
