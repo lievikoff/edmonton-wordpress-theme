@@ -27,13 +27,9 @@ if ( $has_footer_menu || $has_sidebar_1 || get_theme_mod( 'social_footer_enable'
 						<?php if ( $has_sidebar_1 ) { ?>
 
 							<div class="footer-widgets column-one grid-item">
-<<<<<<< Updated upstream
-								<?php dynamic_sidebar( 'sidebar-1' ); ?>
-
-=======
+								
 								<?php dynamic_sidebar( 'footer-widgets-1' ); ?>
 									
->>>>>>> Stashed changes
 							</div>
 
 						<?php } ?>
