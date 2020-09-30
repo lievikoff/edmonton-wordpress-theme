@@ -4711,10 +4711,7 @@ a.to-the-top > * {
 	overflow: hidden;
 	position: relative;
 	padding-bottom: 53px;
-<<<<<<< Updated upstream
 	transition: all 0.4s ease-out;
-=======
->>>>>>> Stashed changes
 }
 
 .author-post-catalog {
@@ -4838,8 +4835,6 @@ article {
 	grid-template-columns: 1fr;
 }
 
-<<<<<<< Updated upstream
-=======
 .sidebar .widget_media_audio {
 	padding: 0 15px 15px 15px;
 }
@@ -4917,7 +4912,6 @@ div[id*='gallery'] {
 	margin-right: 0px;
 }
 
->>>>>>> Stashed changes
 .entry-title {
 	text-align: left;
 	font-family: Inter;

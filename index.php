@@ -111,23 +111,11 @@ get_header();
 	<?php
 		if ( is_home() ) {
 			?>
-<<<<<<< Updated upstream
 			<div id="site-content-main" style="<?php echo ( is_active_sidebar( 'main_sidebar' ) ) ? '' : 'width: 100%;' ?>" class="catalog-grid <?php echo $site_content_main ?>">
 			<?php
 		} else {
 			?>
 			<div id="site-content-main" style="<?php echo ( is_active_sidebar( 'main_sidebar' ) ) ? '' : 'width: 100%;' ?>" class="catalog-grid <?php echo $site_content_main ?>">
-=======
-		
-			<div id="site-content-main" style="<?php echo ( is_active_sidebar( 'sidebar-1' ) ) ? '' : 'width: 100%;' ?>" class="catalog-grid <?php echo $site_content_main ?>">
-
-			<?php
-		} else {
-			?>
-
-			<div id="site-content-main" style="<?php echo ( is_active_sidebar( 'sidebar-1' ) ) ? '' : 'width: 100%;' ?>" class="catalog-grid <?php echo $site_content_main ?>">
-			
->>>>>>> Stashed changes
 			<?php
 		}
 
