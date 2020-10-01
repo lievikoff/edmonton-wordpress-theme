@@ -6517,11 +6517,11 @@ div[id*='quick_links'] {
 	}
 
 	.main-sidebar-left {
-		padding: 0 30px;
+		padding-right: 30px;
 	}
 
 	.main-sidebar-right {
-		padding: 0 30px;
+		padding-left: 30px;
 	}
 
 	.main-sidebar-top {
