@@ -17,7 +17,7 @@
 	<div id="post-content">
 		<?php
 		get_template_part( 'template-parts/entry-header' );
-		
+
 		?>
 
 		<div id="post-bio">
@@ -26,7 +26,7 @@
 
 					<?php
 					$author_id = get_post_field ( 'post_author', get_the_ID() );
-					$name = get_the_author_meta( 'display_name' , $author_id ); 
+					$name = get_the_author_meta( 'display_name' , $author_id );
 
 					echo 'Posted on ' . '<a href="'. preg_replace('/([^\/]*)\/$/mi', '', get_the_permalink()).'">';the_time( 'j M Y' );
 					echo '</a>'.' by '.'<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . $name . '</a> ';
@@ -65,15 +65,18 @@
 					?>
 				</div>
 				<div class="post-tags-list">
-					<?php echo 'Tagged: '. get_the_tag_list( '<i data-cp-fa="true" class="font-icon-25 fa fa-tags"></i>&nbsp;',
+					<?php
+					if ( get_the_tag_list() ) {
+						echo "Tagged: ";
+					}
+					 echo get_the_tag_list( '<i data-cp-fa="true" class="font-icon-25 fa fa-tags"></i>&nbsp;',
 			', ' ); ?>
 				</div>
-				
-
 		</div>
+		
 		<div class="section-inner">
-			
-			
+
+
 
 
 
@@ -90,7 +93,7 @@
 			edit_post_link();
 
 			// Single bottom post meta.
-			
+
 			if ( post_type_supports( get_post_type( get_the_ID() ), 'author' ) && is_single() ) {
 
 				get_template_part( 'template-parts/entry-author-bio' );
