@@ -2518,8 +2518,27 @@ body:not(.singular) main > article:first-of-type {
 	font-weight: normal;
 	font-size: 16px;
 	line-height: 23px;
+	text-decoration: none;
 
 	color: #8492A6;
+}
+
+#post-content .post-footer {
+	font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 23px;
+    text-decoration: none;
+    color: #8492A6;
+}
+
+#post-content a {
+	text-decoration: none;
+}
+
+#post-content a:hover{
+	color: #ffe022;
 }
 
 .post-date-footer {

@@ -66,7 +66,7 @@
 				</div>
 				<div class="post-tags-list">
 					<?php echo 'Tagged: '. get_the_tag_list( '<i data-cp-fa="true" class="font-icon-25 fa fa-tags"></i>&nbsp;',
-			' ' ); ?>
+			', ' ); ?>
 				</div>
 				
 
