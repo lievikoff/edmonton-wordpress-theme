@@ -2225,7 +2225,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'content_sidebar_position',
 				[
 					'capability'    => 'edit_theme_options',
-					'transport'     => 'postMessage',
+					'transport'     => 'refresh',
 				]
 			);
 

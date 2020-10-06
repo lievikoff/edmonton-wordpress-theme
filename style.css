@@ -2367,6 +2367,10 @@ body:not(.singular) main > article:first-of-type {
 
 /* Post Header ------------------------------- */
 
+.comments .section-inner {
+	padding: 0px;
+}
+
 .entry-footer-catalog {
 	position: absolute;
 	bottom: 0px;
@@ -2778,7 +2782,6 @@ body:not(.singular) main > article:first-of-type {
 	font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 20px;
     line-height: 23px;
 	color: #8492A6;
 
@@ -4985,6 +4988,18 @@ div[id*='quick_links'] {
 	margin: 0 0 20px 0;
 }
 
+.entry-header-inner .entry-title {
+    margin: 0 0 5px 0;
+}
+
+.comment-reply-title {
+	margin-top: 0px;
+}
+
+#reply-title {
+	margin: 30px 0 0 ;
+}
+
 #post-content .section-inner {
 	padding: 0;
 }
@@ -6080,6 +6095,10 @@ div[id*='quick_links'] {
 
 	.to-the-top-short {
 		display: none;
+	}
+
+	.pagination-single-inner a {
+		font-size: 20px;
 	}
 }
 
