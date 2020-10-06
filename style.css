@@ -981,11 +981,7 @@ section {
 }
 
 .section-inner {
-<<<<<<< Updated upstream
 	padding: 20px 0;
-=======
-	padding: 20px 10px 0 10px;
->>>>>>> Stashed changes
 }
 
 .archive-section-inner {
@@ -4783,11 +4779,7 @@ article {
 
 #post-content  {
 	background-color: white;
-<<<<<<< Updated upstream
-	padding: 25px;
-=======
 	padding: 20px;
->>>>>>> Stashed changes
 	margin-bottom: 30px;
 }
 
@@ -6116,11 +6108,6 @@ div[id*='quick_links'] {
 
 	#site-content-sitebar {
 		display: block;
-<<<<<<< Updated upstream
-		width: 100%;
-		margin: 0;
-=======
->>>>>>> Stashed changes
 		box-shadow: 0px 15px 30px rgba(141, 135, 135, 0.02);
 	}
 
@@ -6128,15 +6115,11 @@ div[id*='quick_links'] {
 	.main-sidebar-right,
 	.main-sidebar-top,
 	.main-sidebar-bottom {
-<<<<<<< Updated upstream
-		margin: 0 30px;
-=======
 		margin: 0 0 0 0;
 	}
 
 	.widget-title {
 		text-align: center;
->>>>>>> Stashed changes
 	}
 
 	/* Menu Mobile --------------------------- */
