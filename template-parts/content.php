@@ -16,9 +16,27 @@
 
 	<div id="post-content">
 		<?php
-		get_template_part( 'template-parts/featured-image' );
 		get_template_part( 'template-parts/entry-header' );
+		
 		?>
+
+		<div id="post-bio">
+
+				<div class="author-post">
+
+					<?php
+					$author_id = get_post_field ( 'post_author', get_the_ID() );
+					$name = get_the_author_meta( 'display_name' , $author_id ); 
+
+					echo 'Posted on ' . '<a href="'. preg_replace('/([^\/]*)\/$/mi', '', get_the_permalink()).'">';the_time( 'j M Y' );
+					echo '</a>'.' by '.'<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . $name . '</a> ';
+
+					?>
+
+				</div>
+
+		</div>
+				<?php get_template_part( 'template-parts/featured-image' ); ?>
 
 		<div class="<?php echo is_page_template( 'templates/template-full-width.php' ) ? '' : 'thin'; ?> ">
 
@@ -36,29 +54,26 @@
 
 		</div><!-- .post-inner -->
 
-		<div class="section-inner">
-			
-			<div id="post-footer">
+		<div class="post-footer">
 
-				<div class="author-post">
-
+				<div class="post-category">
 					<?php
-					$author_id = get_post_field ( 'post_author', get_the_ID() );
-					$name = get_the_author_meta( 'display_name' , $author_id ); 
-
-					echo 'Posted by ' . '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . $name . '</a> ';
-
 					if ( count( get_the_category() ) != 0 ) {
-						echo " in ";
+						echo "Posted in: ";
 					}
 					get_the_category_custom();
 					?>
-
 				</div>
+				<div class="post-tags-list">
+					<?php echo 'Tagged: '. get_the_tag_list( '<i data-cp-fa="true" class="font-icon-25 fa fa-tags"></i>&nbsp;',
+			' ' ); ?>
+				</div>
+				
 
-				<div class="post-date-footer block-footer">
-            		<a href="<?php echo preg_replace('/([^\/]*)\/$/mi', '', get_the_permalink()); ?>"><?php the_time( 'j M Y' ); ?></a>
-       			</div>
+		</div>
+		<div class="section-inner">
+			
+			
 
 			</div>
 
