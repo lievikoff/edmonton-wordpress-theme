@@ -981,7 +981,11 @@ section {
 }
 
 .section-inner {
+<<<<<<< Updated upstream
 	padding: 20px 0;
+=======
+	padding: 20px 10px 0 10px;
+>>>>>>> Stashed changes
 }
 
 .archive-section-inner {
@@ -3706,14 +3710,16 @@ figure.wp-block-table.is-style-stripes {
     font-weight: 500;
     font-size: 22px;
     line-height: 16px;
-    color: #8492A6;
+	color: #8492A6;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #E5E5E5;
 }
 
 .comment-reply-title {
 	width: calc( 100% - 36px );
 	padding-bottom: 15px;
 	margin-bottom: 15px;
-	border-bottom: 2px solid #e5e5e5;
+	border-bottom: 1px solid #e5e5e5;
 }
 
 /* Comment Item ----------------------------- */
@@ -3834,6 +3840,10 @@ padding: 0 18px 0 18px;
 	width: 100%;
 }
 
+.comment-content pre {
+	white-space: pre-line;
+}
+
 .comment-content.entry-content .alignleft {
 	/*rtl:ignore*/
 	margin-left: 0;
@@ -3942,10 +3952,6 @@ padding: 0 18px 0 18px;
 
 .comment-respond p {
 	line-height: 1.1;
-}
-
-.comment-respond p:not(.comment-notes) {
-	max-width: 58rem;
 }
 
 .comment-form-cookies-consent {
@@ -4777,7 +4783,11 @@ article {
 
 #post-content  {
 	background-color: white;
+<<<<<<< Updated upstream
 	padding: 25px;
+=======
+	padding: 20px;
+>>>>>>> Stashed changes
 	margin-bottom: 30px;
 }
 
@@ -4940,8 +4950,8 @@ div[id*='quick_links'] {
 
 /* Comments ------------------------------ */
 
-.depth-1 {
-	border-bottom: 2px solid #E5E5E5;
+.comment-footer-meta {
+	border-bottom: 1px solid #E5E5E5;
 }
 
 .depth-1:last-child {
@@ -4953,7 +4963,12 @@ div[id*='quick_links'] {
 }
 
 #post-content .entry-content {
-	margin: 0 10px 0 10px;
+	margin: 0 0 0 0;
+}
+
+#post-content .section-inner {
+	padding-left: 0px;
+	padding-right: 0px;
 }
 
 .comments-wrapper {
@@ -5271,6 +5286,10 @@ div[id*='quick_links'] {
 	h6,
 	.heading-size-6 {
 		margin: 15px 0;
+	}
+
+	.entry-header-inner .entry-title {
+		margin: 0 0 3rem 0;
 	}
 
 	/* INPUTS */
@@ -5801,6 +5820,10 @@ div[id*='quick_links'] {
 		padding-bottom: 1rem;
 	}
 
+	#commentform {
+		padding: 15px;
+	}
+
 	div.comment:first-of-type {
 		margin-top: 5rem;
 	}
@@ -5831,6 +5854,7 @@ div[id*='quick_links'] {
 
 	.comment-footer-meta {
 		margin-top: 2rem;
+		padding-bottom: 15px;
 	}
 
 	.comments-pagination {
@@ -5845,8 +5869,76 @@ div[id*='quick_links'] {
 
 	/* COMMENT RESPOND */
 
-	.comment-respond p {
-		margin-bottom: 2.5rem;
+	#respond .comment-notes,
+	#respond .comment-form-cookies-consent {
+		width: 100%;
+	}
+
+	#respond .comment-notes,
+	#respond .comment-form-comment,
+	#respond .comment-form-author, 
+	#respond .comment-form-email, 
+	#respond .comment-form-url, 
+	#respond .comment-form-cookies-consent {
+		margin: 8px 0 1rem 0;
+	}
+
+	#respond .comment-notes {
+		order: 1;
+	}
+
+	#respond .comment-form-comment {
+		order: 5;
+	}
+
+	#respond .comment-form-author {
+		order: 2;
+	}
+
+	#respond .comment-form-email {
+		order: 3;
+	}
+
+	#respond .comment-form-url {
+		order: 4;
+	}
+
+	#respond .comment-form-cookies-consent {
+		order: 6;
+	}
+
+	#respond .form-submit {
+		margin: 8px 0 1rem 0;
+		order: 7;
+	}
+
+	#commentform {
+		display: flex;  
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	#respond .comment-form-author, #respond .comment-form-email, #respond .comment-form-url {
+		float: left;
+		position: relative;
+		margin-right: 3%;
+		width: 31.333%;
+	}
+
+	#respond .comment-form-url {
+		margin-right: 0;
+	}
+
+	.comment-form-comment {
+		width: 100%;
+	}
+
+	.comment-form-comment textarea {
+		resize: none;
+	}
+
+	.comment-form-comment label {
+		display: none;
 	}
 
 	.comment-respond .comment-form-author,
@@ -6024,8 +6116,11 @@ div[id*='quick_links'] {
 
 	#site-content-sitebar {
 		display: block;
+<<<<<<< Updated upstream
 		width: 100%;
 		margin: 0;
+=======
+>>>>>>> Stashed changes
 		box-shadow: 0px 15px 30px rgba(141, 135, 135, 0.02);
 	}
 
@@ -6033,7 +6128,15 @@ div[id*='quick_links'] {
 	.main-sidebar-right,
 	.main-sidebar-top,
 	.main-sidebar-bottom {
+<<<<<<< Updated upstream
 		margin: 0 30px;
+=======
+		margin: 0 0 0 0;
+	}
+
+	.widget-title {
+		text-align: center;
+>>>>>>> Stashed changes
 	}
 
 	/* Menu Mobile --------------------------- */
@@ -6202,7 +6305,7 @@ div[id*='quick_links'] {
 	}
 
 	.left-position.header-titles .site-title,
-	.right-position.header-titles .site-title {
+	.g.header-titles .site-title {
 		margin-top: 0;
 	}
 
@@ -6494,7 +6597,6 @@ div[id*='quick_links'] {
 	/* Entry Content ------------------------- */
 
 	/* ALIGNMENT CLASSES */
-
 
 	.site-content-main-full {
 		width: 100%;

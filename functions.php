@@ -1218,6 +1218,10 @@ function customize () {
 								justify-content: center;
 								align-items: center;
 							}
+
+							.site-title {
+								margin-left: 0px;
+							}
 						}
 					</style>	
 
@@ -1238,7 +1242,7 @@ function customize () {
 							}
 
 							.site-title {
-								margin-left: 60px !important;
+								margin-left: 60px;
 							}
 						}
 					</style>	
