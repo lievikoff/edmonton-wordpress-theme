@@ -101,23 +101,15 @@ if ( $comments ) {
 
 if ( comments_open() || pings_open() ) {
 
-	if ( $comments ) {
-		echo '<hr class="separator"/>';
-	}
-
 	comment_form(
 		array(
-			'class_form'         => 'thin max-percentage',
-			'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title-left">',
-			'title_reply_after'  => '</h2>',
+			'class_form'         	=> 'thin max-percentage',
+			'title_reply_before' 	=> '<h2 id="reply-title" class="comment-reply-title-left">',
+			'title_reply_after'  	=> '</h2>',
 		)
 	);
 
 } else if ( is_single() ) {
-
-	if ( $comments ) {
-		echo '<hr class="separator"/>';
-	}
 
 	?>
 
