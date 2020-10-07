@@ -4670,6 +4670,7 @@ a.to-the-top > * {
 .social-media-block svg {
 	width: 25px;
 	height: 25px;
+	margin-bottom: 0px;
 }
 
 #site-content {
@@ -5292,7 +5293,7 @@ div[id*='quick_links'] {
 	}
 
 	.sidebar-item {
-		width: 270px;
+		width: 265px;
 	}
 
 	pre {
@@ -6806,11 +6807,6 @@ div[id*='quick_links'] {
 
 	.sidebar-main {
 		grid-template-columns: 1fr;
-	}
-
-
-	.sidebar-item {
-		width: 320px;
 	}
 
 	.footer-widgets {

@@ -858,11 +858,11 @@ function customize () {
 
 		<style type="text/css">
 			.social-media-block svg {
-				fill: <?php echo get_theme_mod('color_icon', '#202020'); ?> !important;
+				fill: <?php echo get_theme_mod('color_icon', '#202020'); ?>;
 			}
 
 			.social-media-block img {
-				color: <?php echo get_theme_mod('color_icon', '#202020'); ?> !important;
+				color: <?php echo get_theme_mod('color_icon', '#202020'); ?>;
 			}
 		</style>
 
@@ -872,42 +872,16 @@ function customize () {
 
 		<style type="text/css">
 			.social-media-block svg {
-				fill: #202020 !important;
+				fill: #202020;
 			}
 
 			.social-media-block img {
-				color: #202020 !important;
+				color: #202020;
 			}
 		</style>
 
 		<?php
 	}
-
-	/*if ( get_theme_mod( 'predefined_colors' ) ) {
-
-		set_theme_mod( 'primary_color', '' );
-		set_theme_mod( 'secondary_color', '' );
-
-		if ( get_theme_mod( 'predefined_colors' ) == 'standart' ) {
-			
-			$bgcolor = '#e5e5e5';
-			$header_footer_color = '#202020';
-			?>
-
-			<style type="text/css">
-				html, body {
-					background-color: <?php echo $bgcolor?> !important;
-				}
-				#footer-container,
-				#site-header,
-				.primary-menu-wrapper {
-					background-color: <?php echo $header_footer_color?> !important;
-				}
-			</style>
-			<?php
-
-		}
-	}*/
 
 	if ( get_theme_mod( 'primary_color' ) ) {
 

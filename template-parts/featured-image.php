@@ -20,9 +20,13 @@ if ( has_post_thumbnail() && ! post_password_required() ) {
 
 		<div class="featured-media-inner-post">
 
-			<?php
-			the_post_thumbnail();
-			?>
+			<a href="<?php echo wp_get_attachment_image_url( get_post_thumbnail_id(), 'full' ); ?>">
+
+				<?php
+				the_post_thumbnail();
+				?>
+
+			</a>
 
 		</div><!-- .featured-media-inner -->
 

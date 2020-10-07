@@ -1138,6 +1138,36 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			);
 
 			Kirki::add_config(
+				'color_icon_footer',
+				[
+					'capability'        => 'edit_theme_options',
+					'transport'         => 'auto',
+				]
+			);
+
+			Kirki::add_field(
+				'color_icon_footer',
+				[
+					'type'		=> 'color',
+					'settings'	=> 'color_icon_footer',
+					'section'	=> 'display_setting',
+					'default'	=> '#e5e5e5',
+					'priority'	=> 10,
+					'label'		=> esc_html__( 'Icon color (footer)', 'kirki' ),
+					'output'	=> array(
+						array(
+							'element'	=> '.footer-top .social-media-block img',
+							'property'	=> 'color',
+						),
+						array(
+							'element'	=> '.footer-top .social-media-block svg',
+							'property'	=> 'fill',
+						),
+					),
+				]
+			);
+
+			Kirki::add_config(
 				'border_radius_social_icon_background',
 				[
 					'capability'        => 'edit_theme_options',
