@@ -6157,6 +6157,10 @@ div[id*='quick_links'] {
 		flex-direction: column;
 	}
 
+	#site-content-sitebar {
+		margin: 30px 30px 0;
+	}
+
 	.site-content-column-reverse {
 		flex-direction: column-reverse;
 	}

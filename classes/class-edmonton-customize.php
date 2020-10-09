@@ -1040,25 +1040,6 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			);
 
 			Kirki::add_config(
-				'social_footer_enable',
-				[
-					'capability'        => 'edit_theme_options',
-					'default'           => false,
-				]
-			);
-
-			Kirki::add_field(
-				'social_footer_enable',
-				[
-					'type'        => 'checkbox',
-					'settings'    => 'social_footer_enable',
-					'section'  	  => 'display_setting',
-					'priority' 	  => 10,
-					'label'    	  => esc_html__( 'Display social in footer', 'kirki' ),
-				]
-			);
-
-			Kirki::add_config(
 				'social_mobile_menu_enable',
 				[
 					'capability'        => 'edit_theme_options',
@@ -1138,36 +1119,6 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			);
 
 			Kirki::add_config(
-				'color_icon_footer',
-				[
-					'capability'        => 'edit_theme_options',
-					'transport'         => 'auto',
-				]
-			);
-
-			Kirki::add_field(
-				'color_icon_footer',
-				[
-					'type'		=> 'color',
-					'settings'	=> 'color_icon_footer',
-					'section'	=> 'display_setting',
-					'default'	=> '#e5e5e5',
-					'priority'	=> 10,
-					'label'		=> esc_html__( 'Icon color (footer)', 'kirki' ),
-					'output'	=> array(
-						array(
-							'element'	=> '.footer-top .social-media-block img',
-							'property'	=> 'color',
-						),
-						array(
-							'element'	=> '.footer-top .social-media-block svg',
-							'property'	=> 'fill',
-						),
-					),
-				]
-			);
-
-			Kirki::add_config(
 				'border_radius_social_icon_background',
 				[
 					'capability'        => 'edit_theme_options',
@@ -1216,6 +1167,87 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'section'  => 'display_setting',
 					'priority' => 10,
 					'label'    => esc_html__( 'Open link in new tab', 'kirki' ),
+				]
+			);
+
+			Kirki::add_config(
+				'separator_social_text',
+				[
+					'capability'        => 'edit_theme_options',
+					'transport'         => 'auto',
+				]
+			);
+
+			Kirki::add_field( 'separator_social_text', [
+				'type'        => 'custom',
+				'settings'    => 'separator_social_text',
+				'section'     => 'display_setting',
+				'default'     => '<h3 class="customize-control-title" style="padding:15px 10px; background:#fff; margin:0;">' . __( 'In footer', 'kirki' ) . '</h3>',
+				'priority'    => 10,
+			] );
+
+			Kirki::add_config(
+				'color_icon_footer',
+				[
+					'capability'        => 'edit_theme_options',
+					'transport'         => 'auto',
+				]
+			);
+
+			Kirki::add_field(
+				'color_icon_footer',
+				[
+					'type'		=> 'color',
+					'settings'	=> 'color_icon_footer',
+					'section'	=> 'display_setting',
+					'default'	=> '#e5e5e5',
+					'priority'	=> 10,
+					'label'		=> esc_html__( 'Icon color (footer)', 'kirki' ),
+					'output'	=> array(
+						array(
+							'element'	=> '.footer-top .social-media-block img',
+							'property'	=> 'color',
+						),
+						array(
+							'element'	=> '.footer-top .social-media-block svg',
+							'property'	=> 'fill',
+						),
+					),
+				]
+			);
+
+
+			Kirki::add_config(
+				'position_social_footer',
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'     => 'postMessage',
+				]
+			);
+
+			Kirki::add_field(
+				'position_social_footer',
+				[
+					'type'      => 'radio-image',
+					'label'     => esc_attr__( 'Position', 'text-domain' ),
+					'section'   => 'display_setting',
+					'settings'  => 'position_social_footer',
+					'default'	=> 'flex-start',
+					'priority'  => 10,
+					'choices'   => [
+						'flex-start' => [
+							'title' => esc_attr__( 'Left' ),
+							'path'  => '<svg width="85" height="57" viewBox="0 0 85 57" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="85" height="57" transform="matrix(-1 0 0 1 85 0)" fill="none"/><path d="M85 28.5V57H42.5H-2.75671e-06V28.5V-1.22935e-07H42.5H85V28.5ZM0.849997 5.41852V9.99259H42.5H84.15V5.41852V0.844444H42.5H0.849997V5.41852ZM0.835831 16.0937C0.821664 19.1056 0.821664 29.3515 0.835831 38.8656L0.849997 56.1556H42.5H84.15L84.1642 38.8585C84.1783 29.3515 84.1783 19.1056 84.1642 16.0937L84.15 10.6259H42.5H0.849997L0.835831 16.0937Z" fill="#3157E2"/><path d="M54.1166 14.7778C66.5266 14.7989 76.6841 14.827 76.6912 14.8341C76.7053 14.8411 76.7124 22.8282 76.7124 32.5815V50.3148H59.762C50.4474 50.3148 40.1199 50.2937 36.812 50.2656L30.8124 50.2233V32.4619V14.7074L31.1807 14.7215C31.3862 14.7285 41.7066 14.7567 54.1166 14.7778Z" fill="#3157E2"/><path d="M23.729 32.5463V50.3148H15.654H7.57894V32.5463V14.7778H15.654H23.729V32.5463Z" fill="#3157E2"/></svg>',
+						],
+						'center' => [
+							'title' => esc_attr__( 'Center' ),
+							'path'  => '<svg width="85" height="57" viewBox="0 0 85 57" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="85" height="57" transform="matrix(-1 0 0 1 85 0)" fill="none"/><path d="M85 28.5V57H42.5H-2.75671e-06V28.5V-1.22935e-07H42.5H85V28.5ZM0.849997 5.41852V9.99259H42.5H84.15V5.41852V0.844444H42.5H0.849997V5.41852ZM0.835831 16.0937C0.821664 19.1056 0.821664 29.3515 0.835831 38.8656L0.849997 56.1556H42.5H84.15L84.1642 38.8585C84.1783 29.3515 84.1783 19.1056 84.1642 16.0937L84.15 10.6259H42.5H0.849997L0.835831 16.0937Z" fill="#3157E2"/><path d="M43.017 26.0553C61.1318 26.0719 75.9586 26.0941 75.969 26.0996C75.9897 26.1051 76 32.3858 76 40.0553V54H51.2576C37.6611 54 22.5861 53.9834 17.7576 53.9613L9 53.9281V39.9613V26L9.53766 26.0111C9.8375 26.0166 24.9022 26.0387 43.017 26.0553Z" fill="#3157E2"/><path d="M42.4999 12H75.9999V18V24H42.4999H8.99993V18V12H42.4999Z" fill="#3157E2"/></svg>',
+						],
+						'flex-end' => [
+							'title' => esc_attr__( 'Right' ),
+							'path'	=> '<svg width="85" height="57" viewBox="0 0 85 57" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="85" height="57" fill="none"/><path d="M0 28.5V57H42.5H85V28.5V-1.22935e-07H42.5H0V28.5ZM84.15 5.41852V9.99259H42.5H0.85V5.41852V0.844444H42.5H84.15V5.41852ZM84.1642 16.0937C84.1783 19.1056 84.1783 29.3515 84.1642 38.8656L84.15 56.1556H42.5H0.85L0.835833 38.8585C0.821667 29.3515 0.821667 19.1056 0.835833 16.0937L0.85 10.6259H42.5H84.15L84.1642 16.0937Z" fill="#3157E2"/><path d="M30.8834 14.7778C18.4734 14.7989 8.31593 14.827 8.30885 14.8341C8.29468 14.8411 8.2876 22.8282 8.2876 32.5815V50.3148H25.238C34.5526 50.3148 44.8801 50.2937 48.188 50.2656L54.1876 50.2233V32.4619V14.7074L53.8193 14.7215C53.6138 14.7285 43.2934 14.7567 30.8834 14.7778Z" fill="#3157E2"/><path d="M61.271 32.5463V50.3148H69.346H77.4211V32.5463V14.7778H69.346H61.271V32.5463Z" fill="#3157E2"/></svg>',
+						],
+					],
 				]
 			);
 
