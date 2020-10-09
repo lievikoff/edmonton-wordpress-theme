@@ -1267,7 +1267,7 @@ function customize () {
 				justify-content: <?php echo get_theme_mod( 'position_social_footer', 'flex-start' ); ?>;
 			}
 		</style>
-	<?php get_theme_mod( 'position_social_footer');
+	<?php
 }
 
 add_action( 'wp_head', 'customize' );
