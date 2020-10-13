@@ -956,15 +956,6 @@ section {
 	margin: 10px 3px 0 18px;
 }
 
-.breadcrumbs {
-	font-style: normal;
-	line-height: 22px;
-
-	border-bottom: 2px solid #E5E5E5;
-
-	padding: 0.3rem 1.8rem 0.3rem 1.8rem;
-}
-
 .archive-section-inner-result {
 	padding: 0;
 	margin-top: 7px;
@@ -1270,8 +1261,13 @@ ul.social-icons li {
 /* Breadcrumbs ------------------------------- */
 
 .breadcrumbs {
-	z-index: 1;
+	font-style: normal;
+	line-height: 22px;
 	background: #fff;
+	border-bottom: 2px solid #E5E5E5;
+	padding: 0.3rem 1.8rem 0.3rem 1.8rem;
+	z-index: 1;
+	margin: 0 auto;
 }
 
 .breadcrumbs a {
@@ -1309,11 +1305,9 @@ ul.social-icons li {
 /*	4.	Site Header
 /* -------------------------------------------------------------------------- */
 #site-header {
+	margin: 0 auto;
 	background: #202020;
 	border-bottom: 1px solid #303030;
-}
-
-#site-header {
 	position: relative;
 }
 
@@ -1572,14 +1566,15 @@ ul.primary-menu > li:not(:last-child) {
 
 @media(min-width:1000px){
 	.cover {
-		height: 350px;
-		width: 100%;
 		position: absolute;
-		z-index: 0;
+		height: 400px;
+		width: 100%;
+		top: 0;
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: cover;
 		background-color: inherit;
+		z-index: -1;
 	}
 }
 
@@ -4831,6 +4826,7 @@ article {
 
 #main {
 	display: block;
+	margin: 0 auto;
 }
 
 #site-content-sitebar {
@@ -6346,6 +6342,7 @@ div[id*='quick_links'] {
 		display: flex;
 		min-height: 50px;
 		z-index: 2;
+		margin: 0 auto;
 	}
 
 	.primary-menu-wrapper {
@@ -6376,6 +6373,7 @@ div[id*='quick_links'] {
 		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: space-around;
+		margin: 0 auto;
 		background: #FFFFFF;
 		border-bottom: 2px solid #E5E5E5;
 		height: 50px;
@@ -6416,12 +6414,6 @@ div[id*='quick_links'] {
 	.social-icons a,
 	.alt-navigation-social-media a {
 		justify-content: center;
-	}
-
-	body {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
 	}
 
 	/* HEADER TOGGLES */
@@ -6518,6 +6510,7 @@ div[id*='quick_links'] {
 		opacity: 1;
 		justify-content: flex-end;
 		padding: 0;
+		margin: 0 auto;
 		transition: background-color 0.3s ease-in, left 0s 0.3s, right 0s 0.3s;
 	}
 

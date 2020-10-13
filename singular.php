@@ -20,7 +20,7 @@ $site_content_sidebar = '';
 if ( get_theme_mod( 'content_sidebar_position' ) ) {
 
 	$sidebar_position = get_theme_mod( 'content_sidebar_position' );
-	
+
 	if ( $sidebar_position ) {
 
 		switch ($sidebar_position) {
@@ -28,7 +28,7 @@ if ( get_theme_mod( 'content_sidebar_position' ) ) {
 				$site_content = 'site-content-row-reverse';
 				$site_content_sidebar = 'main-sidebar-left';
 				break;
-			
+
 			case 'right':
 				$site_content = 'site-content-row';
 				$site_content_sidebar = 'main-sidebar-right';
@@ -53,7 +53,7 @@ if ( !is_active_sidebar( 'sidebar-1' ) ) {
 ?>
 
 <main id="main" class="main-post">
-	
+
 	<?php if ( is_page_template( 'templates/template-about-us.php' ) || is_page_template( 'templates/template-contact.php' ) ) {
 
 		if ( have_posts() ) {

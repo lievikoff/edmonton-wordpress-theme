@@ -22,14 +22,10 @@
 		<?php wp_head(); ?>
 
 	</head>
-	
+
 	<body <?php body_class(); ?>>
 
-	
-
-		<?php
-		wp_body_open();
-		?>
+		<?php wp_body_open(); ?>
 
 		<header id="site-header" class="header-footer-group" role="banner">
 
@@ -42,17 +38,15 @@
 					// Check whether the header search is activated in the customizer.
 					$enable_header_search = get_theme_mod( 'enable_header_search', true );
 
-					if ( true === $enable_header_search ) {
+					if ( true === $enable_header_search ) { ?>
 
-						?>
-
-						<button class="toggle search-toggle mobile-search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
-							<span class="toggle-inner">
-								<span class="toggle-icon">
-									<?php edmonton_the_theme_svg( 'search' ); ?>
-								</span>
+					<button class="toggle search-toggle mobile-search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
+						<span class="toggle-inner">
+							<span class="toggle-icon">
+								<?php edmonton_the_theme_svg( 'search' ); ?>
 							</span>
-						</button><!-- .search-toggle -->
+						</span>
+					</button><!-- .search-toggle -->
 
 					<?php } ?>
 
@@ -84,100 +78,81 @@
 
 		<div class="header-navigation-wrapper">
 
-			<?php
-			if ( has_nav_menu( 'primary' ) || ! has_nav_menu( 'expanded' ) ) {
-				?>
+			<?php if ( has_nav_menu( 'primary' ) || ! has_nav_menu( 'expanded' ) ) { ?>
 
-					<nav class="primary-menu-wrapper" aria-label="<?php esc_attr_e( 'Horizontal', 'edmonton' ); ?>" role="navigation">
+			<nav class="primary-menu-wrapper" aria-label="<?php esc_attr_e( 'Horizontal', 'edmonton' ); ?>" role="navigation">
 
-						<ul class="primary-menu reset-list-style">
+				<ul class="primary-menu reset-list-style">
 
-						<?php
-						if ( has_nav_menu( 'primary' ) ) {
+				<?php if ( has_nav_menu( 'primary' ) ) {
 
-							wp_nav_menu(
-								array(
-									'container'  		=> '',
-									'items_wrap' 		=> '%3$s',
-									'theme_location'	=> 'primary',
-								)
-							);
+					wp_nav_menu(
+						array(
+							'container'  		=> '',
+							'items_wrap' 		=> '%3$s',
+							'theme_location'	=> 'primary',
+						)
+					);
 
-						} else if ( ! has_nav_menu( 'expanded' ) ) {
+				} else if ( ! has_nav_menu( 'expanded' ) ) {
 
-							wp_list_pages(
-								array(
-									'match_menu_classes' => true,
-									'show_sub_menu_icons' => true,
-									'title_li' => false,
-									'walker'   => new Edmonton_Walker_Page(),
-								)
-							);
+					wp_list_pages(
+						array(
+							'match_menu_classes' => true,
+							'show_sub_menu_icons' => true,
+							'title_li' => false,
+							'walker'   => new Edmonton_Walker_Page(),
+						)
+					);
 
-						}
-						?>
+				} ?>
 
-						</ul>
+				</ul>
 
-					</nav><!-- .primary-menu-wrapper -->
+			</nav><!-- .primary-menu-wrapper -->
 
-				<?php
-			}
-			?>
+			<?php } ?>
 
 		</div><!-- .header-navigation-wrapper -->
 		<div class="alt-navigation-wrapper">
 
 			<div class="alt-navigation-search">
 
-				<?php
-					
-					get_search_form();
-				?>
+				<?php get_search_form(); ?>
 
 			</div>
 
 			<div class="alt-navigation-social-media">
 
-				<?php 
-				if( get_theme_mod( 'social_header_enable', true ) ) {
-
+				<?php if( get_theme_mod( 'social_header_enable', true ) ) {
 					get_template_part( 'template-parts/social-media' );
 
-				}
-				?>
+				} ?>
 
 			</div>
 
-			<?php				
-			if ( true === $enable_header_search ) {
-
+			<?php if ( true === $enable_header_search ) {
 				get_template_part( 'template-parts/modal-search' );
-
-			}
-			?>
+			} ?>
 
 		</div>
 
-		<?php if ( !is_404() ) {
-		?>
+		<?php if ( !is_404() ) { ?>
 
 		<div class="cover" ></div>
 
-		<?php }?>
+		<?php } ?>
+
 		<?php
+
 		$enable_breadcrumbs = get_theme_mod( 'breadcrumbs_enable' );
 		$pageNum = get_query_var('paged');
 
 		if ( $enable_breadcrumbs === true ) {
-
 			if( !is_front_page() && $pageNum == 0  || is_front_page() && $pageNum != 0){
-
 				the_breadcrumb( get_theme_mod( 'breadcrumbs_separator' ) );
-
 			}
-
 		}
-		
+
 		// Output the menu modal.
 		get_template_part( 'template-parts/modal-menu' );

@@ -377,7 +377,7 @@ function edmonton_sidebar_registration() {
 	register_sidebar(
 		array(
 			'id' 			=> 'sidebar-1',
-			'name' 			=> 'Main sitebar', 
+			'name' 			=> 'Main sitebar',
 			'description' 	=> 'Drag and drop widgets here to add them to the sidebar.',
 			'before_widget' => '<div id="%1$s" class="side widget %2$s">',
 			'after_widget' 	=> '</div>',
@@ -802,11 +802,11 @@ function customize () {
 
 	if ( get_theme_mod( 'cover_enable' ) ) {
 
-		
-		
+
+
     	if ( get_theme_mod( 'cover_image' ) )  {
 		?>
-			
+
 			<style type="text/css">
 				.cover {
 					background-image: url(<?php echo get_theme_mod( 'cover_image' )?>);
@@ -839,7 +839,7 @@ function customize () {
 
 		<style type="text/css">
 
-			<?php 
+			<?php
 			echo get_theme_mod( 'content_post_item_font' ).' {';
 				foreach(get_theme_mod( 'content_post_font' ) as $property => $value){
 					echo $property.': '.$value.';';
@@ -935,10 +935,10 @@ function customize () {
 
 			<?php
 		} else if ( get_theme_mod( 'header_width_full' ) ) {
-			
+
 			if ( get_theme_mod( 'custom_content_width' ) ) {
 
-				$max_width = get_theme_mod( 'custom_content_width' ) + 29 . 'px';	
+				$max_width = get_theme_mod( 'custom_content_width' ) + 29 . 'px';
 				$min_width = get_theme_mod( 'custom_content_width' ) + 30 . 'px';
 				?>
 
@@ -1019,7 +1019,7 @@ function customize () {
 			}
 		}
 	} else {
-		
+
 		if ( get_theme_mod( 'custom_header_width' ) || get_theme_mod( 'custom_content_width' ) ) {
 
 			if ( get_theme_mod( 'custom_header_width' ) ) {
@@ -1071,7 +1071,7 @@ function customize () {
 
 				<?php
 			}
-			
+
 			if ( get_theme_mod( 'custom_content_width' ) ) {
 				?>
 
@@ -1094,7 +1094,7 @@ function customize () {
 				</style>
 
 				<?php
-			} else {	
+			} else {
 				?>
 
 				<style type="text/css">
@@ -1155,13 +1155,13 @@ function customize () {
 	if ( get_theme_mod( 'header_logo_position' ) ) {
 
 		$logo_position = get_theme_mod( 'header_logo_position' );
-				
+
 		if ( $logo_position ) {
-			
+
 			switch ($logo_position) {
 				case 'left':
 					?>
-					
+
 					<style type="text/css">
 						@media (min-width: 1000px) {
 							.header-titles {
@@ -1176,14 +1176,14 @@ function customize () {
 								margin-left: 60px;
 							}
 						}
-					</style>	
+					</style>
 
 					<?php
 					break;
-				
+
 				case 'center':
 					?>
-					
+
 					<style type="text/css">
 						@media (min-width: 1000px) {
 							.header-titles {
@@ -1197,14 +1197,14 @@ function customize () {
 								margin-left: 0px;
 							}
 						}
-					</style>	
+					</style>
 
 					<?php
 					break;
 
 				case 'right':
 					?>
-					
+
 					<style type="text/css">
 						@media (min-width: 1000px) {
 							.header-titles {
@@ -1219,24 +1219,24 @@ function customize () {
 								margin-left: 60px;
 							}
 						}
-					</style>	
+					</style>
 
 					<?php
 					break;
 			}
-		} 
-	}	
+		}
+	}
 
 	if ( true == get_theme_mod( 'show_tagline', true ) ) {
 		?>
-		
+
 		<style type="text/css">
 			.site-description {
 				display: block;
 			}
 		</style>
 
-		<?php 
+		<?php
 	} else {
 		?>
 
@@ -1248,7 +1248,7 @@ function customize () {
 
 		<?php
 	}
-	
+
 	if ( get_theme_mod( 'breadcrumbs_position' ) ) {
 		?>
 
@@ -1295,18 +1295,18 @@ function new_excerpt_more( $more ){
 
 add_action( 'customize_register', 'my_customize_register', 11 );
 
-function my_customize_register( WP_Customize_Manager $wp_customize ){     
+function my_customize_register( WP_Customize_Manager $wp_customize ){
 	$wp_customize->remove_section( 'background_image' );
 	$wp_customize->remove_section( 'static_front_page' );
 	$wp_customize->remove_section( 'colors' );
-} 
+}
 
 add_filter( 'excerpt_length', function(){
 	return 40;
 } );
 
 function get_post_views( $postID ){
-	
+
 	$count_key = 'post_views_count';
 	$count = get_post_meta($postID, $count_key, true);
 
@@ -1322,10 +1322,10 @@ function get_post_views( $postID ){
 }
 
 function set_post_views($postID) {
-	
+
 	$count_key = 'post_views_count';
 	$count = get_post_meta($postID, $count_key, true);
-	
+
 	if ( $count == '' ) {
 		$count = 0;
 		delete_post_meta($postID, $count_key);
@@ -1342,7 +1342,7 @@ add_action( 'manage_posts_custom_column', 'posts_custom_column_views', 5, 2 );
 function posts_column_views( $defaults ) {
 
 	$defaults[ 'post_views' ] = __( 'Views' );
-	
+
     return $defaults;
 }
 
@@ -1354,81 +1354,81 @@ function posts_custom_column_views( $column_name, $id ) {
 }
 
 function the_breadcrumb( $sep ){
- 
+
 	$pageNum = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
-	
+
 	if( get_theme_mod( 'breadcrumbs_separator' ) ) {
 		$separator = ' '.$sep.' ';
 	} else {
 		$separator = ' &raquo; ';
 	}
-	
+
 	if ( !is_search() ) {
 		echo '<div class="breadcrumbs">';
 
 		if ( is_front_page() ) {
-	
+
 			if( $pageNum > 1 ) {
 				echo '<a href="' . site_url() . '">' . __( 'Main', 'edmonton' ) . '</a>' . $separator . $pageNum . __( '`s page', 'edmonton' );
-			} 
-	
-		} else { 
-	
+			}
+
+		} else {
+
 			echo '<a href="' . site_url() . '">' . __( 'Main', 'edmonton' ) . '</a>' . $separator;
-	
-	
-			if( is_single() ){ 
-	
-				echo get_the_category_custom(1); 
-				echo $separator; 
+
+
+			if( is_single() ){
+
+				echo get_the_category_custom(1);
+				echo $separator;
 				the_title();
-	
-			} else if ( is_page() ){ 
-	
+
+			} else if ( is_page() ){
+
 				the_title();
-	
+
 			} else if ( is_category() ) {
-	
+
 				single_cat_title();
-	
+
 			} else if( is_tag() ) {
-	
+
 				single_tag_title();
-	
-			} else if ( is_day() ) { 
-	
+
+			} else if ( is_day() ) {
+
 				echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a>' . $separator;
 				echo '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a>' . $separator;
 				echo get_the_time('d');
-	
-			} else if ( is_month() ) { 
-	
+
+			} else if ( is_month() ) {
+
 				echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a>' . $separator;
 				echo get_the_time('F');
-	
-			} else if ( is_year() ) { 
-	
+
+			} else if ( is_year() ) {
+
 				echo get_the_time('Y');
-	
-			} else if ( is_author() ) { 
-	
+
+			} else if ( is_author() ) {
+
 				global $author;
 				$userdata = get_userdata($author);
 				echo __( 'Published by ', 'edmonton' ) . $userdata->display_name;
-	
-			} else if ( is_404() ) { 
-	
+
+			} else if ( is_404() ) {
+
 				echo __( '', 'edmonton' );
-	
+
 			} else if ( is_search() ) {
 
 				echo __( '', 'edmonton' );
 			}
-	
-			if ( $pageNum > 1 ) { 
+
+			if ( $pageNum > 1 ) {
 				echo ' (' . $pageNum .  __( '`s page', 'edmonton' ) .')';
 			}
-	
+
 		}
 		echo '</div>';
 	}
@@ -1439,11 +1439,11 @@ add_action( 'loop_end',   'switch_comment_filter' );
 
 /**
  * Turn comment text filter on or off depending on global $post object.
- *	
+ *
  * @wp-hook loop_start
  * @wp-hook loop_end
  * @return  void
- * 
+ *
  * @since Edmonton 1.0
  */
 
@@ -1461,7 +1461,7 @@ function switch_comment_filter()
  * @param   string $original
  * @param   string $domain
  * @return  string
- * 
+ *
  * @since Edmonton 1.0
  */
 
@@ -1474,17 +1474,17 @@ function comment_number_text( $translated, $original, $domain ) {
 }
 
 function get_the_category_custom ( $num = NULL ) {
-	
+
 	$temp = get_the_category();
 	$count = count( $temp );
 	$category_return = '';
-	
-	( $num == 0 || $num == '' || $num == NULL ) ? $num = $count : $num = $num; 
-	
+
+	( $num == 0 || $num == '' || $num == NULL ) ? $num = $count : $num = $num;
+
 	for( $i = 0; $i < $num && $i < $count; $i++ ) {
 
 		$category_return .= '<a href="' . get_category_link( $temp[$i]->cat_ID ) . '">' . $temp[$i]->cat_name . '</a>';
-		
+
 		if ( $num == $count ) {
 
 			if ( $i != $num - 2 && $i != $num - 1 ) {
@@ -1497,10 +1497,10 @@ function get_the_category_custom ( $num = NULL ) {
 		} else if ( $num < $count ) {
 
 			if ( $i != $num - 1 && $i + 1 < $count ) {
-		
+
 				$category_return .= ', ';
 			} else if ( $i == $num - 1 && $num < $count ) {
-	
+
 				$category_return .= __( ' and other' , 'edmonton' );
 			}
 		} else if ( $num > $count ) {
