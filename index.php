@@ -103,6 +103,12 @@ get_header();
 					break;
 			}
 		}
+	} else {
+		if ( is_active_sidebar( 'sidebar-1' ) ) {
+			$site_content = 'site-content-row';
+			$site_content_main = 'site-content-main-cut';
+			$site_content_sidebar = 'main-sidebar-right';
+		}
 	}
 
 	if ( !is_active_sidebar( 'sidebar-1' ) ) {
