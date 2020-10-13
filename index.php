@@ -17,7 +17,7 @@ get_header();
 ?>
 
 <main id="main" <?php echo ( is_search() ) ? 'style="min-height: 150px;"' : ''; ?>>
-	
+
 	<?php
 	$archive_title    = '';
 	$archive_subtitle = '';
@@ -30,41 +30,19 @@ get_header();
 				'%1$s %2$s',
 				__( 'Results for ', 'edmonton' ),
 				'&ldquo;' . get_search_query() . '&rdquo;'
-			);	
+			);
 		} else {
 			$archive_title = sprintf(
 				'%1$s %2$s',
 				__( 'No results for ', 'edmonton' ),
 				'&ldquo;' . get_search_query() . '&rdquo;'
-			);		
+			);
 		}
 	} else if ( is_archive() && ! have_posts() ) {
 		$archive_title = __( 'Nothing Found', 'edmonton' );
 	} else if ( ! is_home() ) {
 		$archive_title    = get_the_archive_title();
 		$archive_subtitle = get_the_archive_description();
-	}
-
-	if ( $archive_title || $archive_subtitle ) {
-		?>
-
-		<header class="archive-header has-text-align-center header-footer-group">
-
-			<div class="archive-header-inner archive-section-inner medium">
-
-				<?php if ( $archive_title ) { ?>
-					<h1 class="archive-title"><?php echo wp_kses_post( $archive_title ); ?></h1>
-				<?php } ?>
-
-				<?php if ( $archive_subtitle ) { ?>
-					<div class="archive-subtitle archive-section-inner-result thin max-percentage"><?php echo wp_kses_post( wpautop( $archive_subtitle ) ); ?></div>
-				<?php } ?>
-
-			</div><!-- .archive-header-inner -->
-
-		</header><!-- .archive-header -->
-
-		<?php
 	}
 
 	$site_content = '';
@@ -83,7 +61,7 @@ get_header();
 					$site_content_main = 'site-content-main-cut';
 					$site_content_sidebar = 'main-sidebar-left';
 					break;
-				
+
 				case 'right':
 					$site_content = 'site-content-row';
 					$site_content_main = 'site-content-main-cut';
@@ -109,14 +87,14 @@ get_header();
 		$site_content_main = 'site-content-main-full';
 		$site_content = 'site-content-column';
 	}
-	
+
 	?>
 	<main id="site-content" class="<?php echo $site_content ?>" role="main">
 
 	<?php
 		if ( is_home() ) {
 			?>
-		
+
 			<div id="site-content-main" style="<?php echo ( is_active_sidebar( 'sidebar-1' ) ) ? '' : 'width: 100%;'; echo ( get_theme_mod( 'masonry', false ) ) ? 'grid-auto-rows: 5px;' : ''; ?>" class="catalog-grid <?php echo $site_content_main ?>">
 
 			<?php
@@ -124,7 +102,7 @@ get_header();
 			?>
 
 			<div id="site-content-main" style="<?php echo ( is_active_sidebar( 'sidebar-1' ) ) ? '' : 'width: 100%;'; echo ( get_theme_mod( 'masonry', false ) ) ? 'grid-auto-rows: 5px;' : ''; ?>" class="catalog-grid <?php echo $site_content_main ?>">
-			
+
 			<?php
 		}
 
@@ -139,9 +117,9 @@ get_header();
 				} else if ( is_search() ) {
 					?>
 
-					
+
 					<div class="no-search-results-form section-inner thin">
-		
+
 						<?php
 						get_search_form(
 							array(
@@ -154,10 +132,10 @@ get_header();
 
 					<?php
 				}
-			
-			
+
+
 	?>
-			
+
 		</div>
 
 		<?php if ( is_active_sidebar( 'sidebar-1' ) ) { ?>
@@ -165,7 +143,7 @@ get_header();
 			<div id="site-content-sitebar" class="<?php echo $site_content_sidebar ?>">
 				<!-- sitebar -->
 
-		
+
 				<div id="true-side" class="sidebar">
 
 					<?php dynamic_sidebar( 'sidebar-1' ); ?>
@@ -177,7 +155,7 @@ get_header();
 		<?php } ?>
 
 	</main><!-- #site-content -->
-	
+
 	<?php get_template_part( 'template-parts/pagination' ); ?>
 
 </main>

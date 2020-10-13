@@ -114,6 +114,7 @@
 			<?php } ?>
 
 		</div><!-- .header-navigation-wrapper -->
+
 		<div class="alt-navigation-wrapper">
 
 			<div class="alt-navigation-search">
@@ -131,6 +132,19 @@
 
 			</div>
 
+			<div class="breadcrumbs-wrapper">
+			<?php
+				$enable_breadcrumbs = get_theme_mod( 'breadcrumbs_enable' );
+				$pageNum = get_query_var('paged');
+
+				if ( $enable_breadcrumbs === true ) {
+					if( !is_front_page() && $pageNum == 0  || is_front_page() && $pageNum != 0){
+						the_breadcrumb( get_theme_mod( 'breadcrumbs_separator' ) );
+					}
+				}
+			?>
+		</div>
+
 			<?php if ( true === $enable_header_search ) {
 				get_template_part( 'template-parts/modal-search' );
 			} ?>
@@ -144,15 +158,6 @@
 		<?php } ?>
 
 		<?php
-
-		$enable_breadcrumbs = get_theme_mod( 'breadcrumbs_enable' );
-		$pageNum = get_query_var('paged');
-
-		if ( $enable_breadcrumbs === true ) {
-			if( !is_front_page() && $pageNum == 0  || is_front_page() && $pageNum != 0){
-				the_breadcrumb( get_theme_mod( 'breadcrumbs_separator' ) );
-			}
-		}
 
 		// Output the menu modal.
 		get_template_part( 'template-parts/modal-menu' );

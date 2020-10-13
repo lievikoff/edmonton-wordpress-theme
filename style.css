@@ -1260,12 +1260,15 @@ ul.social-icons li {
 
 /* Breadcrumbs ------------------------------- */
 
+.breadcrumbs-wrapper {
+	border-top: 1px solid #E5E5E5;
+}
+
 .breadcrumbs {
 	font-style: normal;
 	line-height: 22px;
 	background: #fff;
-	border-bottom: 2px solid #E5E5E5;
-	padding: 0.3rem 1.8rem 0.3rem 1.8rem;
+	padding: 0.8rem 1.8rem 0.8rem 1.8rem;
 	z-index: 1;
 	margin: 0 auto;
 }
@@ -1567,7 +1570,7 @@ ul.primary-menu > li:not(:last-child) {
 @media(min-width:1000px){
 	.cover {
 		position: absolute;
-		height: 400px;
+		height: 430px;
 		width: 100%;
 		top: 0;
 		background-repeat: no-repeat;
@@ -2251,33 +2254,6 @@ body.template-full-width [class*="wp-block"].alignfull:not(.has-background) [cla
 
 /*	8. Post: Archive
 /* -------------------------------------------------------------------------- */
-
-/* Archive Header ---------------------------- */
-
-.archive-header {
-	background-color: #fff;
-	padding: 0.3rem 0;
-	border-bottom: 2px solid #E5E5E5;
-}
-
-.reduced-spacing .archive-header {
-	padding-bottom: 0.2rem;
-}
-
-.color-accent {
-	font-family: Roboto;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 18px;
-	line-height: 22px;
-
-	color: #101010 !important;
-	margin: 0;
-}
-
-.archive-subtitle p:last-child {
-	margin-bottom: 0;
-}
 
 /* Posts ------------------------------------- */
 
@@ -5508,19 +5484,6 @@ div[id*='quick_links'] {
 	}
 
 	/* Post: Archive ------------------------- */
-
-	.archive-header {
-		padding: 0.3rem 0;
-	}
-
-	.reduced-spacing .archive-header {
-		padding-bottom: 0.2rem;
-	}
-
-	.archive-header-inner .archive-title {
-		margin-left: 0px;
-	}
-
 	body:not(.singular) main > article:first-of-type {
 		padding: 8rem 0 0;
 	}
@@ -6107,8 +6070,11 @@ div[id*='quick_links'] {
 	.alt-navigation-social-media {
 		display: flex;
 		justify-content: center;
-		border-bottom: 2px solid #E5E5E5;
 		height: 50px;
+	}
+
+	.alt-navigation-wrapper {
+		border-bottom: 2px solid #E5E5E5;
 	}
 
 	.site-content-main-full,
@@ -6376,7 +6342,7 @@ div[id*='quick_links'] {
 		margin: 0 auto;
 		background: #FFFFFF;
 		border-bottom: 2px solid #E5E5E5;
-		height: 50px;
+		min-height: 50px;
 		z-index: 1;
 	}
 

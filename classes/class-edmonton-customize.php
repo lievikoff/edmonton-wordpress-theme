@@ -690,8 +690,8 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'transport' => 'auto',
 					'output'    => [
 						[
-							'element' => '.alt-navigation-wrapper .alt-navigation-social-media .social-media, .menu-bottom .social-media',
-							'property' => 'border-left-color'
+							'element' => '.alt-navigation-wrapper .alt-navigation-social-media .social-media, .menu-bottom .social-media, .alt-navigation-wrapper .breadcrumbs-wrapper',
+							'property' => 'border-color'
 						],
 					],
 				]
@@ -723,127 +723,6 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'choices'	=> [
 						'min'  => 0,
 						'max'  => 5,
-						'step' => 1,
-					],
-				]
-			);
-
-			/** Header archive ----------------------------------------------------------------- */
-
-			Kirki::add_section(
-				'header_archive',
-				[
-					'title'          => esc_html__( 'Archive', 'kirki' ),
-					'panel'          => 'header',
-				]
-			);
-
-			Kirki::add_config(
-				'header_archive_font',
-				[
-					'capability'    => 'edit_theme_options',
-				]
-			);
-
-			Kirki::add_field(
-				'header_archive_font',
-				[
-					'type'        => 'typography',
-					'settings'    => 'header_archive_font',
-					'label'       => esc_html__( 'Font Style', 'kirki' ),
-					'section'     => 'header_archive',
-					'default'     => [
-						'font-family'    => 'Roboto',
-						'variant'        => '800',
-						'font-size'      => '18px',
-						'color'          => '#101010',
-					],
-					'priority'    => 10,
-					'transport'   => 'auto',
-					'output'      => [
-						[
-							'element' => '.archive-title',
-						],
-					],
-				]
-			);
-
-			Kirki::add_config(
-				'header_archive_color',
-				[
-					'capability'    => 'edit_theme_options',
-				]
-			);
-
-			Kirki::add_field(
-				'header_archive_color',
-				[
-					'type'      => 'color',
-					'label'     => esc_attr__( 'Bar color', 'text-domain' ),
-					'section'   => 'header_archive',
-					'settings'  => 'header_archive_color',
-					'default'   => '#ffffff',
-					'transport' => 'auto',
-					'output'    => [
-						[
-							'element' => '.archive-header',
-							'property' => 'background-color'
-						],
-					],
-				]
-			);
-
-			Kirki::add_config(
-				'header_archive_border_bottom_color',
-				[
-					'capability'    => 'edit_theme_options',
-				]
-			);
-
-			Kirki::add_field(
-				'header_archive_border_bottom_color',
-				[
-					'type'      => 'color',
-					'label'     => esc_attr__( 'Border bottom color', 'text-domain' ),
-					'section'   => 'header_archive',
-					'settings'  => 'header_archive_border_bottom_color',
-					'default'   => '#E5E5E5',
-					'transport' => 'auto',
-					'output'    => [
-						[
-							'element' => '.archive-header',
-							'property' => 'border-bottom-color'
-						],
-					],
-				]
-			);
-
-			Kirki::add_config(
-				'header_archive_border_bottom_width',
-				[
-					'capability'    => 'edit_theme_options',
-				]
-			);
-
-			Kirki::add_field(
-				'header_archive_border_bottom_width',
-				[
-					'type'      => 'slider',
-					'label'     => esc_attr__( 'Border bottom width', 'text-domain' ),
-					'section'   => 'header_archive',
-					'settings'  => 'header_archive_border_bottom_width',
-					'default'	=> 2,
-					'transport' => 'auto',
-					'output'    => [
-						[
-							'element' => '.archive-header',
-							'property' => 'border-bottom-width',
-							'suffix'  => 'px',
-						],
-					],
-					'choices'	=> [
-						'min'  => 0,
-						'max'  => 10,
 						'step' => 1,
 					],
 				]
@@ -2368,7 +2247,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'default'     => false,
 				]
 			);
-			
+
 			Kirki::add_config(
 				'masonry',
 				[
@@ -2377,8 +2256,8 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				]
 			);
 
-			Kirki::add_field( 
-				'masonry', 
+			Kirki::add_field(
+				'masonry',
 				[
 					'type'        => 'toggle',
 					'settings'    => 'masonry',
@@ -2386,7 +2265,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'section'     => 'content_general',
 					'default'     => 'false',
 					'priority'    => 10,
-				] 
+				]
 			);
 
 			/* Content Post ----------------------------------------------------------*/
@@ -2757,7 +2636,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'default'     => [
 						'font-family'    => 'Roboto',
 						'variant'        => 'regular',
-						'font-size'      => '16px',
+						'font-size'      => '14px',
 						'color'          => '#8492A6',
 					],
 					'priority'    => 10,
@@ -2798,63 +2677,6 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					],
 				]
 			);
-
-			Kirki::add_config(
-				'header_breadcrumbs_border_bottom_color',
-				[
-					'capability'    => 'edit_theme_options',
-				]
-			);
-
-			Kirki::add_field(
-				'header_breadcrumbs_border_bottom_color',
-				[
-					'type'      => 'color',
-					'label'     => esc_attr__( 'Border bottom color', 'text-domain' ),
-					'section'   => 'breadcrumbs_general',
-					'settings'  => 'header_breadcrumbs_border_bottom_color',
-					'default'   => '#E5E5E5',
-					'transport' => 'auto',
-					'output'    => [
-						[
-							'element' => '.breadcrumbs',
-							'property' => 'border-bottom-color'
-						],
-					],
-				]
-			);
-
-			Kirki::add_config(
-				'header_breadcrumbs_border_bottom_width',
-				[
-					'capability'    => 'edit_theme_options',
-				]
-			);
-
-			Kirki::add_field(
-				'header_breadcrumbs_border_bottom_width',
-				[
-					'type'      => 'slider',
-					'label'     => esc_attr__( 'Border bottom width', 'text-domain' ),
-					'section'   => 'breadcrumbs_general',
-					'settings'  => 'header_breadcrumbs_border_bottom_width',
-					'default'	=> 2,
-					'transport' => 'auto',
-					'output'    => [
-						[
-							'element' => '.breadcrumbs',
-							'property' => 'border-bottom-width',
-							'suffix'  => 'px',
-						],
-					],
-					'choices'	=> [
-						'min'  => 0,
-						'max'  => 10,
-						'step' => 1,
-					],
-				]
-			);
-
 
 			Kirki::add_config(
 				'breadcrumbs_position',
