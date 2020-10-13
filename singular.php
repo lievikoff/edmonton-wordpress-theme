@@ -45,6 +45,11 @@ if ( get_theme_mod( 'content_sidebar_position' ) ) {
 				break;
 		}
 	}
+} else {
+	if ( is_active_sidebar( 'sidebar-1' ) ) {
+		$site_content = 'site-content-row';
+		$site_content_sidebar = 'main-sidebar-right';
+	}
 }
 
 if ( !is_active_sidebar( 'sidebar-1' ) ) {
