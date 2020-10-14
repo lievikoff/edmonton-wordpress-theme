@@ -599,6 +599,10 @@ iframe.instagram-media {
 	margin: auto !important;
 }
 
+.entry-content .attachment img {
+	width: 100%;
+}
+
 /* GALLERIES */
 
 .gallery {
@@ -1788,10 +1792,17 @@ button.close-nav-toggle {
 button.close-nav-toggle svg {
 	height: 1.6rem;
 	width: 1.6rem;
+	margin-bottom: 0;
+	transition: transform 0.15s ease-in-out;
+}
+
+button.close-nav-toggle:hover svg {
+	transform: scale(1.15);
+	transition: transform 0.15s ease-in-out;
 }
 
 button.close-nav-toggle .toggle-text {
-	margin-right: 1.6rem;
+	display: none;
 }
 
 .menu-modal .menu-top {
@@ -2011,10 +2022,11 @@ button.sub-menu-toggle.active svg {
 }
 
 .search-modal-inner .section-inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 	padding: 10px 10px;
 	height: inherit;
-	display: flex;
-	justify-content: space-between;
 }
 
 .search-modal.active {
@@ -2030,12 +2042,13 @@ button.sub-menu-toggle.active svg {
 }
 
 button.search-untoggle {
-	align-items: center;
 	display: flex;
-	flex-shrink: 0;
+	align-items: center;
 	justify-content: center;
+	flex-shrink: 0;
 	margin-right: -2.5rem;
 	padding: 0 2.5rem;
+	height: fit-content;
 }
 
 .search-modal button.search-untoggle {
@@ -3628,7 +3641,7 @@ figure.wp-block-table.is-style-stripes {
 	width: auto;
     font-weight: 500;
     font-size: 22px;
-    line-height: 16px;
+    line-height: normal;
 	color: #8492A6;
 	padding-bottom: 15px;
 	border-bottom: 1px solid #E5E5E5;
@@ -4573,6 +4586,20 @@ a.to-the-top > * {
 	pointer-events: none;
 }
 
+.footer-credits {
+	display: flex;
+	width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.footer-credits .footer-inner-wrap {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 .footer-copyright {
 	font-size: 16px;
 	margin: 0;
@@ -4582,8 +4609,10 @@ a.to-the-top > * {
 
 .powered-by-edmonton,
 .after-powered-by-edmonton {
-	display: none;
 	margin: 0 0 0 0.5rem;
+	color: #ffffff;
+	display: block;
+	font-size: 16px;
 }
 
 .to-the-top-long {
@@ -4899,6 +4928,10 @@ div[id*='quick_links'] {
 	padding: 0;
 }
 
+#commentform {
+	padding: 15px;
+}
+
 .comments-wrapper {
 	padding: 25px;
 	margin-top: 30px;
@@ -4988,6 +5021,23 @@ div[id*='quick_links'] {
 		line-height: unset;
 	}
 
+	#commentform {
+		padding: 15px 0;
+	}
+
+	.main-post #site-content-sitebar {
+		margin: 30px 0px;
+	}
+
+	.footer-credits {
+		width: 100%;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.footer-credits .footer-inner-wrap {
+		width: 100%;
+	}
 }
 
 @media ( min-width: 480px ) {
@@ -5297,10 +5347,6 @@ div[id*='quick_links'] {
 	button.close-nav-toggle svg {
 		height: 2rem;
 		width: 2rem;
-	}
-
-	button.close-nav-toggle .toggle-text {
-		margin-right: 2.1rem;
 	}
 
 	.modal-menu {
@@ -5736,10 +5782,6 @@ div[id*='quick_links'] {
 		padding-bottom: 1rem;
 	}
 
-	#commentform {
-		padding: 15px;
-	}
-
 	div.comment:first-of-type {
 		margin-top: 5rem;
 	}
@@ -5761,11 +5803,12 @@ div[id*='quick_links'] {
 
 	.comment-author {
 		font-size: 2.4rem;
+		float: left;
+		margin-right: 10px;
 	}
 
 	.comment-metadata {
-		font-size: 1.6rem;
-		margin-top: 0.8rem;
+		font-size: 1.4rem;
 	}
 
 	.comment-footer-meta {
@@ -5939,17 +5982,6 @@ div[id*='quick_links'] {
 	#site-footer {
 		font-size: 1.8rem;
 		padding: 3rem 0;
-	}
-
-	.footer-credits {
-		display: flex;
-	}
-
-	.powered-by-edmonton,
-	.after-powered-by-edmonton {
-		display: block;
-		font-size: 16px;
-		color: #ffffff;
 	}
 
 	.to-the-top-long {
@@ -6755,10 +6787,6 @@ div[id*='quick_links'] {
 		padding: 0 4rem;
 	}
 
-	/* Menu Modal ---------------------------- */
-
-	/* Search Modal -------------------------- */
-
 	/* Sub Page ------------------------------ */
 
 	/* Template: Cover Template -------------- */
@@ -6766,8 +6794,6 @@ div[id*='quick_links'] {
 	.cover-header + .post-inner {
 		padding-top: 10rem;
 	}
-
-	/* Post: Archive ------------------------- */
 
 	/* Post: Single -------------------------- */
 
@@ -6806,9 +6832,6 @@ div[id*='quick_links'] {
 		/*rtl:ignore*/
 		left: calc((100% - 58rem) / 2 + 58rem + 6rem);
 	}
-
-
-	/* Site Pagination ----------------------- */
 
 	/* Widgets ------------------------------- */
 
