@@ -2450,7 +2450,7 @@ body:not(.singular) main > article:first-of-type {
 }
 
 #post-content a:hover{
-	color: #ffe022;
+	color: #F7A600;
 }
 
 .post-date-footer {
@@ -2694,7 +2694,7 @@ body:not(.singular) main > article:first-of-type {
 
 .pagination-single-inner a:hover {
 	text-decoration: none;
-	color: #FFE022;
+	color: #F7A600;
 }
 
 .pagination-single hr:first-child {
@@ -3700,7 +3700,7 @@ padding: 0 18px 0 18px;
 }
 
 .comment-reply a {
-	background-color: #FFE022;
+	background-color: #F7A600;
 	color: #202020;
 	border-radius: 2px;
 }
@@ -3865,7 +3865,7 @@ padding: 0 18px 0 18px;
 	border-radius: 2px;
 	padding: 15px;
 	color: #202020;
-	background-color: #FFE022;
+	background-color: #F7A600;
     font-weight: 500;
     font-size: 16px;
     line-height: 16px;
@@ -3948,7 +3948,7 @@ padding: 0 18px 0 18px;
 }
 
 .page-numbers.current {
-	background-color: #FFE022;
+	background-color: #F7A600;
 }
 
 .pagination a,

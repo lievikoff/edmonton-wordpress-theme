@@ -2869,7 +2869,7 @@ h2.entry-title {
 
 .pagination-single-inner a:hover {
 	text-decoration: none;
-	color: #FFE022;
+	color: #F7A600;
 }
 
 .pagination-single hr:first-child {
@@ -3952,7 +3952,7 @@ padding: 0 18px 0 18px;
 
 .comment-reply a:hover,
 .comment-reply a:focus {
-	background-color: #FFE022 !important;
+	background-color: #F7A600 !important;
 	/* template color */
 	/* color: #1b1b1b; */
 	color: #a0a0a0;
@@ -4139,7 +4139,7 @@ padding: 0 18px 0 18px;
 .comment-respond #submit:focus {
 	text-decoration: none;
 	color: #a0a0a0;
-	background-color:  #ffe022;
+	background-color:  #F7A600;
 }
 
 .comment-respond .form-submit {
@@ -4220,7 +4220,7 @@ padding: 0 18px 0 18px;
 }
 
 .page-numbers.current {
-	background-color: #FFE022;
+	background-color: #F7A600;
 }
 
 .pagination a,

@@ -2735,7 +2735,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'settings'  => 'active_page_color',
 					'label'     => esc_attr__( 'Active page marker color', 'text-domain' ),
 					'section'   => 'pagination_general',
-					'default'   => '#FFE022',
+					'default'   => '#F7A600',
 					'transport' => 'auto',
 					'output'    => [
 						[
