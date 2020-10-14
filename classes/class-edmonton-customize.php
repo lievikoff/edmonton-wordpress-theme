@@ -753,7 +753,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'settings'    => 'cover_enable',
 					'label'       => esc_html__( 'Cover Enable', 'kirki' ),
 					'section'     => 'header_cover',
-					'default'     => true,
+					'default'     => false,
 				]
 			);
 
