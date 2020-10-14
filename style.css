@@ -4036,7 +4036,6 @@ padding: 0 18px 0 18px;
 }
 
 .pagination-wrapper {
-	margin-bottom: 30px;
 	margin-top: 20px;
 }
 
@@ -4457,6 +4456,7 @@ padding: 0 18px 0 18px;
 	align-items: center;
 	background: #202020;
 	border-bottom: 1px solid #303030;
+	margin-top: 30px;
 }
 
 .footer-inner {
@@ -6595,6 +6595,11 @@ div[id*='quick_links'] {
 
 	.site-content-column-reverse {
 		flex-direction: column-reverse;
+	}
+
+	#site-content-sitebar {
+		min-width: 350px;
+		max-width: 350px;
 	}
 
 	.main-sidebar-left {

@@ -1363,9 +1363,9 @@ function the_breadcrumb( $sep ){
 		$separator = ' &raquo; ';
 	}
 
-	if ( !is_search() ) {
+	if ( !is_search() && !is_404() ) {
 		echo '<div class="breadcrumbs">';
-
+		
 		if ( is_front_page() ) {
 
 			if( $pageNum > 1 ) {
