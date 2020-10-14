@@ -772,7 +772,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'settings'    => 'cover_image',
 					'label'       => esc_html__( 'Cover Image', 'kirki' ),
 					'section'     => 'header_cover',
-					'default'     => '',
+					'default'     => false,
 				]
 			);
 
