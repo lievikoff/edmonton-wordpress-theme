@@ -404,6 +404,12 @@
   fill: white;
 }
 
+#position_social_footerflex-start:checked + .position_social_footerflex-start svg rect,
+#position_social_footercenter:checked + .position_social_footercenter svg rect,
+#position_social_footerflex-end:checked + .position_social_footerflex-end svg rect {
+  fill: #ffffff;
+}
+
 .customize-control-kirki-radio {
   position: relative;
 }
