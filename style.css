@@ -4430,10 +4430,6 @@ padding: 0 18px 0 18px;
 	border-bottom: 1px solid #303030;
 }
 
-.footer-top-visible .footer-nav-widgets-wrapper {
-	margin-top: 2rem;
-}
-
 .reduced-spacing.footer-top-visible .footer-nav-widgets-wrapper {
 	border-top-width: 0.1rem;
 }
@@ -4441,7 +4437,7 @@ padding: 0 18px 0 18px;
 .footer-top,
 .footer-widgets-outer-wrapper,
 #site-footer {
-	padding: 1rem 0;
+	padding: 20px 0;
 }
 
 
@@ -5898,14 +5894,6 @@ div[id*='quick_links'] {
 		padding-top: 4rem;
 	}
 
-	/* Widgets ------------------------------- */
-
-	/* Site Footer --------------------------- */
-
-	.footer-top-visible .footer-nav-widgets-wrapper {
-		margin-top: 1rem;
-	}
-
 	/* FOOTER TOP */
 
 	.footer-top {
@@ -5930,7 +5918,7 @@ div[id*='quick_links'] {
 	/* FOOTER WIDGETS */
 
 	.footer-widgets-outer-wrapper {
-		padding: 3rem 0 0 0;
+		padding: 40px 0 0 0;
 	}
 
 	.footer-widgets + .footer-widgets {
@@ -5955,7 +5943,6 @@ div[id*='quick_links'] {
 
 	.footer-credits {
 		display: flex;
-		margin-top: 15px;
 	}
 
 	.powered-by-edmonton,
