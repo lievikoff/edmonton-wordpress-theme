@@ -134,7 +134,7 @@ body {
 @supports ( font-variation-settings: normal ) {
 
 	body {
-		font-family: "Inter var", "Roboto", sans-serif;
+		font-family: "Inter", "Roboto", sans-serif;
 	}
 }
 
@@ -693,7 +693,7 @@ button,
 	.faux-button.more-link,
 	.wp-block-button__link,
 	.wp-block-file__button {
-		font-family: "Inter var", "Roboto", sans-serif;
+		font-family: "Inter", "Roboto", sans-serif;
 	}
 }
 
@@ -787,7 +787,7 @@ input[type="submit"] {
 	color: #fff;
 	cursor: pointer;
 	display: inline-block;
-	font-size: 1.5rem;
+	font-size: 1.6rem;
 	font-weight: 600;
 	letter-spacing: 0.0333em;
 	line-height: 1.25;
@@ -946,12 +946,9 @@ section {
 
 .archive-title {
 	min-width: fit-content;
-	font-family: Roboto;
-	font-style: normal;
 	font-weight: bold;
 	font-size: 18px;
 	line-height: 22px;
-
 	color: #101010;
 	margin: 10px 3px 0 18px;
 }
@@ -2322,9 +2319,6 @@ body:not(.singular) main > article:first-of-type {
 
 .block-footer-catalog,
 .block-footer-catalog a {
-	font-family: Roboto;
-	font-style: normal;
-	font-weight: normal;
 	font-size: 15px;
 	line-height: 18px;
 	text-decoration: none;
@@ -2440,25 +2434,17 @@ body:not(.singular) main > article:first-of-type {
 .post-date-footer,
 .author-post a,
 .post-date-footer a {
-	font-family: Roboto;
-	font-style: normal;
-	font-weight: normal;
 	font-size: 16px;
 	line-height: 23px;
 	text-decoration: none;
-
 	color: #8492A6;
 }
 
 #post-content .post-footer {
-	font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
     font-size: 16px;
     line-height: 23px;
     text-decoration: none;
 	color: #8492A6;
-
 	padding-top: 15px;
 	border-top: 1px solid #e5e5e5;
 }
@@ -2501,6 +2487,10 @@ body:not(.singular) main > article:first-of-type {
 .post-meta .meta-icon {
 	flex-shrink: 0;
 	margin-right: 1rem;
+}
+
+.post-meta .meta-icon svg {
+	margin-bottom: 2px;
 }
 
 .sticky .post-sticky {
@@ -2701,12 +2691,8 @@ body:not(.singular) main > article:first-of-type {
 }
 
 .pagination-single-inner a {
-	font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
     line-height: 23px;
 	color: #8492A6;
-
 	align-items: baseline;
 	display: flex;
     align-items: center;
@@ -2851,7 +2837,7 @@ body:not(.singular) main > article:first-of-type {
 	.entry-content .wp-block-latest-comments,
 	.entry-content .wp-block-cover-image p,
 	.entry-content .wp-block-pullquote {
-		font-family: "Inter var", "Roboto", sans-serif;
+		font-family: "Inter", "Roboto", sans-serif;
 	}
 }
 
@@ -3119,8 +3105,6 @@ body:not(.singular) main > article:first-of-type {
 	opacity: 1;
 	text-decoration: none;
 }
-
-/* Block: Image ------------------------------ */
 
 /* Block: Media And Text --------------------- */
 
@@ -3481,24 +3465,14 @@ figure.wp-block-table.is-style-stripes {
 }
 
 /* Font Families ----------------------------- */
-
-.entry-content {
-	font-family: NonBreakingSpaceOverride, "Hoefler Text", Garamond, "Times New Roman", serif;
-	letter-spacing: normal;
-}
-
 .entry-content-catalog {
 	margin: 17px 15px 0 15px;
 }
 
 .entry-content-catalog p {
-	font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
     font-size: 16px;
 	line-height: 26px;
 	height: max-content;
-
 	overflow: hidden;
     text-overflow: ellipsis;
 	color: #303030;
@@ -3534,7 +3508,7 @@ figure.wp-block-table.is-style-stripes {
 	.entry-content address,
 	.entry-content .wp-caption-text,
 	.entry-content .wp-block-file {
-		font-family: "Inter var", "Roboto", sans-serif;
+		font-family: "Inter", "Roboto", sans-serif;
 	}
 }
 
@@ -3652,9 +3626,6 @@ figure.wp-block-table.is-style-stripes {
 .comment-reply-title-left {
 	text-align: left;
 	width: auto;
-
-	font-family: Roboto;
-    font-style: normal;
     font-weight: 500;
     font-size: 22px;
     line-height: 16px;
@@ -3761,9 +3732,6 @@ padding: 0 18px 0 18px;
 /* COMMENT CONTENT */
 
 .comment-content {
-	font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
     font-size: 22px;
     line-height: 27px;
     color: #303030;
@@ -3934,14 +3902,10 @@ padding: 0 18px 0 18px;
 	display: block;
 	border-radius: 2px;
 	padding: 15px;
-
 	color: white;
 	background-color: #a0a0a0;
-
-	font-family: Roboto;
-    font-style: normal;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 16px;
 }
 
@@ -4029,7 +3993,7 @@ padding: 0 18px 0 18px;
 .page-numbers.current {
 	text-decoration: none;
 	color: #000000;
-	font-family: "Inter var";
+	font-family: "Inter";
 	font-style: normal;
 	font-weight: normal;
 	font-size: 16px;
@@ -4069,7 +4033,6 @@ padding: 0 18px 0 18px;
 
 .error404-content .entry-title {
 	color: rgba(0, 0, 0, 0.205);
-	font-family: Roboto;
 	font-size: 100px;
 	line-height: 1;
 	padding: 80px 0 80px 0;
@@ -4151,7 +4114,7 @@ padding: 0 18px 0 18px;
 .widget_text dl,
 .widget_text dt,
 .widget-content .rssSummary {
-	font-family: NonBreakingSpaceOverride, "Hoefler Text", Garamond, "Times New Roman", serif;
+	font-family: "Roboto", sans-serif;
 	letter-spacing: normal;
 }
 
@@ -4166,7 +4129,7 @@ padding: 0 18px 0 18px;
 	.widget-content cite,
 	.widget-content figcaption,
 	.widget-content .wp-caption-text {
-		font-family: "Inter var", "Roboto", sans-serif;
+		font-family: "Inter", "Roboto", sans-serif;
 	}
 }
 
@@ -4547,7 +4510,6 @@ padding: 0 18px 0 18px;
 	word-wrap: normal;
 	color: white !important;
     font-size: 19px;
-    font-family: Roboto;
 }
 
 /* FOOTER SOCIAL */
@@ -4616,8 +4578,6 @@ a.to-the-top > * {
 }
 
 .footer-copyright {
-	font-weight: normal;
-	font-family: Roboto;
 	font-size: 16px;
 	margin: 0;
 	color: #ffffff;
@@ -4700,9 +4660,6 @@ a.to-the-top > * {
 
 .author-post-catalog,
 .author-post-catalog a {
-	font-family: Roboto;
-	font-style: normal;
-	font-weight: normal;
 	font-size: 15px;
 	line-height: 18px;
 	text-decoration: none;
@@ -4720,7 +4677,7 @@ a.to-the-top > * {
 	/* identical to box height */
 	text-transform: uppercase;
 	color: #101010;
-	margin: 0 0 20px 0;
+	margin: 0 0 15px 0;
 }
 
 .side {
@@ -4773,9 +4730,6 @@ a.to-the-top > * {
 .sidebar-post-data {
 	margin: 5px 0 0;
 	color: #000000;
-	font-family: Roboto;
-	font-style: normal;
-	font-weight: normal;
 	font-size: 14px;
 	line-height: 16px;
 }
@@ -4893,9 +4847,6 @@ div[id*='quick_links'] {
 .entry-content figure {
 	margin: 0px;
 	padding: 0px;
-	font-family: Roboto;
-	font-style: normal;
-	font-weight: normal;
 	font-size: inherit;
 	line-height: 27px;
 	color: #303030;
@@ -4959,7 +4910,6 @@ div[id*='quick_links'] {
 }
 
 .no-search-results-form {
-	font-family: Roboto;
 	font-size: 22px;
 	padding-left: 15px;
 	font-weight: bolder;
@@ -4967,9 +4917,6 @@ div[id*='quick_links'] {
 }
 
 .footer-widgets .gallery-item .gallery-caption {
-	font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
     text-decoration: none;
     color: #ffffff;
 }
@@ -5032,12 +4979,8 @@ div[id*='quick_links'] {
 	.entry-content figure {
 		margin: 0px;
 		padding: 0px;
-		font-family: Roboto;
-		font-style: normal;
-		font-weight: normal;
 		font-size: 18px;
 		line-height: 27px;
-
 		color: #303030;
 	}
 
@@ -5296,7 +5239,7 @@ div[id*='quick_links'] {
 	input[type="button"],
 	input[type="reset"],
 	input[type="submit"] {
-		font-size: 1.7rem;
+		font-size: 1.6rem;
 	}
 
 	/* MEDIA */
@@ -6018,8 +5961,6 @@ div[id*='quick_links'] {
 	.powered-by-edmonton,
 	.after-powered-by-edmonton {
 		display: block;
-		font-family: Roboto;
-		font-weight: normal;
 		font-size: 16px;
 		color: #ffffff;
 	}
@@ -6133,12 +6074,7 @@ div[id*='quick_links'] {
 
 	/* Main sidebar and Footer widget -------- */
 
-
-
 	.footer-widgets p {
-		font-family: Roboto;
-		font-style: normal;
-		font-weight: normal;
 		font-size: 16px;
 		line-height: 19px;
 		margin-bottom: 15px;
@@ -6160,27 +6096,22 @@ div[id*='quick_links'] {
 
 	.footer-widgets .widget-title {
 		font-family: Inter;
-		font-style: normal;
 		font-weight: bold;
 		font-size: 18px;
 		line-height: 22px;
 		text-transform: none;
 		letter-spacing: 0.1em;
 		text-align: inherit;
-		margin: 0 0 20px 0;
+		margin: 0 0 15px 0;
 	}
 
 	.footer-widgets li,
 	.footer-widgets a {
-		font-family: Roboto;
-		font-style: normal;
-		font-weight: normal;
 		font-size: 16px;
 		line-height: 19px;
 		letter-spacing: 0.1em;
 		text-decoration: none;
 		list-style-type: none;
-
 		color: #ffffff;
 	}
 
@@ -6345,13 +6276,11 @@ div[id*='quick_links'] {
 	.alt-navigation-social-media,
 	.alt-navigation-search input {
 		width: 50%;
-		font-family: Roboto;
-		border: none;
-		font-style: normal;
 		font-weight: 500;
 		font-size: 14px;
 		line-height: 16px;
 		color: #8492A6;
+		border: none;
 	}
 
 	.alt-navigation-search input {
@@ -6597,11 +6526,6 @@ div[id*='quick_links'] {
 		flex-direction: column-reverse;
 	}
 
-	#site-content-sitebar {
-		min-width: 350px;
-		max-width: 350px;
-	}
-
 	.main-sidebar-left {
 		padding-right: 30px;
 	}
@@ -6762,9 +6686,6 @@ div[id*='quick_links'] {
 	}
 
 	.footer-widgets p {
-		font-family: Roboto;
-		font-style: normal;
-		font-weight: normal;
 		font-size: 16px;
 		line-height: 19px;
 		margin-bottom: 15px;
@@ -6772,26 +6693,21 @@ div[id*='quick_links'] {
 
 	.footer-widgets .widget-title {
 		font-family: Inter;
-		font-style: normal;
 		font-weight: bold;
 		font-size: 14px;
 		line-height: 14px;
 		text-transform: none;
 		letter-spacing: 0.1em;
-		margin: 0 0 20px 0;
+		margin: 0 0 15px 0;
 	}
 
 	.footer-widgets li,
 	.footer-widgets a {
-		font-family: Roboto;
-		font-style: normal;
-		font-weight: normal;
 		font-size: 16px;
 		line-height: 19px;
 		letter-spacing: 0.1em;
 		text-decoration: none;
 		list-style-type: none;
-
 		color: #ffffff;
 	}
 
