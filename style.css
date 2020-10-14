@@ -131,13 +131,6 @@ body {
 	text-align: left;
 }
 
-@supports ( font-variation-settings: normal ) {
-
-	body {
-		font-family: "Inter", "Roboto", sans-serif;
-	}
-}
-
 *,
 *::before,
 *::after {
@@ -686,19 +679,6 @@ button,
 .wp-block-file__button {
 	font-family: "Roboto", sans-serif;
 	line-height: 1;
-}
-
-@supports ( font-variation-settings: normal ) {
-	input,
-	textarea,
-	button,
-	.button,
-	.faux-button,
-	.faux-button.more-link,
-	.wp-block-button__link,
-	.wp-block-file__button {
-		font-family: "Inter", "Roboto", sans-serif;
-	}
 }
 
 input,
@@ -2841,19 +2821,6 @@ body:not(.singular) main > article:first-of-type {
 	font-family: "Roboto", sans-serif;
 }
 
-@supports ( font-variation-settings: normal ) {
-
-	.has-drop-cap:not(:focus)::first-letter,
-	.entry-content .wp-block-archives,
-	.entry-content .wp-block-categories,
-	.entry-content .wp-block-latest-posts,
-	.entry-content .wp-block-latest-comments,
-	.entry-content .wp-block-cover-image p,
-	.entry-content .wp-block-pullquote {
-		font-family: "Inter", "Roboto", sans-serif;
-	}
-}
-
 /* Block Font Sizes -------------------------- */
 
 .entry-content .has-small-font-size {
@@ -3507,23 +3474,6 @@ figure.wp-block-table.is-style-stripes {
 	font-family: "Roboto", sans-serif;
 }
 
-@supports ( font-variation-settings: normal ) {
-
-	.entry-content h1,
-	.entry-content h2,
-	.entry-content h3,
-	.entry-content h4,
-	.entry-content h5,
-	.entry-content h6,
-	.entry-content cite,
-	.entry-content figcaption,
-	.entry-content table,
-	.entry-content address,
-	.entry-content .wp-caption-text,
-	.entry-content .wp-block-file {
-		font-family: "Inter", "Roboto", sans-serif;
-	}
-}
 
 /* Alignment Classes ------------------------- */
 
@@ -4135,15 +4085,6 @@ padding: 0 18px 0 18px;
 .widget-content figcaption,
 .widget-content .wp-caption-text {
 	font-family: "Roboto", sans-serif;
-}
-
-@supports ( font-variation-settings: normal ) {
-
-	.widget-content cite,
-	.widget-content figcaption,
-	.widget-content .wp-caption-text {
-		font-family: "Inter", "Roboto", sans-serif;
-	}
 }
 
 /* Base List Widget -------------------------- */
