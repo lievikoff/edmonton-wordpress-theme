@@ -34,7 +34,8 @@ if ( is_singular() ) {
 			$author_id = get_post_field ( 'post_author', get_the_ID() );
 			$name = get_the_author_meta( 'display_name' , $author_id ); 
 
-			echo 'Posted by ' . '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . $name . '</a> in ';
+			echo 'Posted by ' . '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . $name . '</a> ';
+			if ( count( get_the_category() ) != 0 )  echo 'in ';
 			get_the_category_custom( 4 );
 			?>
 

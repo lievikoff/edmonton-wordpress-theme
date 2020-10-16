@@ -54,25 +54,30 @@
 
 		</div><!-- .post-inner -->
 
-		<div class="post-footer">
-
-				<div class="post-category">
-					<?php
-					if ( count( get_the_category() ) != 0 ) {
+		<?php if ( count( get_the_category() ) != 0 || get_the_tag_list() ) { ?>
+			<div class="post-footer">
+						
+				<?php if ( count( get_the_category() ) != 0 ) { ?>
+					<div class="post-category">
+						<?php
 						echo "Posted in: ";
-					}
-					get_the_category_custom();
-					?>
-				</div>
-				<div class="post-tags-list">
-					<?php
-					if ( get_the_tag_list() ) {
-						echo "Tagged: ";
-					}
-					 echo get_the_tag_list( '<i data-cp-fa="true" class="font-icon-25 fa fa-tags"></i>&nbsp;',
-			', ' ); ?>
-				</div>
-		</div>
+						get_the_category_custom();
+						?>
+					</div>
+				<?php } ?>
+				<?php if ( get_the_tag_list() ) { ?>
+					<div class="post-tags-list">
+						<?php
+						if ( get_the_tag_list() ) {
+							echo "Tagged: ";
+						}
+						echo get_the_tag_list( '<i data-cp-fa="true" class="font-icon-25 fa fa-tags"></i>&nbsp;',
+				', ' ); ?>
+					</div>
+				<?php } ?>
+				
+			</div>
+		<?php } ?>
 		
 		<div class="section-inner">
 
