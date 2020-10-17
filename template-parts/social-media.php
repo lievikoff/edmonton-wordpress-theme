@@ -21,7 +21,7 @@ foreach ( $social_media_list as $social_media ) {
 
     <div class="social-media">
         
-        <a class="social-media-block" style="cursor: pointer !important;" href="<?php echo esc_url( get_theme_mod( 'url_'.$social_media ) );?>">
+        <a class="social-media-block" style="cursor: pointer !important;" href="<?php echo esc_url( get_theme_mod( 'url_'.$social_media ) );?>" target="<?php echo ( get_theme_mod( 'href_target', false ) ) ? '_blank' : ''; ?>">
         
             <?php if ( get_theme_mod( 'icon_'.$social_media ) ) { ?>
 

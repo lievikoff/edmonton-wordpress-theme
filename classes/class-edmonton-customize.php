@@ -194,15 +194,15 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			Kirki::add_field(
 				'show_tagline',
 				[
-					'type'        => 'switch',
+					'type'        => 'toggle',
 					'settings'    => 'show_tagline',
-					'label'       => esc_html__( 'Show site description?', 'kirki' ),
+					'label'       => esc_html__( 'Show site description', 'kirki' ),
 					'section'     => 'header_general',
 					'default'     => 'on',
 					'priority'    => 10,
 					'choices'     => [
-						'on'  	=> esc_html__( 'yes', 'kirki' ),
-						'off' 	=> esc_html__( 'no', 'kirki' ),
+						'on'  	=> esc_html__( '', 'kirki' ),
+						'off' 	=> esc_html__( '', 'kirki' ),
 					],
 				]
 			);
@@ -1064,6 +1064,26 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'default'     => '<h3 class="customize-control-title" style="padding:15px 10px; background:#fff; margin:0;">' . __( 'In footer', 'kirki' ) . '</h3>',
 				'priority'    => 10,
 			] );
+
+
+			Kirki::add_config(
+				'social_footer_enable',
+				[
+					'capability'        => 'edit_theme_options',
+					'default'           => false,
+				]
+			);
+
+			Kirki::add_field(
+				'social_footer_enable',
+				[
+					'type'        => 'checkbox',
+					'settings'    => 'social_footer_enable',
+					'section'  	  => 'display_setting',
+					'priority' 	  => 10,
+					'label'    	  => esc_html__( 'Display social in footer', 'kirki' ),
+				]
+			);
 
 			Kirki::add_config(
 				'color_icon_footer',
