@@ -126,8 +126,9 @@
     wp.customize( 'cover_color', function ( value )  {
         value.bind( function ( newValue )  {
             if ( $( '#_customize-input-cover_enable', window.parent.document ).prop('checked') ) {
+               
                 if ( $( '#customize-control-cover_image', window.parent.document ).children( '.image-wrapper' ).children( '.thumbnail' ).length == 0 ) {
-                    $('.cover').css('background', newValue); 
+                    $('.cover').css('background-color', newValue); 
                 }
             }
         });

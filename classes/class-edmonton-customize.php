@@ -51,7 +51,36 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				[
 				'type'        => 'typography',
 				'settings'    => 'header_general_font',
-				'label'       => esc_html__( 'Font Style', 'kirki' ),
+				'label'       => esc_html__( 'Head Font Style', 'kirki' ),
+				'section'     => 'header_general',
+				'default'     => [
+					'font-family'    => 'Inter	',
+					'variant'        => '700',
+					'font-size'      => '28px',
+					'color'          => '#ffffff',
+				],
+				'priority'    => 10,
+				'transport'   => 'auto',
+				'output'      => [
+					[
+						'element' => '.site-title',
+					],
+				],
+			] );
+
+			Kirki::add_config(
+				'header_description_font',
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field(
+				'header_description_font',
+				[
+				'type'        => 'typography',
+				'settings'    => 'header_description_font',
+				'label'       => esc_html__( 'Description Font Style', 'kirki' ),
 				'section'     => 'header_general',
 				'default'     => [
 					'font-family'    => 'Roboto',
@@ -744,7 +773,6 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				[
 					'type'        => 'color',
 					'settings'    => 'cover_color',
-					'settings'	  => 'color_setting_url',
 					'section'     => 'header_cover',
 					'priority'    => 10,
 					'label'       => esc_html__( 'Cover Color', 'kirki' ),
@@ -2266,6 +2294,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				[
 				'type'        => 'typography',
 				'settings'    => 'content_post_header_font',
+				'label'			=> 'Post Header Font',
 				'section'     => 'content_post',
 				'default'     => [
 					'font-family'    => 'Inter',
@@ -2296,6 +2325,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				[
 				'type'        => 'typography',
 				'settings'    => 'content_post_author_font',
+				'label'			=> 'Post Info Font',
 				'section'     => 'content_post',
 				'default'     => [
 					'font-family'    => 'Roboto',
@@ -2326,6 +2356,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				[
 				'type'        => 'typography',
 				'settings'    => 'content_post_main_text_font',
+				'label'			=> 'Post Main Font',
 				'section'     => 'content_post',
 				'default'     => [
 					'font-family'    => 'Roboto',
@@ -2356,6 +2387,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				[
 				'type'        => 'typography',
 				'settings'    => 'content_post_bottom_line_font',
+				'label'			=> 'Short-Post Bottom Line Font',
 				'section'     => 'content_post',
 				'default'     => [
 					'font-family'    => 'Roboto',

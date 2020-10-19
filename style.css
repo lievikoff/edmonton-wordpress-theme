@@ -5299,7 +5299,7 @@ div[id*='quick_links'] {
 
 	button.close-nav-toggle {
 		font-size: 1.8rem;
-		padding: 4rem 0;
+		padding: 4rem 2.5rem;
 	}
 
 	button.close-nav-toggle svg {
@@ -5315,7 +5315,7 @@ div[id*='quick_links'] {
 	.modal-menu > li > a,
 	.modal-menu > li > .ancestor-wrapper > a {
 		font-size: 2.4rem;
-		padding: 2.5rem 0;
+		padding: 2.5rem;
 	}
 
 	.modal-menu ul li {

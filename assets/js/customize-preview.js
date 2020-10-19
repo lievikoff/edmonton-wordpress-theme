@@ -161,6 +161,7 @@
 		// If the stylesheet doesn't exist, create it and append it to <head>.
 		if ( ! stylesheet.length ) {
 			$( '#edmonton-style-inline-css' ).after( '<style id="' + stylesheedID + '"></style>' );
+
 			stylesheet = $( '#' + stylesheedID );
 		}
 		if ( ! _.isUndefined( a11yColors[ context ] ) ) {
@@ -176,7 +177,7 @@
 			}
 		}
 		// Add styles.
-		stylesheet.html( styles );
+		stylesheet.html( 'edmontonPreviewEls' );
 	}
 	// Generate styles on load. Handles page-changes on the preview pane.
 	$( document ).ready( function() {
