@@ -207,51 +207,6 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				]
 			);
 
-			Kirki::add_config(
-				'custom_header_width',
-				[
-					'capability'    => 'edit_theme_options',
-					'transport'     => 'postMessage',
-				]
-			);
-
-			Kirki::add_field(
-				'custom_header_width',
-				[
-					'type'        => 'slider',
-					'settings'    => 'custom_header_width',
-					'label'       => esc_html__( 'Custom header width', 'kirki' ),
-					'description' => esc_html__( 'Header, menu and search line will be take up as much width as you specity (px). If you have problems settings the width, check if it is checked in the Content->General->Full width. If it`s checked — remove.', 'kirki' ),
-					'section'     => 'header_general',
-					'default'     => 1110,
-					'choices'     => [
-						'min'  => 1030,
-						'max'  => 1700,
-						'step' => 1,
-					],
-				]
-			);
-
-			Kirki::add_config(
-				'header_width_full',
-				[
-					'capability'    => 'edit_theme_options',
-					'transport'     => 'postMessage',
-				]
-			);
-
-			Kirki::add_field(
-				'header_width_full',
-				[
-					'type'        => 'checkbox',
-					'settings'    => 'header_width_full',
-					'label'       => esc_html__( 'Full width', 'kirki' ),
-					'description' => esc_html__( 'Header, menu and search line will be take up the entire of the content.', 'kirki' ),
-					'section'     => 'header_general',
-					'default'     => false,
-				]
-			);
-
 			/** Header Navigation --------------------------------------------------------------------- */
 			Kirki::add_section(
 				'header_navigation',

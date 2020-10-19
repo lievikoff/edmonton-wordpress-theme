@@ -6506,6 +6506,10 @@ div[id*='quick_links'] {
 	}
 
 	#site-content-sitebar .side {
+		width: 350px;
+	}
+
+	.sidebar-item {
 		width: 320px;
 	}
 
