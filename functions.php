@@ -801,7 +801,6 @@ function customize () {
 	}
 
 	if ( get_theme_mod( 'header_general_font' ) ) {
-		var_dump(get_theme_mod( 'header_general_font' )['font-size']);
 	}
 
 	if ( get_theme_mod( 'cover_enable' ) ) {
