@@ -273,7 +273,7 @@
 
     wp.customize( 'position_social_footer', function ( value )  {
         value.bind( function ( newValue )  {
-            if ( $( window ).width() > 1000 ) {
+            if ( $( window ).width() >= 1000 ) {
                 $( '.footer-top' ).css( 'justify-content', newValue );
             }
         });

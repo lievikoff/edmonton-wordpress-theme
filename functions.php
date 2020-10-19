@@ -1263,8 +1263,10 @@ function customize () {
 
 	?>
 		<style type="text/css">
-			.footer-top {
-				justify-content: <?php echo get_theme_mod( 'position_social_footer', 'flex-start' ); ?>;
+			@media (min-width: 1000px) {
+				.footer-top {
+					justify-content: <?php echo get_theme_mod( 'position_social_footer', 'flex-start' ); ?>;
+				}
 			}
 		</style>
 	<?php
