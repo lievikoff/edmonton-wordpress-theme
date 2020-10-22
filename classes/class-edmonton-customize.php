@@ -109,7 +109,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				[
 					'type'      => 'color',
 					'settings'  => 'title_text',
-					'label'     => esc_attr__( 'Header color', 'text-domain' ),
+					'label'     => esc_attr__( 'Header color', 'edmonton' ),
 					'section'   => 'header_general',
 					'settings'  => 'header_general_color',
 					'default'   => '#202020',
@@ -134,7 +134,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'header_general_border_bottom_color',
 				[
 					'type'      => 'color',
-					'label'     => esc_attr__( 'Bottom border color', 'text-domain' ),
+					'label'     => esc_attr__( 'Bottom border color', 'edmonton' ),
 					'section'   => 'header_general',
 					'settings'  => 'header_general_border_bottom_color',
 					'default'   => '#303030',
@@ -159,7 +159,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'header_general_border_bottom_width',
 				[
 					'type'		=> 'slider',
-					'label'		=> esc_attr__( 'Bottom border width', 'text-domain' ),
+					'label'		=> esc_attr__( 'Bottom border width', 'edmonton' ),
 					'section'	=> 'header_general',
 					'settings'  => 'header_general_border_bottom_width',
 					'default'	=> 1,
@@ -191,7 +191,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'header_logo_position',
 				[
 					'type'      => 'radio-image',
-					'label'     => esc_attr__( 'Layout', 'text-domain' ),
+					'label'     => esc_attr__( 'Layout', 'edmonton' ),
 					'section'   => 'header_general',
 					'settings'  => 'header_logo_position',
 					'default'	=> 'center',
@@ -290,7 +290,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				[
 					'type'      => 'color',
 					'settings'  => 'title_text',
-					'label'     => esc_attr__( 'Navigation color', 'text-domain' ),
+					'label'     => esc_attr__( 'Navigation color', 'edmonton' ),
 					'section'   => 'header_navigation',
 					'settings'  => 'header_navigation_color',
 					'default'   => '#202020',
@@ -315,7 +315,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'header_navigation_border_top_color',
 				[
 					'type'      => 'color',
-					'label'     => esc_attr__( 'Border top color', 'text-domain' ),
+					'label'     => esc_attr__( 'Border top color', 'edmonton' ),
 					'section'   => 'header_navigation',
 					'settings'  => 'header_navigation_border_top_color',
 					'default'   => '#000000',
@@ -340,7 +340,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'header_navigation_border_top_width',
 				[
 					'type'      => 'slider',
-					'label'     => esc_attr__( 'Border top width', 'text-domain' ),
+					'label'     => esc_attr__( 'Border top width', 'edmonton' ),
 					'section'   => 'header_navigation',
 					'settings'  => 'header_navigation_border_top_width',
 					'default'     => 1,
@@ -371,7 +371,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'header_navigation_border_bottom_color',
 				[
 					'type'      => 'color',
-					'label'     => esc_attr__( 'Border bottom color', 'text-domain' ),
+					'label'     => esc_attr__( 'Border bottom color', 'edmonton' ),
 					'section'   => 'header_navigation',
 					'settings'  => 'header_navigation_border_bottom_color',
 					'default'   => '#000000',
@@ -396,7 +396,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'header_navigation_border_bottom_width',
 				[
 					'type'      => 'slider',
-					'label'     => esc_attr__( 'Border bottom width', 'text-domain' ),
+					'label'     => esc_attr__( 'Border bottom width', 'edmonton' ),
 					'section'   => 'header_navigation',
 					'settings'  => 'header_navigation_border_bottom_width',
 					'default'	=> 0,
@@ -427,7 +427,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'header_navigation_left_side_separator_color',
 				[
 					'type'      => 'color',
-					'label'     => esc_attr__( 'Left side of separator color', 'text-domain' ),
+					'label'     => esc_attr__( 'Left side of separator color', 'edmonton' ),
 					'section'   => 'header_navigation',
 					'settings'  => 'header_navigation_left_side_separator_color',
 					'default'   => '#303030',
@@ -452,7 +452,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'header_navigation_left_side_separator_width',
 				[
 					'type'      => 'slider',
-					'label'     => esc_attr__( 'Left side of separator width', 'text-domain' ),
+					'label'     => esc_attr__( 'Left side of separator width', 'edmonton' ),
 					'section'   => 'header_navigation',
 					'settings'  => 'header_navigation_left_side_separator_width',
 					'default'     => 1,
@@ -483,7 +483,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'header_navigation_right_side_separator_color',
 				[
 					'type'      => 'color',
-					'label'     => esc_attr__( 'Right side of separator color', 'text-domain' ),
+					'label'     => esc_attr__( 'Right side of separator color', 'edmonton' ),
 					'section'   => 'header_navigation',
 					'settings'  => 'header_navigation_right_side_separator_color',
 					'default'   => '#101010',
@@ -512,7 +512,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'header_navigation_right_side_separator_width',
 				[
 					'type'      => 'slider',
-					'label'     => esc_attr__( 'Right side of separator width', 'text-domain' ),
+					'label'     => esc_attr__( 'Right side of separator width', 'edmonton' ),
 					'section'   => 'header_navigation',
 					'settings'  => 'header_navigation_right_side_separator_width',
 					'default'     => 1,
@@ -586,7 +586,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'header_bar_color',
 				[
 					'type'      => 'color',
-					'label'     => esc_attr__( 'Bar color', 'text-domain' ),
+					'label'     => esc_attr__( 'Bar color', 'edmonton' ),
 					'section'   => 'header_bar',
 					'settings'  => 'header_bar_color',
 					'default'   => '#ffffff',
@@ -611,7 +611,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'header_bar_border_bottom_color',
 				[
 					'type'      => 'color',
-					'label'     => esc_attr__( 'Border bottom color', 'text-domain' ),
+					'label'     => esc_attr__( 'Border bottom color', 'edmonton' ),
 					'section'   => 'header_bar',
 					'settings'  => 'header_bar_border_bottom_color',
 					'default'   => '#E5E5E5',
@@ -636,7 +636,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'header_bar_border_bottom_width',
 				[
 					'type'      => 'slider',
-					'label'     => esc_attr__( 'Border bottom width', 'text-domain' ),
+					'label'     => esc_attr__( 'Border bottom width', 'edmonton' ),
 					'section'   => 'header_bar',
 					'settings'  => 'header_bar_border_bottom_width',
 					'default'	=> 2,
@@ -667,7 +667,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'header_bar_separator_color',
 				[
 					'type'      => 'color',
-					'label'     => esc_attr__( 'Separator color', 'text-domain' ),
+					'label'     => esc_attr__( 'Separator color', 'edmonton' ),
 					'section'   => 'header_bar',
 					'settings'  => 'header_bar_separator_color',
 					'default'   => '#f8f8f8',
@@ -692,7 +692,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'header_bar_separator_width',
 				[
 					'type'      => 'slider',
-					'label'     => esc_attr__( 'Separator width', 'text-domain' ),
+					'label'     => esc_attr__( 'Separator width', 'edmonton' ),
 					'section'   => 'header_bar',
 					'settings'  => 'header_bar_separator_width',
 					'default'	=> 1,
@@ -1111,7 +1111,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'position_social_footer',
 				[
 					'type'      => 'radio-image',
-					'label'     => esc_attr__( 'Position', 'text-domain' ),
+					'label'     => esc_attr__( 'Position', 'edmonton' ),
 					'section'   => 'display_setting',
 					'settings'  => 'position_social_footer',
 					'default'	=> 'flex-start',
@@ -2177,7 +2177,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'content_sidebar_position',
 				[
 					'type'      => 'radio-image',
-					'label'     => esc_attr__( 'Layout', 'text-domain' ),
+					'label'     => esc_attr__( 'Layout', 'edmonton' ),
 					'section'   => 'content_general',
 					'settings'  => 'content_sidebar_position',
 					'default'	=> 'right',
@@ -2519,19 +2519,19 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			Kirki::add_field(
 				'content_full_post_tags_line_font',
 				[
-				'type'        => 'typography',
-				'settings'    => 'content_full_post_tags_line_font',
+				'type'        	=> 'typography',
+				'settings'    	=> 'content_full_post_tags_line_font',
 				'label'			=> 'Short-Post Bottom Line Font',
-				'section'     => 'content_full_post',
-				'default'     => [
+				'section'     	=> 'content_full_post',
+				'default'     	=> [
 					'font-family'    => 'Roboto',
 					'variant'        => 'regular',
 					'font-size'      => '16px',
 					'color'          => '#8492A6',
 				],
-				'priority'    => 10,
-				'transport'   => 'auto',
-				'output'      => [
+				'priority'		=> 10,
+				'transport'   	=> 'auto',
+				'output'      	=> [
 					[
 						'element' => '.post-footer, .post-footer a',
 					],
@@ -2540,24 +2540,50 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			);
 
 			Kirki::add_config(
-				'content_post_color',
+				'content_short_post_color',
 				[
 					'capability'    => 'edit_theme_options',
 				]
 			);
 
 			Kirki::add_field(
-				'content_post_color',
+				'content_short_post_color',
 				[
 					'type'      => 'color',
-					'label'     => esc_attr__( 'Short-Post background color', 'text-domain' ),
+					'label'     => esc_attr__( 'Short-Post background color', 'edmonton' ),
 					'section'   => 'content_short_post',
-					'settings'  => 'content_post_color',
+					'settings'  => 'content_short_post_color',
 					'default'   => '#ffffff',
 					'transport' => 'auto',
 					'output'    => [
 						[
 							'element' => '.catalog-item',
+							'property' => 'background-color'
+						],
+					],
+				]
+			);
+
+
+			Kirki::add_config(
+				'content_full_post_color',
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field(
+				'content_full_post_color',
+				[
+					'type'      => 'color',
+					'label'     => esc_attr__( 'Full-Post background color', 'edmonton' ),
+					'section'   => 'content_full_post',
+					'settings'  => 'content_full_post_color',
+					'default'   => '#ffffff',
+					'transport' => 'auto',
+					'output'    => [
+						[
+							'element' => '#post-content',
 							'property' => 'background-color'
 						],
 					],
@@ -2656,7 +2682,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				[
 					'type'      => 'color',
 					'settings'  => 'primary_color_custom',
-					'label'     => esc_attr__( 'Primary Color (custom)', 'text-domain' ),
+					'label'     => esc_attr__( 'Primary Color (custom)', 'edmonton' ),
 					'section'   => 'color_scheme',
 					'default'   => '#e5e5e5',
 					'output'      => [
@@ -2683,7 +2709,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				[
 					'type'      => 'color',
 					'settings'  => 'secondary_color_custom',
-					'label'     => esc_attr__( 'Secondary Color (custom)', 'text-domain' ),
+					'label'     => esc_attr__( 'Secondary Color (custom)', 'edmonton' ),
 					'section'   => 'color_scheme',
 					'default'   => '#202020',
 					'output'      => [
@@ -2804,7 +2830,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'header_breadcrumbs_color',
 				[
 					'type'      => 'color',
-					'label'     => esc_attr__( 'Bar color', 'text-domain' ),
+					'label'     => esc_attr__( 'Bar color', 'edmonton' ),
 					'section'   => 'breadcrumbs_general',
 					'settings'  => 'header_breadcrumbs_color',
 					'default'   => '#ffffff',
@@ -2830,7 +2856,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'breadcrumbs_position',
 				[
 					'type'      => 'radio-image',
-					'label'     => esc_attr__( 'Position', 'text-domain' ),
+					'label'     => esc_attr__( 'Position', 'edmonton' ),
 					'section'   => 'breadcrumbs_general',
 					'settings'  => 'breadcrumbs_position',
 					'default'	=> 'left',
@@ -2873,7 +2899,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				[
 					'type'      => 'color',
 					'settings'  => 'active_page_color',
-					'label'     => esc_attr__( 'Active page marker color', 'text-domain' ),
+					'label'     => esc_attr__( 'Active page marker color', 'edmonton' ),
 					'section'   => 'pagination_general',
 					'default'   => '#F7A600',
 					'transport' => 'auto',
