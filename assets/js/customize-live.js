@@ -117,8 +117,14 @@
     wp.customize( 'cover_image', function ( value )  {
         value.bind( function ( newValue )  {
             if ( $( '#_customize-input-cover_enable', window.parent.document ).prop('checked') ) {
-                let image = 'no-repeat 100%/ cover url('+ newValue+')';
-                $('.cover').css('background', image);
+                if ( newValue ) {
+                    let image = 'no-repeat 100%/ cover url(' + newValue + ')';
+                    $('.cover').css('background', image);
+                } else {
+                    let color = $( '#customize-control-cover_color .kirki-color-control', window.parent.document ).val();
+                    $('.cover').css('background', 'url( )');
+                    $('.cover').css('background-color', color); 
+                }
             }
         });
     });
@@ -126,7 +132,6 @@
     wp.customize( 'cover_color', function ( value )  {
         value.bind( function ( newValue )  {
             if ( $( '#_customize-input-cover_enable', window.parent.document ).prop('checked') ) {
-               
                 if ( $( '#customize-control-cover_image', window.parent.document ).children( '.image-wrapper' ).children( '.thumbnail' ).length == 0 ) {
                     $('.cover').css('background-color', newValue); 
                 }
