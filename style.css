@@ -2433,7 +2433,7 @@ body:not(.singular) main > article:first-of-type {
 	color: #8492A6;
 }
 
-#post-content .post-footer {
+article .post-footer {
     font-size: 16px;
     line-height: 23px;
     text-decoration: none;
