@@ -2550,9 +2550,8 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'content_post_color',
 				[
 					'type'      => 'color',
-					'settings'  => 'title_text',
 					'label'     => esc_attr__( 'Short-Post background color', 'text-domain' ),
-					'section'   => 'content_post',
+					'section'   => 'content_short_post',
 					'settings'  => 'content_post_color',
 					'default'   => '#ffffff',
 					'transport' => 'auto',
