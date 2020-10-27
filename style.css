@@ -4654,13 +4654,14 @@ a.to-the-top > * {
 	/* identical to box height */
 	text-transform: uppercase;
 	color: #101010;
-	margin: 0 0 15px 0;
+	margin: 0 15px 15px 15px;
 }
 
 .side {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: center;
 	overflow: hidden;
 	background-color: #FFFFFF;
 	margin-top: 30px;
@@ -4668,8 +4669,8 @@ a.to-the-top > * {
 }
 
 .sidebar-item {
-	margin: 5px 0;
-	width: 320px;
+	margin: 5px 15px;
+	width: 290px;
 	height: 60px;
 	display: flex;
 	flex-direction: row;
@@ -6510,7 +6511,7 @@ div[id*='quick_links'] {
 	}
 
 	.sidebar-item {
-		width: 320px;
+		width: 290px;
 	}
 
 	.main-sidebar-left {

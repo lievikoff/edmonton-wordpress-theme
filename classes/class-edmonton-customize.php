@@ -24,8 +24,8 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			Kirki::add_panel(
 				'header',
 				[
-					'title'          => esc_html__( 'Header', 'kirki' ),
-					'priority'       => 90,
+					'title'		=> esc_html__( 'Header', 'kirki' ),
+					'priority'	=> 90,
 				]
 			);
 
@@ -34,8 +34,8 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			Kirki::add_section(
 				'header_general',
 				[
-					'title'          => esc_html__( 'General', 'kirki' ),
-					'panel'          => 'header',
+					'title'	=> esc_html__( 'General', 'kirki' ),
+					'panel'	=> 'header',
 				]
 			);
 
@@ -54,10 +54,10 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'label'       => esc_html__( 'Head Font Style', 'kirki' ),
 				'section'     => 'header_general',
 				'default'     => [
-					'font-family'    => 'Inter	',
-					'variant'        => '700',
-					'font-size'      => '28px',
-					'color'          => '#ffffff',
+					'font-family'	=> 'Inter',
+					'variant'		=> '700',
+					'font-size'  	=> '28px',
+					'color'			=> '#ffffff',
 				],
 				'priority'    => 10,
 				'transport'   => 'auto',
@@ -100,7 +100,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			Kirki::add_config(
 				'header_general_color',
 				[
-					'capability'    => 'edit_theme_options',
+					'capability'	
 				]
 			);
 
