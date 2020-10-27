@@ -100,7 +100,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			Kirki::add_config(
 				'header_general_color',
 				[
-					'capability'	
+					'capability'	=> 'edit_theme_options',
 				]
 			);
 
