@@ -800,33 +800,33 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'step' => 0.01,
 				],
 				'output'    => [
-						[
-							'element' => '.cover',
-							'property' => 'opacity',
-						],
+					[
+						'element' => '.cover',
+						'property' => 'opacity',
 					],
+				],
 			] );
 
 			/**
 			 * Footer
 			 */
-/*
+
 			Kirki::add_panel(
 				'footer',
 				[
 					'title'      => esc_html__( 'Footer', 'kirki' ),
-					'priority'   => 70,
+					'priority'   => 91,
 				]
 			);
-*/
+
 			/* Footer general ---------------------------------------------------- */
 
 			Kirki::add_section(
 				'footer_general',
 				[
-					'title'      => esc_html__( 'Footer', 'kirki' ),
+					'title'      => esc_html__( 'General', 'kirki' ),
 					'priority'   => 91,
-					//'panel'      => 'footer',
+					'panel'      => 'footer',
 					'capability' => 'edit_theme_options',
 				]
 			);
@@ -853,6 +853,69 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 							'function' => 'html',
 						],
 					]
+				]
+			);
+
+			Kirki::add_section(
+				'footer_widgets',
+				[
+					'title'      => esc_html__( 'Widgets', 'kirki' ),
+					'priority'   => 91,
+					'panel'      => 'footer',
+					'capability' => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_config(
+				'footer_widget_text_color',
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field(
+				'footer_widget_text_color',
+				[
+					'type'        	=> 'color',
+					'settings'    	=> 'footer_widget_text_color',
+					'section'     	=> 'footer_widgets',
+					'priority'    	=> 10,
+					'label'       	=> esc_html__( 'Text color', 'kirki' ),
+					'description' 	=> esc_html__( 'Before choosing a color remove image', 'kirki' ),
+					'transport'		=> 'auto',
+					'default'		=> '#ffffff',
+					'output'		=> [
+						[
+							'element' 	=> '.footer-widgets .widget-content',
+							'property'	=> 'color',
+						],
+					],
+				]
+			);
+
+			Kirki::add_config(
+				'footer_widget_text_hover_color',
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field(
+				'footer_widget_text_hover_color',
+				[
+					'type'        	=> 'color',
+					'settings'    	=> 'footer_widget_text_hover_color',
+					'section'     	=> 'footer_widgets',
+					'priority'    	=> 10,
+					'label'       	=> esc_html__( 'Hover text-link color', 'kirki' ),
+					'transport'		=> 'auto',
+					'default'		=> '#F7A600',
+					'output'		=> [
+						[
+							'element'	=> '.footer-widgets .sidebar-item:hover, .footer-widgets li:hover, .footer-widgets a:hover',
+							'property'	=> 'color',
+						],
+					],
 				]
 			);
 
@@ -1098,6 +1161,35 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				]
 			);
 
+			Kirki::add_config(
+				'color_icon_footer_hover',
+				[
+					'capability'        => 'edit_theme_options',
+					'transport'         => 'auto',
+				]
+			);
+
+			Kirki::add_field(
+				'color_icon_footer',
+				[
+					'type'		=> 'color',
+					'settings'	=> 'color_icon_footer',
+					'section'	=> 'display_setting',
+					'default'	=> '#F7A600',
+					'priority'	=> 10,
+					'label'		=> esc_html__( 'Icon hover color (footer)', 'kirki' ),
+					'output'	=> array(
+						array(
+							'element'	=> '.footer-top .social-media-block img:hover',
+							'property'	=> 'color',
+						),
+						array(
+							'element'	=> '.footer-top .social-media-block svg:hover',
+							'property'	=> 'fill',
+						),
+					),
+				]
+			);
 
 			Kirki::add_config(
 				'position_social_footer',
@@ -3107,7 +3199,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'pagination',
 				[
 					'title'          => esc_html__( 'Pagination', 'kirki' ),
-					'priority'       => 90,
+					'priority'       => 92,
 				]
 			);
 
