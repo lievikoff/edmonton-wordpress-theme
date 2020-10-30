@@ -1084,8 +1084,10 @@ function customize () {
 		?>
 
 		<style type="text/css">
-			.site-description {
-				display: block;
+			@media (min-width: 700px) {
+				.site-description {
+					display: block;
+				}
 			}
 		</style>
 
@@ -1123,6 +1125,8 @@ function customize () {
 			}
 		</style>
 	<?php
+
+
 }
 
 add_action( 'wp_head', 'customize' );

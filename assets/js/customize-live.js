@@ -226,3 +226,57 @@
     });
 
 }( jQuery ) );
+
+( function ( $ ) {
+
+    const typeSize = ( el ) => {
+        if ( el >= 1000 ) return 3;
+        else if ( el < 1000 && el >= 700 ) return 2;
+        else if ( el < 700 && el != null && el != 0 ) return 1;
+        return null;
+    };
+
+    const unableBlock = ( prop ) => {
+        let blockIdPart = {
+            1: '_phone',
+            2: '_tablet',
+            3: '_desktop'
+        };
+
+        for ( let key in blockIdPart ) {
+            if ( key == prop ) {
+                $( "li[id$='" + blockIdPart[key] + "']", window.parent.document ).each( function ( i, el ) {
+                    $ ( '#' + el.id, window.parent.document ).css( 'display', 'list-item' );
+                });
+            } else {
+                $( "li[id$='" + blockIdPart[key] + "']", window.parent.document ).each( function ( i, el ) {
+                    $ ( '#' + el.id, window.parent.document ).css( 'display', 'none' );
+                });
+            }
+        };
+    };
+
+    const localRefresh = ( wWTM ) => {
+        unableBlock( wWTM );
+        localStorage.setItem( 'windowWidth', $( window ).width() );
+    }
+
+    $( window ).on( 'load', function () {
+        let windowWidthThisMoment = typeSize( $( window ).width() );
+
+        localRefresh( windowWidthThisMoment );
+    });
+
+    $( window ).resize( function () {
+        let windowWidth = localStorage.getItem( 'windowWidth' ),
+            storageWidth = typeSize( windowWidth ),
+            windowWidthThisMoment = typeSize( $( window ).width() );
+            
+        if ( storageWidth == windowWidthThisMoment ) {
+            // nothing to do
+            console.log('nothing to do');
+        } else {
+            localRefresh( windowWidthThisMoment );
+        }
+    });
+} (jQuery) );

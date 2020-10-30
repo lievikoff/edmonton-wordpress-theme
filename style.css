@@ -5051,7 +5051,7 @@ div[id*='quick_links'] {
 	}
 }
 
-@media ( max-width: 550px ) {
+	@media ( max-width: 550px ) {
 	.site-content-main-cut,
 	.site-content-main-full {
 		grid-template-columns: 1fr;
@@ -5281,10 +5281,6 @@ div[id*='quick_links'] {
 	.site-title {
 		font-size: 2.4rem;
 		font-weight: 700;
-	}
-
-	.site-description {
-		display: block;
 	}
 
 	.site-logo img {

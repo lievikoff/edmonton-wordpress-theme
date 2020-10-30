@@ -39,63 +39,159 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				]
 			);
 
+
 			Kirki::add_config(
-				'header_general_font',
+				'header_general_font_phone',
 				[
 					'capability'    => 'edit_theme_options',
 				]
 			);
 
 			Kirki::add_field(
-				'header_general_font',
+				'header_general_font_phone',
 				[
-				'type'        => 'typography',
-				'settings'    => 'header_general_font',
-				'label'       => esc_html__( 'Head Font Style', 'kirki' ),
-				'section'     => 'header_general',
-				'default'     => [
-					'font-family'	=> 'Inter',
-					'variant'		=> '700',
-					'font-size'  	=> '28px',
-					'color'			=> '#ffffff',
-				],
-				'priority'    => 10,
-				'transport'   => 'auto',
-				'output'      => [
-					[
-						'element' => '.site-title',
+					'type'        => 'typography',
+					'settings'    => 'header_general_font_phone',
+					'label'       => esc_html__( 'Head Font Style', 'kirki' ),
+					'section'     => 'header_general',
+					'default'     => [
+						'font-family'	=> 'Inter',
+						'variant'		=> '700',
+						'font-size'  	=> '28px',
+						'color'			=> '#ffffff',
 					],
-				],
-			] );
+					'priority'    => 10,
+					'transport'   => 'auto',
+					'output'      => [
+						[
+							'element' => '.site-title',
+						],
+					],
+				] 
+			);
 
 			Kirki::add_config(
-				'header_description_font',
+				'header_general_font_tablet',
 				[
 					'capability'    => 'edit_theme_options',
 				]
 			);
 
 			Kirki::add_field(
-				'header_description_font',
+				'header_general_font_tablet',
 				[
-				'type'        => 'typography',
-				'settings'    => 'header_description_font',
-				'label'       => esc_html__( 'Description Font Style', 'kirki' ),
-				'section'     => 'header_general',
-				'default'     => [
-					'font-family'    => 'Roboto',
-					'variant'        => 'regular',
-					'font-size'      => '16px',
-					'color'          => '#ffffff',
-				],
-				'priority'    => 10,
-				'transport'   => 'auto',
-				'output'      => [
-					[
-						'element' => '.site-description',
+					'type'        => 'typography',
+					'settings'    => 'header_general_font_tablet',
+					'label'       => esc_html__( 'Head Font Style', 'kirki' ),
+					'section'     => 'header_general',
+					'default'     => [
+						'font-family'	=> 'Inter',
+						'variant'		=> '700',
+						'font-size'  	=> '28px',
+						'color'			=> '#ffffff',
 					],
-				],
-			] );
+					'priority'    => 10,
+					'transport'   => 'auto',
+					'output'      => [
+						[
+							'element' => '.site-title',
+							'media_query' => '@media (min-width: 700px)',
+						],
+					],
+				] 
+			);
+
+			Kirki::add_config(
+				'header_general_font_desktop',
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field(
+				'header_general_font_desktop',
+				[
+					'type'        => 'typography',
+					'settings'    => 'header_general_font_desktop',
+					'label'       => esc_html__( 'Head Font Style', 'kirki' ),
+					'section'     => 'header_general',
+					'default'     => [
+						'font-family'	=> 'Inter',
+						'variant'		=> '700',
+						'font-size'  	=> '28px',
+						'color'			=> '#ffffff',
+					],
+					'priority'    => 10,
+					'transport'   => 'auto',
+					'output'      => [
+						[
+							'element' => '.site-title',
+						],
+					],
+				] 
+			);
+
+			Kirki::add_config(
+				'header_description_font_tablet',
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field(
+				'header_description_font_tablet',
+				[
+					'type'        => 'typography',
+					'settings'    => 'header_description_font_tablet',
+					'label'       => esc_html__( 'Description Font Style', 'kirki' ),
+					'section'     => 'header_general',
+					'default'     => [
+						'font-family'    => 'Roboto',
+						'variant'        => 'regular',
+						'font-size'      => '16px',
+						'color'          => '#ffffff',
+					],
+					'priority'    => 10,
+					'transport'   => 'auto',
+					'output'      => [
+						[
+							'element' 		=> '.site-description',
+							'media_query' 	=> '@media (min-width: 700px)',
+						],
+					],
+				] 
+			);
+
+			Kirki::add_config(
+				'header_description_font_desktop',
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field(
+				'header_description_font_desktop',
+				[
+					'type'        => 'typography',
+					'settings'    => 'header_description_font_desktop',
+					'label'       => esc_html__( 'Description Font Style', 'kirki' ),
+					'section'     => 'header_general',
+					'default'     => [
+						'font-family'    => 'Roboto',
+						'variant'        => 'regular',
+						'font-size'      => '16px',
+						'color'          => '#ffffff',
+					],
+					'priority'    => 10,
+					'transport'   => 'auto',
+					'output'      => [
+						[
+							'element' 		=> '.site-description',
+							'media_query' => '@media (min-width: 1000px)',
+						],
+					],
+				] 
+			);
 
 			Kirki::add_config(
 				'header_general_color',
@@ -246,17 +342,17 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			);
 
 			Kirki::add_config(
-				'header_navigation_font',
+				'header_navigation_font_phone',
 				[
 					'capability'    => 'edit_theme_options',
 				]
 			);
 
 			Kirki::add_field(
-				'header_navigation_font',
+				'header_navigation_font_phone',
 				[
 					'type'        => 'typography',
-					'settings'    => 'header_navigation_font',
+					'settings'    => 'header_navigation_font_phone',
 					'label'       => esc_html__( 'Font Style', 'kirki' ),
 					'section'     => 'header_navigation',
 					'default'     => [
@@ -273,6 +369,75 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 						[
 							'element' => '.primary-menu li a, .primary-menu .icon',
 							'suffix'  => '!important',
+						],
+					],
+				]
+			);
+
+			Kirki::add_config(
+				'header_navigation_font_tablet',
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field(
+				'header_navigation_font_tablet',
+				[
+					'type'        => 'typography',
+					'settings'    => 'header_navigation_font_tablet',
+					'label'       => esc_html__( 'Font Style', 'kirki' ),
+					'section'     => 'header_navigation',
+					'default'     => [
+						'font-family'    => 'Roboto',
+						'variant'        => 'regular',
+						'font-size'      => '14px',
+						'color'          => '#ffffff',
+					],
+					'transport'   => 'auto',
+					'output'      => [
+						[
+							'element' => '.primary-menu li',
+							'media_query' => '@media (min-width: 700px)',
+						],
+						[
+							'element' => '.primary-menu li a, .primary-menu .icon',
+							'suffix'  => '!important',
+							'media_query' => '@media (min-width: 700px)',
+						],
+					],
+				]
+			);
+			Kirki::add_config(
+				'header_navigation_font_desktop',
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field(
+				'header_navigation_font_desktop',
+				[
+					'type'        => 'typography',
+					'settings'    => 'header_navigation_font_desktop',
+					'label'       => esc_html__( 'Font Style', 'kirki' ),
+					'section'     => 'header_navigation',
+					'default'     => [
+						'font-family'    => 'Roboto',
+						'variant'        => 'regular',
+						'font-size'      => '14px',
+						'color'          => '#ffffff',
+					],
+					'transport'   => 'auto',
+					'output'      => [
+						[
+							'element' => '.primary-menu li',
+							'media_query' => '@media (min-width: 1000px)',
+						],
+						[
+							'element' => '.primary-menu li a, .primary-menu .icon',
+							'suffix'  => '!important',
+							'media_query' => '@media (min-width: 1000px)',
 						],
 					],
 				]
@@ -546,17 +711,78 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			);
 
 			Kirki::add_config(
-				'header_bar_font',
+				'header_bar_font_phone',
 				[
 					'capability'    => 'edit_theme_options',
 				]
 			);
 
 			Kirki::add_field(
-				'header_bar_font',
+				'header_bar_font_phone',
 				[
 					'type'        => 'typography',
-					'settings'    => 'header_bar_font',
+					'settings'    => 'header_bar_font_phone',
+					'label'       => esc_html__( 'Font Style', 'kirki' ),
+					'section'     => 'header_bar',
+					'default'     => [
+						'font-family'    => 'Roboto',
+						'variant'        => 'regular',
+						'font-size'      => '14px',
+						'color'          => '#8492A6',
+					],
+					'priority'    => 10,
+					'transport'   => 'auto',
+					'output'      => [
+						[
+							'element' 		=> '.alt-navigation-search input',
+						],
+					],
+				]
+			);
+
+			Kirki::add_config(
+				'header_bar_font_tablet',
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field(
+				'header_bar_font_tablet',
+				[
+					'type'        => 'typography',
+					'settings'    => 'header_bar_font_tablet',
+					'label'       => esc_html__( 'Font Style', 'kirki' ),
+					'section'     => 'header_bar',
+					'default'     => [
+						'font-family'    => 'Roboto',
+						'variant'        => 'regular',
+						'font-size'      => '14px',
+						'color'          => '#8492A6',
+					],
+					'priority'    => 10,
+					'transport'   => 'auto',
+					'output'      => [
+						[
+							'element' 		=> '.alt-navigation-search input',
+							'media_query' 	=> '@media (min-width: 700px)',
+						],
+					],
+				]
+			);
+
+			Kirki::add_config(
+				'header_bar_font_desktop',
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field(
+				'header_bar_font_desktop',
+				[
+					'type'        => 'typography',
+					'settings'    => 'header_bar_font_desktop',
 					'label'       => esc_html__( 'Font Style', 'kirki' ),
 					'section'     => 'header_bar',
 					'default'     => [
@@ -570,6 +796,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'output'      => [
 						[
 							'element' => '.alt-navigation-search input',
+							'media_query'	=> '@media (min-width: 1000px)',
 						],
 					],
 				]
@@ -2374,7 +2601,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			);
 
 			Kirki::add_config(
-				'content_short_post_header_font',
+				'content_short_post_header_font_phone',
 				[
 					'capability'    => 'edit_theme_options',
 					'transport'     => 'postMessage',
@@ -2382,10 +2609,10 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			);
 
 			Kirki::add_field(
-				'content_short_post_header_font',
+				'content_short_post_header_font_phone',
 				[
 				'type'        => 'typography',
-				'settings'    => 'content_short_post_header_font',
+				'settings'    => 'content_short_post_header_font_phone',
 				'label'			=> 'Short-Post Header Font',
 				'section'     => 'content_short_post',
 				'default'     => [
@@ -2405,7 +2632,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			);
 
 			Kirki::add_config(
-				'content_short_post_author_font',
+				'content_short_post_header_font_tablet',
 				[
 					'capability'    => 'edit_theme_options',
 					'transport'     => 'postMessage',
@@ -2413,11 +2640,75 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			);
 
 			Kirki::add_field(
-				'content_short_post_author_font',
+				'content_short_post_header_font_tablet',
+				[
+				'type'        	=> 'typography',
+				'settings'    	=> 'content_short_post_header_font_tablet ',
+				'label'			=> 'Short-Post Header Font',
+				'section'     	=> 'content_short_post',
+				'default'     	=> [
+					'font-family'    => 'Inter',
+					'variant'        => '700',
+					'font-size'      => '18px',
+					'color'          => '#101010',
+				],
+				'priority'    	=> 10,
+				'transport'   	=> 'auto',
+				'output'      	=> [
+					[
+						'element' 		=> 'h2.entry-title-catalog, .entry-title-catalog a',
+						'media_query' 	=> '@media (min-width: 700px)',
+					],
+				],
+				]
+			);
+
+			Kirki::add_config(
+				'content_short_post_header_font_desktop',
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'     => 'postMessage',
+				]
+			);
+
+			Kirki::add_field(
+				'content_short_post_header_font_desktop',
+				[
+				'type'        	=> 'typography',
+				'settings'    	=> 'content_short_post_header_font_desktop',
+				'label'			=> 'Short-Post Header Font',
+				'section'     	=> 'content_short_post',
+				'default'     	=> [
+					'font-family'    => 'Inter',
+					'variant'        => '700',
+					'font-size'      => '18px',
+					'color'          => '#101010',
+				],
+				'priority'   	=> 10,
+				'transport'   	=> 'auto',
+				'output'      	=> [
+					[
+						'element' 		=> 'h2.entry-title-catalog, .entry-title-catalog a',
+						'media_query' 	=> '@media (min-width: 1000px)',
+					],
+				],
+				]
+			);
+
+			Kirki::add_config(
+				'content_short_post_author_font_phone',
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'     => 'postMessage',
+				]
+			);
+
+			Kirki::add_field(
+				'content_short_post_author_font_phone',
 				[
 				'type'        => 'typography',
-				'settings'    => 'content_short_post_author_font',
-				'label'			=> 'Short-Post Info Font',
+				'settings'    => 'content_short_post_author_font_phone',
+				'label'		  => 'Short-Post Info Font',
 				'section'     => 'content_short_post',
 				'default'     => [
 					'font-family'    => 'Roboto',
@@ -2436,7 +2727,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			);
 
 			Kirki::add_config(
-				'content_short_post_main_text_font',
+				'content_short_post_author_font_tablet',
 				[
 					'capability'    => 'edit_theme_options',
 					'transport'     => 'postMessage',
@@ -2444,10 +2735,74 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			);
 
 			Kirki::add_field(
-				'content_short_post_main_text_font',
+				'content_short_post_author_font_tablet',
 				[
 				'type'        => 'typography',
-				'settings'    => 'content_short_post_main_text_font',
+				'settings'    => 'content_short_post_author_font_tablet',
+				'label'			=> 'Short-Post Info Font',
+				'section'     => 'content_short_post',
+				'default'     => [
+					'font-family'    => 'Roboto',
+					'variant'        => 'regular',
+					'font-size'      => '15px',
+					'color'          => '#8492A6',
+				],
+				'priority'    => 10,
+				'transport'   => 'auto',
+				'output'      => [
+					[
+						'element' => '.author-post-catalog, .author-post-catalog a',
+						'media_query' => '@media (min-width: 700px)',
+					],
+				],
+				]
+			);
+
+			Kirki::add_config(
+				'content_short_post_author_font_desktop',
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'     => 'postMessage',
+				]
+			);
+
+			Kirki::add_field(
+				'content_short_post_author_font_desktop',
+				[
+				'type'        => 'typography',
+				'settings'    => 'content_short_post_author_font_desktop',
+				'label'			=> 'Short-Post Info Font',
+				'section'     => 'content_short_post',
+				'default'     => [
+					'font-family'    => 'Roboto',
+					'variant'        => 'regular',
+					'font-size'      => '15px',
+					'color'          => '#8492A6',
+				],
+				'priority'    => 10,
+				'transport'   => 'auto',
+				'output'      => [
+					[
+						'element' => '.author-post-catalog, .author-post-catalog a',
+						'media_query' => '@media (min-width: 1000px)',
+					],
+				],
+				]
+			);
+
+			Kirki::add_config(
+				'content_short_post_main_text_font_phone',
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'     => 'postMessage',
+				]
+			);
+
+			Kirki::add_field(
+				'content_short_post_main_text_font_phone',
+				[
+				'type'        => 'typography',
+				'settings'    => 'content_short_post_main_text_font_phone',
 				'label'			=> 'Short-Post Main Font',
 				'section'     => 'content_short_post',
 				'default'     => [
@@ -2466,8 +2821,9 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				]
 			);
 
+
 			Kirki::add_config(
-				'content_short_post_bottom_line_font',
+				'content_short_post_main_text_font_tablet',
 				[
 					'capability'    => 'edit_theme_options',
 					'transport'     => 'postMessage',
@@ -2475,25 +2831,153 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			);
 
 			Kirki::add_field(
-				'content_short_post_bottom_line_font',
+				'content_short_post_main_text_font_tablet',
 				[
-				'type'        => 'typography',
-				'settings'    => 'content_short_post_bottom_line_font',
-				'label'			=> 'Short-Post Bottom Line Font',
-				'section'     => 'content_short_post',
-				'default'     => [
-					'font-family'    => 'Roboto',
-					'variant'        => 'regular',
-					'font-size'      => '15px',
-					'color'          => '#8492A6',
-				],
-				'priority'    => 10,
-				'transport'   => 'auto',
-				'output'      => [
-					[
-						'element' => '.block-footer-catalog, .block-footer-catalog a',
+					'type'        => 'typography',
+					'settings'    => 'content_short_post_main_text_font_tablet',
+					'label'			=> 'Short-Post Main Font',
+					'section'     => 'content_short_post',
+					'default'     => [
+						'font-family'    => 'Roboto',
+						'variant'        => 'regular',
+						'font-size'      => '16px',
+						'color'          => '#303030',
 					],
-				],
+					'priority'    => 10,
+					'transport'   => 'auto',
+					'output'      => [
+						[
+							'element' => '.entry-content-catalog p',
+							'media_query' => '@media (min-width: 700px)',
+						],
+					],
+				]
+			);
+
+			Kirki::add_config(
+				'content_short_post_main_text_font_desktop',
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'     => 'postMessage',
+				]
+			);
+
+			Kirki::add_field(
+				'content_short_post_main_text_font_desktop',
+				[
+					'type'        => 'typography',
+					'settings'    => 'content_short_post_main_text_font_desktop',
+					'label'			=> 'Short-Post Main Font',
+					'section'     => 'content_short_post',
+					'default'     => [
+						'font-family'    => 'Roboto',
+						'variant'        => 'regular',
+						'font-size'      => '16px',
+						'color'          => '#303030',
+					],
+					'priority'    => 10,
+					'transport'   => 'auto',
+					'output'      => [
+						[
+							'element' => '.entry-content-catalog p',
+							'media_query' => '@media (min-width: 1000px)',
+						],
+					],
+				]
+			);
+
+			Kirki::add_config(
+				'content_short_post_bottom_line_font_phone',
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'     => 'postMessage',
+				]
+			);
+
+			Kirki::add_field(
+				'content_short_post_bottom_line_font_phone',
+				[
+					'type'        => 'typography',
+					'settings'    => 'content_short_post_bottom_line_font_phone',
+					'label'			=> 'Short-Post Bottom Line Font',
+					'section'     => 'content_short_post',
+					'default'     => [
+						'font-family'    => 'Roboto',
+						'variant'        => 'regular',
+						'font-size'      => '15px',
+						'color'          => '#8492A6',
+					],
+					'priority'    => 10,
+					'transport'   => 'auto',
+					'output'      => [
+						[
+							'element' => '.block-footer-catalog, .block-footer-catalog a',
+						],
+					],
+				]
+			);
+
+			Kirki::add_config(
+				'content_short_post_bottom_line_font_tablet',
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'     => 'postMessage',
+				]
+			);
+
+			Kirki::add_field(
+				'content_short_post_bottom_line_font_tablet',
+				[
+					'type'        => 'typography',
+					'settings'    => 'content_short_post_bottom_line_font_tablet',
+					'label'			=> 'Short-Post Bottom Line Font',
+					'section'     => 'content_short_post',
+					'default'     => [
+						'font-family'    => 'Roboto',
+						'variant'        => 'regular',
+						'font-size'      => '15px',
+						'color'          => '#8492A6',
+					],
+					'priority'    => 10,
+					'transport'   => 'auto',
+					'output'      => [
+						[
+							'element' => '.block-footer-catalog, .block-footer-catalog a',
+							'media_query' => '@media (min-width: 700px)',
+						],
+					],
+				]
+			);
+
+			Kirki::add_config(
+				'content_short_post_bottom_line_font_desktop',
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'     => 'postMessage',
+				]
+			);
+
+			Kirki::add_field(
+				'content_short_post_bottom_line_font_desktop',
+				[
+					'type'        => 'typography',
+					'settings'    => 'content_short_post_bottom_line_font_desktop',
+					'label'			=> 'Short-Post Bottom Line Font',
+					'section'     => 'content_short_post',
+					'default'     => [
+						'font-family'    => 'Roboto',
+						'variant'        => 'regular',
+						'font-size'      => '15px',
+						'color'          => '#8492A6',
+					],
+					'priority'    => 10,
+					'transport'   => 'auto',
+					'output'      => [
+						[
+							'element' => '.block-footer-catalog, .block-footer-catalog a',
+							'media_query' => '@media (min-width: 1000px)',
+						],
+					],
 				]
 			);
 
@@ -2508,7 +2992,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			);
 
 			Kirki::add_config(
-				'content_full_post_header_font',
+				'content_full_post_header_font_phone',
 				[
 					'capability'    => 'edit_theme_options',
 					'transport'     => 'postMessage',
@@ -2516,30 +3000,30 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			);
 
 			Kirki::add_field(
-				'content_full_post_header_font',
+				'content_full_post_header_font_phone',
 				[
-				'type'        => 'typography',
-				'settings'    => 'content_full_post_header_font',
-				'label'			=> 'Full-Post Header Font',
-				'section'     => 'content_full_post',
-				'default'     => [
-					'font-family'    => 'Inter',
-					'variant'        => '700',
-					'font-size'      => '26px',
-					'color'          => '#101010',
-				],
-				'priority'    => 10,
-				'transport'   => 'auto',
-				'output'      => [
-					[
-						'element' => 'h1.entry-title',
+					'type'        => 'typography',
+					'settings'    => 'content_full_post_header_font_phone',
+					'label'			=> 'Full-Post Header Font',
+					'section'     => 'content_full_post',
+					'default'     => [
+						'font-family'    => 'Inter',
+						'variant'        => '700',
+						'font-size'      => '26px',
+						'color'          => '#101010',
 					],
-				],
+					'priority'    => 10,
+					'transport'   => 'auto',
+					'output'      => [
+						[
+							'element' => 'h1.entry-title',
+						],
+					],
 				]
 			);
 
 			Kirki::add_config(
-				'content_full_post_author_font',
+				'content_full_post_header_font_tablet',
 				[
 					'capability'    => 'edit_theme_options',
 					'transport'     => 'postMessage',
@@ -2547,30 +3031,31 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			);
 
 			Kirki::add_field(
-				'content_full_post_author_font',
+				'content_full_post_header_font_tablet',
 				[
-				'type'        => 'typography',
-				'settings'    => 'content_full_post_author_font',
-				'label'			=> 'Full-Post Posted Date Line Font',
-				'section'     => 'content_full_post',
-				'default'     => [
-					'font-family'    => 'Roboto',
-					'variant'        => 'regular',
-					'font-size'      => '16px',
-					'color'          => '#8492A6',
-				],
-				'priority'    => 10,
-				'transport'   => 'auto',
-				'output'      => [
-					[
-						'element' => '.author-post, #post-bio a',
+					'type'        => 'typography',
+					'settings'    => 'content_full_post_header_font_tablet',
+					'label'			=> 'Full-Post Header Font',
+					'section'     => 'content_full_post',
+					'default'     => [
+						'font-family'    => 'Inter',
+						'variant'        => '700',
+						'font-size'      => '26px',
+						'color'          => '#101010',
 					],
-				],
+					'priority'    => 10,
+					'transport'   => 'auto',
+					'output'      => [
+						[
+							'element' => 'h1.entry-title',
+							'media_query' => '@media (min-width: 700px)',
+						],
+					],
 				]
 			);
 
 			Kirki::add_config(
-				'content_full_post_main_text_font',
+				'content_full_post_header_font_desktop',
 				[
 					'capability'    => 'edit_theme_options',
 					'transport'     => 'postMessage',
@@ -2578,30 +3063,31 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			);
 
 			Kirki::add_field(
-				'content_full_post_main_text_font',
+				'content_full_post_header_font_desktop',
 				[
-				'type'        => 'typography',
-				'settings'    => 'content_full_post_main_text_font',
-				'label'			=> 'Full-Post Main Font',
-				'section'     => 'content_full_post',
-				'default'     => [
-					'font-family'    => 'Roboto',
-					'variant'        => 'regular',
-					'font-size'      => '16px',
-					'color'          => '#303030',
-				],
-				'priority'    => 10,
-				'transport'   => 'auto',
-				'output'      => [
-					[
-						'element' => '.entry-content p',
+					'type'        => 'typography',
+					'settings'    => 'content_full_post_header_font_desktop',
+					'label'			=> 'Full-Post Header Font',
+					'section'     => 'content_full_post',
+					'default'     => [
+						'font-family'    => 'Inter',
+						'variant'        => '700',
+						'font-size'      => '26px',
+						'color'          => '#101010',
 					],
-				],
+					'priority'    => 10,
+					'transport'   => 'auto',
+					'output'      => [
+						[
+							'element' => 'h1.entry-title',
+							'media_query' => '@media (min-width: 1000px)',
+						],
+					],
 				]
 			);
 
 			Kirki::add_config(
-				'content_full_post_tags_line_font',
+				'content_full_post_author_font_phone',
 				[
 					'capability'    => 'edit_theme_options',
 					'transport'     => 'postMessage',
@@ -2609,25 +3095,279 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			);
 
 			Kirki::add_field(
-				'content_full_post_tags_line_font',
+				'content_full_post_author_font_phone',
 				[
-				'type'        	=> 'typography',
-				'settings'    	=> 'content_full_post_tags_line_font',
-				'label'			=> 'Short-Post Bottom Line Font',
-				'section'     	=> 'content_full_post',
-				'default'     	=> [
-					'font-family'    => 'Roboto',
-					'variant'        => 'regular',
-					'font-size'      => '16px',
-					'color'          => '#8492A6',
-				],
-				'priority'		=> 10,
-				'transport'   	=> 'auto',
-				'output'      	=> [
-					[
-						'element' => '.post-category, .post-tags-list, .post-footer a',
+					'type'        => 'typography',
+					'settings'    => 'content_full_post_author_font_phone',
+					'label'			=> 'Full-Post Posted Date Line Font',
+					'section'     => 'content_full_post',
+					'default'     => [
+						'font-family'    => 'Roboto',
+						'variant'        => 'regular',
+						'font-size'      => '16px',
+						'color'          => '#8492A6',
 					],
-				],
+					'priority'    => 10,
+					'transport'   => 'auto',
+					'output'      => [
+						[
+							'element' => '.author-post, #post-bio a',
+						],
+					],
+				]
+			);
+
+			Kirki::add_config(
+				'content_full_post_author_font_tablet',
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'     => 'postMessage',
+				]
+			);
+
+			Kirki::add_field(
+				'content_full_post_author_font_tablet',
+				[
+					'type'        => 'typography',
+					'settings'    => 'content_full_post_author_font_tablet',
+					'label'			=> 'Full-Post Posted Date Line Font',
+					'section'     => 'content_full_post',
+					'default'     => [
+						'font-family'    => 'Roboto',
+						'variant'        => 'regular',
+						'font-size'      => '16px',
+						'color'          => '#8492A6',
+					],
+					'priority'    => 10,
+					'transport'   => 'auto',
+					'output'      => [
+						[
+							'element' => '.author-post, #post-bio a',
+							'media_query' => '@media (min-width: 700px)',
+						],
+					],
+				]
+			);
+
+			Kirki::add_config(
+				'content_full_post_author_font_desktop',
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'     => 'postMessage',
+				]
+			);
+
+			Kirki::add_field(
+				'content_full_post_author_font_desktop',
+				[
+					'type'        => 'typography',
+					'settings'    => 'content_full_post_author_font_desktop',
+					'label'			=> 'Full-Post Posted Date Line Font',
+					'section'     => 'content_full_post',
+					'default'     => [
+						'font-family'    => 'Roboto',
+						'variant'        => 'regular',
+						'font-size'      => '16px',
+						'color'          => '#8492A6',
+					],
+					'priority'    => 10,
+					'transport'   => 'auto',
+					'output'      => [
+						[
+							'element' => '.author-post, #post-bio a',
+							'media_query' => '@media (min-width: 1000px)',
+						],
+					],
+				]
+			);
+
+			Kirki::add_config(
+				'content_full_post_main_text_font_phone',
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'     => 'postMessage',
+				]
+			);
+
+			Kirki::add_field(
+				'content_full_post_main_text_font_phone',
+				[
+					'type'        => 'typography',
+					'settings'    => 'content_full_post_main_text_font_phone',
+					'label'			=> 'Full-Post Main Font',
+					'section'     => 'content_full_post',
+					'default'     => [
+						'font-family'    => 'Roboto',
+						'variant'        => 'regular',
+						'font-size'      => '16px',
+						'color'          => '#303030',
+					],
+					'priority'    => 10,
+					'transport'   => 'auto',
+					'output'      => [
+						[
+							'element' => '.entry-content p',
+						],
+					],
+				]
+			);
+
+			Kirki::add_config(
+				'content_full_post_main_text_font_tablet',
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'     => 'postMessage',
+				]
+			);
+
+			Kirki::add_field(
+				'content_full_post_main_text_font_tablet',
+				[
+					'type'        => 'typography',
+					'settings'    => 'content_full_post_main_text_font_tablet',
+					'label'			=> 'Full-Post Main Font',
+					'section'     => 'content_full_post',
+					'default'     => [
+						'font-family'    => 'Roboto',
+						'variant'        => 'regular',
+						'font-size'      => '16px',
+						'color'          => '#303030',
+					],
+					'priority'    => 10,
+					'transport'   => 'auto',
+					'output'      => [
+						[
+							'element' => '.entry-content p',
+							'media_query' => '@media (min-width: 700px)',
+						],
+					],
+				]
+			);
+
+			Kirki::add_config(
+				'content_full_post_main_text_font_desktop',
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'     => 'postMessage',
+				]
+			);
+
+			Kirki::add_field(
+				'content_full_post_main_text_font_desktop',
+				[
+					'type'        => 'typography',
+					'settings'    => 'content_full_post_main_text_font_desktop',
+					'label'			=> 'Full-Post Main Font',
+					'section'     => 'content_full_post',
+					'default'     => [
+						'font-family'    => 'Roboto',
+						'variant'        => 'regular',
+						'font-size'      => '16px',
+						'color'          => '#303030',
+					],
+					'priority'    => 10,
+					'transport'   => 'auto',
+					'output'      => [
+						[
+							'element' => '.entry-content p',
+							'media_query' => '@media (min-width: 1000px)',
+						],
+					],
+				]
+			);
+
+			Kirki::add_config(
+				'content_full_post_tags_line_font_phone',
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'     => 'postMessage',
+				]
+			);
+
+			Kirki::add_field(
+				'content_full_post_tags_line_font_phone',
+				[
+					'type'        	=> 'typography',
+					'settings'    	=> 'content_full_post_tags_line_font_phone',
+					'label'			=> 'Short-Post Bottom Line Font',
+					'section'     	=> 'content_full_post',
+					'default'     	=> [
+						'font-family'    => 'Roboto',
+						'variant'        => 'regular',
+						'font-size'      => '16px',
+						'color'          => '#8492A6',
+					],
+					'priority'		=> 10,
+					'transport'   	=> 'auto',
+					'output'      	=> [
+						[
+							'element' => '.post-category, .post-tags-list, .post-footer a',
+						],
+					],
+				]
+			);
+
+			Kirki::add_config(
+				'content_full_post_tags_line_font_tablet',
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'     => 'postMessage',
+				]
+			);
+
+			Kirki::add_field(
+				'content_full_post_tags_line_font_tablet',
+				[
+					'type'        	=> 'typography',
+					'settings'    	=> 'content_full_post_tags_line_font_tablet',
+					'label'			=> 'Short-Post Bottom Line Font',
+					'section'     	=> 'content_full_post',
+					'default'     	=> [
+						'font-family'    => 'Roboto',
+						'variant'        => 'regular',
+						'font-size'      => '16px',
+						'color'          => '#8492A6',
+					],
+					'priority'		=> 10,
+					'transport'   	=> 'auto',
+					'output'      	=> [
+						[
+							'element' => '.post-category, .post-tags-list, .post-footer a',
+							'media_query' => '@media (min-width: 700px)',
+						],
+					],
+				]
+			);
+
+			Kirki::add_config(
+				'content_full_post_tags_line_font_desktop',
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'     => 'postMessage',
+				]
+			);
+
+			Kirki::add_field(
+				'content_full_post_tags_line_font_desktop',
+				[
+					'type'        	=> 'typography',
+					'settings'    	=> 'content_full_post_tags_line_font_desktop',
+					'label'			=> 'Short-Post Bottom Line Font',
+					'section'     	=> 'content_full_post',
+					'default'     	=> [
+						'font-family'    => 'Roboto',
+						'variant'        => 'regular',
+						'font-size'      => '16px',
+						'color'          => '#8492A6',
+					],
+					'priority'		=> 10,
+					'transport'   	=> 'auto',
+					'output'      	=> [
+						[
+							'element' => '.post-category, .post-tags-list, .post-footer a',
+							'media_query' => '@media (min-width: 1000px)',
+						],
+					],
 				]
 			);
 
@@ -2817,92 +3557,278 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			);
 
 			Kirki::add_config(
-				'about_author_title',
+				'about_author_title_phone',
 				[
 					'capability'    => 'edit_theme_options',
 				]
 			);
 
 			Kirki::add_field(
-				'about_author_title',
+				'about_author_title_phone',
 				[
-				'type'        	=> 'typography',
-				'settings'    	=> 'about_author_title',
-				'label'			=> 'Author name font',
-				'section'     	=> 'content_full_post',
-				'default'     	=> [
-					'font-family'    => 'Inter',
-					'variant'        => '700',
-					'font-size'      => '16px',
-					'color'          => '#202020',
-				],
-				'priority'		=> 10,
-				'transport'   	=> 'auto',
-				'output'      	=> [
-					[
-						'element' => '.author-title',
+					'type'        	=> 'typography',
+					'settings'    	=> 'about_author_title_phone',
+					'label'			=> 'Author name font',
+					'section'     	=> 'content_full_post',
+					'default'     	=> [
+						'font-family'    => 'Inter',
+						'variant'        => '700',
+						'font-size'      => '16px',
+						'color'          => '#202020',
 					],
-				],
+					'priority'		=> 10,
+					'transport'   	=> 'auto',
+					'output'      	=> [
+						[
+							'element' => '.author-title',
+						],
+					],
 				]
 			);
 
 			Kirki::add_config(
-				'about_author_title_link',
+				'about_author_title_tablet',
 				[
 					'capability'    => 'edit_theme_options',
 				]
 			);
 
 			Kirki::add_field(
-				'about_author_title_link',
+				'about_author_title_tablet',
 				[
-				'type'        	=> 'typography',
-				'settings'    	=> 'about_author_title_link',
-				'label'			=> 'Author name link font',
-				'section'     	=> 'content_full_post',
-				'default'     	=> [
-					'font-family'    => 'Inter',
-					'variant'        => 'regular',
-					'font-size'      => '16px',
-					'color'          => '#8492A6',
-				],
-				'priority'		=> 10,
-				'transport'   	=> 'auto',
-				'output'      	=> [
-					[
-						'element' => '.author-title a',
+					'type'        	=> 'typography',
+					'settings'    	=> 'about_author_title_tablet',
+					'label'			=> 'Author name font',
+					'section'     	=> 'content_full_post',
+					'default'     	=> [
+						'font-family'    => 'Inter',
+						'variant'        => '700',
+						'font-size'      => '16px',
+						'color'          => '#202020',
 					],
-				],
+					'priority'		=> 10,
+					'transport'   	=> 'auto',
+					'output'      	=> [
+						[
+							'element' => '.author-title',
+							'media_query' => '@media (min-width: 700px)',
+						],
+					],
 				]
 			);
 
 			Kirki::add_config(
-				'about_author_content',
+				'about_author_title_desktop',
 				[
 					'capability'    => 'edit_theme_options',
 				]
 			);
 
 			Kirki::add_field(
-				'about_author_content',
+				'about_author_title_desktop',
 				[
-				'type'        	=> 'typography',
-				'settings'    	=> 'about_author_content',
-				'label'			=> 'Author description font',
-				'section'     	=> 'content_full_post',
-				'default'     	=> [
-					'font-family'    => 'Roboto',
-					'variant'        => 'regular',
-					'font-size'      => '16px',
-					'color'          => '#303030',
-				],
-				'priority'		=> 10,
-				'transport'   	=> 'auto',
-				'output'      	=> [
-					[
-						'element' => '.author-description, .author-description p',
+					'type'        	=> 'typography',
+					'settings'    	=> 'about_author_title_desktop',
+					'label'			=> 'Author name font',
+					'section'     	=> 'content_full_post',
+					'default'     	=> [
+						'font-family'    => 'Inter',
+						'variant'        => '700',
+						'font-size'      => '16px',
+						'color'          => '#202020',
 					],
-				],
+					'priority'		=> 10,
+					'transport'   	=> 'auto',
+					'output'      	=> [
+						[
+							'element' => '.author-title',
+							'media_query' => '@media (min-width: 1000px)',
+						],
+					],
+				]
+			);
+
+			Kirki::add_config(
+				'about_author_title_link_phone',
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field(
+				'about_author_title_link_phone',
+				[
+					'type'        	=> 'typography',
+					'settings'    	=> 'about_author_title_link_phone',
+					'label'			=> 'Author name link font',
+					'section'     	=> 'content_full_post',
+					'default'     	=> [
+						'font-family'    => 'Inter',
+						'variant'        => 'regular',
+						'font-size'      => '16px',
+						'color'          => '#8492A6',
+					],
+					'priority'		=> 10,
+					'transport'   	=> 'auto',
+					'output'      	=> [
+						[
+							'element' => '.author-title a',
+						],
+					],
+				]
+			);
+
+			Kirki::add_config(
+				'about_author_title_link_tablet',
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field(
+				'about_author_title_link_tablet',
+				[
+					'type'        	=> 'typography',
+					'settings'    	=> 'about_author_title_link_tablet',
+					'label'			=> 'Author name link font',
+					'section'     	=> 'content_full_post',
+					'default'     	=> [
+						'font-family'    => 'Inter',
+						'variant'        => 'regular',
+						'font-size'      => '16px',
+						'color'          => '#8492A6',
+					],
+					'priority'		=> 10,
+					'transport'   	=> 'auto',
+					'output'      	=> [
+						[
+							'element' => '.author-title a',
+							'media_query' => '@media (min-width: 700px)',
+						],
+					],
+				]
+			);
+
+			Kirki::add_config(
+				'about_author_title_link_desktop',
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field(
+				'about_author_title_link_desktop',
+				[
+					'type'        	=> 'typography',
+					'settings'    	=> 'about_author_title_link_desktop',
+					'label'			=> 'Author name link font',
+					'section'     	=> 'content_full_post',
+					'default'     	=> [
+						'font-family'    => 'Inter',
+						'variant'        => 'regular',
+						'font-size'      => '16px',
+						'color'          => '#8492A6',
+					],
+					'priority'		=> 10,
+					'transport'   	=> 'auto',
+					'output'      	=> [
+						[
+							'element' => '.author-title a',
+							'media_query' => '@media (min-width: 1000px)',
+						],
+					],
+				]
+			);
+
+			Kirki::add_config(
+				'about_author_content_phone',
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field(
+				'about_author_content_phone',
+				[
+					'type'        	=> 'typography',
+					'settings'    	=> 'about_author_content_phone',
+					'label'			=> 'Author description font',
+					'section'     	=> 'content_full_post',
+					'default'     	=> [
+						'font-family'    => 'Roboto',
+						'variant'        => 'regular',
+						'font-size'      => '16px',
+						'color'          => '#303030',
+					],
+					'priority'		=> 10,
+					'transport'   	=> 'auto',
+					'output'      	=> [
+						[
+							'element' => '.author-description, .author-description p',
+						],
+					],
+				]
+			);
+
+			Kirki::add_config(
+				'about_author_content_tablet',
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field(
+				'about_author_content_tablet',
+				[
+					'type'        	=> 'typography',
+					'settings'    	=> 'about_author_content_tablet',
+					'label'			=> 'Author description font',
+					'section'     	=> 'content_full_post',
+					'default'     	=> [
+						'font-family'    => 'Roboto',
+						'variant'        => 'regular',
+						'font-size'      => '16px',
+						'color'          => '#303030',
+					],
+					'priority'		=> 10,
+					'transport'   	=> 'auto',
+					'output'      	=> [
+						[
+							'element' => '.author-description, .author-description p',
+							'media_query' => '@media (min-width: 700px)',
+						],
+					],
+				]
+			);
+
+			Kirki::add_config(
+				'about_author_content_desktop',
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field(
+				'about_author_content_desktop',
+				[
+					'type'        	=> 'typography',
+					'settings'    	=> 'about_author_content_desktop',
+					'label'			=> 'Author description font',
+					'section'     	=> 'content_full_post',
+					'default'     	=> [
+						'font-family'    => 'Roboto',
+						'variant'        => 'regular',
+						'font-size'      => '16px',
+						'color'          => '#303030',
+					],
+					'priority'		=> 10,
+					'transport'   	=> 'auto',
+					'output'      	=> [
+						[
+							'element' => '.author-description, .author-description p',
+							'media_query' => '@media (min-width: 1000px)',
+						],
+					],
 				]
 			);
 
@@ -3102,17 +4028,17 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			);
 
 			Kirki::add_config(
-				'breadcrumbs_font',
+				'breadcrumbs_font_phone',
 				[
 					'capability'    => 'edit_theme_options',
 				]
 			);
 
 			Kirki::add_field(
-				'breadcrumbs_font',
+				'breadcrumbs_font_phone',
 				[
 					'type'        => 'typography',
-					'settings'    => 'breadcrumbs_font',
+					'settings'    => 'breadcrumbs_font_phone',
 					'label'       => esc_html__( 'Font Style', 'kirki' ),
 					'section'     => 'breadcrumbs_general',
 					'default'     => [
@@ -3124,12 +4050,73 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'priority'    => 10,
 					'transport'   => 'auto',
 					'output'      => [
-						[
-							'element' =>
-								[
-									'.breadcrumbs',
-									'.breadcrumbs a',
-								],
+						'element' => [
+							'.breadcrumbs',
+							'.breadcrumbs a',
+						],
+					],
+				]
+			);
+
+			Kirki::add_config(
+				'breadcrumbs_font_tablet',
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field(
+				'breadcrumbs_font_tablet',
+				[
+					'type'        => 'typography',
+					'settings'    => 'breadcrumbs_font_tablet',
+					'label'       => esc_html__( 'Font Style', 'kirki' ),
+					'section'     => 'breadcrumbs_general',
+					'default'     => [
+						'font-family'    => 'Roboto',
+						'variant'        => 'regular',
+						'font-size'      => '14px',
+						'color'          => '#8492A6',
+					],
+					'priority'    => 10,
+					'transport'   => 'auto',
+					'output'      => [
+						'element' => [
+							'.breadcrumbs',
+							'.breadcrumbs a',
+							'media_query' => '@media (min-width: 700px)',
+						],
+					],
+				]
+			);
+
+			Kirki::add_config(
+				'breadcrumbs_font_desktop',
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field(
+				'breadcrumbs_font_desktop',
+				[
+					'type'        => 'typography',
+					'settings'    => 'breadcrumbs_font_desktop',
+					'label'       => esc_html__( 'Font Style', 'kirki' ),
+					'section'     => 'breadcrumbs_general',
+					'default'     => [
+						'font-family'    => 'Roboto',
+						'variant'        => 'regular',
+						'font-size'      => '14px',
+						'color'          => '#8492A6',
+					],
+					'priority'    => 10,
+					'transport'   => 'auto',
+					'output'      => [
+						'element' => [
+							'.breadcrumbs',
+							'.breadcrumbs a',
+							'media_query' => '@media (min-width: 1000px)',
 						],
 					],
 				]
@@ -3238,17 +4225,17 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			);
 
 			Kirki::add_config(
-				'pagination_font',
+				'pagination_font_phone',
 				[
 					'capability'    => 'edit_theme_options',
 				]
 			);
 
 			Kirki::add_field(
-				'pagination_font',
+				'pagination_font_phone',
 				[
 					'type'        => 'typography',
-					'settings'    => 'pagination_font',
+					'settings'    => 'pagination_font_phone',
 					'label'       => esc_html__( 'Pagination Font Style', 'kirki' ),
 					'section'     => 'pagination_main',
 					'default'     => [
@@ -3262,6 +4249,68 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'output'      => [
 						[
 							'element' => '.pagination a, .page-numbers.current',
+						],
+					],
+				]
+			);
+
+			Kirki::add_config(
+				'pagination_font_tablet',
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field(
+				'pagination_font_tablet',
+				[
+					'type'        => 'typography',
+					'settings'    => 'pagination_font_tablet',
+					'label'       => esc_html__( 'Pagination Font Style', 'kirki' ),
+					'section'     => 'pagination_main',
+					'default'     => [
+						'font-family'    => 'Inter',
+						'variant'        => 'regular',
+						'font-size'      => '16px',
+						'color'          => '#202020',
+					],
+					'priority'    => 10,
+					'transport'   => 'auto',
+					'output'      => [
+						[
+							'element' => '.pagination a, .page-numbers.current',
+							'media_query' => '@media (min-width: 700px)',
+						],
+					],
+				]
+			);
+
+			Kirki::add_config(
+				'pagination_font_desktop',
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field(
+				'pagination_font_desktop',
+				[
+					'type'        => 'typography',
+					'settings'    => 'pagination_font_desktop',
+					'label'       => esc_html__( 'Pagination Font Style', 'kirki' ),
+					'section'     => 'pagination_main',
+					'default'     => [
+						'font-family'    => 'Inter',
+						'variant'        => 'regular',
+						'font-size'      => '16px',
+						'color'          => '#202020',
+					],
+					'priority'    => 10,
+					'transport'   => 'auto',
+					'output'      => [
+						[
+							'element' => '.pagination a, .page-numbers.current',
+							'media_query' => '@media (min-width: 1000px)',
 						],
 					],
 				]
@@ -3308,17 +4357,17 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			);
 
 			Kirki::add_config(
-				'pagination_font',
+				'pagination_font_phone',
 				[
 					'capability'    => 'edit_theme_options',
 				]
 			);
 
 			Kirki::add_field(
-				'pagination_font',
+				'pagination_font_phone',
 				[
 					'type'        => 'typography',
-					'settings'    => 'pagination_font',
+					'settings'    => 'pagination_font_phone',
 					'label'       => esc_html__( 'Font	', 'kirki' ),
 					'section'     => 'pagination_post',
 					'default'     => [
@@ -3332,6 +4381,68 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'output'      => [
 						[
 							'element' => '.pagination-single-inner a',
+						],
+					],
+				]
+			);
+
+			Kirki::add_config(
+				'pagination_font_tablet',
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field(
+				'pagination_font_tablet',
+				[
+					'type'        => 'typography',
+					'settings'    => 'pagination_font_tablet',
+					'label'       => esc_html__( 'Font	', 'kirki' ),
+					'section'     => 'pagination_post',
+					'default'     => [
+						'font-family'    => 'Roboto',
+						'variant'        => 'regular',
+						'font-size'      => '18px',
+						'color'          => '#8492A6',
+					],
+					'priority'    => 10,
+					'transport'   => 'auto',
+					'output'      => [
+						[
+							'element' => '.pagination-single-inner a',
+							'media_query' => '@media (min-width: 700px)',
+						],
+					],
+				]
+			);
+
+			Kirki::add_config(
+				'pagination_font_desktop',
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field(
+				'pagination_font_desktop',
+				[
+					'type'        => 'typography',
+					'settings'    => 'pagination_font_desktop',
+					'label'       => esc_html__( 'Font	', 'kirki' ),
+					'section'     => 'pagination_post',
+					'default'     => [
+						'font-family'    => 'Roboto',
+						'variant'        => 'regular',
+						'font-size'      => '18px',
+						'color'          => '#8492A6',
+					],
+					'priority'    => 10,
+					'transport'   => 'auto',
+					'output'      => [
+						[
+							'element' => '.pagination-single-inner a',
+							'media_query' => '@media (min-width: 1000px)',
 						],
 					],
 				]
