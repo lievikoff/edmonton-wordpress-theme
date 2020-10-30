@@ -771,8 +771,11 @@ function edmonton_get_elements_array() {
 	*/
 	return apply_filters( 'edmonton_get_elements_array', $elements );
 }
-
-
+/** Refresh Site after change Logo */
+function customize_logo_refresh( $wp_customize ) {
+	$wp_customize->get_setting( 'custom_logo' )->transport = 'refresh';
+}
+add_action( 'customize_register', 'customize_logo_refresh' );
 
 function customize () {
 
