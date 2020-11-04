@@ -4712,7 +4712,6 @@ a.to-the-top > * {
 	font-weight: bold;
 	font-size: 14px;
 	line-height: 17px;
-	color: #101010;
 	text-decoration: none;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -4721,7 +4720,6 @@ a.to-the-top > * {
 
 .sidebar-post-data {
 	margin: 5px 0 0;
-	color: #000000;
 	font-size: 14px;
 	line-height: 16px;
 }

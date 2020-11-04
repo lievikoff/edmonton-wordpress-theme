@@ -3847,6 +3847,160 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				]
 			);
 
+			/** Content Sidebar Widget */
+
+			Kirki::add_section(
+				'content_sidebar_widget',
+				[
+					'title'          => esc_html__( 'Sidebar Widgets', 'kirki' ),
+					'panel'          => 'content',
+				]
+			);
+
+			Kirki::add_config(
+				'content_sidebar_widget_bgcolor',
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'     => 'auto',
+				]
+			);
+
+			Kirki::add_field(
+				'content_sidebar_widget_bgcolor',
+				[
+					'type'      => 'color',
+					'settings'  => 'content_sidebar_widget_bgcolor',
+					'label'     => esc_attr__( 'Background Color', 'edmonton' ),
+					'section'   => 'content_sidebar_widget',
+					'default'   => '#ffffff',
+					'output'      => [
+						[
+							'element'  => '.side.widget',
+							'property' => 'background-color',
+						],
+					],
+				]
+			);
+
+			Kirki::add_config(
+				'content_sidebar_widget_title_font_phone',
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field(
+				'content_sidebar_widget_title_font_phone',
+				[
+					'type'        	=> 'typography',
+					'settings'    	=> 'content_sidebar_widget_title_font_phone',
+					'label'			=> 'Widget-Title font',
+					'section'     	=> 'content_sidebar_widget',
+					'default'     	=> [
+						'font-family'    => 'Inter',
+						'variant'        => '700',
+						'font-size'      => '12px',
+						'color'          => '#101010',
+					],
+					'priority'		=> 10,
+					'transport'   	=> 'auto',
+					'output'      	=> [
+						[
+							'element' => '.side.widget .widget-title',
+							'media_query' 	=> '@media (max-width: 699px)',
+						],
+					],
+				]
+			);
+
+			Kirki::add_config(
+				'content_sidebar_widget_title_font_tablet',
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field(
+				'content_sidebar_widget_title_font_tablet',
+				[
+					'type'        	=> 'typography',
+					'settings'    	=> 'content_sidebar_widget_title_font_tablet',
+					'label'			=> 'Widget-Title font',
+					'section'     	=> 'content_sidebar_widget',
+					'default'     	=> [
+						'font-family'    => 'Inter',
+						'variant'        => '700',
+						'font-size'      => '13px',
+						'color'          => '#101010',
+					],
+					'priority'		=> 10,
+					'transport'   	=> 'auto',
+					'output'      	=> [
+						[
+							'element' => '.side.widget .widget-title',
+							'media_query' => '@media (min-width: 700px)',
+						],
+					],
+				]
+			);
+
+			Kirki::add_config(
+				'content_sidebar_widget_title_font_desktop',
+				[
+					'capability'    => 'edit_theme_options',
+				]
+			);
+
+			Kirki::add_field(
+				'content_sidebar_widget_title_font_desktop',
+				[
+					'type'        	=> 'typography',
+					'settings'    	=> 'content_sidebar_widget_title_font_desktop',
+					'label'			=> 'Widget-Title font',
+					'section'     	=> 'content_sidebar_widget',
+					'default'     	=> [
+						'font-family'    => 'Inter',
+						'variant'        => '700',
+						'font-size'      => '14px',
+						'color'          => '#303030',
+					],
+					'priority'		=> 10,
+					'transport'   	=> 'auto',
+					'output'      	=> [
+						[
+							'element' => '.side.widget .widget-title',
+							'media_query' => '@media (min-width: 1000px)',
+						],
+					],
+				]
+			);
+
+			Kirki::add_config(
+				'content_sidebar_widget_main_text_color',
+				[
+					'capability'    => 'edit_theme_options',
+					'transport'     => 'auto',
+				]
+			);
+
+			Kirki::add_field(
+				'content_sidebar_widget_main_text_color',
+				[
+					'type'      => 'color',
+					'settings'  => 'content_sidebar_widget_main_text_color',
+					'label'     => esc_attr__( 'Main Text Color', 'edmonton' ),
+					'section'   => 'content_sidebar_widget',
+					'default'   => '#101010',
+					'output'      => [
+						[
+							'element'  => '.side.widget, .side.widget a',
+							'property' => 'color',
+						],
+					],
+				]
+			);
+
+
 			/**
 			 * Color Scheme
 			 */
