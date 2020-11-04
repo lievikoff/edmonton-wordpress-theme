@@ -1401,10 +1401,10 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 			);
 
 			Kirki::add_field(
-				'color_icon_footer',
+				'color_icon_footer_hover',
 				[
 					'type'		=> 'color',
-					'settings'	=> 'color_icon_footer',
+					'settings'	=> 'color_icon_footer_hover',
 					'section'	=> 'display_setting',
 					'default'	=> '#F7A600',
 					'priority'	=> 10,
