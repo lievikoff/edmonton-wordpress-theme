@@ -65,6 +65,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'output'      => [
 						[
 							'element' => '.site-title',
+							'media_query' 	=> '@media (max-width: 699px)',
 						],
 					],
 				] 
@@ -365,10 +366,12 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'output'      => [
 						[
 							'element' => '.primary-menu li',
+							'media_query' 	=> '@media (max-width: 699px)',
 						],
 						[
 							'element' => '.primary-menu li a, .primary-menu .icon',
 							'suffix'  => '!important',
+							'media_query' 	=> '@media (max-width: 699px)',
 						],
 					],
 				]
@@ -735,6 +738,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'output'      => [
 						[
 							'element' 		=> '.alt-navigation-search input',
+							'media_query' 	=> '@media (max-width: 699px)',
 						],
 					],
 				]
@@ -2626,6 +2630,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'output'      => [
 					[
 						'element' => 'h2.entry-title-catalog, .entry-title-catalog a',
+						'media_query' 	=> '@media (max-width: 699px)',
 					],
 				],
 				]
@@ -2721,6 +2726,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'output'      => [
 					[
 						'element' => '.author-post-catalog, .author-post-catalog a',
+						'media_query' 	=> '@media (max-width: 699px)',
 					],
 				],
 				]
@@ -2816,6 +2822,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 				'output'      => [
 					[
 						'element' => '.entry-content-catalog p',
+						'media_query' 	=> '@media (max-width: 699px)',
 					],
 				],
 				]
@@ -2912,6 +2919,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'output'      => [
 						[
 							'element' => '.block-footer-catalog, .block-footer-catalog a',
+							'media_query' 	=> '@media (max-width: 699px)',
 						],
 					],
 				]
@@ -3016,7 +3024,8 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'transport'   => 'auto',
 					'output'      => [
 						[
-							'element' => 'h1.entry-title',
+							'element' 		=> 'h1.entry-title',
+							'media_query' 	=> '@media (max-width: 699px)',
 						],
 					],
 				]
@@ -3112,6 +3121,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'output'      => [
 						[
 							'element' => '.author-post, #post-bio a',
+							'media_query' 	=> '@media (max-width: 699px)',
 						],
 					],
 				]
@@ -3207,6 +3217,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'output'      => [
 						[
 							'element' => '.entry-content p',
+							'media_query' 	=> '@media (max-width: 699px)',
 						],
 					],
 				]
@@ -3302,6 +3313,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'output'      	=> [
 						[
 							'element' => '.post-category, .post-tags-list, .post-footer a',
+							'media_query' 	=> '@media (max-width: 699px)',
 						],
 					],
 				]
@@ -3581,6 +3593,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'output'      	=> [
 						[
 							'element' => '.author-title',
+							'media_query' 	=> '@media (max-width: 699px)',
 						],
 					],
 				]
@@ -3673,6 +3686,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'output'      	=> [
 						[
 							'element' => '.author-title a',
+							'media_query' 	=> '@media (max-width: 699px)',
 						],
 					],
 				]
@@ -3765,6 +3779,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'output'      	=> [
 						[
 							'element' => '.author-description, .author-description p',
+							'media_query' 	=> '@media (max-width: 699px)',
 						],
 					],
 				]
@@ -4054,6 +4069,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 							'.breadcrumbs',
 							'.breadcrumbs a',
 						],
+						'media_query' 	=> '@media (max-width: 699px)',
 					],
 				]
 			);
@@ -4084,8 +4100,8 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 						'element' => [
 							'.breadcrumbs',
 							'.breadcrumbs a',
-							'media_query' => '@media (min-width: 700px)',
 						],
+						'media_query' => '@media (min-width: 700px)',
 					],
 				]
 			);
@@ -4116,8 +4132,8 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 						'element' => [
 							'.breadcrumbs',
 							'.breadcrumbs a',
-							'media_query' => '@media (min-width: 1000px)',
 						],
+						'media_query' => '@media (min-width: 1000px)',
 					],
 				]
 			);
@@ -4249,6 +4265,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'output'      => [
 						[
 							'element' => '.pagination a, .page-numbers.current',
+							'media_query' => '@media (max-width: 699px)',
 						],
 					],
 				]
@@ -4381,6 +4398,7 @@ if ( ! class_exists( 'Edmonton_Customize' ) ) {
 					'output'      => [
 						[
 							'element' => '.pagination-single-inner a',
+							'media_query' => '@media (max-width: 699px)',
 						],
 					],
 				]

@@ -274,7 +274,6 @@
             
         if ( storageWidth == windowWidthThisMoment ) {
             // nothing to do
-            console.log('nothing to do');
         } else {
             localRefresh( windowWidthThisMoment );
         }
