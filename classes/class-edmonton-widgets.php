@@ -354,7 +354,7 @@ class recentPosts extends WP_Widget {
 		if ( ! empty( $title ) ) echo $args['before_title'] . $title . $args['after_title'];
 		
 
-		$recent_posts = $wpdb->get_results( "SELECT * FROM wp_posts INNER JOIN wp_postmeta ON post_id = ID WHERE post_status = 'publish' AND post_type = 'post' ORDER BY `post_date` DESC LIMIT $count_posts" );
+		$recent_posts = $wpdb->get_results( "SELECT * FROM $wpdb->posts INNER JOIN $wpdb->postmeta ON post_id = ID WHERE post_status = 'publish' AND post_type = 'post' ORDER BY `post_date` DESC LIMIT $count_posts" );
 		$recent_posts = json_decode( json_encode( $recent_posts ), true );
 		?>
 
